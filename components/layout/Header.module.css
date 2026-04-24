@@ -169,19 +169,18 @@
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  /* Start flush with the bottom of the li — padding-top creates the
+     visual gap *inside* the element so the mouse never crosses empty space */
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   width: 340px;
-  background: #fff;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: var(--space-2);
+  background: transparent;          /* transparent wrapper, no gap in hover zone */
+  padding-top: 10px;                 /* visual gap lives inside the element */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateX(-50%) translateY(-8px);
+  transform: translateX(-50%) translateY(-6px);
   transition:
     opacity var(--dur-base) var(--ease-out),
     transform var(--dur-base) var(--ease-out),
@@ -189,8 +188,23 @@
   z-index: 300;
 }
 
-/* Arrow pointer */
-.dropdown::before {
+/* Inner card that holds the actual content */
+.dropdown::after {
+  display: none; /* unused — inner content uses .dropInner */
+}
+
+/* Real visible dropdown card */
+.dropInner {
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+  position: relative;
+}
+
+/* Arrow pointer — sits at the top of the visible card */
+.dropInner::before {
   content: '';
   position: absolute;
   top: -6px;

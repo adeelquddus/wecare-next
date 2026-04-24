@@ -52,11 +52,20 @@ const NAV_ITEMS = [
 
 export default function Header() {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen]       = useState(false);
-  const [dropOpen, setDropOpen]       = useState(false);
-  const [scrolled, setScrolled]       = useState(false);
+  const [menuOpen, setMenuOpen]           = useState(false);
+  const [dropOpen, setDropOpen]           = useState(false);
+  const [scrolled, setScrolled]           = useState(false);
   const [bannerVisible, setBannerVisible] = useState(true);
-  const dropRef = useRef<HTMLLIElement>(null);
+  const dropRef      = useRef<HTMLLIElement>(null);
+  const closeTimer   = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openDrop  = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setDropOpen(true);
+  };
+  const closeDrop = () => {
+    closeTimer.current = setTimeout(() => setDropOpen(false), 120);
+  };
 
   /* Scroll shadow */
   useEffect(() => {
@@ -135,8 +144,8 @@ export default function Header() {
                       key={item.href}
                       ref={dropRef}
                       className={styles.dropItem}
-                      onMouseEnter={() => setDropOpen(true)}
-                      onMouseLeave={() => setDropOpen(false)}
+                      onMouseEnter={openDrop}
+                      onMouseLeave={closeDrop}
                     >
                       <button
                         className={`${styles.navLink} ${isServicesActive ? styles.active : ''} ${styles.dropTrigger}`}
@@ -156,37 +165,43 @@ export default function Header() {
                         </svg>
                       </button>
 
-                      {/* Dropdown panel */}
+                      {/* Dropdown panel — transparent wrapper starts at li bottom,
+                          padding-top creates the visual gap without a hover dead-zone */}
                       <div
                         className={`${styles.dropdown} ${dropOpen ? styles.dropdownOpen : ''}`}
                         role="menu"
                         aria-label="Services menu"
+                        onMouseEnter={openDrop}
+                        onMouseLeave={closeDrop}
                       >
-                        {/* All services link at top */}
-                        <Link href="/services" className={styles.dropAllLink} role="menuitem">
-                          <span className={styles.dropAllLabel}>All services</span>
-                          <span className={styles.dropAllArrow}>→</span>
-                        </Link>
+                        {/* Visible card lives inside .dropInner */}
+                        <div className={styles.dropInner}>
+                          {/* All services link at top */}
+                          <Link href="/services" className={styles.dropAllLink} role="menuitem">
+                            <span className={styles.dropAllLabel}>All services</span>
+                            <span className={styles.dropAllArrow}>→</span>
+                          </Link>
 
-                        <div className={styles.dropDivider} aria-hidden="true" />
+                          <div className={styles.dropDivider} aria-hidden="true" />
 
-                        <ul className={styles.dropList} role="list">
-                          {SERVICES_DROPDOWN.map((s) => (
-                            <li key={s.href} role="none">
-                              <Link
-                                href={s.href}
-                                className={`${styles.dropLink} ${pathname === s.href ? styles.dropLinkActive : ''}`}
-                                role="menuitem"
-                              >
-                                <span className={styles.dropIcon} aria-hidden="true">{s.icon}</span>
-                                <span className={styles.dropContent}>
-                                  <span className={styles.dropLabel}>{s.label}</span>
-                                  <span className={styles.dropDesc}>{s.desc}</span>
-                                </span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                          <ul className={styles.dropList} role="list">
+                            {SERVICES_DROPDOWN.map((s) => (
+                              <li key={s.href} role="none">
+                                <Link
+                                  href={s.href}
+                                  className={`${styles.dropLink} ${pathname === s.href ? styles.dropLinkActive : ''}`}
+                                  role="menuitem"
+                                >
+                                  <span className={styles.dropIcon} aria-hidden="true">{s.icon}</span>
+                                  <span className={styles.dropContent}>
+                                    <span className={styles.dropLabel}>{s.label}</span>
+                                    <span className={styles.dropDesc}>{s.desc}</span>
+                                  </span>
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </li>
                   );
