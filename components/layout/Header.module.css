@@ -1,99 +1,310 @@
-.header {
+/* =========================================================================
+   Header — WeCare Wellness
+   Announcement bar + sticky navbar + Services dropdown + mobile menu
+   ========================================================================= */
+
+/* Outer wrapper so sticky nav sits below the banner */
+.headerWrap {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: var(--bg-surface);
+  z-index: 200;
+}
+
+/* ── Announcement banner ─────────────────────────────────────────────── */
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px var(--space-3);
+  /* Brand gradient — blue → teal */
+  background: linear-gradient(90deg, var(--color-primary) 0%, #1a7aff 35%, var(--color-secondary) 100%);
+  color: #fff;
+}
+
+.bannerText {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.bannerLink {
+  color: #fff;
+  font-weight: var(--weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+  margin-left: 6px;
+  transition: opacity var(--dur-fast);
+}
+
+.bannerLink:hover {
+  opacity: 0.85;
+}
+
+.bannerClose {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  font-size: var(--text-base);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: color var(--dur-fast), background var(--dur-fast);
+}
+
+.bannerClose:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ── Navbar ──────────────────────────────────────────────────────────── */
+.nav {
+  background: #fff;
   border-bottom: 1px solid var(--border-subtle);
   transition: box-shadow var(--dur-base) var(--ease-out);
 }
 
-.header.scrolled {
-  box-shadow: var(--shadow-sm);
+.nav.scrolled {
+  box-shadow: 0 2px 16px rgba(11, 31, 58, 0.08);
 }
 
-.inner {
+.navInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  height: 70px;
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  height: 72px;
 }
 
 /* ── Logo ────────────────────────────────────────────────────────────── */
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
-.logoIcon {
-  font-size: 28px;
-  line-height: 1;
-}
-
-.logoText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.logoMain {
-  font-size: var(--text-md);
-  font-weight: var(--weight-semibold);
-  color: var(--color-primary);
-  letter-spacing: var(--tracking-snug);
-}
-
-.logoSub {
-  font-size: var(--text-xs);
-  font-weight: var(--weight-medium);
-  color: var(--text-secondary);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
+.logoImg {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* ── Desktop nav ─────────────────────────────────────────────────────── */
-.nav {
+.desktopNav {
   flex: 1;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .navList {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: 2px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .navLink {
-  display: block;
-  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
-  color: var(--text-secondary);
+  color: var(--color-dark);
   text-decoration: none;
   border-radius: var(--radius-sm);
-  transition: color var(--dur-fast), background var(--dur-fast);
+  border: none;
+  background: none;
+  cursor: pointer;
   white-space: nowrap;
+  transition: color var(--dur-fast), background var(--dur-fast);
+  letter-spacing: 0.01em;
 }
 
 .navLink:hover {
-  color: var(--text-primary);
-  background: var(--bg-muted);
+  color: var(--color-primary);
+  background: var(--color-primary-50);
 }
 
 .navLink.active {
   color: var(--color-primary);
-  background: var(--color-primary-50);
   font-weight: var(--weight-semibold);
+  background: var(--color-primary-50);
 }
 
-/* ── Actions ─────────────────────────────────────────────────────────── */
-.actions {
+/* Chevron icon */
+.chevron {
+  transition: transform var(--dur-base) var(--ease-out);
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ── Services dropdown ───────────────────────────────────────────────── */
+.dropItem {
+  position: relative;
+  list-style: none;
+}
+
+.dropTrigger {
+  /* same as .navLink — just also a <button> */
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px;
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-8px);
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out),
+    visibility var(--dur-base);
+  z-index: 300;
+}
+
+/* Arrow pointer */
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-top: 1px solid var(--border-subtle);
+  border-left: 1px solid var(--border-subtle);
+}
+
+.dropdownOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* "All services" header row */
+.dropAllLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px var(--space-2);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--dur-fast);
+}
+
+.dropAllLink:hover {
+  background: var(--color-primary-50);
+}
+
+.dropAllLabel {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.dropAllArrow {
+  font-size: var(--text-base);
+  color: var(--color-primary);
+}
+
+.dropDivider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: var(--space-1) 0;
+}
+
+.dropList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropLink {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px var(--space-2);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--dur-fast);
+}
+
+.dropLink:hover,
+.dropLinkActive {
+  background: var(--color-primary-50);
+}
+
+.dropIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-sm);
+  margin-top: 1px;
+}
+
+.dropContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropLabel {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-dark);
+  line-height: 1.3;
+}
+
+.dropLink:hover .dropLabel,
+.dropLinkActive .dropLabel {
+  color: var(--color-primary);
+}
+
+.dropDesc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ── Nav right actions ───────────────────────────────────────────────── */
+.navRight {
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -101,10 +312,14 @@
 }
 
 .phoneLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
   color: var(--text-secondary);
   text-decoration: none;
+  white-space: nowrap;
   transition: color var(--dur-fast);
 }
 
@@ -112,100 +327,218 @@
   color: var(--color-primary);
 }
 
+/* CTA pill button */
+.bookBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+  letter-spacing: 0.01em;
+}
+
+.bookBtn:hover {
+  background: var(--color-primary-600);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.bookBtn:active {
+  transform: translateY(0);
+}
+
 /* ── Hamburger ───────────────────────────────────────────────────────── */
-.menuToggle {
+.hamburger {
   display: none;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 36px;
-  height: 36px;
-  padding: 6px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
   background: none;
-  border: none;
-  cursor: pointer;
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--dur-fast);
 }
 
-.menuToggle:focus-visible {
-  box-shadow: var(--shadow-focus);
+.hamburger:hover {
+  background: var(--bg-muted);
+}
+
+.hamburger:focus-visible {
   outline: none;
+  box-shadow: var(--shadow-focus);
 }
 
 .bar {
   display: block;
   height: 2px;
-  background: var(--text-primary);
+  background: var(--color-dark);
   border-radius: 2px;
-  transition: transform var(--dur-base) var(--ease-both), opacity var(--dur-base);
+  transition:
+    transform var(--dur-base) var(--ease-both),
+    opacity var(--dur-base);
 }
 
-.barTop { transform: translateY(7px) rotate(45deg); }
-.barMid { opacity: 0; }
-.barBot { transform: translateY(-7px) rotate(-45deg); }
+.barTop  { transform: translateY(7px) rotate(45deg); }
+.barMid  { opacity: 0; transform: scaleX(0); }
+.barBot  { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── Mobile menu ─────────────────────────────────────────────────────── */
 .mobileMenu {
-  display: none;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height var(--dur-slow) var(--ease-out);
+  background: #fff;
   border-top: 1px solid var(--border-subtle);
-  background: var(--bg-surface);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--dur-slow) var(--ease-out);
+  box-shadow: var(--shadow-md);
 }
 
 .mobileMenuOpen {
-  max-height: 600px;
+  max-height: 700px;
 }
 
-.mobileNavList {
+.mobileList {
   list-style: none;
   margin: 0;
-  padding: var(--space-2) var(--space-3) var(--space-3);
+  padding: var(--space-3) var(--space-4) var(--space-4);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
-.mobileNavLink {
+.mobileLink {
   display: block;
   padding: 12px var(--space-2);
   font-size: var(--text-base);
   font-weight: var(--weight-medium);
+  color: var(--color-dark);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast), background var(--dur-fast);
+}
+
+.mobileLink:hover,
+.mobileLink.active {
+  color: var(--color-primary);
+  background: var(--color-primary-50);
+}
+
+/* Sub-nav for Services */
+.mobileSubList {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 var(--space-1) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobileSubLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px var(--space-2);
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   text-decoration: none;
   border-radius: var(--radius-sm);
   transition: color var(--dur-fast), background var(--dur-fast);
 }
 
-.mobileNavLink:hover,
-.mobileNavLink.active {
+.mobileSubLink:hover,
+.mobileSubLink.active {
   color: var(--color-primary);
   background: var(--color-primary-50);
 }
 
-.mobileBook {
+/* Mobile CTA block */
+.mobileCta {
+  padding-top: var(--space-3);
   margin-top: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mobileBookBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  text-align: center;
+  transition: background var(--dur-fast);
+}
+
+.mobileBookBtn:hover {
+  background: var(--color-primary-600);
+}
+
+.mobilePhone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-btn);
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.mobilePhone:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 /* ── Responsive ──────────────────────────────────────────────────────── */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .phoneLink {
     display: none;
   }
 }
 
-@media (max-width: 768px) {
-  .nav,
+@media (max-width: 900px) {
+  .desktopNav,
   .bookBtn {
     display: none;
   }
 
-  .menuToggle {
+  .hamburger {
     display: flex;
   }
 
   .mobileMenu {
     display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerText {
+    font-size: 11px;
+  }
+
+  .navInner {
+    padding: 0 var(--space-3);
   }
 }

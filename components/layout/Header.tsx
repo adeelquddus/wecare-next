@@ -1,116 +1,297 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { CLINIC } from '@/lib/clinic';
-import Button from '@/components/ui/Button';
 import styles from './Header.module.css';
 
-const NAV_LINKS = [
-  { label: 'Services',        href: '/services' },
-  { label: 'Primary care',    href: '/primary-care' },
-  { label: 'Weight loss',     href: '/medical-weight-loss' },
-  { label: 'Telehealth',      href: '/telehealth' },
-  { label: 'About us',        href: '/about' },
-  { label: 'Insurance',       href: '/insurance' },
-  { label: 'Blog',            href: '/blog' },
-  { label: 'Contact',         href: '/contact' },
+/* ─── Services dropdown items ──────────────────────────────────────────── */
+const SERVICES_DROPDOWN = [
+  {
+    label: 'Primary Care',
+    href: '/primary-care',
+    desc: 'Comprehensive care for the whole family',
+    icon: '🩺',
+  },
+  {
+    label: "Gynecology / Women's Health",
+    href: '/womens-health',
+    desc: 'Annual exams, hormones & reproductive health',
+    icon: '🌸',
+  },
+  {
+    label: "Men's Health",
+    href: '/mens-health',
+    desc: 'Testosterone, prostate & preventive screenings',
+    icon: '💪',
+  },
+  {
+    label: 'Medical Weight Loss',
+    href: '/medical-weight-loss',
+    desc: 'GLP-1 · Semaglutide · Tirzepatide programs',
+    icon: '⚕️',
+  },
+  {
+    label: 'Telehealth',
+    href: '/telehealth',
+    desc: 'Video visits from anywhere in Florida',
+    icon: '💻',
+  },
+];
+
+/* ─── Main nav items ───────────────────────────────────────────────────── */
+const NAV_ITEMS = [
+  { label: 'Home',         href: '/' },
+  { label: 'Services',     href: '/services', hasDropdown: true },
+  { label: 'Contact',      href: '/contact' },
+  { label: 'Health Blog',  href: '/blog' },
+  { label: 'Loyalty',      href: '/loyalty' },
 ];
 
 export default function Header() {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen]       = useState(false);
+  const [dropOpen, setDropOpen]       = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
+  const [bannerVisible, setBannerVisible] = useState(true);
+  const dropRef = useRef<HTMLLIElement>(null);
 
+  /* Scroll shadow */
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => setScrolled(window.scrollY > 4);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close menu on route change
+  /* Close mobile menu on route change */
   useEffect(() => {
     setMenuOpen(false);
+    setDropOpen(false);
   }, [pathname]);
 
+  /* Close dropdown on outside click */
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) {
+        setDropOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  const isServicesActive = pathname.startsWith('/services')
+    || SERVICES_DROPDOWN.some(s => pathname === s.href);
+
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`} role="banner">
-      <div className={`container ${styles.inner}`}>
-        {/* Logo */}
-        <Link href="/" className={styles.logo} aria-label="WeCare Wellness Clinic — home">
-          <span className={styles.logoIcon}>🌿</span>
-          <span className={styles.logoText}>
-            <span className={styles.logoMain}>WeCare</span>
-            <span className={styles.logoSub}>Wellness</span>
-          </span>
-        </Link>
+    <div className={styles.headerWrap} role="banner">
 
-        {/* Desktop nav */}
-        <nav className={styles.nav} aria-label="Main navigation">
-          <ul className={styles.navList} role="list">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`${styles.navLink} ${pathname === link.href ? styles.active : ''}`}
-                  aria-current={pathname === link.href ? 'page' : undefined}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* CTA + mobile toggle */}
-        <div className={styles.actions}>
-          <a href={`tel:${CLINIC.phone}`} className={styles.phoneLink}>
-            {CLINIC.phoneDisplay}
-          </a>
-          <Button href="/booking" size="md" variant="primary" className={styles.bookBtn}>
-            Book Appointment
-          </Button>
+      {/* ── Announcement bar ─────────────────────────────────────────── */}
+      {bannerVisible && (
+        <div className={styles.banner}>
+          <p className={styles.bannerText}>
+            🌿 Now accepting new patients — same-week appointments available!{' '}
+            <a href="/booking" className={styles.bannerLink}>
+              Book today →
+            </a>
+          </p>
           <button
-            className={styles.menuToggle}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
-            onClick={() => setMenuOpen((v) => !v)}
+            className={styles.bannerClose}
+            aria-label="Dismiss announcement"
+            onClick={() => setBannerVisible(false)}
           >
-            <span className={`${styles.bar} ${menuOpen ? styles.barTop : ''}`} />
-            <span className={`${styles.bar} ${menuOpen ? styles.barMid : ''}`} />
-            <span className={`${styles.bar} ${menuOpen ? styles.barBot : ''}`} />
+            ✕
           </button>
         </div>
-      </div>
+      )}
 
-      {/* Mobile menu */}
+      {/* ── Main navbar ──────────────────────────────────────────────── */}
+      <header className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
+        <div className={styles.navInner}>
+
+          {/* Logo */}
+          <Link href="/" className={styles.logo} aria-label="WeCare Wellness Clinic — home">
+            <Image
+              src="/logo.png"
+              alt="WeCare Wellness Clinic"
+              width={180}
+              height={52}
+              priority
+              className={styles.logoImg}
+            />
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className={styles.desktopNav} aria-label="Main navigation">
+            <ul className={styles.navList} role="list">
+              {NAV_ITEMS.map((item) => {
+
+                /* Services item with dropdown */
+                if (item.hasDropdown) {
+                  return (
+                    <li
+                      key={item.href}
+                      ref={dropRef}
+                      className={styles.dropItem}
+                      onMouseEnter={() => setDropOpen(true)}
+                      onMouseLeave={() => setDropOpen(false)}
+                    >
+                      <button
+                        className={`${styles.navLink} ${isServicesActive ? styles.active : ''} ${styles.dropTrigger}`}
+                        aria-haspopup="true"
+                        aria-expanded={dropOpen}
+                        onClick={() => setDropOpen(v => !v)}
+                      >
+                        {item.label}
+                        <svg
+                          className={`${styles.chevron} ${dropOpen ? styles.chevronOpen : ''}`}
+                          width="14" height="14" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" strokeWidth="2.5"
+                          strokeLinecap="round" strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                      </button>
+
+                      {/* Dropdown panel */}
+                      <div
+                        className={`${styles.dropdown} ${dropOpen ? styles.dropdownOpen : ''}`}
+                        role="menu"
+                        aria-label="Services menu"
+                      >
+                        {/* All services link at top */}
+                        <Link href="/services" className={styles.dropAllLink} role="menuitem">
+                          <span className={styles.dropAllLabel}>All services</span>
+                          <span className={styles.dropAllArrow}>→</span>
+                        </Link>
+
+                        <div className={styles.dropDivider} aria-hidden="true" />
+
+                        <ul className={styles.dropList} role="list">
+                          {SERVICES_DROPDOWN.map((s) => (
+                            <li key={s.href} role="none">
+                              <Link
+                                href={s.href}
+                                className={`${styles.dropLink} ${pathname === s.href ? styles.dropLinkActive : ''}`}
+                                role="menuitem"
+                              >
+                                <span className={styles.dropIcon} aria-hidden="true">{s.icon}</span>
+                                <span className={styles.dropContent}>
+                                  <span className={styles.dropLabel}>{s.label}</span>
+                                  <span className={styles.dropDesc}>{s.desc}</span>
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </li>
+                  );
+                }
+
+                /* Regular nav item */
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={`${styles.navLink} ${pathname === item.href ? styles.active : ''}`}
+                      aria-current={pathname === item.href ? 'page' : undefined}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          {/* Right: phone + CTA + hamburger */}
+          <div className={styles.navRight}>
+            <a href={`tel:${CLINIC.phone}`} className={styles.phoneLink} aria-label={`Call ${CLINIC.phoneDisplay}`}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12.6 19.79 19.79 0 0 1 1.07 4A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              {CLINIC.phoneDisplay}
+            </a>
+
+            <Link href="/booking" className={styles.bookBtn} aria-label="Book an appointment">
+              Book an Appointment
+            </Link>
+
+            {/* Hamburger */}
+            <button
+              className={styles.hamburger}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setMenuOpen(v => !v)}
+            >
+              <span className={`${styles.bar} ${menuOpen ? styles.barTop : ''}`} />
+              <span className={`${styles.bar} ${menuOpen ? styles.barMid : ''}`} />
+              <span className={`${styles.bar} ${menuOpen ? styles.barBot : ''}`} />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* ── Mobile menu ──────────────────────────────────────────────── */}
       <nav
         id="mobile-menu"
         className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}
         aria-label="Mobile navigation"
         aria-hidden={!menuOpen}
       >
-        <ul className={styles.mobileNavList} role="list">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`${styles.mobileNavLink} ${pathname === link.href ? styles.active : ''}`}
-                aria-current={pathname === link.href ? 'page' : undefined}
-              >
-                {link.label}
-              </Link>
+        <ul className={styles.mobileList} role="list">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.href}>
+              {item.hasDropdown ? (
+                <>
+                  <Link
+                    href="/services"
+                    className={`${styles.mobileLink} ${isServicesActive ? styles.active : ''}`}
+                  >
+                    Services
+                  </Link>
+                  <ul className={styles.mobileSubList} role="list">
+                    {SERVICES_DROPDOWN.map((s) => (
+                      <li key={s.href}>
+                        <Link
+                          href={s.href}
+                          className={`${styles.mobileSubLink} ${pathname === s.href ? styles.active : ''}`}
+                        >
+                          <span aria-hidden="true">{s.icon}</span>
+                          {s.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  className={`${styles.mobileLink} ${pathname === item.href ? styles.active : ''}`}
+                  aria-current={pathname === item.href ? 'page' : undefined}
+                >
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
-          <li>
-            <Button href="/booking" fullWidth variant="primary" className={styles.mobileBook}>
-              Book Appointment
-            </Button>
+
+          <li className={styles.mobileCta}>
+            <Link href="/booking" className={styles.mobileBookBtn}>
+              Book an Appointment
+            </Link>
+            <a href={`tel:${CLINIC.phone}`} className={styles.mobilePhone}>
+              {CLINIC.phoneDisplay}
+            </a>
           </li>
         </ul>
       </nav>
-    </header>
+    </div>
   );
 }
