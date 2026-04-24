@@ -1,0 +1,211 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: box-shadow var(--dur-base) var(--ease-out);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: 72px;
+}
+
+/* ── Logo ────────────────────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logoMain {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+}
+
+.logoSub {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+/* ── Desktop nav ─────────────────────────────────────────────────────── */
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  display: block;
+  padding: 8px 12px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast), background var(--dur-fast);
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+  background: var(--bg-muted);
+}
+
+.navLink.active {
+  color: var(--color-primary);
+  background: var(--color-primary-50);
+  font-weight: var(--weight-semibold);
+}
+
+/* ── Actions ─────────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.phoneLink {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--dur-fast);
+}
+
+.phoneLink:hover {
+  color: var(--color-primary);
+}
+
+/* ── Hamburger ───────────────────────────────────────────────────────── */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.menuToggle:focus-visible {
+  box-shadow: var(--shadow-focus);
+  outline: none;
+}
+
+.bar {
+  display: block;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform var(--dur-base) var(--ease-both), opacity var(--dur-base);
+}
+
+.barTop { transform: translateY(7px) rotate(45deg); }
+.barMid { opacity: 0; }
+.barBot { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile menu ─────────────────────────────────────────────────────── */
+.mobileMenu {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--dur-slow) var(--ease-out);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+}
+
+.mobileMenuOpen {
+  max-height: 600px;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-2) var(--space-3) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 12px var(--space-2);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast), background var(--dur-fast);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: var(--color-primary);
+  background: var(--color-primary-50);
+}
+
+.mobileBook {
+  margin-top: var(--space-2);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .phoneLink {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav,
+  .bookBtn {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+}

@@ -1,0 +1,156 @@
+.missionSection { background: var(--bg-surface); }
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.statItem {
+  background: var(--bg-page);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  text-align: center;
+  border: 1px solid var(--border-subtle);
+}
+
+.statValue {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+/* Values */
+.valuesSection { background: var(--bg-page); }
+
+.sectionHeader {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-6);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.valueCard {
+  text-align: center;
+}
+
+.valueIcon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+/* Team */
+.teamSection { background: var(--bg-surface); }
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+}
+
+.teamCard {
+  text-align: center;
+}
+
+.teamAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--color-primary-100);
+  margin: 0 auto var(--space-3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teamImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teamPlaceholder {
+  font-size: 48px;
+}
+
+.teamName {
+  margin: 0 0 var(--space-1);
+}
+
+.teamTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin: 0 0 var(--space-3);
+}
+
+/* Insurance */
+.insuranceSection { background: var(--bg-page); }
+
+.insuranceList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.insurancePill {
+  padding: 12px var(--space-4);
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  border: 1px solid var(--color-primary-100);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .valuesGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .missionGrid { grid-template-columns: 1fr; }
+  .teamGrid { grid-template-columns: 1fr; }
+  .valuesGrid { grid-template-columns: 1fr; }
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+}

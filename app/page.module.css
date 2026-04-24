@@ -1,0 +1,334 @@
+/* Stats band */
+.statsSection {
+  background: var(--color-primary-50);
+  border-top: 1px solid var(--color-primary-100);
+  border-bottom: 1px solid var(--color-primary-100);
+  padding: var(--space-5) 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.statValue {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.statLabel {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: var(--weight-medium);
+}
+
+/* Services */
+.servicesSection {
+  background: var(--bg-page);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-6);
+}
+
+.sectionSub {
+  margin-top: var(--space-2);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.serviceCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.serviceCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.serviceIcon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.serviceName {
+  margin: 0 0 var(--space-1);
+}
+
+.serviceTagline {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  margin: 0 0 var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.serviceDesc {
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-3);
+  flex: 1;
+}
+
+.featureList {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.featureCheck {
+  color: var(--color-secondary);
+  font-weight: var(--weight-bold);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.serviceLink {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-top: auto;
+  display: inline-block;
+  transition: gap var(--dur-fast);
+}
+
+.serviceLink:hover {
+  text-decoration: underline;
+}
+
+.sectionCta {
+  text-align: center;
+  margin-top: var(--space-6);
+}
+
+/* Why choose us */
+.whySection {
+  background: var(--bg-surface);
+}
+
+.whyInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.whyText {
+  position: sticky;
+  top: calc(72px + var(--space-5));
+}
+
+.whyText .ds-h2 {
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.whyText .ds-lede {
+  margin: 0 0 var(--space-4);
+}
+
+.whyGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.whyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.whyIcon {
+  font-size: 32px;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-50);
+  border-radius: var(--radius-md);
+}
+
+.whyTitle {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.whyDesc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--lh-sm);
+  margin: 0;
+}
+
+/* Testimonials */
+.testimonialsSection {
+  background: var(--bg-page);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+}
+
+.testimonialCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  font-size: var(--text-md);
+  color: #F59E0B;
+  letter-spacing: 2px;
+  margin-bottom: var(--space-2);
+}
+
+.testimonialText {
+  font-size: var(--text-md);
+  line-height: var(--lh-md);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3);
+  font-style: normal;
+  flex: 1;
+}
+
+.testimonialFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.testimonialName {
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+}
+
+.testimonialDetail {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+/* Insurance */
+.insuranceSection {
+  background: var(--bg-surface);
+  text-align: center;
+}
+
+.insuranceHeading {
+  margin-bottom: var(--space-5);
+}
+
+.insuranceList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+}
+
+.insurancePill {
+  padding: 10px var(--space-3);
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  border: 1px solid var(--color-primary-100);
+}
+
+.insuranceNote {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.insuranceNote a {
+  color: var(--color-primary);
+  font-weight: var(--weight-medium);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .whyInner {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .whyText {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+}

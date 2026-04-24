@@ -1,0 +1,76 @@
+.section {
+  padding: var(--section-pad-desktop) 0;
+  background: var(--bg-page);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-inverse);
+  border-radius: 20px;
+  padding: var(--space-7) var(--space-7);
+  text-align: center;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.heading {
+  color: var(--color-white) !important;
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.subtext {
+  color: var(--color-gray-400) !important;
+  margin: 0 0 var(--space-3);
+}
+
+.insurance {
+  font-size: var(--text-sm);
+  color: var(--color-teal-300);
+  margin: 0 0 var(--space-5);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+/* Override outline button on dark background */
+.actions :global(.outline) {
+  color: var(--color-white);
+  border-color: rgba(255,255,255,0.35);
+}
+
+.actions :global(.outline:hover) {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Decorative gradient blob */
+.blob {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 320px;
+  height: 320px;
+  background: var(--gradient-brand);
+  opacity: 0.12;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-pad-mobile) 0;
+  }
+
+  .card {
+    padding: var(--space-5) var(--space-4);
+  }
+}
