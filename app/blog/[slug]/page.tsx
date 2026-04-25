@@ -81,10 +81,10 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
               )}
 
-              {/* Blog content rendered from Wix rich text */}
+              {/* Full blog post body — converted from Wix Draft.js JSON */}
               <div
                 className={styles.body}
-                dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                dangerouslySetInnerHTML={{ __html: post.content ?? post.excerpt }}
               />
 
               <div className={styles.disclaimer}>

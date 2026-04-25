@@ -7,6 +7,7 @@ import { bookings } from '@wix/bookings';
 import { posts, categories } from '@wix/blog';
 import { members } from '@wix/members';
 import { plans, orders } from '@wix/pricing-plans';
+import { ricosToHtml } from './ricos-to-html';
 
 // Client ID from Wix Dashboard > Headless Settings > OAuth Apps
 const WIX_CLIENT_ID = process.env.NEXT_PUBLIC_WIX_CLIENT_ID || '';
@@ -25,6 +26,8 @@ export interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
+  /** Full post body as HTML, converted from Wix Draft.js JSON. Only populated by getPostBySlug. */
+  content?: string;
   coverImage?: string;
   slug: string;
   publishedDate: string;
@@ -64,22 +67,28 @@ export async function getLatestPosts(limit = 6): Promise<BlogPost[]> {
 }
 
 /**
- * Fetches a single blog post by slug.
+ * Fetches a single blog post by slug, including full HTML content.
+ * Uses getPostBySlug with RICH_CONTENT fieldset, then converts
+ * Ricos nodes to HTML via ricosToHtml.
  */
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
-    const { items } = await wixClient.posts.queryPosts()
-      .eq('slug', slug)
-      .limit(1)
-      .find();
+    const res = await wixClient.posts.getPostBySlug(slug, {
+      fieldsets: ['RICH_CONTENT'],
+    });
 
-    const p = items[0];
+    const p = res.post;
     if (!p) return null;
+
+    // Convert Ricos rich content → HTML
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const contentHtml = p.richContent ? ricosToHtml(p.richContent as any) : '';
 
     return {
       id: p._id ?? '',
       title: p.title ?? '',
       excerpt: p.excerpt ?? '',
+      content: contentHtml,
       coverImage: p.media?.wixMedia?.image ?? undefined,
       slug: p.slug ?? '',
       publishedDate: p.firstPublishedDate
@@ -89,6 +98,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
             day: 'numeric',
           })
         : '',
+      readingTime: p.minutesToRead ?? undefined,
       tags: p.hashtags ?? [],
     };
   } catch {
