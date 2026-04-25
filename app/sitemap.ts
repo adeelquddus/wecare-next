@@ -25,6 +25,10 @@ const STATIC_PAGES: Array<{
   { url: '/contact',             changeFrequency: 'monthly', priority: 0.75, lastModified: '2026-04-10' },
   { url: '/insurance',           changeFrequency: 'monthly', priority: 0.75, lastModified: '2026-04-10' },
   { url: '/loyalty',             changeFrequency: 'monthly', priority: 0.6,  lastModified: '2026-03-15' },
+  // New high-value pages
+  { url: '/faq',                 changeFrequency: 'monthly', priority: 0.8,  lastModified: '2026-04-25' },
+  { url: '/new-patients',        changeFrequency: 'monthly', priority: 0.85, lastModified: '2026-04-25' },
+  { url: '/brandon-fl',          changeFrequency: 'monthly', priority: 0.9,  lastModified: '2026-04-25' },
   // Legal — lower priority, infrequent change
   { url: '/privacy',             changeFrequency: 'yearly',  priority: 0.3,  lastModified: '2026-01-15' },
   { url: '/terms',               changeFrequency: 'yearly',  priority: 0.3,  lastModified: '2026-01-15' },

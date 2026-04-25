@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import BookingCTA from '@/components/sections/BookingCTA';
 import Button from '@/components/ui/Button';
@@ -159,13 +160,13 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ── Hero or header ── */}
       {post.coverImage ? (
         <div className={styles.hero} role="img" aria-label={post.title}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={post.coverImage}
-            alt={post.title}
+            alt={post.title ?? ''}
+            fill
             className={styles.heroCover}
-            loading="eager"
-            decoding="async"
+            priority
+            sizes="100vw"
           />
           <div className={styles.heroOverlay} aria-hidden="true" />
           <div className={styles.heroContent}>
@@ -272,14 +273,15 @@ export default async function BlogPostPage({ params }: Props) {
                     {related.map((rp) => (
                       <Link key={rp.slug} href={`/blog/${rp.slug}`} className={styles.relatedCard}>
                         {rp.coverImage ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            src={rp.coverImage}
-                            alt={rp.title}
-                            className={styles.relatedThumb}
-                            loading="lazy"
-                            decoding="async"
-                          />
+                          <div className={styles.relatedThumbWrap}>
+                            <Image
+                              src={rp.coverImage}
+                              alt={rp.title ?? ''}
+                              fill
+                              className={styles.relatedThumb}
+                              sizes="(max-width: 600px) 100vw, 33vw"
+                            />
+                          </div>
                         ) : (
                           <div className={styles.relatedThumbPlaceholder} aria-hidden="true" />
                         )}

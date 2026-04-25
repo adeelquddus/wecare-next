@@ -620,11 +620,15 @@
   transform: translateY(-3px);
 }
 
-.relatedThumb {
+.relatedThumbWrap {
+  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.relatedThumb {
   object-fit: cover;
-  display: block;
 }
 
 .relatedThumbPlaceholder {

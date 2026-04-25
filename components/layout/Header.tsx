@@ -20,9 +20,10 @@ const SERVICES_DROPDOWN = SERVICES.map((s) => ({
 const NAV_ITEMS = [
   { label: 'Home',         href: '/' },
   { label: 'Services',     href: '/services', hasDropdown: true },
-  { label: 'Contact',      href: '/contact' },
+  { label: 'New Patients', href: '/new-patients' },
   { label: 'Health Blog',  href: '/blog' },
-  { label: 'Loyalty',      href: '/loyalty' },
+  { label: 'FAQ',          href: '/faq' },
+  { label: 'Contact',      href: '/contact' },
 ];
 
 export default function Header() {

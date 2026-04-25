@@ -115,7 +115,9 @@ export default function Footer() {
               <ul className={styles.linkList} role="list">
                 {[
                   { label: 'About us',          href: '/about' },
+                  { label: 'New patients',       href: '/new-patients' },
                   { label: 'Blog',               href: '/blog' },
+                  { label: 'FAQ',                href: '/faq' },
                   { label: 'Insurance',          href: '/insurance' },
                   { label: 'Loyalty rewards',    href: '/loyalty' },
                   { label: 'HIV PrEP',           href: '/hiv-prep' },

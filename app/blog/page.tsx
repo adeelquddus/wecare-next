@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import Card from '@/components/ui/Card';
@@ -124,13 +125,13 @@ export default async function BlogPage() {
                   <Card padding="lg" className={styles.postCard}>
                     {post.coverImage && (
                       <div className={styles.coverWrap}>
-                        {/* Using img tag intentionally for fallback compatibility */}
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
+                        <Image
                           src={post.coverImage}
-                          alt=""
+                          alt={post.title ?? 'Blog post cover image'}
+                          fill
                           className={styles.cover}
-                          loading={i < 3 ? 'eager' : 'lazy'}
+                          priority={i < 3}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
                       </div>
                     )}
