@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   title: 'Insurance Accepted — WeCare Wellness Clinic | Brandon, FL',
   description:
     'WeCare Wellness Clinic accepts Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. Self-pay options available. Serving Brandon, FL and telehealth patients across Florida.',
+  keywords: [
+    'insurance accepted Brandon FL',
+    'Aetna primary care Brandon FL',
+    'Medicare doctor Brandon FL',
+    'United Healthcare Brandon FL',
+    'Blue Cross Blue Shield Brandon FL',
+    'MultiPlan Brandon FL',
+    'insurance clinic Brandon Florida',
+    'does doctor accept Aetna Brandon',
+    'self-pay primary care Brandon FL',
+    'telehealth insurance Florida',
+  ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/insurance' },
   openGraph: {
     title: 'Insurance We Accept — WeCare Wellness Clinic',

@@ -210,6 +210,23 @@ export const SERVICES: Service[] = [
     ],
     url: '/iv-hydration',
   },
+  {
+    slug: 'hiv-prep',
+    name: 'HIV PrEP',
+    tagline: 'HIV prevention — discreet & covered by insurance',
+    description:
+      'HIV Pre-Exposure Prophylaxis (PrEP) prescriptions, STI testing, and sexual health care in Brandon, FL. Confidential, judgment-free care with board-certified providers.',
+    icon: '🛡️',
+    features: [
+      'PrEP prescriptions (Truvada / Descovy)',
+      'Injectable Apretude consultations',
+      'Comprehensive STI screening',
+      'HIV & hepatitis testing',
+      'Emergency PEP consultations',
+      'Telehealth PrEP management statewide',
+    ],
+    url: '/hiv-prep',
+  },
 ];
 
 /* ─── Insurance ─────────────────────────────────────────────────────── */

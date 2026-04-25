@@ -498,7 +498,7 @@ export default function HivPrepPage() {
         </div>
       </div>
 
-      <RelatedServices currentSlug="mens-health" />
+      <RelatedServices currentSlug="hiv-prep" />
       <BookingCTA
         heading="Start PrEP today — same-week appointments available"
         subtext="Confidential, judgment-free care in Brandon, FL. Insurance verified before your visit. Telehealth available across Florida."

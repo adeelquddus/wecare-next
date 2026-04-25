@@ -7,10 +7,27 @@ import { SERVICES } from '@/lib/clinic';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Services — Primary Care, Weight Loss, Telehealth & More',
+  title: 'Medical Services — WeCare Wellness Clinic Brandon, FL',
   description:
-    'WeCare Wellness Clinic offers primary care, GLP-1 medical weight loss (Semaglutide/Tirzepatide), telehealth, women\'s health, men\'s health, IV hydration & hormone therapy in Brandon, FL.',
+    'WeCare Wellness Clinic offers primary care, GLP-1 medical weight loss (Semaglutide/Tirzepatide), telehealth, women\'s health, men\'s health, IV hydration, hormone replacement therapy, and HIV PrEP in Brandon, FL.',
+  keywords: [
+    'medical services Brandon FL',
+    'primary care Brandon FL',
+    'GLP-1 weight loss Brandon FL',
+    'telehealth Florida',
+    "women's health Brandon FL",
+    "men's health Brandon FL",
+    'IV hydration Brandon FL',
+    'hormone replacement therapy Brandon FL',
+    'HIV PrEP Brandon FL',
+    'wellness clinic Brandon Florida',
+  ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/services' },
+  openGraph: {
+    title: 'All Medical Services — WeCare Wellness Clinic Brandon FL',
+    description: 'Primary care, weight loss, telehealth, women\'s health, men\'s health, IV therapy, HRT & PrEP under one roof in Brandon, FL.',
+    url: 'https://www.wecarewellnessclinic.com/services',
+  },
 };
 
 export default function ServicesPage() {
@@ -51,11 +68,9 @@ export default function ServicesPage() {
                   <Link href="/booking" className={styles.bookLink}>
                     Book this service →
                   </Link>
-                  {service.url !== '/services' && (
-                    <Link href={service.url} className={styles.learnLink}>
-                      Learn more
-                    </Link>
-                  )}
+                  <Link href={service.url} className={styles.learnLink}>
+                    Learn more
+                  </Link>
                 </div>
               </Card>
             ))}
