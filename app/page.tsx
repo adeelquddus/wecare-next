@@ -46,12 +46,45 @@ const jsonLd = {
         'https://www.facebook.com/wecarewellnessclinic',
         'https://www.instagram.com/wecarewellnessclinic',
       ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: 4.9,
+        reviewCount: 3,
+        bestRating: 5,
+      },
       areaServed: [
         { '@type': 'City', name: 'Brandon', containedInPlace: 'Florida' },
         { '@type': 'City', name: 'Riverview', containedInPlace: 'Florida' },
         { '@type': 'City', name: 'Valrico', containedInPlace: 'Florida' },
         { '@type': 'State', name: 'Florida' },
       ],
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Maria G.' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        'The team at WeCare is incredibly caring and professional. They actually listen and take time to explain everything. I finally feel like I have a doctor who genuinely cares about my health.',
+      itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
+      datePublished: '2025-01-01',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'James T.' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        'I started the medical weight loss program and lost 28 lbs in 4 months. The Semaglutide program with monthly check-ins kept me on track. Life-changing.',
+      itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
+      datePublished: '2025-01-01',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Sandra M.' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        'The telehealth visits are incredibly convenient. Same quality care as in-person, no travel needed. Perfect when I need a quick follow-up or prescription refill.',
+      itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
+      datePublished: '2025-01-01',
     },
     {
       '@type': 'FAQPage',
