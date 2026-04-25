@@ -19,6 +19,7 @@ const STATIC_PAGES: Array<{
   { url: '/mens-health',         changeFrequency: 'monthly', priority: 0.9   },
   { url: '/telehealth',          changeFrequency: 'monthly', priority: 0.9   },
   { url: '/iv-hydration',        changeFrequency: 'monthly', priority: 0.9   },
+  { url: '/hiv-prep',            changeFrequency: 'monthly', priority: 0.85  },
   { url: '/blog',                changeFrequency: 'weekly',  priority: 0.8   },
   { url: '/booking',             changeFrequency: 'monthly', priority: 0.85  },
   { url: '/contact',             changeFrequency: 'monthly', priority: 0.75  },

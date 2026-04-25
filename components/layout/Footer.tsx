@@ -112,6 +112,7 @@ export default function Footer() {
                   { label: 'Blog',               href: '/blog' },
                   { label: 'Insurance',          href: '/insurance' },
                   { label: 'Loyalty rewards',    href: '/loyalty' },
+                  { label: 'HIV PrEP',           href: '/hiv-prep' },
                   { label: 'Contact',            href: '/contact' },
                   { label: 'Book appointment',   href: '/booking' },
                 ].map((l) => (
