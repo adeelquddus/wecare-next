@@ -50,6 +50,8 @@
 
 .actions :global(.outline:hover) {
   background: rgba(255,255,255,0.08);
+  color: var(--color-white);   /* stay white on dark card background */
+  border-color: rgba(255,255,255,0.5);
 }
 
 /* Decorative gradient blob */

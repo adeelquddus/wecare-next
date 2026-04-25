@@ -45,37 +45,41 @@
 
 /* ── Variants ───────────────────────────────────────────────────────── */
 .primary {
-  background: var(--action-primary);
+  background: var(--action-primary);   /* #2E6BFF */
   color: #fff;
   border-color: var(--action-primary);
 }
 
 .primary:hover {
-  background: var(--action-primary-hover);
+  background: var(--action-primary-hover);   /* #1E54DB */
   border-color: var(--action-primary-hover);
+  color: #fff;                               /* keep white — prevents global a:hover bleed */
   box-shadow: var(--shadow-md);
 }
 
 .secondary {
-  background: var(--action-secondary);
+  background: var(--action-secondary);   /* #00C2A8 teal */
   color: #fff;
   border-color: var(--action-secondary);
 }
 
 .secondary:hover {
-  background: var(--action-secondary-hover);
+  background: var(--action-secondary-hover);   /* #009E89 */
   border-color: var(--action-secondary-hover);
+  color: #fff;
   box-shadow: var(--shadow-md);
 }
 
 .outline {
   background: transparent;
-  color: var(--action-primary);
+  color: var(--action-primary);          /* #2E6BFF */
   border-color: var(--action-primary);
 }
 
 .outline:hover {
-  background: var(--color-primary-50);
+  background: var(--color-primary-50);  /* #EEF3FF */
+  color: var(--action-primary-hover);   /* #1E54DB — slightly darker, still blue */
+  border-color: var(--action-primary-hover);
 }
 
 .ghost {
@@ -86,6 +90,7 @@
 
 .ghost:hover {
   background: var(--bg-muted);
+  color: var(--text-primary);            /* keep dark, not primary blue */
 }
 
 /* ── Full width ─────────────────────────────────────────────────────── */

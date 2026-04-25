@@ -42,6 +42,7 @@
 
 .bannerLink:hover {
   opacity: 0.85;
+  color: #fff;   /* keep white — global a:hover would turn this primary-blue */
 }
 
 .bannerClose {
@@ -361,7 +362,8 @@
 }
 
 .bookBtn:hover {
-  background: var(--color-primary-600);
+  background: var(--color-primary-600);   /* #1E54DB */
+  color: #fff;                            /* prevent a:hover bleed */
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
@@ -503,7 +505,8 @@
 }
 
 .mobileBookBtn:hover {
-  background: var(--color-primary-600);
+  background: var(--color-primary-600);   /* #1E54DB */
+  color: #fff;
 }
 
 .mobilePhone {
