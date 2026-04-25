@@ -61,30 +61,30 @@ const jsonLd = {
     },
     {
       '@type': 'Review',
-      author: { '@type': 'Person', name: 'Maria G.' },
+      author: { '@type': 'Person', name: 'Miguel M.' },
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
       reviewBody:
-        'The team at WeCare is incredibly caring and professional. They actually listen and take time to explain everything. I finally feel like I have a doctor who genuinely cares about my health.',
+        'Darlyne is an exceptional Family Nurse Practitioner who consistently provides compassionate, thorough, and professional care. She really listens and makes you feel valued.',
       itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
-      datePublished: '2025-01-01',
+      datePublished: '2026-04-01',
     },
     {
       '@type': 'Review',
-      author: { '@type': 'Person', name: 'James T.' },
+      author: { '@type': 'Person', name: 'Jalisa R.' },
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
       reviewBody:
-        'I started the medical weight loss program and lost 28 lbs in 4 months. The Semaglutide program with monthly check-ins kept me on track. Life-changing.',
+        'Amazing office staff. Doctor & Nurse were both great and showed they really cared — I wasn\'t just another patient. Highly recommend WeCare Wellness.',
       itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
-      datePublished: '2025-01-01',
+      datePublished: '2026-04-01',
     },
     {
       '@type': 'Review',
-      author: { '@type': 'Person', name: 'Sandra M.' },
+      author: { '@type': 'Person', name: 'Sally O.' },
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
       reviewBody:
-        'The telehealth visits are incredibly convenient. Same quality care as in-person, no travel needed. Perfect when I need a quick follow-up or prescription refill.',
+        'WeCare clinic primary care is top notch. The NP is great and I love the way she takes care of patients. One of the best clinics in the Riverview/Tampa area.',
       itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
-      datePublished: '2025-01-01',
+      datePublished: '2026-04-01',
     },
     {
       '@type': 'FAQPage',
@@ -173,27 +173,27 @@ export const metadata: Metadata = {
   },
 };
 
-/* Testimonials */
+/* Testimonials — sourced from verified Google/BirdEye reviews */
 const TESTIMONIALS = [
   {
     id: 1,
-    text: "The team at WeCare is incredibly caring and professional. They actually listen and take time to explain everything. I finally feel like I have a doctor who genuinely cares about my health.",
-    name: 'Maria G.',
-    detail: 'Primary Care Patient, Brandon FL',
+    text: "Darlyne is an exceptional Family Nurse Practitioner who consistently provides compassionate, thorough, and professional care. She really listens and makes you feel valued.",
+    name: 'Miguel M.',
+    detail: 'Primary Care Patient',
     rating: 5,
   },
   {
     id: 2,
-    text: "I started the medical weight loss program and lost 28 lbs in 4 months. The Semaglutide program with monthly check-ins kept me on track. Life-changing.",
-    name: 'James T.',
-    detail: 'Medical Weight Loss Patient',
+    text: "Amazing office staff. Doctor & Nurse were both great and showed they really cared — I wasn't just another patient. Highly recommend WeCare Wellness.",
+    name: 'Jalisa R.',
+    detail: 'Primary Care Patient, Brandon FL',
     rating: 5,
   },
   {
     id: 3,
-    text: "The telehealth visits are incredibly convenient. Same quality care as in-person, no travel needed. Perfect when I need a quick follow-up or prescription refill.",
-    name: 'Sandra M.',
-    detail: 'Telehealth Patient, Riverview FL',
+    text: "WeCare clinic primary care is top notch. The NP is great and I love the way she takes care of patients. One of the best clinics in the Riverview/Tampa area.",
+    name: 'Sally O.',
+    detail: 'Primary Care Patient',
     rating: 5,
   },
 ];
