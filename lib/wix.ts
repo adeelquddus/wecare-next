@@ -13,6 +13,41 @@ import { ricosToHtml } from './ricos-to-html';
 const WIX_CLIENT_ID = process.env.NEXT_PUBLIC_WIX_CLIENT_ID || '';
 
 /**
+ * Converts a Wix media value to a usable CDN image URL.
+ *
+ * The Blog API returns p.media.wixMedia.image as one of:
+ *   • Already a full URL  "https://static.wixstatic.com/media/..."  → use as-is
+ *   • A bare media ID     "abc123~mv2.jpg"                          → build CDN URL
+ *   • A wix:image URI     "wix:image://v1/<id>/<file>#..."          → extract ID
+ *
+ * All three cases are handled below.
+ */
+function wixCoverImageUrl(raw: string | undefined | null): string | undefined {
+  if (!raw) return undefined;
+
+  // Already a full CDN URL
+  if (raw.startsWith('https://') || raw.startsWith('http://')) return raw;
+
+  let mediaId = raw;
+
+  // wix:image://v1/<id>/<filename>#originWidth=...&originHeight=...
+  if (raw.startsWith('wix:image://')) {
+    const withoutScheme = raw.replace('wix:image://v1/', '');
+    // Strip the filename portion and any fragment
+    mediaId = withoutScheme.split('/')[0];
+  }
+
+  if (!mediaId) return undefined;
+
+  // Build the Wix static CDN URL.
+  // Requirements confirmed from ricos-to-html.ts investigation:
+  //   - Both w_ AND h_ are required (omitting h_ → HTTP 400)
+  //   - enc_jpg (enc_avif and quality_auto both → HTTP 400)
+  //   - Trailing segment must be a generic filename, NOT the mediaId
+  return `https://static.wixstatic.com/media/${mediaId}/v1/fill/w_800,h_450,al_c,q_85,usm_0.66_1.00_0.01,enc_jpg/file.jpg`;
+}
+
+/**
  * Shared Wix client — use this for Bookings, Blog, Members, and Plans.
  */
 export const wixClient = createClient({
@@ -55,7 +90,7 @@ export async function getLatestPosts(limit = 6): Promise<BlogPost[]> {
       id: p._id ?? '',
       title: p.title ?? '',
       excerpt: p.excerpt ?? '',
-      coverImage: p.media?.wixMedia?.image ?? undefined,
+      coverImage: wixCoverImageUrl(p.media?.wixMedia?.image),
       slug: p.slug ?? '',
       publishedDate: p.firstPublishedDate
         ? new Date(p.firstPublishedDate).toLocaleDateString('en-US', {
@@ -97,7 +132,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       title: p.title ?? '',
       excerpt: p.excerpt ?? '',
       content: contentHtml,
-      coverImage: p.media?.wixMedia?.image ?? undefined,
+      coverImage: wixCoverImageUrl(p.media?.wixMedia?.image),
       slug: p.slug ?? '',
       publishedDate: p.firstPublishedDate
         ? new Date(p.firstPublishedDate).toLocaleDateString('en-US', {
