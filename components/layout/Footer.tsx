@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CLINIC, HOURS_DISPLAY, SERVICES, INSURANCE } from '@/lib/clinic';
 import styles from './Footer.module.css';
 
@@ -62,9 +63,14 @@ export default function Footer() {
           <div className={styles.grid}>
             {/* Brand */}
             <div className={styles.brand}>
-              <Link href="/" className={styles.logo} aria-label="WeCare Wellness — home">
-                <span className={styles.logoIcon}>🌿</span>
-                <span className={styles.logoName}>WeCare Wellness</span>
+              <Link href="/" className={styles.logo} aria-label="WeCare Wellness Clinic — home">
+                <Image
+                  src="/logo-dark.png"
+                  alt="WeCare Wellness Clinic"
+                  width={180}
+                  height={52}
+                  className={styles.logoImg}
+                />
               </Link>
               <p className={styles.tagline}>
                 Modern, trustworthy, patient-centered wellness care in Brandon, FL.

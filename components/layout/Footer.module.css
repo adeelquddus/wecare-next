@@ -62,19 +62,14 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
   text-decoration: none;
   margin-bottom: var(--space-3);
 }
 
-.logoIcon {
-  font-size: 24px;
-}
-
-.logoName {
-  font-size: var(--text-md);
-  font-weight: var(--weight-semibold);
-  color: var(--color-white);
+.logoImg {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
 }
 
 .tagline {
