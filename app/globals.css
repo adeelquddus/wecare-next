@@ -110,6 +110,9 @@
   --font-sans: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, 'SFMono-Regular', 'Menlo', monospace;
 
+  --lh-tight: 1.2;
+  --lh-snug:  1.35;
+
   --text-xs:    12px;   --lh-xs: 18px;
   --text-sm:    14px;   --lh-sm: 22px;
   --text-base:  16px;   --lh-base: 26px;
@@ -143,6 +146,8 @@
   --space-5:  48px;
   --space-6:  64px;
   --space-7:  96px;
+  --space-8:  128px;
+  --space-10: 160px;
 
   --container-max:        1200px;
   --grid-gutter:          24px;
@@ -155,6 +160,8 @@
   --radius-sm:   8px;
   --radius-md:   12px;
   --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-2xl:  28px;
   --radius-btn:  10px;
   --radius-pill: 999px;
 
