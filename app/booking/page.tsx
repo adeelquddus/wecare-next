@@ -5,10 +5,27 @@ import { CLINIC, HOURS_DISPLAY, INSURANCE, SERVICES } from '@/lib/clinic';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Book Appointment — WeCare Wellness Clinic Brandon FL',
+  title: 'Book an Appointment — WeCare Wellness Clinic Brandon FL',
   description:
-    'Book an appointment at WeCare Wellness Clinic in Brandon, FL. Same-week availability. Online booking or call (813) 438-5220. Telehealth available statewide in Florida.',
+    'Book an appointment at WeCare Wellness Clinic in Brandon, FL. Same-week availability for primary care, weight loss, telehealth & more. Call (813) 438-5220 or book online.',
+  keywords: [
+    'book appointment Brandon FL',
+    'schedule doctor appointment Brandon FL',
+    'same-week appointment Brandon FL',
+    'online doctor booking Brandon FL',
+    'telehealth appointment Florida',
+    'primary care appointment Brandon FL',
+    'new patient appointment Brandon FL',
+    'same-day telehealth Florida',
+    'doctor appointment near me Brandon',
+    'WeCare Wellness book appointment',
+  ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/booking' },
+  openGraph: {
+    title: 'Book an Appointment — WeCare Wellness Clinic Brandon FL',
+    description: 'Same-week in-person or telehealth appointments. Primary care, weight loss, women\'s health & more in Brandon, FL.',
+    url: 'https://www.wecarewellnessclinic.com/booking',
+  },
 };
 
 const STEPS = [

@@ -5,10 +5,23 @@ import Card from '@/components/ui/Card';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Loyalty Program — WeCare Wellness Clinic',
+  title: 'Patient Loyalty Program — WeCare Wellness Clinic Brandon FL',
   description:
-    'Join the WeCare Wellness Loyalty Program. Earn points on every visit, redeem rewards, and get exclusive benefits as a returning patient.',
+    'Join the WeCare Wellness Loyalty Program in Brandon, FL. Earn points on every visit, unlock discounts on services, and get exclusive member benefits as a returning patient.',
+  keywords: [
+    'patient loyalty program Brandon FL',
+    'healthcare rewards program Brandon FL',
+    'WeCare Wellness loyalty',
+    'patient rewards Brandon Florida',
+    'wellness membership Brandon FL',
+    'doctor loyalty program Brandon FL',
+  ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/loyalty' },
+  openGraph: {
+    title: 'Patient Loyalty Program — WeCare Wellness Clinic',
+    description: 'Earn points on every visit, redeem rewards, and unlock exclusive benefits. Free to join at WeCare Wellness Clinic in Brandon, FL.',
+    url: 'https://www.wecarewellnessclinic.com/loyalty',
+  },
 };
 
 const TIERS = [

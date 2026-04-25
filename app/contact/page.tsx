@@ -6,10 +6,25 @@ import { CLINIC, HOURS_DISPLAY, INSURANCE } from '@/lib/clinic';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Contact Us — WeCare Wellness Clinic Brandon FL',
+  title: 'Contact WeCare Wellness Clinic — Brandon, FL (813) 438-5220',
   description:
-    'Contact WeCare Wellness Clinic at 214 W Brandon Blvd, Brandon FL 33511. Call (813) 438-5220 or book online. Mon–Thu 9–5, Fri 9–6, Sat 9–1.',
+    'Contact WeCare Wellness Clinic at 214 W Brandon Blvd, Brandon FL 33511. Call (813) 438-5220 or book online. Mon–Thu 9–5, Fri 9–6, Sat 9–1. Serving Brandon, Riverview, and Tampa Bay.',
+  keywords: [
+    'WeCare Wellness Clinic phone number',
+    'contact doctor Brandon FL',
+    'WeCare Wellness address Brandon FL',
+    '214 W Brandon Blvd Brandon FL',
+    'doctor phone number Brandon FL',
+    'healthcare clinic contact Brandon FL',
+    'primary care hours Brandon FL',
+    'clinic near me Brandon Florida',
+  ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/contact' },
+  openGraph: {
+    title: 'Contact WeCare Wellness Clinic — Brandon, FL',
+    description: '214 W Brandon Blvd, Brandon FL 33511 · (813) 438-5220 · Mon–Thu 9–5, Fri 9–6, Sat 9–1.',
+    url: 'https://www.wecarewellnessclinic.com/contact',
+  },
 };
 
 export default function ContactPage() {
