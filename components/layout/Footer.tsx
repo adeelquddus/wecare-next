@@ -67,8 +67,8 @@ export default function Footer() {
                 <Image
                   src="/logo-dark.png"
                   alt="WeCare Wellness Clinic"
-                  width={180}
-                  height={52}
+                  width={360}
+                  height={104}
                   className={styles.logoImg}
                 />
               </Link>
