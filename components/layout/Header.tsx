@@ -96,7 +96,6 @@ export default function Header() {
       <header className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.navInner}>
 
-
           {/* Logo */}
           <Link href="/" className={styles.logo} aria-label="WeCare Wellness Clinic — home">
             <Image
@@ -214,7 +213,7 @@ export default function Header() {
               Book an Appointment
             </Link>
 
-            {/* Hamburger — SVG, no border */}
+            {/* Hamburger */}
             <button
               className={styles.hamburger}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -222,28 +221,21 @@ export default function Header() {
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen(v => !v)}
             >
-              {menuOpen ? (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              ) : (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"/>
-                </svg>
-              )}
+              <span className={`${styles.bar} ${menuOpen ? styles.barTop : ''}`} />
+              <span className={`${styles.bar} ${menuOpen ? styles.barMid : ''}`} />
+              <span className={`${styles.bar} ${menuOpen ? styles.barBot : ''}`} />
             </button>
           </div>
         </div>
+      </header>
 
-        {/* ── Mobile menu — absolute overlay, inside <header> so top:100% anchors here */}
-        <nav
-          id="mobile-menu"
-          className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}
-          aria-label="Mobile navigation"
-          aria-hidden={!menuOpen}
-        >
+      {/* ── Mobile menu ──────────────────────────────────────────────── */}
+      <nav
+        id="mobile-menu"
+        className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}
+        aria-label="Mobile navigation"
+        aria-hidden={!menuOpen}
+      >
         <ul className={styles.mobileList} role="list">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
@@ -290,8 +282,7 @@ export default function Header() {
             </a>
           </li>
         </ul>
-        </nav>
-      </header>
+      </nav>
     </div>
   );
 }
