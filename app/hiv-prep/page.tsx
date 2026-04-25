@@ -10,7 +10,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'HIV PrEP Prescription & STI Testing Brandon FL — WeCare Wellness Clinic',
   description:
-    'Get HIV PrEP (Truvada/Descovy) prescribed in Brandon, FL. Same-week appointments, discreet care, lab monitoring included. WeCare accepts Aetna, Medicare, UHC & BCBS. Serving Brandon, Tampa, and all of Florida via telehealth.',
+    'HIV PrEP (Truvada/Descovy) prescribed in Brandon, FL. Discreet care, lab monitoring, insurance accepted. Telehealth available statewide in Florida.',
   keywords: [
     'HIV PrEP Brandon FL',
     'PrEP prescription Brandon Florida',

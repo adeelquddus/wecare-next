@@ -11,7 +11,8 @@ export default function robots(): MetadataRoute.Robots {
           '/_next/',
         ],
       },
-      // Block AI training scrapers that respect robots.txt
+      // Block AI training scrapers — social crawlers (FacebookBot, Twitterbot)
+      // must NOT be blocked or link previews stop working
       {
         userAgent: [
           'GPTBot',
@@ -20,8 +21,9 @@ export default function robots(): MetadataRoute.Robots {
           'anthropic-ai',
           'Claude-Web',
           'Omgilibot',
-          'FacebookBot',
-          'Twitterbot',
+          'Bytespider',
+          'PetalBot',
+          'ImagesiftBot',
         ],
         disallow: '/',
       },

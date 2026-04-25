@@ -6,7 +6,7 @@
 
 export const CLINIC = {
   name: 'WeCare Wellness Clinic',
-  phone: '+1 813-438-5220',
+  phone: '+18134385220',
   phoneDisplay: '(813) 438-5220',
   email: 'info@wecarewellnessclinic.com',
   address: '214 W Brandon Blvd, Brandon, FL 33511',

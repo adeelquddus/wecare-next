@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: 'Insurance We Accept — WeCare Wellness Clinic',
     description: 'Aetna, United Healthcare, Medicare, BCBS & MultiPlan accepted. Self-pay options available.',
     url: 'https://www.wecarewellnessclinic.com/insurance',
+    type: 'website',
   },
 };
 
@@ -84,9 +85,43 @@ const FAQS = [
   },
 ];
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['MedicalClinic', 'LocalBusiness'],
+      '@id': 'https://www.wecarewellnessclinic.com/#clinic',
+      name: 'WeCare Wellness Clinic',
+      url: 'https://www.wecarewellnessclinic.com',
+      telephone: '+18134385220',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '214 W Brandon Blvd',
+        addressLocality: 'Brandon',
+        addressRegion: 'FL',
+        postalCode: '33511',
+        addressCountry: 'US',
+      },
+      paymentAccepted: 'Cash, Credit Card, Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, MultiPlan',
+      priceRange: '$$',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.wecarewellnessclinic.com' },
+        { '@type': 'ListItem', position: 2, name: 'Insurance Accepted', item: 'https://www.wecarewellnessclinic.com/insurance' },
+      ],
+    },
+  ],
+};
+
 export default function InsurancePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero
         headline="We accept most major insurance plans"
         subtext="WeCare Wellness Clinic works with Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan — plus affordable self-pay options for every patient."

@@ -7,7 +7,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Medical Weight Loss Brandon FL — Semaglutide & Tirzepatide | WeCare Wellness',
   description:
-    'Physician-supervised medical weight loss in Brandon, FL. Semaglutide (Ozempic/Wegovy), Tirzepatide (Mounjaro/Zepbound), GLP-1 & GIP therapy, nutrition counseling, lab monitoring. Insurance accepted.',
+    'Physician-supervised GLP-1 weight loss in Brandon, FL. Semaglutide (Ozempic/Wegovy), Tirzepatide (Mounjaro/Zepbound), nutrition counseling & lab monitoring. Insurance accepted.',
   keywords: [
     'medical weight loss Brandon FL',
     'semaglutide Brandon FL',
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     description:
       'GLP-1 weight loss programs using Semaglutide and Tirzepatide, supervised by board-certified physicians in Brandon, FL. Lab monitoring and nutrition counseling included.',
     url: 'https://www.wecarewellnessclinic.com/medical-weight-loss',
+    type: 'website',
   },
 };
 
@@ -36,7 +37,7 @@ const medicalClinicSchema = {
   '@type': 'MedicalClinic',
   name: 'WeCare Wellness Clinic',
   url: 'https://www.wecarewellnessclinic.com',
-  telephone: '+1-813-438-5220',
+  telephone: '+18134385220',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '214 W Brandon Blvd',

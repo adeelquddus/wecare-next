@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description:
       "Complete gynecological & women's wellness care in Brandon, FL. Annual exams, HRT, menopause management, PCOS, birth control, and more. Same-week appointments available.",
     url: 'https://www.wecarewellnessclinic.com/womens-health',
+    type: 'website',
   },
 };
 

@@ -32,7 +32,7 @@ const jsonLd = {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 27.9375,
+        latitude: 27.9378,
         longitude: -82.2859,
       },
       openingHoursSpecification: [
@@ -112,7 +112,7 @@ const jsonLd = {
 export const metadata: Metadata = {
   title: 'WeCare Wellness Clinic | Primary Care, Weight Loss & Telehealth — Brandon, FL',
   description:
-    'WeCare Wellness Clinic in Brandon, FL: primary care, medical weight loss (GLP-1/Semaglutide/Tirzepatide), telehealth, women\'s health, men\'s health, IV hydration, HRT & HIV PrEP. Same-week appointments. Aetna, Medicare & BCBS accepted.',
+    'Primary care, GLP-1 weight loss, telehealth, IV hydration & HIV PrEP in Brandon, FL. Same-week appointments. Aetna, Medicare & BCBS accepted. Self-pay welcome.',
   keywords: [
     'WeCare Wellness Clinic Brandon FL',
     'primary care Brandon FL',

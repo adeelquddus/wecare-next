@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: 'Patient Loyalty Program — WeCare Wellness Clinic',
     description: 'Earn points on every visit, redeem rewards, and unlock exclusive benefits. Free to join at WeCare Wellness Clinic in Brandon, FL.',
     url: 'https://www.wecarewellnessclinic.com/loyalty',
+    type: 'website',
   },
 };
 

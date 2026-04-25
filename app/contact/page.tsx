@@ -24,12 +24,53 @@ export const metadata: Metadata = {
     title: 'Contact WeCare Wellness Clinic — Brandon, FL',
     description: '214 W Brandon Blvd, Brandon FL 33511 · (813) 438-5220 · Mon–Thu 9–5, Fri 9–6, Sat 9–1.',
     url: 'https://www.wecarewellnessclinic.com/contact',
+    type: 'website',
   },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['MedicalClinic', 'LocalBusiness'],
+      '@id': 'https://www.wecarewellnessclinic.com/#clinic',
+      name: 'WeCare Wellness Clinic',
+      url: 'https://www.wecarewellnessclinic.com',
+      telephone: '+18134385220',
+      email: 'info@wecarewellnessclinic.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '214 W Brandon Blvd',
+        addressLocality: 'Brandon',
+        addressRegion: 'FL',
+        postalCode: '33511',
+        addressCountry: 'US',
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: 27.9378, longitude: -82.2859 },
+      hasMap: 'https://maps.google.com/?q=214+W+Brandon+Blvd+Brandon+FL+33511',
+      openingHoursSpecification: [
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday'], opens: '09:00', closes: '17:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '09:00', closes: '18:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '13:00' },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.wecarewellnessclinic.com' },
+        { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.wecarewellnessclinic.com/contact' },
+      ],
+    },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero
         headline="We're here for you"
         subtext="Reach out by phone, email, or use our contact form. We aim to respond within one business day."

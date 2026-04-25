@@ -5,9 +5,9 @@ import RelatedServices from '@/components/sections/RelatedServices';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Telehealth Doctor in Florida — Same-Day Video Visits | WeCare Wellness Clinic Brandon FL',
+  title: 'Telehealth Doctor Florida — Virtual Visits | WeCare Brandon FL',
   description:
-    'Board-certified telehealth doctor available statewide in Florida. Same-day virtual visits for primary care, prescriptions, chronic conditions & more. Most insurance accepted. Book online.',
+    'Board-certified telehealth doctor, statewide Florida. Virtual visits for primary care, prescriptions & chronic conditions. Most insurance accepted.',
   keywords: [
     'telehealth doctor Florida',
     'virtual doctor visit Brandon FL',

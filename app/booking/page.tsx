@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     title: 'Book an Appointment — WeCare Wellness Clinic Brandon FL',
     description: 'Same-week in-person or telehealth appointments. Primary care, weight loss, women\'s health & more in Brandon, FL.',
     url: 'https://www.wecarewellnessclinic.com/booking',
+    type: 'website',
   },
 };
 

@@ -10,7 +10,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'About WeCare Wellness Clinic — Primary Care in Brandon, FL',
   description:
-    'WeCare Wellness Clinic is a patient-centered primary care and wellness clinic in Brandon, FL. Board-certified providers, same-week appointments, and 8 services under one roof. Serving Brandon, Riverview, Valrico, and Tampa.',
+    'Board-certified primary care clinic in Brandon, FL. Same-week appointments, 7 services under one roof. Serving Brandon, Riverview, Valrico & Tampa Bay.',
   keywords: [
     'WeCare Wellness Clinic Brandon FL',
     'about WeCare Wellness',
@@ -56,7 +56,7 @@ const jsonLd = {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 27.9375,
+        latitude: 27.9378,
         longitude: -82.2859,
       },
       openingHoursSpecification: [

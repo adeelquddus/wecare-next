@@ -10,7 +10,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'IV Hydration Therapy & Hormone Replacement Therapy Brandon FL — WeCare Wellness',
   description:
-    'IV hydration infusions and physician-supervised HRT in Brandon, FL. Myers Cocktail, NAD+, vitamin drips, testosterone & estrogen therapy. Same-day IV appointments available.',
+    'IV hydration & physician-supervised HRT in Brandon, FL. Myers Cocktail, NAD+, vitamin drips, testosterone & estrogen therapy. Same-day appointments.',
   keywords: [
     'IV hydration therapy Brandon FL',
     'IV infusion Brandon Florida',

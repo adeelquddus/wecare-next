@@ -326,7 +326,7 @@ export default async function BlogPostPage({ params }: Props) {
                     ['Telehealth', '/telehealth'],
                     ["Women's Health", '/womens-health'],
                     ["Men's Health", '/mens-health'],
-                    ['IV Hydration', '/services'],
+                    ['IV Hydration', '/iv-hydration'],
                   ] as [string, string][]).map(([label, href]) => (
                     <li key={href}>
                       <Link href={href} className={styles.sideLink}>

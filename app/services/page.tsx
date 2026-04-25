@@ -27,12 +27,50 @@ export const metadata: Metadata = {
     title: 'All Medical Services — WeCare Wellness Clinic Brandon FL',
     description: 'Primary care, weight loss, telehealth, women\'s health, men\'s health, IV therapy, HRT & PrEP under one roof in Brandon, FL.',
     url: 'https://www.wecarewellnessclinic.com/services',
+    type: 'website',
   },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['MedicalClinic', 'LocalBusiness'],
+      '@id': 'https://www.wecarewellnessclinic.com/#clinic',
+      name: 'WeCare Wellness Clinic',
+      url: 'https://www.wecarewellnessclinic.com',
+      telephone: '+18134385220',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '214 W Brandon Blvd',
+        addressLocality: 'Brandon',
+        addressRegion: 'FL',
+        postalCode: '33511',
+        addressCountry: 'US',
+      },
+      hasMap: 'https://maps.google.com/?q=214+W+Brandon+Blvd+Brandon+FL+33511',
+      medicalSpecialty: [
+        'Primary Care', 'Internal Medicine', 'Preventive Medicine',
+        'General Practice', 'Family Medicine',
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.wecarewellnessclinic.com' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.wecarewellnessclinic.com/services' },
+      ],
+    },
+  ],
 };
 
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero
         headline="All the care you need, in one place"
         subtext="From everyday primary care to specialized weight loss programs — WeCare Wellness covers your health from every angle."

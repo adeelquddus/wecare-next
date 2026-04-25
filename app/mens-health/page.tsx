@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     description:
       "Insurance-accepted men's health care in Brandon, FL. Testosterone replacement therapy, ED evaluation, prostate health, annual physicals & more from a board-certified physician.",
     url: 'https://www.wecarewellnessclinic.com/mens-health',
+    type: 'website',
   },
 };
 

@@ -9,7 +9,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Health & Wellness Blog — WeCare Wellness Clinic Brandon FL',
   description:
-    'Health tips, wellness advice, and medical insights from the WeCare Wellness Clinic team in Brandon, FL. Topics include GLP-1 weight loss, primary care, telehealth, women\'s health, men\'s health, IV hydration, and preventive medicine.',
+    'Evidence-based health tips, wellness advice & medical insights from WeCare Wellness Clinic in Brandon, FL. GLP-1, primary care, telehealth, women\'s health & more.',
   keywords: [
     'health blog Brandon FL',
     'wellness tips Brandon FL',

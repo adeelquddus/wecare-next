@@ -217,7 +217,7 @@ const jsonLd = [
     image: 'https://www.wecarewellnessclinic.com/og-image.jpg',
     description:
       'Board-certified primary care clinic in Brandon, FL offering annual physicals, chronic disease management, same-week appointments, and Saturday hours. Accepting new patients. Most insurance accepted.',
-    telephone: '+1-813-438-5220',
+    telephone: '+18134385220',
     email: 'info@wecarewellnessclinic.com',
     address: {
       '@type': 'PostalAddress',
@@ -229,8 +229,8 @@ const jsonLd = [
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 27.937,
-      longitude: -82.285,
+      latitude: 27.9378,
+      longitude: -82.2859,
     },
     openingHoursSpecification: [
       {
