@@ -68,6 +68,7 @@
 
 /* ── Navbar ──────────────────────────────────────────────────────────── */
 .nav {
+  position: relative;
   background: #fff;
   border-bottom: 1px solid var(--border-subtle);
   transition: box-shadow var(--dur-base) var(--ease-out);
@@ -112,7 +113,7 @@
 .navList {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: var(--space-8);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -122,29 +123,28 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 20px;
+  padding: 6px 0;
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
-  color: var(--color-dark);
+  color: var(--text-secondary);
   text-decoration: none;
-  border-radius: var(--radius-sm);
   border: none;
   background: none;
   cursor: pointer;
   white-space: nowrap;
-  transition: color var(--dur-fast), background var(--dur-fast);
+  transition: color var(--dur-fast);
   letter-spacing: 0.01em;
 }
 
 .navLink:hover {
   color: var(--color-primary);
-  background: var(--color-primary-50);
+  background: none;
 }
 
 .navLink.active {
   color: var(--color-primary);
   font-weight: var(--weight-semibold);
-  background: var(--color-primary-50);
+  background: none;
 }
 
 /* Chevron icon */
@@ -346,12 +346,12 @@
 .bookBtn {
   display: inline-flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 28px;
   background: var(--color-primary);
   color: #fff;
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  border-radius: var(--radius-btn);
+  border-radius: 999px;
   text-decoration: none;
   white-space: nowrap;
   transition:
@@ -362,34 +362,38 @@
 }
 
 .bookBtn:hover {
-  background: var(--color-primary-600);   /* #1E54DB */
-  color: #fff;                            /* prevent a:hover bleed */
+  background: var(--color-primary-600);
+  color: #fff;
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
 
 .bookBtn:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.97);
 }
 
 /* ── Hamburger ───────────────────────────────────────────────────────── */
 .hamburger {
   display: none;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
   background: none;
-  border: 1px solid var(--border-subtle);
+  border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background var(--dur-fast);
+  color: var(--color-dark);
+  transition: color var(--dur-fast), transform var(--dur-fast);
 }
 
 .hamburger:hover {
-  background: var(--bg-muted);
+  color: var(--color-primary);
+}
+
+.hamburger:active {
+  transform: scale(0.92);
 }
 
 .hamburger:focus-visible {
@@ -397,41 +401,39 @@
   box-shadow: var(--shadow-focus);
 }
 
-.bar {
-  display: block;
-  height: 2px;
-  background: var(--color-dark);
-  border-radius: 2px;
-  transition:
-    transform var(--dur-base) var(--ease-both),
-    opacity var(--dur-base);
-}
-
-.barTop  { transform: translateY(7px) rotate(45deg); }
-.barMid  { opacity: 0; transform: scaleX(0); }
-.barBot  { transform: translateY(-7px) rotate(-45deg); }
-
-/* ── Mobile menu ─────────────────────────────────────────────────────── */
+/* ── Mobile menu — absolute overlay below nav bar ────────────────────── */
 .mobileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   background: #fff;
   border-top: 1px solid var(--border-subtle);
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height var(--dur-slow) var(--ease-out);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 24px rgba(11, 31, 58, 0.10);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition:
+    opacity 180ms ease-out,
+    transform 180ms ease-out,
+    visibility 180ms;
 }
 
 .mobileMenuOpen {
-  max-height: 1000px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .mobileList {
   list-style: none;
   margin: 0;
-  padding: var(--space-3) var(--space-4) var(--space-4);
+  padding: var(--space-5) var(--space-6) var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .mobileLink {
@@ -549,6 +551,7 @@
     display: flex;
   }
 
+  /* Enable the absolute dropdown on mobile */
   .mobileMenu {
     display: block;
   }
