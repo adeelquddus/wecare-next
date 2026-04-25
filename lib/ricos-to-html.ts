@@ -139,10 +139,19 @@ function renderImage(node: RicosNode): string {
   const srcId = d.image?.src?.id ?? d.image?.src?.url ?? '';
   if (!srcId) return '';
 
-  // Wix media CDN — 900 px wide, auto quality
+  // Wix media CDN — 900 px wide, auto quality.
+  // Wix /v1/fill/ transform endpoint has three strict requirements:
+  //   1. Both w_ AND h_ params are required — omitting h_ returns HTTP 400.
+  //   2. enc_avif and enc_auto both return HTTP 400; use enc_jpg instead.
+  //   3. The trailing path segment must be a generic filename ("file.jpg"),
+  //      NOT the srcId repeated — srcIds with ~mv2 metadata suffixes are
+  //      rejected as the trailing segment (returns HTTP 400).
+  const imgHeight = d.image?.height
+    ? Math.round((d.image.height / (d.image.width ?? 900)) * 900)
+    : 600;
   const imgUrl = srcId.startsWith('http')
     ? srcId
-    : `https://static.wixstatic.com/media/${srcId}/v1/fill/w_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/${srcId}`;
+    : `https://static.wixstatic.com/media/${srcId}/v1/fill/w_900,h_${imgHeight},al_c,q_85,usm_0.66_1.00_0.01,enc_jpg/file.jpg`;
 
   const width  = d.image?.width  ?? 900;
   const height = d.image?.height ?? undefined;

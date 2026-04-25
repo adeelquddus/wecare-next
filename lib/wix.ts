@@ -26,11 +26,16 @@ export interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
-  /** Full post body as HTML, converted from Wix Draft.js JSON. Only populated by getPostBySlug. */
+  /** Full post body as HTML, converted from Wix Ricos JSON. Only populated by getPostBySlug. */
   content?: string;
   coverImage?: string;
   slug: string;
+  /** Human-readable date, e.g. "April 25, 2026" */
   publishedDate: string;
+  /** ISO 8601 date string for JSON-LD / <time datetime> */
+  publishedDateISO?: string;
+  /** ISO 8601 modified date string for JSON-LD */
+  modifiedDateISO?: string;
   author?: string;
   readingTime?: number;
   tags?: string[];
@@ -59,6 +64,9 @@ export async function getLatestPosts(limit = 6): Promise<BlogPost[]> {
             day: 'numeric',
           })
         : '',
+      publishedDateISO: p.firstPublishedDate
+        ? new Date(p.firstPublishedDate).toISOString()
+        : undefined,
       tags: p.hashtags ?? [],
     }));
   } catch {
@@ -98,6 +106,12 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
             day: 'numeric',
           })
         : '',
+      publishedDateISO: p.firstPublishedDate
+        ? new Date(p.firstPublishedDate).toISOString()
+        : undefined,
+      modifiedDateISO: p.lastPublishedDate
+        ? new Date(p.lastPublishedDate).toISOString()
+        : undefined,
       readingTime: p.minutesToRead ?? undefined,
       tags: p.hashtags ?? [],
     };

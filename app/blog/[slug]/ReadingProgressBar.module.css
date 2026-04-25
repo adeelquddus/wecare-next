@@ -1,0 +1,13 @@
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9999;
+  background: var(--gradient-brand);
+  transform-origin: left center;
+  transform: scaleX(var(--progress, 0));
+  transition: transform 50ms linear;
+  pointer-events: none;
+}
