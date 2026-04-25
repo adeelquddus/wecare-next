@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
+import RelatedServices from '@/components/sections/RelatedServices';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -734,6 +735,8 @@ export default function TelehealthPage() {
           Aetna · United Healthcare · Medicare · Blue Cross Blue Shield · MultiPlan · Uninsured welcome
         </p>
       </div>
+
+      <RelatedServices currentSlug="telehealth" />
 
       <BookingCTA
         heading="Book your telehealth visit today"

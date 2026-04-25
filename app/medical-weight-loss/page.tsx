@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
+import RelatedServices from '@/components/sections/RelatedServices';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -635,6 +636,8 @@ export default function MedicalWeightLossPage() {
         <p className={styles.insuranceText}>Insurance accepted — GLP-1 medication coverage may apply. Uninsured patients welcome.</p>
         <p className={styles.insuranceNames}>Aetna · United Healthcare · Medicare · Blue Cross Blue Shield · MultiPlan</p>
       </div>
+
+      <RelatedServices currentSlug="medical-weight-loss" />
 
       <BookingCTA
         heading="Ready to start your weight loss journey in Brandon, FL?"

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
+import RelatedServices from '@/components/sections/RelatedServices';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -642,6 +643,8 @@ export default function WomensHealthPage() {
           Aetna &nbsp;·&nbsp; United Healthcare &nbsp;·&nbsp; Medicare &nbsp;·&nbsp; Blue Cross Blue Shield &nbsp;·&nbsp; MultiPlan &nbsp;·&nbsp; Uninsured patients welcome
         </p>
       </div>
+
+      <RelatedServices currentSlug="womens-health" />
 
       <BookingCTA
         heading="Take charge of your women's health today"

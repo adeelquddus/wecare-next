@@ -95,14 +95,11 @@ export default function Footer() {
             <div className={styles.col}>
               <h3 className={styles.colHeading}>Services</h3>
               <ul className={styles.linkList} role="list">
-                {SERVICES.slice(0, 5).map((s) => (
+                {SERVICES.map((s) => (
                   <li key={s.slug}>
                     <Link href={s.url} className={styles.footerLink}>{s.name}</Link>
                   </li>
                 ))}
-                <li>
-                  <Link href="/services" className={styles.footerLink}>All services →</Link>
-                </li>
               </ul>
             </div>
 
@@ -111,11 +108,12 @@ export default function Footer() {
               <h3 className={styles.colHeading}>Quick links</h3>
               <ul className={styles.linkList} role="list">
                 {[
-                  { label: 'About us',     href: '/about' },
-                  { label: 'Insurance',    href: '/insurance' },
-                  { label: 'Blog',         href: '/blog' },
-                  { label: 'Contact',      href: '/contact' },
-                  { label: 'Book appointment', href: '/booking' },
+                  { label: 'About us',          href: '/about' },
+                  { label: 'Blog',               href: '/blog' },
+                  { label: 'Insurance',          href: '/insurance' },
+                  { label: 'Loyalty rewards',    href: '/loyalty' },
+                  { label: 'Contact',            href: '/contact' },
+                  { label: 'Book appointment',   href: '/booking' },
                 ].map((l) => (
                   <li key={l.href}>
                     <Link href={l.href} className={styles.footerLink}>{l.label}</Link>

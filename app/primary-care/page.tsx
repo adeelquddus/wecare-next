@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
+import RelatedServices from '@/components/sections/RelatedServices';
 import styles from './page.module.css';
 
 /* ── Metadata ─────────────────────────────────────────────────────────── */
@@ -543,6 +544,8 @@ export default function PrimaryCarePage() {
           Aetna &nbsp;·&nbsp; United Healthcare &nbsp;·&nbsp; Medicare &nbsp;·&nbsp; Blue Cross Blue Shield &nbsp;·&nbsp; MultiPlan &nbsp;·&nbsp; Self-Pay
         </p>
       </div>
+
+      <RelatedServices currentSlug="primary-care" />
 
       <BookingCTA
         heading="Ready to make primary care a priority?"
