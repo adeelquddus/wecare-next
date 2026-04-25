@@ -208,7 +208,7 @@ export const SERVICES: Service[] = [
       'Adrenal support',
       'Customized protocols',
     ],
-    url: '/services',
+    url: '/iv-hydration',
   },
 ];
 
