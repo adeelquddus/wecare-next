@@ -50,6 +50,15 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
     },
   },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/icon.svg',
+  },
   verification: {
     google: '',   // Add Search Console verification code
   },
