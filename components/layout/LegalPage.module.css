@@ -1,0 +1,188 @@
+/* ── Legal page shell ──────────────────────────────────────────────────── */
+
+.hero {
+  background: var(--gradient-brand);
+  padding: var(--space-6) 0 var(--space-5);
+  text-align: center;
+}
+
+.heroEyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 var(--space-1);
+}
+
+.heroTitle {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: var(--weight-bold);
+  color: #fff;
+  margin: 0 0 var(--space-2);
+  letter-spacing: var(--tracking-tight);
+}
+
+.heroMeta {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+}
+
+/* ── Body ──────────────────────────────────────────────────────────────── */
+.body {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-3) var(--space-7);
+}
+
+/* Table of contents */
+.toc {
+  background: var(--color-primary-50);
+  border: 1px solid var(--color-primary-100);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.tocTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.tocList {
+  list-style: decimal;
+  padding-left: var(--space-3);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tocList a {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.tocList a:hover { text-decoration: underline; }
+
+/* Sections */
+.section {
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3);
+  padding-top: var(--space-2);
+  scroll-margin-top: 80px;
+}
+
+.sectionSubtitle {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+.p {
+  font-size: var(--text-base);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-2);
+}
+
+.list {
+  padding-left: var(--space-4);
+  margin: 0 0 var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list li {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Callout / alert box */
+.callout {
+  background: var(--color-teal-50);
+  border: 1px solid var(--color-teal-200);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-3) 0;
+}
+
+.calloutTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-teal-700);
+  margin: 0 0 6px;
+}
+
+.callout .p {
+  color: var(--color-teal-700);
+  margin: 0;
+}
+
+.calloutWarn {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary-200);
+  border-left-color: var(--color-primary);
+}
+
+.calloutWarn .calloutTitle,
+.calloutWarn .p { color: var(--color-primary-700); }
+
+/* Contact block */
+.contactBlock {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.contactBlock p {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0 0 6px;
+  line-height: 1.6;
+}
+
+.contactBlock p:last-child { margin: 0; }
+
+.contactBlock strong { color: var(--text-primary); }
+
+.contactBlock a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Last updated badge */
+.lastUpdated {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  margin-bottom: var(--space-4);
+}
