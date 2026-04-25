@@ -7,10 +7,29 @@ import { getLatestPosts } from '@/lib/wix';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Health Blog — WeCare Wellness Clinic',
+  title: 'Health & Wellness Blog — WeCare Wellness Clinic Brandon FL',
   description:
-    'Health tips, wellness advice, and medical insights from the WeCare Wellness Clinic team in Brandon, FL. Topics include weight loss, primary care, telehealth, and preventive health.',
+    'Health tips, wellness advice, and medical insights from the WeCare Wellness Clinic team in Brandon, FL. Topics include GLP-1 weight loss, primary care, telehealth, women\'s health, men\'s health, IV hydration, and preventive medicine.',
+  keywords: [
+    'health blog Brandon FL',
+    'wellness tips Brandon FL',
+    'medical weight loss blog',
+    'GLP-1 semaglutide tips',
+    'primary care health tips Brandon FL',
+    'telehealth Florida advice',
+    "women's health tips Florida",
+    "men's health tips Brandon",
+    'IV hydration benefits',
+    'hormone therapy information',
+    'HIV PrEP information Florida',
+  ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/blog' },
+  openGraph: {
+    title: 'Health & Wellness Blog — WeCare Wellness Clinic',
+    description: 'Expert health tips, wellness advice, and medical insights from our board-certified team in Brandon, FL.',
+    url: 'https://www.wecarewellnessclinic.com/blog',
+    type: 'website',
+  },
 };
 
 // Revalidate every hour
