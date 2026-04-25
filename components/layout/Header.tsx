@@ -101,8 +101,8 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="WeCare Wellness Clinic"
-              width={180}
-              height={52}
+              width={220}
+              height={64}
               priority
               className={styles.logoImg}
             />
