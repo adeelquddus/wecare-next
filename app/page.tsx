@@ -7,11 +7,137 @@ import Card from '@/components/ui/Card';
 import { SERVICES, TRUST_STATS, INSURANCE } from '@/lib/clinic';
 import styles from './page.module.css';
 
+/* ── JSON-LD ───────────────────────────────────────────────────────────── */
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['MedicalClinic', 'LocalBusiness'],
+      '@id': 'https://www.wecarewellnessclinic.com/#clinic',
+      name: 'WeCare Wellness Clinic',
+      url: 'https://www.wecarewellnessclinic.com',
+      logo: 'https://www.wecarewellnessclinic.com/logo.png',
+      image: 'https://www.wecarewellnessclinic.com/og-image.jpg',
+      telephone: '+18134385220',
+      email: 'info@wecarewellnessclinic.com',
+      description:
+        'WeCare Wellness Clinic is a patient-centered primary care and wellness clinic in Brandon, FL offering primary care, medical weight loss, women\'s health, men\'s health, telehealth, IV hydration, HRT, and HIV PrEP.',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '214 W Brandon Blvd',
+        addressLocality: 'Brandon',
+        addressRegion: 'FL',
+        postalCode: '33511',
+        addressCountry: 'US',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 27.9375,
+        longitude: -82.2859,
+      },
+      openingHoursSpecification: [
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '09:00', closes: '17:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '09:00', closes: '18:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '13:00' },
+      ],
+      priceRange: '$$',
+      paymentAccepted: 'Cash, Credit Card, Insurance',
+      sameAs: [
+        'https://www.facebook.com/wecarewellnessclinic',
+        'https://www.instagram.com/wecarewellnessclinic',
+      ],
+      areaServed: [
+        { '@type': 'City', name: 'Brandon', containedInPlace: 'Florida' },
+        { '@type': 'City', name: 'Riverview', containedInPlace: 'Florida' },
+        { '@type': 'City', name: 'Valrico', containedInPlace: 'Florida' },
+        { '@type': 'State', name: 'Florida' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What services does WeCare Wellness Clinic offer?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'WeCare Wellness Clinic in Brandon, FL offers primary care, medical weight loss (GLP-1/Semaglutide/Tirzepatide), women\'s health & gynecology, men\'s health & testosterone therapy, telehealth (statewide Florida), IV hydration therapy & hormone replacement therapy (HRT), and HIV PrEP & sexual health services.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does WeCare Wellness Clinic accept insurance?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. WeCare Wellness Clinic accepts Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. Self-pay rates are also available for uninsured patients.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I book an appointment at WeCare Wellness?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'You can book an appointment online at wecarewellnessclinic.com/booking or call (813) 438-5220. Same-week appointments are typically available for new and existing patients.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does WeCare offer telehealth visits?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. WeCare Wellness Clinic offers telehealth video visits for patients across the entire state of Florida. Services available by telehealth include primary care, prescription refills, follow-ups, chronic condition management, GLP-1 weight loss, and PrEP management.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Where is WeCare Wellness Clinic located?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'WeCare Wellness Clinic is located at 214 W Brandon Blvd, Brandon, FL 33511. We serve patients from Brandon, Riverview, Valrico, Lithia, Sun City Center, and the greater Tampa Bay area.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What are WeCare Wellness Clinic\'s hours?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Our office hours are Monday through Thursday 9 AM to 5 PM, Friday 9 AM to 6 PM, and Saturday 9 AM to 1 PM. We are closed on Sundays.',
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: 'WeCare Wellness Clinic | Primary Care, Weight Loss & Telehealth in Brandon, FL',
+  title: 'WeCare Wellness Clinic | Primary Care, Weight Loss & Telehealth — Brandon, FL',
   description:
-    'WeCare Wellness Clinic in Brandon, FL: primary care, medical weight loss (GLP-1/Semaglutide/Tirzepatide), telehealth, women\'s health & men\'s health. Same-week appointments available.',
+    'WeCare Wellness Clinic in Brandon, FL: primary care, medical weight loss (GLP-1/Semaglutide/Tirzepatide), telehealth, women\'s health, men\'s health, IV hydration, HRT & HIV PrEP. Same-week appointments. Aetna, Medicare & BCBS accepted.',
+  keywords: [
+    'WeCare Wellness Clinic Brandon FL',
+    'primary care Brandon FL',
+    'doctor Brandon FL',
+    'medical weight loss Brandon FL',
+    'GLP-1 Brandon FL',
+    'Semaglutide Brandon FL',
+    'telehealth doctor Florida',
+    "women's health Brandon FL",
+    "men's health Brandon FL",
+    'IV hydration Brandon FL',
+    'hormone replacement therapy Brandon FL',
+    'HIV PrEP Brandon FL',
+    'same week appointment Brandon FL',
+    'family doctor Brandon Florida',
+    'wellness clinic near Tampa FL',
+  ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com' },
+  openGraph: {
+    title: 'WeCare Wellness Clinic — Primary Care, Weight Loss & Telehealth Brandon, FL',
+    description:
+      'Board-certified primary care, GLP-1 weight loss, telehealth & more in Brandon, FL. Same-week appointments. Aetna, Medicare & BCBS accepted.',
+    url: 'https://www.wecarewellnessclinic.com',
+    type: 'website',
+  },
 };
 
 /* Testimonials */
@@ -75,6 +201,11 @@ const WHY_US = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* 1. Hero */}
       <Hero
         headline="Your health, our priority"
