@@ -541,6 +541,10 @@
     display: none;
   }
 
+  .navRight {
+    margin-left: auto;
+  }
+
   .hamburger {
     display: flex;
   }
