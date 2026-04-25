@@ -174,7 +174,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  width: 340px;
+  width: 380px;
   background: transparent;          /* transparent wrapper, no gap in hover zone */
   padding-top: 10px;                 /* visual gap lives inside the element */
   opacity: 0;
@@ -420,7 +420,7 @@
 }
 
 .mobileMenuOpen {
-  max-height: 700px;
+  max-height: 860px;
 }
 
 .mobileList {

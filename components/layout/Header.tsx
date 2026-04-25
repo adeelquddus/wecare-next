@@ -4,42 +4,17 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { CLINIC } from '@/lib/clinic';
+import { CLINIC, SERVICES } from '@/lib/clinic';
 import styles from './Header.module.css';
 
-/* ─── Services dropdown items ──────────────────────────────────────────── */
-const SERVICES_DROPDOWN = [
-  {
-    label: 'Primary Care',
-    href: '/primary-care',
-    desc: 'Comprehensive care for the whole family',
-    icon: '🩺',
-  },
-  {
-    label: "Gynecology / Women's Health",
-    href: '/womens-health',
-    desc: 'Annual exams, hormones & reproductive health',
-    icon: '🌸',
-  },
-  {
-    label: "Men's Health",
-    href: '/mens-health',
-    desc: 'Testosterone, prostate & preventive screenings',
-    icon: '💪',
-  },
-  {
-    label: 'Medical Weight Loss',
-    href: '/medical-weight-loss',
-    desc: 'GLP-1 · Semaglutide · Tirzepatide programs',
-    icon: '⚕️',
-  },
-  {
-    label: 'Telehealth',
-    href: '/telehealth',
-    desc: 'Video visits from anywhere in Florida',
-    icon: '💻',
-  },
-];
+/* ─── Services dropdown — sourced directly from lib/clinic so it always
+       stays in sync with the SERVICES array. ──────────────────────────── */
+const SERVICES_DROPDOWN = SERVICES.map((s) => ({
+  label: s.name,
+  href:  s.url,
+  desc:  s.tagline,
+  icon:  s.icon,
+}));
 
 /* ─── Main nav items ───────────────────────────────────────────────────── */
 const NAV_ITEMS = [
