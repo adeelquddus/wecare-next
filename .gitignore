@@ -32,3 +32,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local env (contains secrets)
+.env.local
+.env*.local
+dev.log
+dev.err
+dev2.log
+.claude/
+.vscode/

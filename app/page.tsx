@@ -4,7 +4,13 @@ import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
-import { SERVICES, TRUST_STATS, INSURANCE } from '@/lib/clinic';
+import Image from 'next/image';
+import { SERVICES, TRUST_STATS, INSURANCE, INSURANCE_LOGOS, SERVICE_IMAGES } from '@/lib/clinic';
+import LogoLoop from '@/components/ui/LogoLoop';
+import {
+  AwardIcon, CalendarIcon, CardIcon, LaptopIcon, LeafIcon, MicroscopeIcon,
+} from '@/components/ui/AnimatedIcons';
+import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 /* ── JSON-LD ───────────────────────────────────────────────────────────── */
@@ -48,8 +54,8 @@ const jsonLd = {
       ],
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: 4.9,
-        reviewCount: 3,
+        ratingValue: 5,
+        reviewCount: 18,
         bestRating: 5,
       },
       areaServed: [
@@ -61,30 +67,48 @@ const jsonLd = {
     },
     {
       '@type': 'Review',
-      author: { '@type': 'Person', name: 'Miguel M.' },
+      author: { '@type': 'Person', name: 'Miguel Medina' },
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
       reviewBody:
-        'Darlyne is an exceptional Family Nurse Practitioner who consistently provides compassionate, thorough, and professional care. She really listens and makes you feel valued.',
+        'Darlyne is an exceptional Family Nurse Practitioner who consistently provides compassionate, thorough, and professional care. She takes the time to listen carefully, explains things clearly, and makes her patients feel genuinely valued and respected.',
       itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
-      datePublished: '2026-04-01',
+      datePublished: '2026-04-20',
     },
     {
       '@type': 'Review',
-      author: { '@type': 'Person', name: 'Jalisa R.' },
+      author: { '@type': 'Person', name: 'Saint Thompson' },
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
       reviewBody:
-        'Amazing office staff. Doctor & Nurse were both great and showed they really cared — I wasn\'t just another patient. Highly recommend WeCare Wellness.',
+        'WeCare Wellness is truly one of the best primary care clinics in the Riverview/Tampa area. The facility is clean, modern, and the doctor takes the time to actually listen, explain everything clearly, and address all concerns. What really sets WeCare apart is their affordable monthly plan for patients without insurance.',
       itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
-      datePublished: '2026-04-01',
+      datePublished: '2025-12-15',
     },
     {
       '@type': 'Review',
-      author: { '@type': 'Person', name: 'Sally O.' },
+      author: { '@type': 'Person', name: 'Heather Allen' },
       reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
       reviewBody:
-        'WeCare clinic primary care is top notch. The NP is great and I love the way she takes care of patients. One of the best clinics in the Riverview/Tampa area.',
+        'Highly recommend!!! The office staff is very professional and attentive. The nurse practitioner is kind, warm and listens to your needs as well as very knowledgeable.',
       itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
-      datePublished: '2026-04-01',
+      datePublished: '2025-12-10',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Terry H.' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        "Darlyne has been so helpful and supportive! Her suggestions and insights are making my weight loss journey less daunting and more doable.",
+      itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
+      datePublished: '2026-01-11',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'María M.' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        'In 2 weeks, I lost 19 pounds, and as you can imagine, I AM SO HAPPY with the results! Darlyne walked me through every step.',
+      itemReviewed: { '@id': 'https://www.wecarewellnessclinic.com/#clinic' },
+      datePublished: '2025-11-20',
     },
     {
       '@type': 'FAQPage',
@@ -173,59 +197,122 @@ export const metadata: Metadata = {
   },
 };
 
-/* Testimonials — sourced from verified Google/BirdEye reviews */
+/* Testimonials — verbatim verified reviews from BirdEye, Tebra & EvexiPEL */
 const TESTIMONIALS = [
   {
     id: 1,
-    text: "Darlyne is an exceptional Family Nurse Practitioner who consistently provides compassionate, thorough, and professional care. She really listens and makes you feel valued.",
-    name: 'Miguel M.',
-    detail: 'Primary Care Patient',
+    text: "Darlyne is an exceptional Family Nurse Practitioner who consistently provides compassionate, thorough, and professional care. She takes the time to listen carefully, explains things clearly, and makes her patients feel genuinely valued and respected. Her clinical knowledge, attention to detail, and calm, reassuring manner make you feel welcomed and comfortable.",
+    name: 'Miguel Medina',
+    detail: 'Verified Google Review · Primary Care',
     rating: 5,
   },
   {
     id: 2,
-    text: "Amazing office staff. Doctor & Nurse were both great and showed they really cared — I wasn't just another patient. Highly recommend WeCare Wellness.",
-    name: 'Jalisa R.',
-    detail: 'Primary Care Patient, Brandon FL',
+    text: "Amazing office staff. Doctor & Nurse were both great and showed they really cared and wasn't just another patient. Very happy with my visit.",
+    name: 'Jalisa Rivera',
+    detail: 'Verified Google Review',
     rating: 5,
   },
   {
     id: 3,
-    text: "WeCare clinic primary care is top notch. The NP is great and I love the way she takes care of patients. One of the best clinics in the Riverview/Tampa area.",
-    name: 'Sally O.',
-    detail: 'Primary Care Patient',
+    text: "We care clinic primary care is top notch. The NP is good and I love the way she takes care of patients.",
+    name: 'Sally Olembo',
+    detail: 'Verified Google Review · Primary Care',
+    rating: 5,
+  },
+  {
+    id: 4,
+    text: "WeCare Wellness is truly one of the best primary care clinics in the Riverview/Tampa area. The facility is clean, modern, which immediately makes you feel comfortable. The doctor takes the time to actually listen, explain everything clearly, and make sure all concerns are addressed — something that's hard to find in healthcare today. I never feel rushed, and the care feels personal and thorough every visit. What really sets WeCare apart is their affordable monthly plan for patients without insurance.",
+    name: 'Saint Thompson',
+    detail: 'Verified Google Review · Riverview FL',
+    rating: 5,
+  },
+  {
+    id: 5,
+    text: "Highly recommend!!! The office staff is very professional and attentive. The nurse practitioner is kind, warm and listens to your needs as well as very knowledgeable.",
+    name: 'Heather Allen',
+    detail: 'Verified Google Review',
+    rating: 5,
+  },
+  {
+    id: 6,
+    text: "Darlyne has been so helpful and supportive! Her suggestions and insights are making my weight loss journey less daunting and more 'doable!' Thank you, Darlyne!",
+    name: 'Terry H.',
+    detail: 'Verified Tebra Review · Medical Weight Loss',
+    rating: 5,
+  },
+  {
+    id: 7,
+    text: "WeCare Wellness Clinic has friendly staff and cares about your health.",
+    name: 'Vicanna C.',
+    detail: 'Verified Tebra Review',
+    rating: 5,
+  },
+  {
+    id: 8,
+    text: "Nurse practitioner Darlyne is amazing — I hadn't been to the doctor in forever and she really took the time to listen to my concerns and questions and patiently explained all my results to me.",
+    name: 'Taquita Z.',
+    detail: 'Verified EvexiPEL Patient',
+    rating: 5,
+  },
+  {
+    id: 9,
+    text: "I want to start by thanking WeCare Wellness and Darlyne Georges, APRN, FNP-C for the support in my weight loss journey. She understood what was going on with my body and helped me reach my weight loss goal.",
+    name: 'Tamaraa R.',
+    detail: 'Verified Patient · Medical Weight Loss',
+    rating: 5,
+  },
+  {
+    id: 10,
+    text: "In 2 weeks, I lost 19 pounds, and as you can imagine, I AM SO FREAKING HAPPY with the results! Darlyne walked me through every step.",
+    name: 'María M.',
+    detail: 'Verified Patient · GLP-1 Weight Loss',
+    rating: 5,
+  },
+  {
+    id: 11,
+    text: "Dr Georges was professional, patient and thorough. She offered compassion and listened to each concern I had.",
+    name: 'Jamie T.',
+    detail: 'Verified Patient',
+    rating: 5,
+  },
+  {
+    id: 12,
+    text: "Darlyne is very knowledgeable in her practice. I decided to get NAD injections and I am very happy with the extra energy and vitality. I recommend this clinic for improving health and wellbeing.",
+    name: 'Colleen M.',
+    detail: 'Verified Patient · IV / NAD Therapy',
     rating: 5,
   },
 ];
 
-const WHY_US = [
+const WHY_US: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '🏅',
+    Icon: AwardIcon,
     title: 'Board-certified providers',
     desc: 'All our physicians are board-certified with years of experience in their specialty areas.',
   },
   {
-    icon: '📅',
+    Icon: CalendarIcon,
     title: 'Same-week availability',
     desc: 'We know your time matters. Most patients are seen within the same week of requesting an appointment.',
   },
   {
-    icon: '💳',
+    Icon: CardIcon,
     title: 'Major insurance accepted',
-    desc: 'We accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan.',
+    desc: 'We accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, MultiPlan, and Tricare.',
   },
   {
-    icon: '💻',
+    Icon: LaptopIcon,
     title: 'Telehealth across Florida',
     desc: 'Can\'t come in person? See a provider by video from anywhere in Florida — same great care.',
   },
   {
-    icon: '🌿',
+    Icon: LeafIcon,
     title: 'Whole-person wellness',
     desc: 'We treat you, not just your symptoms. Our approach addresses lifestyle, prevention, and long-term health.',
   },
   {
-    icon: '🔬',
+    Icon: MicroscopeIcon,
     title: 'On-site diagnostics',
     desc: 'Lab work, diagnostics, and screenings available on-site so you get answers faster.',
   },
@@ -241,8 +328,12 @@ export default function HomePage() {
 
       {/* 1. Hero */}
       <Hero
-        headline="Your health, our priority"
-        subtext="Personalized wellness care for the whole family — primary care, medical weight loss, telehealth, and more in Brandon, FL."
+        headlineLines={[
+          { text: 'Personalized Care.', color: 'dark' },
+          { text: 'Trusted Expertise.', color: 'primary' },
+          { text: 'Better Health.', color: 'teal' },
+        ]}
+        subtext="Comprehensive wellness care for the whole family — primary care, medical weight loss, telehealth, and more in Brandon, FL."
         ctaLabel="Book Appointment"
         ctaHref="/booking"
         secondaryLabel="Explore services"
@@ -282,9 +373,21 @@ export default function HomePage() {
             {SERVICES.map((service) => (
               <li key={service.slug}>
                 <Card as="article" padding="lg" className={styles.serviceCard}>
-                  <span className={styles.serviceIcon} aria-hidden="true">
-                    {service.icon}
-                  </span>
+                  {SERVICE_IMAGES[service.slug] ? (
+                    <div className={styles.serviceCardImg} aria-hidden="true">
+                      <Image
+                        src={SERVICE_IMAGES[service.slug]}
+                        alt=""
+                        fill
+                        className={styles.serviceCardImgEl}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                  ) : (
+                    <span className={styles.serviceIcon} aria-hidden="true">
+                      {service.icon}
+                    </span>
+                  )}
                   <h3 className={`ds-h3 ${styles.serviceName}`}>{service.name}</h3>
                   <p className={styles.serviceTagline}>{service.tagline}</p>
                   <p className={`ds-body ${styles.serviceDesc}`}>{service.description}</p>
@@ -330,12 +433,14 @@ export default function HomePage() {
             </div>
 
             <ul className={styles.whyGrid} role="list">
-              {WHY_US.map((item) => (
-                <li key={item.title} className={styles.whyItem}>
-                  <span className={styles.whyIcon} aria-hidden="true">{item.icon}</span>
+              {WHY_US.map(({ Icon, title, desc }) => (
+                <li key={title} className={styles.whyItem}>
+                  <span className={styles.whyIcon} aria-hidden="true">
+                    <Icon size={32} />
+                  </span>
                   <div>
-                    <h3 className={styles.whyTitle}>{item.title}</h3>
-                    <p className={styles.whyDesc}>{item.desc}</p>
+                    <h3 className={styles.whyTitle}>{title}</h3>
+                    <p className={styles.whyDesc}>{desc}</p>
                   </div>
                 </li>
               ))}
@@ -352,27 +457,36 @@ export default function HomePage() {
             <h2 id="testimonials-heading" className="ds-h2">
               What our patients say
             </h2>
+            <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
+              Verified reviews from Google &amp; BirdEye — averaging 5&#9733; across all services.
+            </p>
           </div>
-
-          <ul className={styles.testimonialsGrid} role="list">
-            {TESTIMONIALS.map((t) => (
-              <li key={t.id}>
-                <Card as="article" padding="lg" className={styles.testimonialCard}>
-                  <div className={styles.stars} aria-label={`${t.rating} stars`}>
-                    {'★'.repeat(t.rating)}
-                  </div>
-                  <blockquote className={styles.testimonialText}>
-                    "{t.text}"
-                  </blockquote>
-                  <footer className={styles.testimonialFooter}>
-                    <span className={styles.testimonialName}>{t.name}</span>
-                    <span className={styles.testimonialDetail}>{t.detail}</span>
-                  </footer>
-                </Card>
-              </li>
-            ))}
-          </ul>
         </div>
+
+        <LogoLoop
+          logos={TESTIMONIALS.map((t) => ({
+            ariaLabel: `Review by ${t.name}`,
+            node: (
+              <article className={styles.testimonialCard}>
+                <div className={styles.stars} aria-label={`${t.rating} stars`}>
+                  {'★'.repeat(t.rating)}
+                </div>
+                <blockquote className={styles.testimonialText}>{t.text}</blockquote>
+                <footer className={styles.testimonialFooter}>
+                  <span className={styles.testimonialName}>{t.name}</span>
+                  <span className={styles.testimonialDetail}>{t.detail}</span>
+                </footer>
+              </article>
+            ),
+          }))}
+          speed={30}
+          logoHeight={320}
+          gap={28}
+          hoverSpeed={0}
+          fadeOut
+          fadeOutColor="#F9FAFB"
+          ariaLabel="Patient testimonials"
+        />
       </section>
 
       {/* 6. Insurance */}
@@ -381,11 +495,18 @@ export default function HomePage() {
           <h2 id="insurance-heading" className={`ds-h2 ${styles.insuranceHeading}`}>
             We accept your insurance
           </h2>
-          <ul className={styles.insuranceList} role="list">
-            {INSURANCE.map((ins) => (
-              <li key={ins} className={styles.insurancePill}>{ins}</li>
-            ))}
-          </ul>
+        </div>
+        <LogoLoop
+          logos={INSURANCE.map((ins) => ({ src: INSURANCE_LOGOS[ins], alt: ins }))}
+          speed={60}
+          logoHeight={100}
+          gap={56}
+          hoverSpeed={0}
+          fadeOut
+          fadeOutColor="#ffffff"
+          ariaLabel="Insurance plans accepted"
+        />
+        <div className="container">
           <p className={styles.insuranceNote}>
             Don't see your plan?{' '}
             <Link href="/insurance">Check our full insurance page</Link>

@@ -1,8 +1,30 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Hero from '@/components/sections/Hero';
+import Image from 'next/image';
 import BookingCTA from '@/components/sections/BookingCTA';
-import { CLINIC, HOURS_DISPLAY, INSURANCE } from '@/lib/clinic';
+import Button from '@/components/ui/Button';
+import { CLINIC, HOURS_DISPLAY, INSURANCE, INSURANCE_LOGOS, SERVICES, SERVICE_IMAGES } from '@/lib/clinic';
+import LogoLoop from '@/components/ui/LogoLoop';
+import {
+  CalendarBookIllustration,
+  DocumentsIllustration,
+  ClockIllustration,
+  StethoscopeIllustration,
+  SameWeekIllustration,
+  ServicesClusterIllustration,
+  WeekendIllustration,
+  TelehealthIllustration,
+  InsuranceCardIllustration,
+  CareHandshakeIllustration,
+  IdIcon,
+  PillsIcon,
+  PaperIcon,
+  AlertIcon,
+  PhoneIcon,
+  LetterIcon,
+  NewPatientHeroIllustration,
+} from '@/components/ui/Illustrations';
+import { CalendarIcon, HospitalIcon, GlobeIcon } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -31,70 +53,76 @@ export const metadata: Metadata = {
 const STEPS = [
   {
     step: 1,
-    icon: '📋',
+    Illustration: CalendarBookIllustration,
     title: 'Book your appointment',
-    desc: 'Book online 24/7 or call (813) 438-5220. Same-week and same-day slots are often available. Telehealth video visits are available for patients anywhere in Florida.',
+    desc: 'Book online 24/7 or call (813) 438-5220. Same-week and same-day slots are often available. Telehealth video visits are available statewide across Florida.',
   },
   {
     step: 2,
-    icon: '🪪',
+    Illustration: DocumentsIllustration,
     title: 'Gather your documents',
     desc: 'Bring a valid photo ID, your insurance card, a list of current medications (or your prescription bottles), and any relevant medical records you have.',
   },
   {
     step: 3,
-    icon: '⏰',
+    Illustration: ClockIllustration,
     title: 'Arrive a few minutes early',
-    desc: 'First-time patients should arrive 10–15 minutes before their appointment to complete intake paperwork. Our team will verify your insurance and go over your copay details.',
+    desc: 'First-time patients should arrive 10–15 minutes before their appointment to complete intake paperwork. Our team will verify your insurance and copay details.',
   },
   {
     step: 4,
-    icon: '🩺',
+    Illustration: StethoscopeIllustration,
     title: 'Meet your provider',
-    desc: 'Your board-certified provider will review your medical history, discuss your health goals, perform any needed exams, and create a personalised care plan.',
+    desc: 'Your board-certified provider will review your medical history, discuss your health goals, perform any needed exams, and create a personalised care plan with you.',
   },
 ];
 
 const WHAT_TO_BRING = [
-  'Valid government-issued photo ID',
-  'Insurance card (if applicable)',
-  'List of current medications and dosages',
-  'Any prior lab results or imaging reports',
-  'List of allergies (medications or otherwise)',
-  'Emergency contact information',
-  'Referral letter (if your plan requires one)',
+  { Icon: IdIcon, text: 'Valid government-issued photo ID' },
+  { Icon: InsuranceCardIllustration, text: 'Insurance card (if applicable)', small: true },
+  { Icon: PillsIcon, text: 'List of current medications and dosages' },
+  { Icon: PaperIcon, text: 'Any prior lab results or imaging reports' },
+  { Icon: AlertIcon, text: 'List of allergies (medications or otherwise)' },
+  { Icon: PhoneIcon, text: 'Emergency contact information' },
+  { Icon: LetterIcon, text: 'Referral letter (if your plan requires one)' },
 ];
 
 const WHY_CHOOSE = [
   {
-    icon: '📅',
+    Illustration: SameWeekIllustration,
     title: 'Same-week appointments',
-    desc: 'We keep same-week and same-day slots available so you never wait weeks to see a provider.',
+    desc: 'We hold same-week and same-day slots open every week, so you never wait weeks just to see a provider.',
+    accent: 'blue',
   },
   {
-    icon: '🏥',
+    Illustration: ServicesClusterIllustration,
     title: '8 services under one roof',
-    desc: 'Primary care, GLP-1 weight loss, women\'s health, men\'s health, telehealth, IV hydration, HRT, and HIV PrEP — all at one clinic.',
+    desc: "Primary care, GLP-1 weight loss, women's health, men's health, telehealth, IV hydration, HRT, and HIV PrEP — all here.",
+    accent: 'mint',
   },
   {
-    icon: '⏱️',
+    Illustration: WeekendIllustration,
     title: 'Saturday hours',
     desc: 'Open Saturday 9 AM–1 PM — one of very few primary care clinics in Brandon with weekend availability.',
+    accent: 'amber',
   },
   {
-    icon: '💻',
+    Illustration: TelehealthIllustration,
     title: 'Telehealth statewide',
     desc: 'Live anywhere in Florida? Our video visits let you see a board-certified provider without leaving home.',
+    accent: 'blue',
   },
   {
-    icon: '💳',
+    Illustration: InsuranceCardIllustration,
     title: 'Insurance + self-pay',
-    desc: 'We accept Aetna, UHC, Medicare, BCBS, and MultiPlan. Transparent self-pay rates available for uninsured patients.',
+    desc: 'Aetna, UHC, Medicare, BCBS, MultiPlan & Tricare accepted. Transparent self-pay rates available for uninsured patients.',
+    accent: 'mint',
   },
   {
-    icon: '🤝',
+    Illustration: CareHandshakeIllustration,
     title: 'Judgment-free care',
-    desc: 'We treat every patient with respect and dignity — whether you\'re here for a physical, PrEP, hormone therapy, or weight loss.',
+    desc: "We treat every patient with respect and dignity — whether you're here for a physical, PrEP, hormone therapy, or weight loss.",
+    accent: 'rose',
   },
 ];
 
@@ -120,7 +148,7 @@ const jsonLd = {
         { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '09:00', closes: '18:00' },
         { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '13:00' },
       ],
-      paymentAccepted: 'Cash, Credit Card, Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, MultiPlan',
+      paymentAccepted: 'Cash, Credit Card, Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, MultiPlan, Tricare',
     },
     {
       '@type': 'BreadcrumbList',
@@ -137,64 +165,99 @@ export default function NewPatientsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <Hero
-        headline="Now welcoming new patients"
-        subtext="Getting started at WeCare Wellness is easy — same-week appointments, flexible hours including Saturdays, and most major insurance plans accepted."
-        ctaLabel="Book Your First Visit"
-        ctaHref="/booking"
-        secondaryLabel={`Call ${CLINIC.phoneDisplay}`}
-        secondaryHref={`tel:${CLINIC.phone}`}
-        badgeText="Accepting new patients"
-        variant="light"
-      />
+      {/* ── Custom Hero ──────────────────────────────────────────────── */}
+      <section className={styles.npHero} aria-labelledby="np-hero-heading">
+        <span className={`${styles.heroBlob} ${styles.heroBlobOne}`} aria-hidden="true" />
+        <span className={`${styles.heroBlob} ${styles.heroBlobTwo}`} aria-hidden="true" />
+        <span className={styles.heroDots} aria-hidden="true" />
 
-      {/* Steps */}
+        <div className="container">
+          <div className={styles.npHeroGrid}>
+            <div className={styles.npHeroContent}>
+              <span className={styles.npHeroBadge}>
+                <span className={styles.pulseDot} aria-hidden="true" />
+                Now accepting new patients
+              </span>
+              <h1 id="np-hero-heading" className={styles.npHeroTitle}>
+                Your <span className={styles.titleAccent}>first visit</span><br />
+                made simple.
+              </h1>
+              <p className={styles.npHeroLede}>
+                Same-week appointments, transparent pricing, and a provider who actually listens.
+                Here is everything you need to know before stepping through our doors — or hopping
+                on a telehealth visit.
+              </p>
+              <div className={styles.npHeroCtas}>
+                <Button href="/booking" size="lg" variant="primary">Book Your First Visit</Button>
+                <Button href={`tel:${CLINIC.phone}`} size="lg" variant="outline">
+                  Call {CLINIC.phoneDisplay}
+                </Button>
+              </div>
+              <ul className={styles.npHeroPills} role="list">
+                <li><CalendarIcon size={16} /> Same-week slots</li>
+                <li><HospitalIcon size={16} /> 8 services here</li>
+                <li><GlobeIcon size={16} /> Telehealth FL-wide</li>
+              </ul>
+            </div>
+            <div className={styles.npHeroIllustration} aria-hidden="true">
+              <NewPatientHeroIllustration size={420} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Steps ────────────────────────────────────────────────────── */}
       <section className={styles.stepsSection} aria-labelledby="steps-heading">
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="ds-eyebrow">Simple process</p>
             <h2 id="steps-heading" className="ds-h2">Your first visit — what to expect</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              We make it easy to get started. Here is how your first visit works.
+              Four straightforward steps from booking to walking out with a personalised care plan.
             </p>
           </div>
           <ol className={styles.steps} role="list">
-            {STEPS.map((item) => (
-              <li key={item.step} className={styles.step}>
-                <div className={styles.stepNum} aria-label={`Step ${item.step}`}>{item.step}</div>
-                <span className={styles.stepIcon} aria-hidden="true">{item.icon}</span>
-                <h3 className={styles.stepTitle}>{item.title}</h3>
-                <p className={styles.stepDesc}>{item.desc}</p>
+            {STEPS.map(({ step, Illustration, title, desc }) => (
+              <li key={step} className={styles.step}>
+                <div className={styles.stepIllusWrap}>
+                  <Illustration size={110} />
+                </div>
+                <div className={styles.stepNumBadge} aria-label={`Step ${step}`}>
+                  Step {step}
+                </div>
+                <h3 className={styles.stepTitle}>{title}</h3>
+                <p className={styles.stepDesc}>{desc}</p>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* What to bring + hours */}
+      {/* ── Bring + Hours info section ───────────────────────────────── */}
       <section className={styles.infoSection} aria-labelledby="info-heading">
         <div className="container">
           <div className={styles.infoGrid}>
-            {/* What to bring */}
-            <div className={styles.infoCard}>
-              <h2 id="info-heading" className={styles.cardHeading}>
-                <span aria-hidden="true">🧳</span> What to bring
+            <div className={styles.bringCard}>
+              <p className="ds-eyebrow">First visit checklist</p>
+              <h2 id="info-heading" className="ds-h2" style={{ marginBottom: 'var(--space-4)' }}>
+                What to bring
               </h2>
               <ul className={styles.bringList} role="list">
-                {WHAT_TO_BRING.map((item) => (
-                  <li key={item} className={styles.bringItem}>
-                    <span className={styles.check} aria-hidden="true">✓</span>
-                    {item}
+                {WHAT_TO_BRING.map(({ Icon, text, small }) => (
+                  <li key={text} className={styles.bringItem}>
+                    <span className={styles.bringIconWrap} aria-hidden="true">
+                      {/* @ts-ignore — both small icon & small SVG renderers accept size */}
+                      <Icon size={small ? 36 : 22} />
+                    </span>
+                    <span>{text}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Hours & location */}
-            <div className={styles.infoCard}>
-              <h2 className={styles.cardHeading}>
-                <span aria-hidden="true">🕘</span> Office hours
-              </h2>
+            <div className={styles.hoursCard}>
+              <p className="ds-eyebrow">Plan your visit</p>
+              <h3 className={styles.hoursHeading}>Office hours</h3>
               <ul className={styles.hoursList} role="list">
                 {HOURS_DISPLAY.map((h) => (
                   <li key={h.days} className={styles.hoursItem}>
@@ -204,75 +267,98 @@ export default function NewPatientsPage() {
                 ))}
               </ul>
 
-              <div className={styles.divider} />
-
-              <h3 className={styles.subHeading}>
-                <span aria-hidden="true">📍</span> Location
-              </h3>
-              <a
-                href={CLINIC.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.addressLink}
-              >
-                {CLINIC.addressParts.street}<br />
-                {CLINIC.addressParts.city}, {CLINIC.addressParts.state} {CLINIC.addressParts.zip}
+              <h3 className={styles.hoursHeading} style={{ marginTop: 'var(--space-5)' }}>Location</h3>
+              <a href={CLINIC.mapUrl} target="_blank" rel="noopener noreferrer" className={styles.addressLink}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z" stroke="currentColor" strokeWidth="2" />
+                  <circle cx="12" cy="9" r="3" stroke="currentColor" strokeWidth="2" />
+                </svg>
+                <span>{CLINIC.addressParts.street}<br />{CLINIC.addressParts.city}, {CLINIC.addressParts.state} {CLINIC.addressParts.zip}</span>
               </a>
 
-              <div className={styles.divider} />
-
-              <h3 className={styles.subHeading}>
-                <span aria-hidden="true">💳</span> Insurance accepted
-              </h3>
-              <p className={styles.insuranceList}>{INSURANCE.join(' · ')}</p>
-              <p className={styles.selfPayNote}>+ self-pay rates available</p>
+              <h3 className={styles.hoursHeading} style={{ marginTop: 'var(--space-5)' }}>Insurance accepted</h3>
+              <p className={styles.insuranceText}>{INSURANCE.join(' · ')}</p>
+              <p className={styles.selfPayNote}>+ transparent self-pay rates available</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why choose us */}
+      {/* ── Why patients choose us — illustrated cards ─────────────── */}
       <section className={styles.whySection} aria-labelledby="why-heading">
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="ds-eyebrow">Why WeCare</p>
             <h2 id="why-heading" className="ds-h2">Why patients choose us</h2>
+            <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
+              Six reasons hundreds of patients keep coming back — and refer their friends.
+            </p>
           </div>
           <div className={styles.whyGrid}>
-            {WHY_CHOOSE.map((item) => (
-              <div key={item.title} className={styles.whyCard}>
-                <span className={styles.whyIcon} aria-hidden="true">{item.icon}</span>
-                <h3 className={styles.whyTitle}>{item.title}</h3>
-                <p className={styles.whyDesc}>{item.desc}</p>
-              </div>
+            {WHY_CHOOSE.map(({ Illustration, title, desc, accent }) => (
+              <article key={title} className={`${styles.whyCard} ${styles[`whyAccent_${accent}`]}`}>
+                <div className={styles.whyIllusWrap}>
+                  <Illustration size={96} />
+                </div>
+                <h3 className={styles.whyTitle}>{title}</h3>
+                <p className={styles.whyDesc}>{desc}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Quick links to services */}
+      {/* ── Services available ───────────────────────────────────────── */}
       <section className={styles.servicesSection} aria-labelledby="services-heading">
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="ds-eyebrow">Everything in one place</p>
             <h2 id="services-heading" className="ds-h2">Services available to new patients</h2>
+            <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
+              Browse what you can book on your first visit — or any visit after.
+            </p>
           </div>
-          <div className={styles.serviceLinks}>
-            {[
-              { label: 'Primary Care', href: '/primary-care' },
-              { label: 'Medical Weight Loss', href: '/medical-weight-loss' },
-              { label: 'Telehealth', href: '/telehealth' },
-              { label: "Women's Health", href: '/womens-health' },
-              { label: "Men's Health", href: '/mens-health' },
-              { label: 'IV Hydration & HRT', href: '/iv-hydration' },
-              { label: 'HIV PrEP', href: '/hiv-prep' },
-            ].map((s) => (
-              <Link key={s.href} href={s.href} className={styles.serviceLink}>
-                {s.label} →
-              </Link>
+          <ul className={styles.serviceTiles} role="list">
+            {SERVICES.map((s) => (
+              <li key={s.slug}>
+                <Link href={s.url} className={styles.serviceTile}>
+                  {SERVICE_IMAGES[s.slug] ? (
+                    <Image
+                      src={SERVICE_IMAGES[s.slug]}
+                      alt=""
+                      width={48}
+                      height={48}
+                      className={styles.serviceTileImg}
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <span className={styles.serviceTileEmoji} aria-hidden="true">{s.icon}</span>
+                  )}
+                  <span className={styles.serviceTileLabel}>{s.name}</span>
+                  <span className={styles.serviceTileArrow} aria-hidden="true">→</span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
+      </section>
+
+      {/* ── Insurance LogoLoop ───────────────────────────────────────── */}
+      <section className={styles.insuranceLoopSection} aria-labelledby="insurance-loop-heading">
+        <div className="container" style={{ textAlign: 'center' }}>
+          <p className="ds-eyebrow">Coverage</p>
+          <h2 id="insurance-loop-heading" className="ds-h2">We accept your insurance</h2>
+        </div>
+        <LogoLoop
+          logos={INSURANCE.map((ins) => ({ src: INSURANCE_LOGOS[ins], alt: ins }))}
+          speed={60}
+          logoHeight={90}
+          gap={56}
+          hoverSpeed={0}
+          fadeOut
+          fadeOutColor="#F9FAFB"
+          ariaLabel="Insurance plans accepted"
+        />
       </section>
 
       <BookingCTA

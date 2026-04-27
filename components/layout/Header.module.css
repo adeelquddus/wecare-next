@@ -16,10 +16,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px var(--space-3);
+  /* Right-padding ensures the centred text never collides with the close button */
+  padding: 10px clamp(48px, 8vw, 56px);
   /* Brand gradient — blue → teal */
   background: linear-gradient(90deg, var(--color-primary) 0%, #1a7aff 35%, var(--color-secondary) 100%);
   color: #fff;
+  overflow: hidden;   /* belt-and-braces: no spill on small viewports */
 }
 
 .bannerText {
@@ -28,6 +30,17 @@
   margin: 0;
   text-align: center;
   letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bannerIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .bannerLink {
@@ -77,14 +90,17 @@
   box-shadow: 0 2px 16px rgba(11, 31, 58, 0.08);
 }
 
+/* Full-width: no max-width — padding scales with the viewport so the nav
+   breathes on big monitors and tightens cleanly on tablet sizes. */
 .navInner {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--space-10);
+  width: 100%;
+  margin: 0;
+  padding: 0 clamp(16px, 3vw, 56px);
   height: 80px;
   display: flex;
   align-items: center;
-  gap: var(--space-6);
+  gap: var(--space-3);
+  min-width: 0;        /* allow flex children to shrink */
 }
 
 /* ── Logo ────────────────────────────────────────────────────────────── */
@@ -124,6 +140,7 @@
   gap: 4px;
   padding: 8px 20px;
   font-size: var(--text-sm);
+  line-height: var(--lh-sm);
   font-weight: var(--weight-medium);
   color: var(--color-dark);
   text-decoration: none;
@@ -165,7 +182,34 @@
 }
 
 .dropTrigger {
-  /* same as .navLink — just also a <button> */
+  /* Same as .navLink but needs ALL properties explicit for buttons */
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 20px;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-dark);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--dur-fast), background var(--dur-fast);
+  letter-spacing: 0.01em;
+}
+
+.dropTrigger:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-50);
+}
+
+.dropTrigger.active {
+  color: var(--color-primary);
+  font-weight: var(--weight-semibold);
+  background: var(--color-primary-50);
 }
 
 .dropdown {
@@ -292,6 +336,13 @@
   background: var(--color-gray-100);
   border-radius: var(--radius-sm);
   margin-top: 1px;
+  overflow: hidden;
+}
+
+.dropIconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .dropContent {
@@ -479,6 +530,23 @@
   background: var(--color-primary-50);
 }
 
+.mobileSubIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.mobileSubIconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Mobile CTA block */
 .mobileCta {
   padding-top: var(--space-3);
@@ -529,13 +597,58 @@
 }
 
 /* ── Responsive ──────────────────────────────────────────────────────── */
-@media (max-width: 1100px) {
+
+/* Wide desktop: lots of breathing room */
+@media (min-width: 1400px) {
+  .navInner {
+    padding: 0 clamp(40px, 4vw, 80px);
+    gap: var(--space-4);
+  }
+
+  .navList {
+    gap: var(--space-2);
+  }
+
+  .navLink, .dropTrigger {
+    padding: 8px 16px;
+  }
+}
+
+/* 1280–1100: hide phone link to free space, slightly tighten */
+@media (max-width: 1280px) {
   .phoneLink {
     display: none;
   }
 }
 
-@media (max-width: 900px) {
+/* 1100–1024: tighten link padding so 7 items fit cleanly */
+@media (max-width: 1100px) {
+  .navInner {
+    gap: var(--space-2);
+  }
+
+  .navList {
+    gap: 0;
+  }
+
+  .navLink, .dropTrigger {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .bookBtn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .logoImg {
+    height: 48px;
+  }
+}
+
+/* ≤1024: switch to mobile menu — 7 nav items + logo + CTA can no longer
+   fit comfortably even with tight padding. Cleaner UX than squeezing. */
+@media (max-width: 1024px) {
   .desktopNav,
   .bookBtn {
     display: none;
@@ -543,6 +656,7 @@
 
   .navRight {
     margin-left: auto;
+    gap: var(--space-2);
   }
 
   .hamburger {
@@ -552,20 +666,94 @@
   .mobileMenu {
     display: block;
   }
-}
 
-@media (max-width: 768px) {
   .navInner {
-    padding: 0 var(--space-6);
+    height: 72px;
+    padding: 0 clamp(16px, 4vw, 32px);
+  }
+
+  .logoImg {
+    height: 44px;
   }
 }
 
+/* Small tablet: keep logo + hamburger, ensure no overflow */
+@media (max-width: 640px) {
+  .navInner {
+    padding: 0 var(--space-3);
+    gap: var(--space-2);
+    height: 64px;
+  }
+
+  .logoImg {
+    height: 40px;
+  }
+
+  .banner {
+    padding: 8px var(--space-3);
+  }
+}
+
+/* Phone: tighten banner + nav further to prevent any text overflow */
 @media (max-width: 480px) {
   .bannerText {
     font-size: 11px;
+    /* The "Now accepting new patients..." sentence + Book today link
+       must wrap gracefully on small screens. */
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 1.35;
+  }
+
+  .bannerLink {
+    margin-left: 0;
+  }
+
+  .bannerClose {
+    right: 8px;
+    padding: 4px;
+    font-size: 13px;
   }
 
   .navInner {
-    padding: 0 var(--space-4);
+    padding: 0 12px;
+    gap: 8px;
+    height: 60px;
   }
+
+  .logoImg {
+    height: 36px;
+  }
+
+  .hamburger {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+}
+
+/* ── Dropdown clipping safety: keep within viewport bounds ─────────── */
+@media (max-width: 1280px) {
+  .dropdown {
+    /* If the trigger sits near the right edge, keep dropdown visible */
+    width: min(380px, calc(100vw - 24px));
+  }
+}
+
+/* ── Mobile menu polish: no horizontal overflow on tiny screens ───── */
+.mobileMenu {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.mobileList,
+.mobileSubList {
+  max-width: 100%;
+}
+
+.mobileLink,
+.mobileSubLink,
+.mobileBookBtn,
+.mobilePhone {
+  word-break: break-word;
 }

@@ -1,0 +1,993 @@
+/* =====================================================================
+   MemberDashboard — logged-in loyalty experience
+   Brand-aligned: primary blue, mint, amber, with rose accents.
+   Uses design tokens exclusively (no hardcoded hex outside accent colours).
+   ===================================================================== */
+
+.page {
+  /* Push the page out of the global container — the hero needs full bleed */
+  background: var(--bg-page);
+  padding-bottom: var(--space-9);
+}
+
+/* ───────────────────────────────────────────────────────────
+   1. HERO  — full-bleed gradient banner with floating blobs
+   ─────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(255, 255, 255, 0.18), transparent 55%),
+    radial-gradient(700px 400px at 0% 110%, rgba(0, 0, 0, 0.12), transparent 55%),
+    linear-gradient(135deg, #0086C5 0%, #0a5ca7 45%, #10B981 100%);
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 64px);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+.blobOne   { top: -120px; left: -60px;  width: 380px; height: 380px; background: #FBBF24; opacity: 0.25; }
+.blobTwo   { bottom: -120px; right: -80px; width: 420px; height: 420px; background: #34D399; }
+.blobThree { top: 40%; left: 50%; width: 280px; height: 280px; background: #fff; opacity: 0.2; }
+
+.dotPattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.18) 1px, transparent 0);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 25%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 25%, transparent 75%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.heroLeft { min-width: 0; }
+
+.welcomePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: var(--space-4);
+}
+.pulseDot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+  animation: dashPulse 2s infinite;
+}
+@keyframes dashPulse {
+  0%   { box-shadow: 0 0 0 0   rgba(52, 211, 153, 0.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(52, 211, 153, 0); }
+}
+
+.greeting {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 var(--space-3);
+}
+.greetingName {
+  background: linear-gradient(135deg, #FBBF24 0%, #fff 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subgreeting {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.92);
+  line-height: var(--lh-base);
+  max-width: 480px;
+  margin: 0 0 var(--space-5);
+}
+
+.heroActions {
+  display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center;
+}
+
+.heroCta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 22px;
+  background: #fff;
+  color: var(--color-primary);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+.heroCta:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+}
+
+.heroSecondary {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: rgba(255,255,255,0.85);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding: 10px 4px;
+  transition: color var(--dur-fast);
+}
+.heroSecondary:hover { color: #fff; }
+
+/* Hero right — avatar + animated points number */
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.avatarWrap {
+  position: relative;
+  width: 96px; height: 96px;
+}
+.avatar, .avatarFallback {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.35);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+  object-fit: cover;
+}
+.avatarFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.22);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+.avatarBadge {
+  position: absolute;
+  bottom: -4px; right: -4px;
+  width: 32px; height: 32px;
+  background: #FBBF24;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.pointsBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: var(--space-4) var(--space-5);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: var(--radius-xl);
+  min-width: 240px;
+}
+.pointsLabel {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+.pointsValue {
+  font-size: clamp(3.4rem, 7vw, 5rem);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #fff;
+  /* Soft glow */
+  text-shadow: 0 0 28px rgba(255,255,255,0.45);
+  font-feature-settings: 'tnum' 1; /* tabular numbers so digits don't jiggle */
+}
+.pointsCash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.92);
+  margin-top: 6px;
+  text-align: center;
+}
+
+.pointsCash strong {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: #FBBF24;
+  letter-spacing: -0.01em;
+}
+
+.pointsCashSub {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.78);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-weight: var(--weight-medium);
+}
+
+
+/* ───────────────────────────────────────────────────────────
+   2. STATS STRIP — 4 tiles
+   ─────────────────────────────────────────────────────────── */
+.statsStrip {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-7) clamp(20px, 5vw, 48px) 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.statTile {
+  position: relative;
+  padding: var(--space-5);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base);
+}
+.statTile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.statTile::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+}
+.statBlue::before  { background: linear-gradient(90deg, #0086C5, #38BDF8); }
+.statMint::before  { background: linear-gradient(90deg, #10B981, #34D399); }
+.statAmber::before { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
+.statRose::before  { background: linear-gradient(90deg, #EF4444, #F87171); }
+
+.statIcon {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-50);
+  margin-bottom: var(--space-2);
+}
+.statBlue  .statIcon { background: rgba(0, 134, 197, 0.10); }
+.statMint  .statIcon { background: rgba(16, 185, 129, 0.12); }
+.statAmber .statIcon { background: rgba(245, 158, 11, 0.14); }
+.statRose  .statIcon { background: rgba(239, 68, 68, 0.10); }
+
+.statValue {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-feature-settings: 'tnum' 1;
+}
+.statLabel {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+
+/* ───────────────────────────────────────────────────────────
+   3. PROGRESS BAND — next-reward gradient bar
+   ─────────────────────────────────────────────────────────── */
+.progressBand {
+  max-width: var(--container-max);
+  margin: var(--space-7) auto 0;
+  padding: var(--space-6) clamp(20px, 5vw, 48px);
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.progressTitle {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin: var(--space-1) 0 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.progressEm {
+  background: linear-gradient(135deg, #0086C5, #10B981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.progressLevels {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  font-feature-settings: 'tnum' 1;
+  white-space: nowrap;
+}
+
+.progressSubtitle {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: var(--space-2) 0 0;
+  max-width: 600px;
+}
+
+.progressMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.progressMetaValue {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  font-feature-settings: 'tnum' 1;
+}
+
+.progressMetaLabel {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-weight: var(--weight-semibold);
+  margin-top: 2px;
+}
+
+/* Start/end labels on the progress bar */
+.progressBarStart,
+.progressBarEnd {
+  position: absolute;
+  top: calc(100% + 6px);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  font-feature-settings: 'tnum' 1;
+}
+.progressBarStart { left: 0; }
+.progressBarEnd   { right: 0; }
+
+.progressTrack {
+  position: relative;
+  height: 18px;
+  background: var(--color-gray-100, #F1F5F9);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.progressFill {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(90deg, #0086C5 0%, #38BDF8 50%, #10B981 100%);
+  border-radius: var(--radius-pill);
+  transition: width 1.4s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
+  box-shadow: 0 0 12px rgba(0, 134, 197, 0.4);
+}
+
+/* Animated shine sliding across the progress bar */
+.progressShine {
+  position: absolute;
+  top: 0; left: -50%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.4) 50%,
+    rgba(255,255,255,0) 100%);
+  animation: progShine 2.4s ease-in-out infinite;
+}
+@keyframes progShine {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(300%); }
+}
+
+.progressMilestone {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px; height: 18px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+
+/* ───────────────────────────────────────────────────────────
+   3b. ROADMAP — milestone ladder
+   ─────────────────────────────────────────────────────────── */
+.roadmapSection {
+  max-width: var(--container-max);
+  margin: var(--space-7) auto 0;
+  padding: 0 clamp(20px, 5vw, 48px);
+}
+
+.milestones {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+  position: relative;
+}
+
+/* Connector line behind the milestones */
+.milestones::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 6%;
+  right: 6%;
+  height: 4px;
+  background: var(--color-gray-100, #F1F5F9);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.milestone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-3) 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  z-index: 1;
+  transition: transform var(--dur-base), box-shadow var(--dur-base), border-color var(--dur-base);
+}
+
+.milestone:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.milestoneIcon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-gray-100, #F1F5F9);
+  border-radius: 50%;
+  margin-bottom: var(--space-2);
+  border: 3px solid var(--bg-surface);
+  position: relative;
+  z-index: 2;
+  color: var(--text-secondary);
+}
+
+.milestoneAmount {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.milestonePts {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin-top: 4px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-weight: var(--weight-semibold);
+}
+
+.milestoneStatus {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-weight: var(--weight-medium);
+}
+
+/* Reached milestones */
+.milestoneReached {
+  border-color: var(--color-secondary, #10B981);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(0, 134, 197, 0.04));
+}
+.milestoneReached .milestoneIcon {
+  background: var(--color-secondary, #10B981);
+  color: #fff;
+}
+.milestoneReached .milestoneStatus {
+  color: var(--color-secondary, #10B981);
+  font-weight: var(--weight-semibold);
+}
+
+/* Highest reached — "you are here" */
+.milestoneCurrent {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(0, 134, 197, 0.18);
+  transform: translateY(-2px);
+}
+.milestoneCurrent .milestoneIcon {
+  background: var(--color-primary);
+  color: #fff;
+  animation: milestonePulse 2s ease-in-out infinite;
+}
+.milestoneCurrent .milestoneStatus {
+  color: var(--color-primary);
+  font-weight: var(--weight-bold);
+}
+
+@keyframes milestonePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 134, 197, 0.5); }
+  50%      { box-shadow: 0 0 0 10px rgba(0, 134, 197, 0); }
+}
+
+/* The next one they're working toward */
+.milestoneNext {
+  border-color: var(--color-primary-200, #BAE6FD);
+  border-style: dashed;
+}
+.milestoneNext .milestoneIcon {
+  border-color: var(--color-primary-50);
+}
+
+/* Redemption explainer at the bottom of the roadmap */
+.howToRedeem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  background: linear-gradient(135deg, rgba(0, 134, 197, 0.06), rgba(16, 185, 129, 0.06));
+  border: 1px solid var(--color-primary-100, #BAE6FD);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  line-height: 1.55;
+}
+
+.howToRedeem svg {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  margin-top: 2px;
+}
+
+
+/* ───────────────────────────────────────────────────────────
+   4. REWARDS RAIL
+   ─────────────────────────────────────────────────────────── */
+.rewardsSection {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-7) clamp(20px, 5vw, 48px) 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-5);
+}
+
+.rewardsGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.rewardCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: var(--space-5);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base), border-color var(--dur-base);
+}
+.rewardReady {
+  border-color: var(--color-secondary, #10B981);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.18), 0 0 0 1px rgba(16, 185, 129, 0.18) inset;
+  background:
+    radial-gradient(140px 80px at 80% 0%, rgba(16, 185, 129, 0.08), transparent 70%),
+    var(--bg-surface);
+}
+.rewardCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.rewardReady:hover {
+  box-shadow: 0 16px 36px rgba(16, 185, 129, 0.25);
+}
+
+.rewardIcon {
+  width: 56px; height: 56px;
+  display: flex;
+  align-items: center; justify-content: center;
+  background: var(--color-primary-50);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-2);
+}
+.rewardReady .rewardIcon { background: rgba(16, 185, 129, 0.12); }
+
+.rewardName {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 4px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.rewardSub {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  letter-spacing: 0;
+}
+
+.rewardCost {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-3);
+}
+
+.rewardBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: var(--color-secondary, #10B981);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  margin-top: auto;
+  transition: background var(--dur-fast), transform var(--dur-fast);
+}
+.rewardBtn:hover {
+  background: #059669;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.rewardLocked {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: var(--color-gray-100, #F1F5F9);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-pill);
+  margin-top: auto;
+}
+
+.rewardEmpty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-6);
+  color: var(--text-secondary);
+  border: 2px dashed var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+
+/* ───────────────────────────────────────────────────────────
+   5. EARN-MORE GRID
+   ─────────────────────────────────────────────────────────── */
+.earnSection {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-7) clamp(20px, 5vw, 48px) 0;
+}
+
+.earnGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+}
+
+.earnCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: transform var(--dur-base), box-shadow var(--dur-base), border-color var(--dur-base);
+}
+.earnCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-200, #BAE6FD);
+}
+
+.earnIcon {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  background: var(--color-primary-50);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-2);
+}
+
+.earnPoints {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #0086C5, #10B981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2px;
+}
+
+.earnTitle {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.earnDesc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0 0 var(--space-2);
+  flex: 1;
+}
+
+.earnCta {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-top: auto;
+  transition: transform var(--dur-fast);
+}
+.earnCard:hover .earnCta { transform: translateX(2px); }
+
+.earnNote {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: auto;
+}
+
+
+/* ───────────────────────────────────────────────────────────
+   6. TIER LADDER — only when configured
+   ─────────────────────────────────────────────────────────── */
+.tierSection {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-7) clamp(20px, 5vw, 48px) 0;
+}
+
+.tierLadder {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+  position: relative;
+}
+
+.tierStep {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  position: relative;
+  transition: transform var(--dur-base);
+}
+.tierReached {
+  background: linear-gradient(135deg, rgba(0,134,197,0.06), rgba(16,185,129,0.06));
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(0, 134, 197, 0.15);
+}
+
+.tierIndex {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--color-gray-100, #F1F5F9);
+  color: var(--text-secondary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-2);
+}
+.tierReached .tierIndex {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.tierName {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+}
+.tierPoints {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+.tierBadgeText {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: 4px 10px;
+  background: var(--color-secondary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  border-radius: var(--radius-pill);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+
+/* ───────────────────────────────────────────────────────────
+   7. FOOTER BAND
+   ─────────────────────────────────────────────────────────── */
+.footerBand {
+  max-width: var(--container-max);
+  margin: var(--space-7) auto 0;
+  padding: var(--space-5) clamp(20px, 5vw, 48px);
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+}
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.footerHeading {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+.footerBody {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+.footerLink {
+  color: var(--color-primary);
+  font-weight: var(--weight-semibold);
+}
+.footerActions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.footerSecondary {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+.footerSecondary:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.footerEmail {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin: var(--space-3) 0 0;
+  text-align: center;
+}
+
+
+/* ───────────────────────────────────────────────────────────
+   RESPONSIVE
+   ─────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .heroInner { grid-template-columns: 1fr; text-align: center; }
+  .heroLeft { display: flex; flex-direction: column; align-items: center; }
+  .heroActions, .subgreeting { justify-content: center; margin-left: auto; margin-right: auto; }
+  .statsStrip { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .milestones { grid-template-columns: repeat(3, 1fr); }
+  .milestones::before { display: none; }
+}
+
+@media (max-width: 600px) {
+  .statsStrip { grid-template-columns: 1fr 1fr; }
+  .progressHeader { flex-direction: column; align-items: flex-start; }
+  .progressMeta { align-items: flex-start; text-align: left; }
+  .pointsValue { font-size: clamp(2.8rem, 12vw, 4rem); }
+  .greeting    { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .footerInner { flex-direction: column; align-items: stretch; }
+  .footerActions { justify-content: center; }
+  .milestones  { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 420px) {
+  .statsStrip { grid-template-columns: 1fr; }
+  .heroCta, .heroSecondary { width: 100%; justify-content: center; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pulseDot, .progressShine, .progressFill {
+    animation: none !important;
+    transition: none !important;
+  }
+}

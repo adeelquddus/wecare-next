@@ -2,6 +2,24 @@ import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import RelatedServices from '@/components/sections/RelatedServices';
+import {
+  StethoscopeIcon,
+  ClipboardIcon,
+  PillsIcon,
+  MicroscopeIcon,
+  LaptopIcon,
+  HandshakeIcon,
+  SyringeIcon,
+  ArmStrengthIcon,
+  BrainIcon,
+  CalendarIcon,
+  LightningIcon,
+  BadgeIcon,
+  CardIcon,
+  GlobeIcon,
+  HospitalIcon,
+} from '@/components/ui/AnimatedIcons';
+import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 /* ── Metadata ─────────────────────────────────────────────────────────── */
@@ -32,49 +50,49 @@ export const metadata: Metadata = {
 };
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
-const BENEFITS = [
+const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '🩺',
+    Icon: StethoscopeIcon,
     title: 'Whole-family care',
     desc: 'From pediatric checkups to senior wellness visits, we treat every age under one roof — no referral needed to get started.',
   },
   {
-    icon: '📋',
+    Icon: ClipboardIcon,
     title: 'Annual wellness exams',
     desc: 'Comprehensive preventive exams with lab work, cancer screenings, and immunization reviews tailored to your age and risk profile.',
   },
   {
-    icon: '💊',
+    Icon: PillsIcon,
     title: 'Chronic disease management',
     desc: 'Structured care plans for diabetes, hypertension, high cholesterol, asthma, thyroid disorders, and other long-term conditions.',
   },
   {
-    icon: '🔬',
+    Icon: MicroscopeIcon,
     title: 'In-house lab & diagnostics',
     desc: 'On-site blood draws, urinalysis, EKG, and rapid diagnostics mean faster answers without sending you to a separate lab facility.',
   },
   {
-    icon: '📱',
+    Icon: LaptopIcon,
     title: 'Telehealth follow-ups',
     desc: "Can't make it in? Continue your care via secure video from anywhere in Florida — ideal for follow-ups, results review, and Rx refills.",
   },
   {
-    icon: '🤝',
+    Icon: HandshakeIcon,
     title: 'Specialist referrals',
     desc: 'We coordinate warm referrals to trusted specialists in cardiology, endocrinology, orthopedics, and more so your care stays connected.',
   },
   {
-    icon: '💉',
+    Icon: SyringeIcon,
     title: 'Immunizations & travel vaccines',
     desc: 'Stay up to date with flu shots, COVID-19 boosters, tetanus, shingles, pneumonia, and travel-specific vaccines.',
   },
   {
-    icon: '🏃',
+    Icon: ArmStrengthIcon,
     title: 'Preventive screenings',
     desc: 'Evidence-based screenings for colorectal cancer, hypertension, diabetes, STIs, and vision and hearing changes — caught early, treated better.',
   },
   {
-    icon: '🧠',
+    Icon: BrainIcon,
     title: 'Behavioral health integration',
     desc: 'Primary care includes routine screening for anxiety and depression, with medication management and referrals to licensed therapists.',
   },
@@ -107,34 +125,34 @@ const CONDITIONS = [
   'Pre-operative Medical Clearance',
 ];
 
-const DIFFERENTIATORS = [
+const DIFFERENTIATORS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '📅',
+    Icon: CalendarIcon,
     title: 'Saturday appointments available',
     desc: "We're open Saturday 9 AM–1 PM — one of the few Brandon clinics that offers weekend primary care so you don't have to miss work or school.",
   },
   {
-    icon: '⚡',
+    Icon: LightningIcon,
     title: 'Same-week access for new patients',
     desc: 'Most primary care practices make new patients wait weeks. We consistently offer same-week appointments — and often same-day for urgent needs.',
   },
   {
-    icon: '💼',
+    Icon: BadgeIcon,
     title: 'Full-service under one roof',
     desc: 'Beyond primary care, we offer GLP-1 weight loss, IV hydration, hormone therapy, and gynecology — reducing the specialists you have to coordinate.',
   },
   {
-    icon: '💳',
+    Icon: CardIcon,
     title: 'Uninsured patients welcome',
     desc: 'We believe cost should not be a barrier to good health. Transparent self-pay rates are available, and we will work with you on a plan.',
   },
   {
-    icon: '🌐',
+    Icon: GlobeIcon,
     title: 'Telehealth across Florida',
     desc: 'Licensed to see patients anywhere in Florida via video — great for snowbirds, remote workers, and anyone with a busy schedule.',
   },
   {
-    icon: '🏥',
+    Icon: HospitalIcon,
     title: 'Coordinated, continuous care',
     desc: 'We maintain complete medical records and proactively follow up after specialist visits, ER trips, and lab results so nothing falls through the cracks.',
   },
@@ -359,7 +377,7 @@ export default function PrimaryCarePage() {
             <div className={styles.statsPanel} aria-label="Quick facts about WeCare Wellness Clinic">
               {[
                 { value: '500+', label: 'Patients served in Brandon' },
-                { value: '4.9★', label: 'Average patient rating' },
+                { value: '5★', label: 'Average patient rating' },
                 { value: 'Same week', label: 'New patient availability' },
                 { value: '6 days', label: 'Open Mon–Sat for your convenience' },
                 { value: '5+', label: 'Years serving the Brandon community' },
@@ -386,11 +404,13 @@ export default function PrimaryCarePage() {
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
-            {BENEFITS.map((b) => (
-              <div key={b.title} className={styles.benefitCard} role="listitem">
-                <span className={styles.benefitIcon} aria-hidden="true">{b.icon}</span>
-                <h3 className={styles.benefitTitle}>{b.title}</h3>
-                <p className={styles.benefitDesc}>{b.desc}</p>
+            {BENEFITS.map(({ Icon, title, desc }) => (
+              <div key={title} className={styles.benefitCard} role="listitem">
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <Icon size={32} />
+                </span>
+                <h3 className={styles.benefitTitle}>{title}</h3>
+                <p className={styles.benefitDesc}>{desc}</p>
               </div>
             ))}
           </div>
@@ -434,11 +454,13 @@ export default function PrimaryCarePage() {
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
-            {DIFFERENTIATORS.map((d) => (
-              <div key={d.title} className={styles.benefitCard} role="listitem">
-                <span className={styles.benefitIcon} aria-hidden="true">{d.icon}</span>
-                <h3 className={styles.benefitTitle}>{d.title}</h3>
-                <p className={styles.benefitDesc}>{d.desc}</p>
+            {DIFFERENTIATORS.map(({ Icon, title, desc }) => (
+              <div key={title} className={styles.benefitCard} role="listitem">
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <Icon size={32} />
+                </span>
+                <h3 className={styles.benefitTitle}>{title}</h3>
+                <p className={styles.benefitDesc}>{desc}</p>
               </div>
             ))}
           </div>

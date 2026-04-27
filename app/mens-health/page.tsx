@@ -2,6 +2,18 @@ import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import RelatedServices from '@/components/sections/RelatedServices';
+import {
+  LightningIcon,
+  ChartIcon,
+  HeartIcon,
+  MicroscopeIcon,
+  StethoscopeIcon,
+  ClipboardIcon,
+  ScaleIcon,
+  BrainIcon,
+  AlertIcon,
+} from '@/components/ui/AnimatedIcons';
+import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -173,44 +185,44 @@ const breadcrumbSchema = {
 
 /* ─── Page Data ─────────────────────────────────────────────────────── */
 
-const BENEFITS = [
+const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '⚡',
+    Icon: LightningIcon,
     title: 'Testosterone Replacement Therapy (TRT)',
     desc: 'Physician-supervised TRT using injections, gels, or pellets to restore testosterone to healthy levels. We run a full hormone panel before starting and monitor your labs every 3–6 months. No cookie-cutter protocols — your dosing is tailored to your symptoms and bloodwork.',
   },
   {
-    icon: '🔋',
+    Icon: ChartIcon,
     title: 'Low Testosterone Evaluation',
     desc: 'Comprehensive low-T workup including total testosterone, free testosterone, LH, FSH, and estradiol. We identify root causes — not just low numbers — whether it\'s primary hypogonadism, secondary causes, or age-related decline. Results reviewed with you in plain language.',
   },
   {
-    icon: '❤️',
+    Icon: HeartIcon,
     title: 'Erectile Dysfunction Treatment',
     desc: 'Discreet, evidence-based ED evaluation and treatment. We investigate cardiovascular, hormonal, and psychological contributors and offer PDE5 inhibitors (sildenafil, tadalafil), hormone optimization, and urology referrals when needed. ED is a health issue — we treat it that way.',
   },
   {
-    icon: '🔬',
+    Icon: MicroscopeIcon,
     title: 'Prostate Health & PSA Screening',
     desc: 'Age-appropriate PSA screening with individualized risk assessment. We follow current USPSTF and ACS guidelines and have an honest conversation about the benefits and limitations of testing. High-risk patients (African American men, family history) start discussion at age 40.',
   },
   {
-    icon: '🫀',
+    Icon: StethoscopeIcon,
     title: 'Cardiovascular Risk Assessment',
     desc: 'Men develop heart disease at nearly twice the rate of women before age 65. We assess your full cardiovascular risk profile — lipids, blood pressure, blood sugar, family history, smoking, and BMI — and build a prevention plan before a problem develops.',
   },
   {
-    icon: '📋',
+    Icon: ClipboardIcon,
     title: 'Comprehensive Annual Physicals',
     desc: 'A thorough annual exam covering all the labs men actually need: testosterone panel, PSA, lipid panel, A1C, CBC, and metabolic panel. Most preventive physicals are covered 100% by insurance. This is your reset point — come in once a year and stay ahead of everything.',
   },
   {
-    icon: '⚖️',
+    Icon: ScaleIcon,
     title: 'Weight Management for Men',
     desc: 'Medical weight management combining GLP-1 medications (semaglutide, tirzepatide) with personalized lifestyle guidance. For men, losing excess body fat directly raises testosterone, improves ED, and cuts cardiovascular risk — making weight management one of the most impactful things you can do.',
   },
   {
-    icon: '🧠',
+    Icon: BrainIcon,
     title: "Men's Mental Health",
     desc: "Men are under-diagnosed for depression and anxiety because symptoms show up differently — as irritability, withdrawal, or risky behavior rather than sadness. Our providers screen for mental health conditions at primary care visits and offer treatment or coordination with specialists without stigma.",
   },
@@ -407,11 +419,13 @@ export default function MensHealthPage() {
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
-            {BENEFITS.map((b) => (
-              <div key={b.title} className={styles.benefitCard} role="listitem">
-                <span className={styles.benefitIcon} aria-hidden="true">{b.icon}</span>
-                <h3 className={styles.benefitTitle}>{b.title}</h3>
-                <p className={styles.benefitDesc}>{b.desc}</p>
+            {BENEFITS.map(({ Icon, title, desc }) => (
+              <div key={title} className={styles.benefitCard} role="listitem">
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <Icon size={32} />
+                </span>
+                <h3 className={styles.benefitTitle}>{title}</h3>
+                <p className={styles.benefitDesc}>{desc}</p>
               </div>
             ))}
           </div>
@@ -431,7 +445,9 @@ export default function MensHealthPage() {
           <div className={styles.benefitsGrid} role="list" aria-label="Low testosterone symptoms">
             {LOW_T_SYMPTOMS.map((symptom) => (
               <div key={symptom} className={styles.benefitCard} role="listitem">
-                <span className={styles.benefitIcon} aria-hidden="true">⚠️</span>
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <AlertIcon size={28} />
+                </span>
                 <p className={styles.benefitDesc}>{symptom}</p>
               </div>
             ))}

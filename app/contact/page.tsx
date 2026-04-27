@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import { CLINIC, HOURS_DISPLAY, INSURANCE } from '@/lib/clinic';
+import { PinIcon, PhoneIcon, MailIcon } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -90,7 +91,7 @@ export default function ContactPage() {
                 <h2 className={`ds-h3 ${styles.cardTitle}`}>Clinic information</h2>
 
                 <div className={styles.infoItem}>
-                  <span className={styles.infoIcon} aria-hidden="true">📍</span>
+                  <span className={styles.infoIcon} aria-hidden="true"><PinIcon size={28} /></span>
                   <div>
                     <div className={styles.infoLabel}>Address</div>
                     <a
@@ -106,7 +107,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className={styles.infoItem}>
-                  <span className={styles.infoIcon} aria-hidden="true">📞</span>
+                  <span className={styles.infoIcon} aria-hidden="true"><PhoneIcon size={28} /></span>
                   <div>
                     <div className={styles.infoLabel}>Phone</div>
                     <a href={`tel:${CLINIC.phone}`} className={styles.infoValue}>
@@ -116,7 +117,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className={styles.infoItem}>
-                  <span className={styles.infoIcon} aria-hidden="true">✉️</span>
+                  <span className={styles.infoIcon} aria-hidden="true"><MailIcon size={28} /></span>
                   <div>
                     <div className={styles.infoLabel}>Email</div>
                     <a href={`mailto:${CLINIC.email}`} className={styles.infoValue}>

@@ -137,6 +137,18 @@
   transform: translateY(-2px);
 }
 
+.benefitLogoWrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.benefitLogo {
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+}
+
 .benefitIcon {
   font-size: 32px;
   line-height: 1;

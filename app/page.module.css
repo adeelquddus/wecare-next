@@ -30,7 +30,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 1.1;
+  line-height: 1.3;
+  padding: 4px 0;
 }
 
 .statLabel {
@@ -79,6 +80,18 @@
   font-size: 40px;
   display: block;
   margin-bottom: var(--space-2);
+}
+
+.serviceCardImg {
+  position: relative;
+  height: 180px;
+  margin: calc(-1 * var(--space-5)) calc(-1 * var(--space-5)) var(--space-4);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+}
+
+.serviceCardImgEl {
+  object-fit: cover;
 }
 
 .serviceName {
@@ -212,27 +225,43 @@
 /* Testimonials */
 .testimonialsSection {
   background: var(--bg-page);
+  overflow: hidden;
+  padding-bottom: var(--space-7);
 }
 
-.testimonialsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
-  list-style: none;
-  margin: var(--space-6) 0 0;
-  padding: 0;
+/* Reset LogoLoop default item font-size for testimonial nodes */
+.testimonialsSection :global(.logoloop__item) {
+  font-size: var(--text-base);
+  line-height: var(--lh-base);
+}
+.testimonialsSection :global(.logoloop__node) {
+  display: block;            /* let card define its own layout, not inline-flex */
+  align-items: stretch;
 }
 
 .testimonialCard {
+  width: 380px;
+  height: 320px;
   display: flex;
   flex-direction: column;
+  padding: var(--space-5);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  white-space: normal;
+  text-align: left;
+  font-style: normal;
+  cursor: default;
 }
 
 .stars {
   font-size: var(--text-md);
   color: #F59E0B;
   letter-spacing: 2px;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .testimonialText {
@@ -242,29 +271,41 @@
   margin: 0 0 var(--space-3);
   font-style: normal;
   flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+.testimonialText::before { content: '"'; }
+.testimonialText::after  { content: '"'; }
 
 .testimonialFooter {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   padding-top: var(--space-3);
   border-top: 1px solid var(--border-subtle);
+  flex-shrink: 0;
 }
 
 .testimonialName {
   font-weight: var(--weight-semibold);
   color: var(--text-primary);
   font-size: var(--text-sm);
+  line-height: 1.3;
 }
 
 .testimonialDetail {
   font-size: var(--text-xs);
   color: var(--text-secondary);
+  line-height: 1.3;
 }
 
 /* Insurance */
 .insuranceSection {
+  overflow: hidden;
   background: var(--bg-surface);
   text-align: center;
 }
@@ -273,25 +314,10 @@
   margin-bottom: var(--space-5);
 }
 
-.insuranceList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  justify-content: center;
-  list-style: none;
-  margin: 0 0 var(--space-4);
-  padding: 0;
+.insuranceSection :global(img[src*="tricare"]) {
+  height: calc(var(--logoloop-logoHeight) * 1.4) !important;
 }
 
-.insurancePill {
-  padding: 10px var(--space-3);
-  background: var(--color-primary-50);
-  color: var(--color-primary-700);
-  border-radius: var(--radius-pill);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
-  border: 1px solid var(--color-primary-100);
-}
 
 .insuranceNote {
   font-size: var(--text-sm);
@@ -305,6 +331,10 @@
 
 /* ── Responsive ──────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .servicesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -328,7 +358,8 @@
     grid-template-columns: 1fr;
   }
 
-  .testimonialsGrid {
-    grid-template-columns: 1fr;
+  .testimonialCard {
+    width: 320px;
+    height: 300px;
   }
 }

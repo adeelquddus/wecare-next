@@ -4,6 +4,20 @@ import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import RelatedServices from '@/components/sections/RelatedServices';
 import { CLINIC, INSURANCE } from '@/lib/clinic';
+import {
+  LightningIcon,
+  ShieldIcon,
+  BrainIcon,
+  ArmStrengthIcon,
+  SparkleIcon,
+  ScaleIcon,
+  StethoscopeIcon,
+  MicroscopeIcon,
+  PillsIcon,
+  DropIcon,
+  AwardIcon,
+} from '@/components/ui/AnimatedIcons';
+import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 /* ── Metadata ─────────────────────────────────────────────────────────── */
@@ -166,87 +180,93 @@ const jsonLd = {
 };
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
-const BENEFITS = [
+const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '⚡',
+    Icon: LightningIcon,
     title: 'Instant energy boost',
     desc: 'IV delivery achieves near-100% nutrient bioavailability vs. 20–50% from oral supplements, so you feel results within hours — not days.',
   },
   {
-    icon: '🛡️',
+    Icon: ShieldIcon,
     title: 'Immune system support',
     desc: 'High-dose vitamin C, zinc, and glutathione administered intravenously provide powerful immune modulation that oral supplements simply cannot match.',
   },
   {
-    icon: '🧠',
+    Icon: BrainIcon,
     title: 'Cognitive clarity',
     desc: 'NAD+ and B-complex infusions support neurotransmitter production and mitochondrial function, improving focus, memory, and mental stamina.',
   },
   {
-    icon: '💪',
+    Icon: ArmStrengthIcon,
     title: 'Athletic recovery',
     desc: 'Replenish electrolytes, reduce oxidative stress, and accelerate muscle recovery after intense training with our Performance and Recovery IV protocols.',
   },
   {
-    icon: '✨',
+    Icon: SparkleIcon,
     title: 'Skin & anti-aging',
     desc: "Glutathione — the body's master antioxidant — administered IV reduces oxidative damage, brightens skin tone, and supports healthy aging from the inside out.",
   },
   {
-    icon: '⚖️',
+    Icon: ScaleIcon,
     title: 'Hormonal balance',
     desc: 'Physician-prescribed HRT relieves hot flashes, night sweats, fatigue, and mood swings by restoring estrogen, progesterone, and testosterone to optimal levels.',
   },
   {
-    icon: '🩺',
+    Icon: StethoscopeIcon,
     title: 'Physician-supervised safety',
     desc: 'Every IV and HRT protocol is prescribed by our board-certified providers, not wellness spa staff. Full medical oversight with labs before and after.',
   },
   {
-    icon: '🔬',
+    Icon: MicroscopeIcon,
     title: 'Personalized protocols',
     desc: "No one-size-fits-all drips. We assess your lab values, symptoms, and goals to build a custom IV or hormone protocol matched to your body's exact needs.",
   },
 ];
 
-const IV_MENU = [
+const IV_MENU: Array<{
+  Icon: React.FC<IconProps>;
+  name: string;
+  desc: string;
+  ingredients: string[];
+  duration: string;
+}> = [
   {
-    icon: '💊',
+    Icon: PillsIcon,
     name: 'Myers Cocktail',
     desc: 'The gold-standard multi-vitamin IV, clinically used since the 1970s. Addresses chronic fatigue, fibromyalgia, migraines, and general wellness.',
     ingredients: ['Magnesium', 'Calcium', 'B12', 'B-Complex', 'Vitamin C'],
     duration: '45–60 min',
   },
   {
-    icon: '⚡',
+    Icon: LightningIcon,
     name: 'NAD+ Infusion',
     desc: 'Cellular energy and longevity therapy. Supports mitochondrial function, DNA repair, and neuroprotection. Significant for anti-aging and cognitive health.',
     ingredients: ['NAD+', 'B-Complex', 'Magnesium', 'Saline'],
     duration: '2–4 hours',
   },
   {
-    icon: '🛡️',
+    Icon: ShieldIcon,
     name: 'Immune Boost',
     desc: 'High-dose vitamin C with zinc and glutathione to supercharge immune response — ideal before travel, during illness, or cold/flu season.',
     ingredients: ['Vitamin C (high-dose)', 'Zinc', 'Glutathione', 'B-Complex'],
     duration: '45–60 min',
   },
   {
-    icon: '💧',
+    Icon: DropIcon,
     name: 'Hydration Plus',
     desc: 'Premium isotonic hydration with electrolytes. Perfect for dehydration, post-surgery recovery, hangover relief, and heat exhaustion.',
     ingredients: ['Normal Saline', 'Electrolytes', 'Magnesium', 'B-Complex'],
     duration: '30–45 min',
   },
   {
-    icon: '✨',
+    Icon: SparkleIcon,
     name: 'Skin Glow / Glutathione',
     desc: "Our most popular beauty IV. Glutathione — the body's master antioxidant — reduces hyperpigmentation, brightens complexion, and neutralizes free radicals.",
     ingredients: ['Glutathione', 'Vitamin C', 'Biotin', 'Saline'],
     duration: '30–45 min',
   },
   {
-    icon: '🏋️',
+    Icon: AwardIcon,
     name: 'Performance & Recovery',
     desc: 'Built for athletes and active professionals. Reduces inflammation, replenishes amino acids, and speeds post-workout muscle recovery.',
     ingredients: ['Amino Acids', 'B-Complex', 'Magnesium', 'Vitamin C', 'Zinc'],
@@ -438,11 +458,13 @@ export default function IvHydrationPage() {
             </p>
           </div>
           <div className={styles.benefitsGrid}>
-            {BENEFITS.map((b) => (
-              <div key={b.title} className={styles.benefitCard}>
-                <span className={styles.benefitIcon} aria-hidden="true">{b.icon}</span>
-                <h3 className={styles.benefitTitle}>{b.title}</h3>
-                <p className={styles.benefitDesc}>{b.desc}</p>
+            {BENEFITS.map(({ Icon, title, desc }) => (
+              <div key={title} className={styles.benefitCard}>
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <Icon size={32} />
+                </span>
+                <h3 className={styles.benefitTitle}>{title}</h3>
+                <p className={styles.benefitDesc}>{desc}</p>
               </div>
             ))}
           </div>
@@ -463,20 +485,25 @@ export default function IvHydrationPage() {
             </p>
           </div>
           <div className={styles.menuGrid}>
-            {IV_MENU.map((item) => (
-              <div key={item.name} className={styles.menuCard}>
-                <div className={styles.menuCardHeader}>
-                  <span className={styles.menuCardIcon} aria-hidden="true">{item.icon}</span>
-                  <h3 className={styles.menuCardName}>{item.name}</h3>
+            {IV_MENU.map((item) => {
+              const { Icon } = item;
+              return (
+                <div key={item.name} className={styles.menuCard}>
+                  <div className={styles.menuCardHeader}>
+                    <span className={styles.menuCardIcon} aria-hidden="true">
+                      <Icon size={32} />
+                    </span>
+                    <h3 className={styles.menuCardName}>{item.name}</h3>
+                  </div>
+                  <p className={styles.menuCardDesc}>{item.desc}</p>
+                  <ul className={styles.menuCardIngredients} aria-label={`${item.name} ingredients`}>
+                    {item.ingredients.map((ing) => (
+                      <li key={ing} className={styles.menuCardIngredient}>{ing}</li>
+                    ))}
+                  </ul>
                 </div>
-                <p className={styles.menuCardDesc}>{item.desc}</p>
-                <ul className={styles.menuCardIngredients} aria-label={`${item.name} ingredients`}>
-                  {item.ingredients.map((ing) => (
-                    <li key={ing} className={styles.menuCardIngredient}>{ing}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

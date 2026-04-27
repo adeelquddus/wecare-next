@@ -1,0 +1,563 @@
+/* ── Loyalty Marketing Landing ──────────────────────────────────────── */
+
+/* ── Hero ───────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding: var(--space-6) 0 var(--space-7);
+  background:
+    radial-gradient(1100px 600px at 90% -10%, rgba(46, 107, 255, 0.12), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(0, 194, 168, 0.12), transparent 55%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Floating colour blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+.blobOne {
+  top: -120px;
+  left: -90px;
+  width: 380px;
+  height: 380px;
+  background: var(--color-primary-100);
+}
+.blobTwo {
+  bottom: -160px;
+  right: -100px;
+  width: 460px;
+  height: 460px;
+  background: rgba(0, 194, 168, 0.22);
+}
+.blobThree {
+  top: 25%;
+  left: 55%;
+  width: 320px;
+  height: 320px;
+  background: rgba(245, 158, 11, 0.18);
+  opacity: 0.4;
+}
+
+/* Subtle dot pattern */
+.dotPattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.06) 1px, transparent 0);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 30%, transparent 75%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-primary-100);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary-700);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+  box-shadow: 0 2px 8px rgba(46, 107, 255, 0.08);
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-secondary, #00C2A8);
+  box-shadow: 0 0 0 0 rgba(0, 194, 168, 0.55);
+  animation: loyaltyPulseDot 2s infinite;
+}
+@keyframes loyaltyPulseDot {
+  0%   { box-shadow: 0 0 0 0    rgba(0, 194, 168, 0.55); }
+  70%  { box-shadow: 0 0 0 10px rgba(0, 194, 168, 0); }
+  100% { box-shadow: 0 0 0 0    rgba(0, 194, 168, 0); }
+}
+
+.heroHeadline {
+  font-size: clamp(2.2rem, 5.2vw, 3.6rem);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--space-4);
+}
+.heroHeadline span { display: block; }
+
+.headlineDark { color: var(--text-primary); }
+
+.headlineGradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroLede {
+  font-size: var(--text-md);
+  line-height: var(--lh-md);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto var(--space-5);
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+/* Custom anchor that mimics primary Button styling — needed because we
+   need a plain <a> for the auth route handler redirect. */
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: var(--gradient-brand);
+  color: var(--text-on-dark);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-snug);
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(46, 107, 255, 0.25);
+  transition: transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.ctaPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(46, 107, 255, 0.32);
+  color: var(--text-on-dark);
+}
+.ctaPrimary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.trustPills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.trustPills li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+/* ── Section header ─────────────────────────────────────────────────── */
+.sectionHeader {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-5);
+}
+.sectionHeader > * { margin-top: var(--space-2); }
+.sectionHeader > :first-child { margin-top: 0; }
+
+/* ── How it works ───────────────────────────────────────────────────── */
+.howSection { background: #fff; }
+
+.howGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.howCard {
+  position: relative;
+  padding: var(--space-5) var(--space-4);
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  transition: transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.howCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+}
+
+.howStep {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-primary);
+  opacity: 0.55;
+}
+
+.howIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-3);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-primary-50), #fff);
+  border: 1px solid var(--color-primary-100);
+}
+
+/* Generic card text */
+.cardTitle {
+  font-size: var(--text-lg);
+  line-height: var(--lh-tight);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+}
+.cardBody {
+  font-size: var(--text-sm);
+  line-height: var(--lh-base);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ── Earn points ────────────────────────────────────────────────────── */
+.earnSection {
+  background: linear-gradient(180deg, #f4f8fc 0%, #fbfdff 100%);
+}
+
+.earnGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.earnCard {
+  position: relative;
+  padding: var(--space-4);
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out),
+              border-color var(--dur-base) var(--ease-out);
+}
+.earnCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+  border-color: var(--color-primary-200);
+}
+
+.earnIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-primary-50), #fff);
+  border: 1px solid var(--color-primary-100);
+}
+
+.earnPoints {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.earnPointsValue {
+  font-size: var(--text-3xl);
+  line-height: 1;
+  font-weight: var(--weight-bold);
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: var(--tracking-tight);
+}
+.earnPointsLabel {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-secondary);
+}
+
+.earnCta { margin-top: auto; padding-top: var(--space-2); }
+
+/* ── Available rewards ──────────────────────────────────────────────── */
+.rewardsSection { background: #fff; }
+
+.rewardsGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  max-width: 980px;
+  margin-inline: auto;
+}
+.rewardsGridSingle {
+  grid-template-columns: minmax(280px, 480px);
+  justify-content: center;
+}
+
+.rewardCard {
+  position: relative;
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  background:
+    radial-gradient(600px 200px at 50% -20%, rgba(46, 107, 255, 0.07), transparent 70%),
+    #fff;
+  border: 1px solid var(--color-primary-100);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  transition: transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.rewardCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 42px rgba(15, 23, 42, 0.10);
+}
+
+.rewardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--color-primary-50), #fff);
+  border: 1px solid var(--color-primary-100);
+  margin-bottom: var(--space-2);
+}
+
+.rewardEyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.rewardName {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: var(--lh-tight);
+}
+
+.rewardCost {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: var(--space-2) 0 0;
+}
+.rewardCostValue {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.rewardCostLabel {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+}
+
+.rewardBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin-top: var(--space-2);
+  background: rgba(0, 194, 168, 0.10);
+  border: 1px solid rgba(0, 194, 168, 0.25);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: #0a8775;
+}
+
+.rewardsEmpty {
+  text-align: center;
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ── Sign-in band ───────────────────────────────────────────────────── */
+.signInBand {
+  position: relative;
+  padding: var(--space-6) 0;
+  background:
+    radial-gradient(800px 400px at 80% 50%, rgba(0, 194, 168, 0.18), transparent 60%),
+    var(--gradient-brand);
+  color: var(--text-on-dark);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.bandBlobOne {
+  top: -120px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.22);
+  opacity: 0.5;
+}
+.bandBlobTwo {
+  bottom: -140px;
+  right: -60px;
+  width: 360px;
+  height: 360px;
+  background: rgba(0, 194, 168, 0.45);
+  opacity: 0.45;
+}
+
+.signInInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.signInEyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 var(--space-1);
+}
+
+.signInHeading {
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.15;
+  margin: 0 0 var(--space-2);
+  color: var(--text-on-dark);
+}
+
+.signInBody {
+  font-size: var(--text-base);
+  line-height: var(--lh-base);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 540px;
+  margin: 0;
+}
+
+.signInCtaWrap { display: flex; justify-content: flex-end; }
+
+.signInCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: #fff;
+  color: var(--color-primary-700);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-snug);
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.20);
+  transition: transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.signInCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.28);
+  color: var(--color-primary-800);
+}
+.signInCta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 980px) {
+  .earnGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: var(--space-5) 0 var(--space-6); }
+  .heroCtas { gap: var(--space-2); }
+  .ctaPrimary { padding: 12px 22px; }
+
+  .howGrid { grid-template-columns: 1fr; }
+  .earnGrid { grid-template-columns: 1fr; }
+
+  .signInInner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .signInCtaWrap { justify-content: center; }
+  .signInBody { margin-inline: auto; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pulseDot { animation: none; }
+  .howCard, .earnCard, .rewardCard, .ctaPrimary, .signInCta {
+    transition: none;
+  }
+}

@@ -2,6 +2,22 @@ import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import RelatedServices from '@/components/sections/RelatedServices';
+import {
+  PhoneIcon,
+  HomeIcon,
+  PillsIcon,
+  RefreshIcon,
+  BrainIcon,
+  ClipboardIcon,
+  ScaleIcon,
+  LockIcon,
+  LaptopIcon,
+  StethoscopeIcon,
+  TestTubeIcon,
+  SyringeIcon,
+  AlertIcon,
+} from '@/components/ui/AnimatedIcons';
+import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -227,44 +243,44 @@ const breadcrumbSchema = {
 
 /* ─── Page Data ────────────────────────────────────────────────────── */
 
-const BENEFITS = [
+const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '📱',
+    Icon: PhoneIcon,
     title: 'Same-day appointments',
     desc: 'No waiting rooms, no long drives. Book a slot online and see a provider today from your phone, tablet, or computer — often within hours.',
   },
   {
-    icon: '🏠',
+    Icon: HomeIcon,
     title: 'Care from anywhere in Florida',
     desc: 'Our telehealth service is available to all Florida residents — from Jacksonville to Key West, Tampa to Orlando. Distance is no barrier to quality care.',
   },
   {
-    icon: '💊',
+    Icon: PillsIcon,
     title: 'Prescription management',
     desc: 'Refills, new prescriptions, and medication adjustments handled during your video visit. Prescriptions are sent directly to your preferred pharmacy.',
   },
   {
-    icon: '🔄',
+    Icon: RefreshIcon,
     title: 'Chronic condition follow-ups',
     desc: 'Manage diabetes, hypertension, thyroid disorders, and other ongoing conditions from home. Skip the office trip for routine monitoring visits.',
   },
   {
-    icon: '🧠',
+    Icon: BrainIcon,
     title: 'Mental health check-ins',
     desc: 'Brief mental health screenings, counseling conversations, and medication management for anxiety, depression, and stress — from your private space.',
   },
   {
-    icon: '📋',
+    Icon: ClipboardIcon,
     title: 'Lab result reviews',
     desc: 'Review blood work and diagnostic results with your provider over video. Understand what your numbers mean and get a clear care plan.',
   },
   {
-    icon: '⚖️',
+    Icon: ScaleIcon,
     title: 'Weight loss program visits',
     desc: 'GLP-1 and medical weight loss follow-ups are available via telehealth. Stay on track with your Semaglutide program without driving to the clinic.',
   },
   {
-    icon: '🔒',
+    Icon: LockIcon,
     title: 'Secure and HIPAA compliant',
     desc: 'All video visits are end-to-end encrypted and fully HIPAA compliant. Your health information stays private — just find a quiet spot and connect.',
   },
@@ -325,20 +341,20 @@ const TREATABLE_CONDITIONS = {
   ],
 };
 
-const TECH_REQUIREMENTS = [
+const TECH_REQUIREMENTS: Array<{ device: string; Icon: React.FC<IconProps>; desc: string }> = [
   {
     device: 'Smartphone',
-    icon: '📱',
+    Icon: PhoneIcon,
     desc: 'iPhone or Android — any model from the past 5 years. Use Safari (iPhone) or Chrome (Android) for the best experience.',
   },
   {
     device: 'Tablet',
-    icon: '💻',
+    Icon: LaptopIcon,
     desc: 'iPad, Android tablet, or Surface. Larger screen makes it easy to see your provider clearly. Any modern browser works.',
   },
   {
     device: 'Laptop or Desktop',
-    icon: '🖥️',
+    Icon: LaptopIcon,
     desc: 'Windows or Mac computer with a webcam and microphone. Chrome or Safari recommended. No software to install.',
   },
 ];
@@ -371,24 +387,24 @@ const PROCESS = [
   },
 ];
 
-const LIMITATIONS = [
+const LIMITATIONS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '🩺',
+    Icon: StethoscopeIcon,
     title: 'Physical examinations',
     desc: 'Conditions that require hands-on assessment — listening to heart or lung sounds, abdominal palpation, wound inspection — need an in-person visit.',
   },
   {
-    icon: '🧪',
+    Icon: TestTubeIcon,
     title: 'In-office lab draws',
     desc: 'Bloodwork, urine cultures, and other lab tests must be performed in person at our Brandon clinic or at a partner lab. Your provider can order labs during a telehealth visit.',
   },
   {
-    icon: '💉',
+    Icon: SyringeIcon,
     title: 'Controlled substances',
     desc: 'Federal law generally prohibits prescribing Schedule II–IV controlled substances via telehealth without a prior in-person relationship. An office visit may be required.',
   },
   {
-    icon: '🚨',
+    Icon: AlertIcon,
     title: 'Medical emergencies',
     desc: 'Chest pain, difficulty breathing, stroke symptoms, severe injuries, or any life-threatening condition — call 911 or go to your nearest emergency room immediately.',
   },
@@ -508,7 +524,7 @@ export default function TelehealthPage() {
                 { value: 'Same day', label: 'Appointment availability when slots open' },
                 { value: 'FL-wide', label: 'All Florida residents eligible' },
                 { value: 'No app', label: 'Works in any modern web browser' },
-                { value: '4.9★', label: 'Average patient satisfaction rating' },
+                { value: '5★', label: 'Average patient satisfaction rating' },
                 { value: '5 steps', label: 'From booking to care plan' },
                 { value: 'Mon–Sat', label: 'Telehealth hours availability' },
               ].map((s) => (
@@ -533,11 +549,13 @@ export default function TelehealthPage() {
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
-            {BENEFITS.map((b) => (
-              <div key={b.title} className={styles.benefitCard} role="listitem">
-                <span className={styles.benefitIcon} aria-hidden="true">{b.icon}</span>
-                <h3 className={styles.benefitTitle}>{b.title}</h3>
-                <p className={styles.benefitDesc}>{b.desc}</p>
+            {BENEFITS.map(({ Icon, title, desc }) => (
+              <div key={title} className={styles.benefitCard} role="listitem">
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <Icon size={32} />
+                </span>
+                <h3 className={styles.benefitTitle}>{title}</h3>
+                <p className={styles.benefitDesc}>{desc}</p>
               </div>
             ))}
           </div>
@@ -580,12 +598,14 @@ export default function TelehealthPage() {
               We want to set honest expectations. Some situations genuinely require an in-person visit. Our providers will always let you know if you need to come in — your safety comes first.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 'var(--space-4)' }}>
-              {LIMITATIONS.map((l) => (
-                <div key={l.title} style={{ display: 'flex', gap: 'var(--space-3)', alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: '1.5rem', flexShrink: 0 }} aria-hidden="true">{l.icon}</span>
+              {LIMITATIONS.map(({ Icon, title, desc }) => (
+                <div key={title} style={{ display: 'flex', gap: 'var(--space-3)', alignItems: 'flex-start' }}>
+                  <span style={{ flexShrink: 0 }} aria-hidden="true">
+                    <Icon size={28} />
+                  </span>
                   <div>
-                    <strong style={{ display: 'block', fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>{l.title}</strong>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>{l.desc}</p>
+                    <strong style={{ display: 'block', fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>{title}</strong>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>{desc}</p>
                   </div>
                 </div>
               ))}
@@ -605,11 +625,13 @@ export default function TelehealthPage() {
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 'var(--space-6)', marginTop: 'var(--space-8)' }}>
-            {TECH_REQUIREMENTS.map((t) => (
-              <div key={t.device} className={styles.benefitCard}>
-                <span className={styles.benefitIcon} aria-hidden="true">{t.icon}</span>
-                <h3 className={styles.benefitTitle}>{t.device}</h3>
-                <p className={styles.benefitDesc}>{t.desc}</p>
+            {TECH_REQUIREMENTS.map(({ device, Icon, desc }) => (
+              <div key={device} className={styles.benefitCard}>
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <Icon size={32} />
+                </span>
+                <h3 className={styles.benefitTitle}>{device}</h3>
+                <p className={styles.benefitDesc}>{desc}</p>
               </div>
             ))}
           </div>

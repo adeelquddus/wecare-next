@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CLINIC, HOURS_DISPLAY, SERVICES, INSURANCE } from '@/lib/clinic';
+import { PinIcon, PhoneIcon, MailIcon, CalendarIcon } from '@/components/ui/AnimatedIcons';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -14,7 +15,7 @@ export default function Footer() {
         <div className="container">
           <div className={styles.napGrid}>
             <div className={styles.napItem}>
-              <span className={styles.napIcon} aria-hidden="true">📍</span>
+              <span className={styles.napIcon} aria-hidden="true"><PinIcon size={28} /></span>
               <div>
                 <div className={styles.napLabel}>Our location</div>
                 <a
@@ -29,7 +30,7 @@ export default function Footer() {
               </div>
             </div>
             <div className={styles.napItem}>
-              <span className={styles.napIcon} aria-hidden="true">📞</span>
+              <span className={styles.napIcon} aria-hidden="true"><PhoneIcon size={28} /></span>
               <div>
                 <div className={styles.napLabel}>Call us</div>
                 <a href={`tel:${CLINIC.phone}`} className={styles.napValue}>
@@ -38,7 +39,7 @@ export default function Footer() {
               </div>
             </div>
             <div className={styles.napItem}>
-              <span className={styles.napIcon} aria-hidden="true">✉️</span>
+              <span className={styles.napIcon} aria-hidden="true"><MailIcon size={28} /></span>
               <div>
                 <div className={styles.napLabel}>Email us</div>
                 <a href={`mailto:${CLINIC.email}`} className={styles.napValue}>
@@ -47,7 +48,7 @@ export default function Footer() {
               </div>
             </div>
             <div className={styles.napItem}>
-              <span className={styles.napIcon} aria-hidden="true">📅</span>
+              <span className={styles.napIcon} aria-hidden="true"><CalendarIcon size={28} /></span>
               <div>
                 <div className={styles.napLabel}>Hours</div>
                 <div className={styles.napValue}>Mon–Thu 9–5 | Fri 9–6 | Sat 9–1</div>

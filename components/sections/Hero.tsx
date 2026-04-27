@@ -1,10 +1,17 @@
 import React from 'react';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { CLINIC } from '@/lib/clinic';
 import styles from './Hero.module.css';
 
+interface HeadlineLine {
+  text: string;
+  color?: 'dark' | 'primary' | 'teal';
+}
+
 interface HeroProps {
-  headline: string;
+  headline?: string;
+  headlineLines?: HeadlineLine[];
   subtext: string;
   ctaLabel?: string;
   ctaHref?: string;
@@ -12,12 +19,18 @@ interface HeroProps {
   secondaryHref?: string;
   badgeText?: string;
   showPhone?: boolean;
-  /** Use gradient background instead of white */
   variant?: 'light' | 'gradient';
 }
 
+const colorClass: Record<string, string> = {
+  dark:    'headlineDark',
+  primary: 'headlineBlue',
+  teal:    'headlineTeal',
+};
+
 export default function Hero({
   headline,
+  headlineLines,
   subtext,
   ctaLabel = 'Book Appointment',
   ctaHref = '/booking',
@@ -31,7 +44,7 @@ export default function Hero({
     <section className={`${styles.hero} ${styles[variant]}`} aria-labelledby="hero-heading">
       <div className="container">
         <div className={styles.inner}>
-          {/* Text side */}
+          {/* Text content */}
           <div className={styles.content}>
             {badgeText && (
               <p className={`ds-eyebrow ${styles.badge}`} aria-label="Featured highlight">
@@ -40,12 +53,18 @@ export default function Hero({
             )}
 
             <h1 id="hero-heading" className={`ds-h1 ${styles.headline}`}>
-              {headline}
+              {headlineLines ? (
+                headlineLines.map((line, i) => (
+                  <span key={i} className={styles[colorClass[line.color ?? 'dark']]}>
+                    {line.text}
+                  </span>
+                ))
+              ) : (
+                headline
+              )}
             </h1>
 
-            <p className={`ds-lede ${styles.subtext}`}>
-              {subtext}
-            </p>
+            <p className={`ds-lede ${styles.subtext}`}>{subtext}</p>
 
             <div className={styles.ctas}>
               <Button href={ctaHref} size="lg" variant="primary">
@@ -67,7 +86,6 @@ export default function Hero({
               </p>
             )}
 
-            {/* Trust row */}
             <div className={styles.trust} role="list" aria-label="Trust indicators">
               {[
                 '✓ Same-week appointments',
@@ -81,23 +99,16 @@ export default function Hero({
             </div>
           </div>
 
-          {/* Image side */}
-          <div className={styles.imageWrap} aria-hidden="true">
-            <div className={styles.imagePlaceholder}>
-              <div className={styles.placeholderContent}>
-                <span className={styles.placeholderEmoji}>🏥</span>
-                <span className={styles.placeholderText}>WeCare Wellness Clinic</span>
-                <span className={styles.placeholderSub}>214 W Brandon Blvd · Brandon, FL</span>
-              </div>
-            </div>
-            {/* Floating card */}
-            <div className={styles.floatCard} aria-hidden="true">
-              <span className={styles.floatIcon}>⭐</span>
-              <div>
-                <div className={styles.floatValue}>4.9/5.0</div>
-                <div className={styles.floatLabel}>Patient rating</div>
-              </div>
-            </div>
+          {/* Doctor image — visible on mobile/small screens only */}
+          <div className={styles.doctorWrap} aria-hidden="true">
+            <Image
+              src="/darlyne.png"
+              alt=""
+              width={320}
+              height={380}
+              priority
+              className={styles.doctorImg}
+            />
           </div>
         </div>
       </div>

@@ -3,6 +3,11 @@ import Link from 'next/link';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import { CLINIC } from '@/lib/clinic';
+import {
+  CalendarIcon, CardIcon, MedicalCrossIcon, LaptopIcon, ShieldIcon, StethoscopeIcon,
+} from '@/components/ui/AnimatedIcons';
+import type { IconProps } from '@/components/ui/AnimatedIcons';
+import React from 'react';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -31,7 +36,7 @@ export const metadata: Metadata = {
 const FAQ_SECTIONS = [
   {
     category: 'Appointments & Availability',
-    icon: '📅',
+    Icon: CalendarIcon,
     faqs: [
       {
         q: 'How do I book an appointment at WeCare Wellness Clinic?',
@@ -57,7 +62,7 @@ const FAQ_SECTIONS = [
   },
   {
     category: 'Insurance & Billing',
-    icon: '💳',
+    Icon: CardIcon,
     faqs: [
       {
         q: 'What insurance plans do you accept?',
@@ -83,7 +88,7 @@ const FAQ_SECTIONS = [
   },
   {
     category: 'GLP-1 & Medical Weight Loss',
-    icon: '⚕️',
+    Icon: MedicalCrossIcon,
     faqs: [
       {
         q: 'Do you prescribe Semaglutide (Ozempic / Wegovy) and Tirzepatide (Mounjaro / Zepbound)?',
@@ -109,7 +114,7 @@ const FAQ_SECTIONS = [
   },
   {
     category: 'Telehealth',
-    icon: '💻',
+    Icon: LaptopIcon,
     faqs: [
       {
         q: 'Can I see a doctor online with WeCare?',
@@ -131,7 +136,7 @@ const FAQ_SECTIONS = [
   },
   {
     category: 'HIV PrEP & Sexual Health',
-    icon: '🛡️',
+    Icon: ShieldIcon,
     faqs: [
       {
         q: 'Do you prescribe PrEP (pre-exposure prophylaxis) in Brandon, FL?',
@@ -153,7 +158,7 @@ const FAQ_SECTIONS = [
   },
   {
     category: "Women's & Men's Health",
-    icon: '🩺',
+    Icon: StethoscopeIcon,
     faqs: [
       {
         q: 'Do you offer gynecology services?',
@@ -217,21 +222,26 @@ export default function FaqPage() {
         <div className="container">
           {/* Category nav */}
           <nav className={styles.catNav} aria-label="FAQ categories">
-            {FAQ_SECTIONS.map((section) => (
-              <a
-                key={section.category}
-                href={`#${section.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-                className={styles.catLink}
-              >
-                <span aria-hidden="true">{section.icon}</span>
-                {section.category}
-              </a>
-            ))}
+            {FAQ_SECTIONS.map((section) => {
+              const SecIcon = section.Icon;
+              return (
+                <a
+                  key={section.category}
+                  href={`#${section.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                  className={styles.catLink}
+                >
+                  <SecIcon size={20} />
+                  {section.category}
+                </a>
+              );
+            })}
           </nav>
 
           {/* FAQ sections */}
           <div className={styles.sections}>
-            {FAQ_SECTIONS.map((section) => (
+            {FAQ_SECTIONS.map((section) => {
+              const SecIcon = section.Icon;
+              return (
               <section
                 key={section.category}
                 id={section.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
@@ -239,7 +249,7 @@ export default function FaqPage() {
                 aria-labelledby={`heading-${section.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
               >
                 <div className={styles.sectionHeader}>
-                  <span className={styles.sectionIcon} aria-hidden="true">{section.icon}</span>
+                  <span className={styles.sectionIcon} aria-hidden="true"><SecIcon size={32} /></span>
                   <h2
                     id={`heading-${section.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
                     className={styles.sectionTitle}
@@ -257,7 +267,8 @@ export default function FaqPage() {
                   ))}
                 </dl>
               </section>
-            ))}
+              );
+            })}
           </div>
 
           {/* Still have questions CTA */}

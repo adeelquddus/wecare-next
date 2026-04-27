@@ -4,6 +4,19 @@ import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import RelatedServices from '@/components/sections/RelatedServices';
 import { CLINIC, INSURANCE } from '@/lib/clinic';
+import {
+  ShieldIcon,
+  StethoscopeIcon,
+  LockIcon,
+  CalendarIcon,
+  CardIcon,
+  GlobeIcon,
+  MicroscopeIcon,
+  HandshakeIcon,
+  PillsIcon,
+  SyringeIcon,
+} from '@/components/ui/AnimatedIcons';
+import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 /* ── Metadata ─────────────────────────────────────────────────────────── */
@@ -166,68 +179,74 @@ const jsonLd = {
 };
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
-const BENEFITS = [
+const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '🛡️',
+    Icon: ShieldIcon,
     title: '~99% HIV protection',
     desc: 'When taken daily as prescribed, PrEP reduces the risk of getting HIV from sex by approximately 99%. It is the most effective biomedical HIV prevention tool available.',
   },
   {
-    icon: '🩺',
+    Icon: StethoscopeIcon,
     title: 'Board-certified providers',
     desc: 'Our physicians and nurse practitioners have extensive experience prescribing PrEP, managing STI care, and providing inclusive sexual health services.',
   },
   {
-    icon: '🔒',
+    Icon: LockIcon,
     title: 'Completely confidential',
     desc: 'Your PrEP use and sexual health information is protected under HIPAA. We maintain strict confidentiality. No judgment. No disclosure without your consent.',
   },
   {
-    icon: '📅',
+    Icon: CalendarIcon,
     title: 'Same-week appointments',
     desc: 'New PrEP patients are typically seen within 3–5 business days. Emergency PEP consultations are available same-day in-person or via telehealth.',
   },
   {
-    icon: '💳',
+    Icon: CardIcon,
     title: 'Insurance covered',
     desc: 'Under the ACA, most insurance plans must cover PrEP at zero cost-sharing — that means the prescription AND the quarterly labs. We verify your coverage before your visit.',
   },
   {
-    icon: '🌐',
+    Icon: GlobeIcon,
     title: 'Telehealth across Florida',
     desc: 'Start or continue PrEP via telehealth from anywhere in Florida. Labs ordered to your nearest draw site. Prescription sent to your pharmacy. No travel required.',
   },
   {
-    icon: '🔬',
+    Icon: MicroscopeIcon,
     title: 'Comprehensive STI testing',
     desc: 'HIV, gonorrhea, chlamydia, syphilis, hepatitis B/C, herpes, and more — all at one visit. Discreet, fast results with follow-up guidance from your provider.',
   },
   {
-    icon: '🤝',
+    Icon: HandshakeIcon,
     title: 'Inclusive, affirming care',
     desc: 'WeCare is a welcoming clinic for LGBTQ+ patients, people of color, sex workers, and anyone seeking non-judgmental sexual health care in Brandon, FL.',
   },
 ];
 
-const PREP_MEDS = [
+const PREP_MEDS: Array<{
+  name: string;
+  generic: string;
+  Icon: React.FC<IconProps>;
+  desc: string;
+  notes: string[];
+}> = [
   {
     name: 'Truvada',
     generic: 'Tenofovir Disoproxil Fumarate / Emtricitabine',
-    icon: '💊',
+    Icon: PillsIcon,
     desc: 'The original FDA-approved PrEP medication. Available as generic (very affordable). Approved for all populations at risk of HIV. Most widely prescribed PrEP worldwide.',
     notes: ['Available as low-cost generic', 'Approved for all genders', 'Most studied PrEP medication'],
   },
   {
     name: 'Descovy',
     generic: 'Tenofovir Alafenamide / Emtricitabine',
-    icon: '💊',
+    Icon: PillsIcon,
     desc: "Newer formulation with a more favorable kidney and bone safety profile. Preferred for patients with kidney concerns or low bone density. Not FDA-approved for individuals at risk via vaginal sex.",
     notes: ['Better kidney safety profile', 'Preferred for older patients', 'Not for vaginal sex risk'],
   },
   {
     name: 'Apretude (CAB-LA)',
     generic: 'Cabotegravir Long-Acting Injectable',
-    icon: '💉',
+    Icon: SyringeIcon,
     desc: 'Injectable PrEP given every 2 months. Ideal for people who struggle with daily pill adherence. Requires initial 2-injection series (4 weeks apart), then bimonthly injections. Ask if available.',
     notes: ['Injection every 2 months', 'No daily pill required', 'Requires office visits'],
   },
@@ -389,11 +408,13 @@ export default function HivPrepPage() {
             </p>
           </div>
           <div className={styles.benefitsGrid}>
-            {BENEFITS.map((b) => (
-              <div key={b.title} className={styles.benefitCard}>
-                <span className={styles.benefitIcon} aria-hidden="true">{b.icon}</span>
-                <h3 className={styles.benefitTitle}>{b.title}</h3>
-                <p className={styles.benefitDesc}>{b.desc}</p>
+            {BENEFITS.map(({ Icon, title, desc }) => (
+              <div key={title} className={styles.benefitCard}>
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <Icon size={32} />
+                </span>
+                <h3 className={styles.benefitTitle}>{title}</h3>
+                <p className={styles.benefitDesc}>{desc}</p>
               </div>
             ))}
           </div>
@@ -414,25 +435,30 @@ export default function HivPrepPage() {
             </p>
           </div>
           <div className={styles.medsGrid}>
-            {PREP_MEDS.map((med) => (
-              <div key={med.name} className={styles.medCard}>
-                <div className={styles.medHeader}>
-                  <span className={styles.medIcon} aria-hidden="true">{med.icon}</span>
-                  <div>
-                    <h3 className={styles.medName}>{med.name}</h3>
-                    <p className={styles.medGeneric}>{med.generic}</p>
+            {PREP_MEDS.map((med) => {
+              const { Icon } = med;
+              return (
+                <div key={med.name} className={styles.medCard}>
+                  <div className={styles.medHeader}>
+                    <span className={styles.medIcon} aria-hidden="true">
+                      <Icon size={32} />
+                    </span>
+                    <div>
+                      <h3 className={styles.medName}>{med.name}</h3>
+                      <p className={styles.medGeneric}>{med.generic}</p>
+                    </div>
                   </div>
+                  <p className={styles.medDesc}>{med.desc}</p>
+                  <ul className={styles.medNotes} aria-label={`${med.name} key points`}>
+                    {med.notes.map((n) => (
+                      <li key={n} className={styles.medNote}>
+                        <span aria-hidden="true">✓</span> {n}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className={styles.medDesc}>{med.desc}</p>
-                <ul className={styles.medNotes} aria-label={`${med.name} key points`}>
-                  {med.notes.map((n) => (
-                    <li key={n} className={styles.medNote}>
-                      <span aria-hidden="true">✓</span> {n}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

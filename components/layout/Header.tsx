@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { CLINIC, SERVICES } from '@/lib/clinic';
+import { CLINIC, SERVICES, SERVICE_IMAGES } from '@/lib/clinic';
 import styles from './Header.module.css';
 
 /* ─── Services dropdown — sourced directly from lib/clinic so it always
@@ -14,12 +14,14 @@ const SERVICES_DROPDOWN = SERVICES.map((s) => ({
   href:  s.url,
   desc:  s.tagline,
   icon:  s.icon,
+  slug:  s.slug,
 }));
 
 /* ─── Main nav items ───────────────────────────────────────────────────── */
 const NAV_ITEMS = [
   { label: 'Home',         href: '/' },
   { label: 'Services',     href: '/services', hasDropdown: true },
+  { label: 'About Us',     href: '/about' },
   { label: 'New Patients', href: '/new-patients' },
   { label: 'Health Blog',  href: '/blog' },
   { label: 'FAQ',          href: '/faq' },
@@ -77,7 +79,8 @@ export default function Header() {
       {bannerVisible && (
         <div className={styles.banner}>
           <p className={styles.bannerText}>
-            🌿 Now accepting new patients — same-week appointments available!{' '}
+            <img src="/favi-white-wecare-wellness.svg" alt="" aria-hidden="true" className={styles.bannerIcon} />
+            Now accepting new patients — same-week appointments available!{' '}
             <a href="/booking" className={styles.bannerLink}>
               Book today →
             </a>
@@ -168,7 +171,17 @@ export default function Header() {
                                   className={`${styles.dropLink} ${pathname === s.href ? styles.dropLinkActive : ''}`}
                                   role="menuitem"
                                 >
-                                  <span className={styles.dropIcon} aria-hidden="true">{s.icon}</span>
+                                  <span className={styles.dropIcon} aria-hidden="true">
+                                    {SERVICE_IMAGES[s.slug] ? (
+                                      <Image
+                                        src={SERVICE_IMAGES[s.slug]}
+                                        alt=""
+                                        width={32}
+                                        height={32}
+                                        className={styles.dropIconImg}
+                                      />
+                                    ) : s.icon}
+                                  </span>
                                   <span className={styles.dropContent}>
                                     <span className={styles.dropLabel}>{s.label}</span>
                                     <span className={styles.dropDesc}>{s.desc}</span>
@@ -254,7 +267,17 @@ export default function Header() {
                           href={s.href}
                           className={`${styles.mobileSubLink} ${pathname === s.href ? styles.active : ''}`}
                         >
-                          <span aria-hidden="true">{s.icon}</span>
+                          <span aria-hidden="true" className={styles.mobileSubIcon}>
+                            {SERVICE_IMAGES[s.slug] ? (
+                              <Image
+                                src={SERVICE_IMAGES[s.slug]}
+                                alt=""
+                                width={24}
+                                height={24}
+                                className={styles.mobileSubIconImg}
+                              />
+                            ) : s.icon}
+                          </span>
                           {s.label}
                         </Link>
                       </li>

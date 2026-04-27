@@ -149,7 +149,7 @@
   --space-8:  128px;
   --space-10: 160px;
 
-  --container-max:        1200px;
+  --container-max:        1400px;
   --grid-gutter:          24px;
   --section-pad-desktop:  96px;
   --section-pad-mobile:   64px;
@@ -311,7 +311,7 @@ img {
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 var(--space-3);
+  padding: 0 var(--space-4);
 }
 
 .section {
@@ -351,4 +351,213 @@ img {
 
 .skip-nav:focus {
   top: var(--space-2);
+}
+
+/* ── LogoLoop ───────────────────────────────────────────────────────────── */
+.logoloop {
+  position: relative;
+  --logoloop-gap: 32px;
+  --logoloop-logoHeight: 28px;
+  --logoloop-fadeColorAuto: #ffffff;
+}
+.logoloop--vertical { height: 100%; display: inline-block; }
+.logoloop--scale-hover {
+  padding-top: calc(var(--logoloop-logoHeight) * 0.1);
+  padding-bottom: calc(var(--logoloop-logoHeight) * 0.1);
+}
+.logoloop__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  user-select: none;
+  position: relative;
+  z-index: 0;
+}
+.logoloop--vertical .logoloop__track { flex-direction: column; height: max-content; width: 100%; }
+.logoloop__list {
+  display: flex;
+  align-items: center;
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
+}
+.logoloop--vertical .logoloop__list { flex-direction: column; }
+.logoloop__item {
+  flex: 0 0 auto;
+  list-style: none !important;
+  margin-right: var(--logoloop-gap);
+  font-size: var(--logoloop-logoHeight);
+  line-height: 1;
+}
+.logoloop--vertical .logoloop__item { margin-right: 0; margin-bottom: var(--logoloop-gap); }
+.logoloop__item:last-child { margin-right: var(--logoloop-gap); }
+.logoloop--vertical .logoloop__item:last-child { margin-right: 0; margin-bottom: var(--logoloop-gap); }
+.logoloop__node { display: inline-flex; align-items: center; }
+.logoloop__item img {
+  height: var(--logoloop-logoHeight);
+  width: auto;
+  display: block;
+  object-fit: contain;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.logoloop--scale-hover .logoloop__item { overflow: visible; }
+.logoloop--scale-hover .logoloop__item:hover img,
+.logoloop--scale-hover .logoloop__item:hover .logoloop__node { transform: scale(1.2); transform-origin: center center; }
+.logoloop--scale-hover .logoloop__node { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.logoloop__link { display: inline-flex; align-items: center; text-decoration: none; border-radius: 4px; transition: opacity 0.2s ease; }
+.logoloop__link:hover { opacity: 0.8; }
+.logoloop__link:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.logoloop--fade::before,
+.logoloop--fade::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: clamp(24px, 8%, 120px);
+  pointer-events: none;
+  z-index: 10;
+}
+.logoloop--fade::before {
+  left: 0;
+  background: linear-gradient(to right, var(--logoloop-fadeColor, var(--logoloop-fadeColorAuto)) 0%, rgba(0,0,0,0) 100%);
+}
+.logoloop--fade::after {
+  right: 0;
+  background: linear-gradient(to left, var(--logoloop-fadeColor, var(--logoloop-fadeColorAuto)) 0%, rgba(0,0,0,0) 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .logoloop__track { transform: translate3d(0, 0, 0) !important; }
+  .logoloop__item img, .logoloop__node { transition: none !important; }
+}
+
+/* =========================================================================
+   ANIMATED ICONS — keyframes & per-icon classes
+   Used by components/ui/AnimatedIcons.tsx
+   ========================================================================= */
+
+.icon { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+
+/* Pulse: gentle scale ring, used for shield, brain, alert, medical-cross */
+@keyframes icon-pulse-kf {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.07); }
+}
+.icon-pulse { animation: icon-pulse-kf 2.4s ease-in-out infinite; transform-origin: center; }
+
+/* Pulse-dot: status indicator with ripple */
+@keyframes icon-pulse-dot-kf {
+  0%   { box-shadow: 0 0 0 0   rgba(16,185,129,0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+  100% { box-shadow: 0 0 0 0   rgba(16,185,129,0); }
+}
+.icon-pulse-dot { animation: icon-pulse-dot-kf 2s infinite; }
+
+/* Heartbeat — two-stage scale that mimics a pulse */
+@keyframes icon-heartbeat-kf {
+  0%, 50%, 100%   { transform: scale(1); }
+  20%             { transform: scale(1.18); }
+  35%             { transform: scale(0.95); }
+  60%             { transform: scale(1.10); }
+}
+.icon-heartbeat { animation: icon-heartbeat-kf 1.6s ease-in-out infinite; transform-origin: center; }
+
+/* Wiggle: phone, syringe, alarm */
+@keyframes icon-wiggle-kf {
+  0%, 100% { transform: rotate(0); }
+  20%      { transform: rotate(-12deg); }
+  40%      { transform: rotate(10deg); }
+  60%      { transform: rotate(-6deg); }
+  80%      { transform: rotate(4deg); }
+}
+.icon-wiggle { animation: icon-wiggle-kf 2.8s ease-in-out infinite; transform-origin: center; }
+
+/* Float: small vertical bob */
+@keyframes icon-float-kf {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-2px); }
+}
+.icon-float { animation: icon-float-kf 3s ease-in-out infinite; }
+
+/* Sway: gentle rotation back and forth (stethoscope, leaf, plants) */
+@keyframes icon-sway-kf {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+.icon-sway { animation: icon-sway-kf 4s ease-in-out infinite; transform-origin: center; }
+
+/* Spin-slow: globe, refresh */
+@keyframes icon-spin-kf { to { transform: rotate(360deg); } }
+.icon-spin       { animation: icon-spin-kf 16s linear infinite; transform-origin: center; }
+.icon-spin-slow  { animation: icon-spin-kf 24s linear infinite; transform-origin: center; }
+
+/* Pop: subtle scale-in pulse, used for badges and check icons */
+@keyframes icon-pop-kf {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.08); }
+}
+.icon-pop { animation: icon-pop-kf 2.2s ease-in-out infinite; transform-origin: center; }
+
+/* Twinkle: opacity + scale, for stars and sparkles */
+@keyframes icon-twinkle-kf {
+  0%, 100% { opacity: 1;   transform: scale(1)    rotate(0deg); }
+  50%      { opacity: 0.7; transform: scale(1.12) rotate(8deg); }
+}
+.icon-twinkle { animation: icon-twinkle-kf 2.6s ease-in-out infinite; transform-origin: center; }
+
+/* Glow: soft drop-shadow halo, for lightbulb */
+@keyframes icon-glow-kf {
+  0%, 100% { filter: drop-shadow(0 0 0   rgba(251,191,36,0)); }
+  50%      { filter: drop-shadow(0 0 6px rgba(251,191,36,0.65)); }
+}
+.icon-glow { animation: icon-glow-kf 2.4s ease-in-out infinite; }
+
+/* Drop: pin / water-drop bounce */
+@keyframes icon-drop-kf {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+.icon-drop { animation: icon-drop-kf 2.4s ease-in-out infinite; }
+
+/* Flash: lightning blink */
+@keyframes icon-flash-kf {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  45%      { opacity: 0.55; transform: scale(0.95); }
+  50%      { opacity: 1;    transform: scale(1.05); }
+}
+.icon-flash { animation: icon-flash-kf 1.8s ease-in-out infinite; transform-origin: center; }
+
+/* Roll: pills capsule shimmer */
+@keyframes icon-roll-kf {
+  0%, 100% { transform: rotate(0); }
+  50%      { transform: rotate(-6deg); }
+}
+.icon-roll { animation: icon-roll-kf 3s ease-in-out infinite; transform-origin: center; }
+
+/* Flipx: subtle horizontal flip (credit card flair) */
+@keyframes icon-flipx-kf {
+  0%, 100% { transform: rotateY(0); }
+  50%      { transform: rotateY(15deg); }
+}
+.icon-flipx { animation: icon-flipx-kf 4s ease-in-out infinite; transform-origin: center; }
+
+/* Inner accent: small pulsing red dot used inside the stethoscope and laptop */
+@keyframes icon-cal-tick-kf {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.85); }
+}
+.icon-cal-tick, .icon-heart-dot {
+  animation: icon-cal-tick-kf 1.4s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* Reduced-motion preference: stop all icon animations */
+@media (prefers-reduced-motion: reduce) {
+  .icon-pulse, .icon-pulse-dot, .icon-heartbeat, .icon-wiggle,
+  .icon-float, .icon-sway, .icon-spin, .icon-spin-slow, .icon-pop,
+  .icon-twinkle, .icon-glow, .icon-drop, .icon-flash, .icon-roll,
+  .icon-flipx, .icon-cal-tick, .icon-heart-dot {
+    animation: none !important;
+  }
 }

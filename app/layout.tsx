@@ -50,20 +50,18 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
     },
   },
-  icons: {
-    icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    apple: [
-      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
-    ],
-    shortcut: '/icon.svg',
-  },
   verification: {
     google: '',   // Add Search Console verification code
   },
   alternates: {
     canonical: SITE_URL,
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: { url: '/favicon.svg', type: 'image/svg+xml' },
+    shortcut: '/favicon.svg',
   },
 };
 
@@ -147,7 +145,7 @@ export default function RootLayout({
               ],
               aggregateRating: {
                 '@type': 'AggregateRating',
-                ratingValue: '4.9',
+                ratingValue: '5',
                 reviewCount: '50',
                 bestRating: '5',
               },

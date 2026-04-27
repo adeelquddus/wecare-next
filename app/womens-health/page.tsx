@@ -2,6 +2,17 @@ import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import RelatedServices from '@/components/sections/RelatedServices';
+import {
+  FlowerIcon,
+  MicroscopeIcon,
+  ScaleIcon,
+  PillsIcon,
+  LeafIcon,
+  DropIcon,
+  TestTubeIcon,
+  BrainIcon,
+} from '@/components/ui/AnimatedIcons';
+import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -222,44 +233,44 @@ const breadcrumbSchema = {
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
 
-const BENEFITS = [
+const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '🌸',
+    Icon: FlowerIcon,
     title: 'Annual well-woman exams',
     desc: 'Comprehensive preventive visits that go beyond a basic checkup. We review your full health history, perform a physical and pelvic exam, check blood pressure and BMI, discuss immunizations, and order labs tailored to your age and risk factors — all in one appointment.',
   },
   {
-    icon: '🔬',
+    Icon: MicroscopeIcon,
     title: 'Pap smears & cervical screening',
     desc: 'Cervical cancer is largely preventable with routine screening. We follow USPSTF guidelines — Pap smear every 3 years for women 21–65, or combined Pap + HPV co-testing every 5 years for women 30–65. We walk you through your results and any next steps with clarity and care.',
   },
   {
-    icon: '⚖️',
+    Icon: ScaleIcon,
     title: 'Hormone replacement therapy (HRT)',
     desc: 'Menopause does not have to derail your life. We design individualized HRT plans — estrogen, progesterone, or combination therapy — to ease hot flashes, night sweats, mood shifts, sleep disruption, and bone loss, while monitoring your health closely at every follow-up.',
   },
   {
-    icon: '💊',
+    Icon: PillsIcon,
     title: 'Birth control counseling',
     desc: 'Family planning on your terms. We review your medical history, lifestyle, and goals to help you choose the right method — oral contraceptive pills, the patch, vaginal ring, Depo-Provera injection, or IUD referral. No pressure, just honest guidance so you feel confident in your decision.',
   },
   {
-    icon: '🌿',
+    Icon: LeafIcon,
     title: 'PCOS diagnosis & management',
     desc: 'Polycystic ovary syndrome affects roughly 1 in 10 women and is one of the most common causes of irregular periods and infertility. We diagnose PCOS through lab work and exam, then build a care plan that may include lifestyle coaching, metformin, hormonal therapy, or specialist coordination.',
   },
   {
-    icon: '🌡️',
+    Icon: DropIcon,
     title: 'Menopause & perimenopause care',
     desc: 'The transition to menopause can span a decade. We support every stage — from the first irregular periods of perimenopause through post-menopause — with HRT, non-hormonal options, bone health monitoring, cardiovascular risk reduction, and compassionate counseling every step of the way.',
   },
   {
-    icon: '🧪',
+    Icon: TestTubeIcon,
     title: 'STI testing & treatment',
     desc: 'Confidential, judgment-free STI screening for chlamydia, gonorrhea, syphilis, HIV, hepatitis B/C, and herpes. We provide rapid results, same-visit treatment when possible, and supportive counseling so you can protect your health and your partners without shame or stigma.',
   },
   {
-    icon: '🧠',
+    Icon: BrainIcon,
     title: 'Mental health & thyroid screening',
     desc: 'Women are disproportionately affected by depression, anxiety, and thyroid disorders. Every well-woman visit includes validated mental health screening (PHQ-9, GAD-7) and thyroid testing as indicated. If screening is positive, we discuss counseling, medication options, and referrals right then and there.',
   },
@@ -427,7 +438,7 @@ export default function WomensHealthPage() {
             </div>
             <div className={styles.statsPanel} aria-label="Quick facts about our women's health services">
               {[
-                { value: '4.9★', label: 'Average patient rating on Google' },
+                { value: '5★', label: 'Average patient rating on Google' },
                 { value: 'Same week', label: 'New patient appointment availability' },
                 { value: 'All stages', label: 'Adolescent through post-menopause' },
                 { value: 'Telehealth', label: 'Women\'s health visits statewide in FL' },
@@ -455,11 +466,13 @@ export default function WomensHealthPage() {
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
-            {BENEFITS.map((b) => (
-              <div key={b.title} className={styles.benefitCard} role="listitem">
-                <span className={styles.benefitIcon} aria-hidden="true">{b.icon}</span>
-                <h3 className={styles.benefitTitle}>{b.title}</h3>
-                <p className={styles.benefitDesc}>{b.desc}</p>
+            {BENEFITS.map(({ Icon, title, desc }) => (
+              <div key={title} className={styles.benefitCard} role="listitem">
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <Icon size={32} />
+                </span>
+                <h3 className={styles.benefitTitle}>{title}</h3>
+                <p className={styles.benefitDesc}>{desc}</p>
               </div>
             ))}
           </div>

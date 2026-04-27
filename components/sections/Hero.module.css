@@ -1,52 +1,76 @@
 .hero {
-  padding: var(--section-pad-desktop) 0;
+  position: relative;
+  padding: 0;
   overflow: hidden;
-}
-
-.hero.light {
-  background: var(--bg-surface);
-}
-
-.hero.gradient {
-  background: linear-gradient(150deg, var(--color-primary-50) 0%, var(--color-teal-50) 100%);
-}
-
-.inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-7);
+  background-image: url('/hero-image.webp');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
 }
 
-/* ── Content ─────────────────────────────────────────────────────────── */
+.hero > * {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* ── Inner: single left-aligned column ──────────────────────────────── */
+.inner {
+  display: flex;
+  align-items: center;
+  padding: var(--space-7) 0;
+}
+
+/* ── Content — sits on the white part of the bg image ─────────────── */
 .content {
-  max-width: 560px;
+  max-width: 620px;
 }
 
 .badge {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .headline {
-  margin: 0 0 var(--space-3);
-  /* Gradient text on key word */
+  margin: 0 0 var(--space-5);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Multi-color headline spans */
+.headlineBlue {
+  color: var(--color-primary);
+  display: block;
+}
+
+.headlineTeal {
+  color: var(--color-secondary);
+  display: block;
+}
+
+.headlineDark {
+  color: var(--color-dark);
+  display: block;
 }
 
 .subtext {
-  margin: 0 0 var(--space-5);
+  margin: 0 0 var(--space-6);
+  max-width: 420px;
 }
 
 .ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-bottom: var(--space-3);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .phone {
   font-size: var(--text-sm);
   color: var(--text-secondary);
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-5);
 }
 
 .phoneLink {
@@ -72,92 +96,48 @@
   color: var(--color-secondary);
 }
 
-/* ── Image ────────────────────────────────────────────────────────────── */
-.imageWrap {
-  position: relative;
+/* ── Doctor image — hidden on desktop only ───────────────────────────── */
+.doctorWrap {
+  display: none;
 }
 
-.imagePlaceholder {
-  aspect-ratio: 5/4;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-teal-100) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
+.doctorImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: bottom center;
 }
 
-.placeholderContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-  text-align: center;
-  padding: var(--space-5);
-}
-
-.placeholderEmoji {
-  font-size: 64px;
-  opacity: 0.6;
-}
-
-.placeholderText {
-  font-size: var(--text-lg);
-  font-weight: var(--weight-semibold);
-  color: var(--color-primary-800);
-}
-
-.placeholderSub {
-  font-size: var(--text-sm);
-  color: var(--color-primary-600);
-}
-
-/* Floating card */
-.floatCard {
-  position: absolute;
-  bottom: var(--space-3);
-  left: calc(-1 * var(--space-4));
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  background: var(--bg-surface);
-  border-radius: var(--radius-md);
-  padding: var(--space-2) var(--space-3);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-subtle);
-}
-
-.floatIcon {
-  font-size: 24px;
-}
-
-.floatValue {
-  font-size: var(--text-md);
-  font-weight: var(--weight-semibold);
-  color: var(--text-primary);
-  line-height: 1.2;
-}
-
-.floatLabel {
-  font-size: var(--text-xs);
-  color: var(--text-secondary);
-}
-
-/* ── Responsive ──────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
+/* ── ≤1104px: no background, darlyne image shown below content ──────── */
+@media (max-width: 1104px) {
   .hero {
-    padding: var(--section-pad-mobile) 0;
+    min-height: 0;
+    background-image: none;
+    padding: 0;
+    align-items: flex-start;
   }
 
   .inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-5);
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-5) 0 0;
+    gap: 0;
   }
 
   .content {
-    max-width: 100%;
+    max-width: 640px;
+    padding: var(--space-4) 0;
     text-align: center;
+    order: 1;
+  }
+
+  .headline {
+    white-space: normal;
+  }
+
+  .subtext {
+    max-width: 520px;
   }
 
   .ctas {
@@ -168,7 +148,60 @@
     justify-content: center;
   }
 
-  .floatCard {
-    left: var(--space-2);
+  .phone {
+    text-align: center;
+  }
+
+  /* Show darlyne.png below content */
+  .doctorWrap {
+    display: flex;
+    justify-content: center;
+    order: 2;
+    width: 100%;
+    margin-top: var(--space-3);
+  }
+
+  .doctorImg {
+    max-width: 380px;
+    height: auto;
+  }
+}
+
+/* ── ≤768px: center everything for mobile ───────────────────────────── */
+@media (max-width: 768px) {
+  .inner {
+    padding: var(--space-4) 0 0;
+    align-items: center;
+  }
+
+  .content {
+    max-width: 100%;
+    text-align: center;
+    padding: var(--space-4) 0;
+  }
+
+  .subtext {
+    max-width: 100%;
+  }
+
+  .ctas {
+    justify-content: center;
+  }
+
+  .trust {
+    justify-content: center;
+  }
+
+  .phone {
+    text-align: center;
+  }
+
+  .doctorWrap {
+    justify-content: center;
+    margin-top: var(--space-2);
+  }
+
+  .doctorImg {
+    max-width: 280px;
   }
 }

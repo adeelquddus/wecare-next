@@ -2,6 +2,17 @@ import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import RelatedServices from '@/components/sections/RelatedServices';
+import {
+  SyringeIcon,
+  MedicalCrossIcon,
+  PillsIcon,
+  LightningIcon,
+  LeafIcon,
+  MicroscopeIcon,
+  ChartIcon,
+  CalendarIcon,
+} from '@/components/ui/AnimatedIcons';
+import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -218,44 +229,44 @@ const breadcrumbSchema = {
 
 /* ─── Page data ───────────────────────────────────────────────────────── */
 
-const BENEFITS = [
+const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   {
-    icon: '💉',
+    Icon: SyringeIcon,
     title: 'Semaglutide (GLP-1)',
     desc: 'The active ingredient in Ozempic® and Wegovy®. Semaglutide reduces hunger signals, slows gastric emptying, and improves insulin sensitivity — producing an average 14.9% body weight reduction in the STEP-1 clinical trial over 68 weeks.',
   },
   {
-    icon: '⚕️',
+    Icon: MedicalCrossIcon,
     title: 'Tirzepatide (GIP + GLP-1)',
     desc: 'The dual-agonist in Mounjaro® and Zepbound® targets both GIP and GLP-1 receptors simultaneously. SURMOUNT-1 trials showed up to 22.5% average body weight reduction — the highest of any approved weight-loss medication to date.',
   },
   {
-    icon: '💊',
+    Icon: PillsIcon,
     title: 'Phentermine (short-term)',
     desc: 'FDA-approved since 1959, phentermine is a fast-acting appetite suppressant suitable for appropriate candidates who need a short-term boost or bridge. Prescribed only after a thorough cardiovascular and medical history review.',
   },
   {
-    icon: '⚡',
+    Icon: LightningIcon,
     title: 'B12 Injections',
     desc: 'Vitamin B12 supports red blood cell production, neurological function, and energy metabolism. Injections deliver higher bioavailability than oral supplements and can help counteract the fatigue some patients experience early in a caloric deficit.',
   },
   {
-    icon: '🥗',
+    Icon: LeafIcon,
     title: 'Nutrition counseling',
     desc: 'Our GLP-1-optimized nutrition guidance focuses on protein-forward, anti-inflammatory eating to preserve lean muscle mass during weight loss. We provide practical macro targets and meal strategies that complement your medication.',
   },
   {
-    icon: '🔬',
+    Icon: MicroscopeIcon,
     title: 'Lab monitoring included',
     desc: 'Baseline and ongoing metabolic panels, A1C, kidney function, thyroid, and lipid panels ensure your program is safe and progressing well. We monitor markers that online-only programs often skip entirely.',
   },
   {
-    icon: '📊',
+    Icon: ChartIcon,
     title: 'Body composition analysis',
     desc: 'Scale weight alone is misleading. We track body fat percentage versus lean mass so we can confirm you are losing fat — not muscle — and adjust your program accordingly to preserve strength and metabolic rate.',
   },
   {
-    icon: '📅',
+    Icon: CalendarIcon,
     title: 'Monthly provider check-ins',
     desc: 'Regular one-on-one appointments with your physician to review lab trends, adjust dosing, troubleshoot side effects, and celebrate milestones. Follow-up visits are available via telehealth for convenience.',
   },
@@ -451,11 +462,13 @@ export default function MedicalWeightLossPage() {
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
-            {BENEFITS.map((b) => (
-              <div key={b.title} className={styles.benefitCard} role="listitem">
-                <span className={styles.benefitIcon} aria-hidden="true">{b.icon}</span>
-                <h3 className={styles.benefitTitle}>{b.title}</h3>
-                <p className={styles.benefitDesc}>{b.desc}</p>
+            {BENEFITS.map(({ Icon, title, desc }) => (
+              <div key={title} className={styles.benefitCard} role="listitem">
+                <span className={styles.benefitIcon} aria-hidden="true">
+                  <Icon size={32} />
+                </span>
+                <h3 className={styles.benefitTitle}>{title}</h3>
+                <p className={styles.benefitDesc}>{desc}</p>
               </div>
             ))}
           </div>

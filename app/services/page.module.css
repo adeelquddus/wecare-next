@@ -1,5 +1,124 @@
+/* ── Services page ───────────────────────────────────────────────────── */
+
+/* ─── Hero ─────────────────────────────────────────────────────────── */
+.svcHero {
+  position: relative;
+  padding: clamp(60px, 8vw, 110px) 0 var(--space-7);
+  background:
+    radial-gradient(1100px 600px at 90% -10%, rgba(0, 134, 197, 0.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(16, 185, 129, 0.10), transparent 55%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
+  overflow: hidden;
+}
+
+.heroBlob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+.heroBlobOne { top: -100px; right: -100px; width: 400px; height: 400px; background: #BAE6FD; }
+.heroBlobTwo { bottom: -120px; left: -100px; width: 380px; height: 380px; background: rgba(16, 185, 129, 0.4); }
+
+.svcHeroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.svcHeroBadge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-primary-100);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary-700);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+  box-shadow: 0 2px 8px rgba(0, 134, 197, 0.10);
+}
+
+.svcHeroTitle {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.titleAccent {
+  background: linear-gradient(135deg, #0086C5 0%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.svcHeroLede {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: var(--lh-base);
+  max-width: 600px;
+  margin: 0 auto var(--space-5);
+}
+
+.svcHeroCtas {
+  display: flex; flex-wrap: wrap; gap: var(--space-3);
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+/* Hero quick-jump chips */
+.heroChips {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 10px;
+  justify-content: center;
+}
+.heroChip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px 6px 6px;
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  transition: border-color var(--dur-base), box-shadow var(--dur-base), transform var(--dur-base);
+}
+.heroChip:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 134, 197, 0.15);
+  transform: translateY(-2px);
+}
+.heroChipImg {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.heroChipEmoji {
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  background: var(--color-primary-50);
+  border-radius: 50%;
+}
+
+/* ─── Service cards grid ────────────────────────────────────────────── */
 .servicesSection {
   padding: var(--section-pad-desktop) 0;
+  background: var(--bg-page);
 }
 
 .servicesGrid {
@@ -9,97 +128,185 @@
 }
 
 .serviceCard {
+  position: relative;
   display: flex;
   flex-direction: column;
+  background: #fff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.serviceCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.14);
 }
 
-.cardTop {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-bottom: var(--space-2);
+/* Decorative accent strip per row */
+.cardBlue::before, .cardMint::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  z-index: 2;
+}
+.cardBlue::before { background: linear-gradient(90deg, #0086C5, #38BDF8); }
+.cardMint::before { background: linear-gradient(90deg, #10B981, #34D399); }
+
+/* Card image */
+.cardImageWrap {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary-50), #fff);
+}
+.cardImage {
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.serviceCard:hover .cardImage { transform: scale(1.06); }
+
+.cardImageEmoji {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 96px;
 }
 
-.icon {
-  font-size: 36px;
+.cardImageOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0) 50%);
+  pointer-events: none;
 }
 
-.tagline {
-  font-size: var(--text-xs);
-  font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-wider);
+.cardTaglineBadge {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  z-index: 1;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  color: var(--color-primary-700);
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-secondary);
 }
 
-.name {
+/* Card body */
+.cardBody {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardName {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
   margin: 0 0 var(--space-2);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
-.desc {
+.cardDesc {
+  font-size: var(--text-base);
+  line-height: var(--lh-base);
   color: var(--text-secondary);
   margin: 0 0 var(--space-4);
 }
 
-.features {
+.cardFeatures {
   list-style: none;
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-5);
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 10px 16px;
 }
 
-.featureItem {
+.cardFeature {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   font-size: var(--text-sm);
-  color: var(--text-secondary);
+  color: var(--text-primary);
+  font-weight: var(--weight-medium);
 }
 
-.check {
-  color: var(--color-secondary);
-  font-weight: var(--weight-bold);
+.cardCheck {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+  border-radius: 50%;
   flex-shrink: 0;
 }
 
 .cardActions {
-  display: flex;
-  gap: var(--space-4);
-  align-items: center;
+  display: flex; align-items: center; gap: var(--space-3);
   margin-top: auto;
-  padding-top: var(--space-3);
+  padding-top: var(--space-4);
   border-top: 1px solid var(--border-subtle);
 }
 
-.bookLink {
+.cardBookBtn {
+  display: inline-flex; align-items: center;
+  padding: 10px 18px;
+  background: var(--color-primary);
+  color: #fff;
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  color: var(--color-primary);
+  border-radius: var(--radius-md);
   text-decoration: none;
+  transition: background var(--dur-base), transform var(--dur-base);
+}
+.cardBookBtn:hover {
+  background: var(--color-primary-700, #036aa3);
+  transform: translateY(-1px);
 }
 
-.bookLink:hover {
-  text-decoration: underline;
-}
-
-.learnLink {
+.cardLearnLink {
   font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
   color: var(--text-secondary);
   text-decoration: none;
+  margin-left: auto;
+  transition: color var(--dur-base), gap var(--dur-base);
+}
+.cardLearnLink:hover {
+  color: var(--color-primary);
 }
 
-.learnLink:hover {
-  color: var(--text-primary);
+/* ─── Insurance section ───────────────────────────────────────────── */
+.insuranceSection {
+  padding: var(--section-pad-desktop) 0;
+  background: var(--bg-surface);
+  overflow: hidden;
+}
+.insuranceSection :global(img[src*="tricare"]) {
+  height: calc(var(--logoloop-logoHeight) * 1.4) !important;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .servicesGrid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .servicesGrid {
-    grid-template-columns: 1fr;
-  }
+  .cardImageWrap { height: 200px; }
+  .cardFeatures { grid-template-columns: 1fr; }
+  .cardActions { flex-wrap: wrap; }
+  .heroChips { gap: 8px; }
+}
 
-  .features {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 600px) {
+  .svcHeroTitle { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .cardName { font-size: var(--text-xl); }
+  .cardImageWrap { height: 180px; }
 }

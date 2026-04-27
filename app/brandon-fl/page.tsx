@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
 import { CLINIC, HOURS_DISPLAY, INSURANCE, SERVICES } from '@/lib/clinic';
+import { PinIcon, PhoneIcon, ClockIcon, CardIcon } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -129,7 +130,7 @@ export default function BrandonFLPage() {
             {/* Quick info panel */}
             <aside className={styles.infoPanel} aria-label="Quick clinic information">
               <div className={styles.infoPanelItem}>
-                <span className={styles.infoPanelIcon} aria-hidden="true">📍</span>
+                <span className={styles.infoPanelIcon} aria-hidden="true"><PinIcon size={28} /></span>
                 <div>
                   <div className={styles.infoPanelLabel}>Address</div>
                   <a href={CLINIC.mapUrl} target="_blank" rel="noopener noreferrer" className={styles.infoPanelValue}>
@@ -139,14 +140,14 @@ export default function BrandonFLPage() {
                 </div>
               </div>
               <div className={styles.infoPanelItem}>
-                <span className={styles.infoPanelIcon} aria-hidden="true">📞</span>
+                <span className={styles.infoPanelIcon} aria-hidden="true"><PhoneIcon size={28} /></span>
                 <div>
                   <div className={styles.infoPanelLabel}>Phone</div>
                   <a href={`tel:${CLINIC.phone}`} className={styles.infoPanelValue}>{CLINIC.phoneDisplay}</a>
                 </div>
               </div>
               <div className={styles.infoPanelItem}>
-                <span className={styles.infoPanelIcon} aria-hidden="true">⏰</span>
+                <span className={styles.infoPanelIcon} aria-hidden="true"><ClockIcon size={28} /></span>
                 <div>
                   <div className={styles.infoPanelLabel}>Hours</div>
                   <ul className={styles.hoursList} role="list">
@@ -160,7 +161,7 @@ export default function BrandonFLPage() {
                 </div>
               </div>
               <div className={styles.infoPanelItem}>
-                <span className={styles.infoPanelIcon} aria-hidden="true">💳</span>
+                <span className={styles.infoPanelIcon} aria-hidden="true"><CardIcon size={28} /></span>
                 <div>
                   <div className={styles.infoPanelLabel}>Insurance</div>
                   <div className={styles.infoPanelValue}>{INSURANCE.join(' · ')}</div>
@@ -207,7 +208,7 @@ export default function BrandonFLPage() {
           <ul className={styles.areasList} role="list">
             {AREAS_SERVED.map((area) => (
               <li key={area} className={styles.areasItem}>
-                <span aria-hidden="true">📌</span>
+                <PinIcon size={16} />
                 {area}
               </li>
             ))}

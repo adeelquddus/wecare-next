@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Hero from '@/components/sections/Hero';
 import BookingCTA from '@/components/sections/BookingCTA';
-import { INSURANCE } from '@/lib/clinic';
+import Image from 'next/image';
+import { INSURANCE, INSURANCE_LOGOS } from '@/lib/clinic';
+import { CardIcon } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -33,27 +35,22 @@ export const metadata: Metadata = {
 const INSURANCE_DETAILS = [
   {
     name: 'Aetna',
-    icon: '🔵',
     desc: 'Aetna commercial, Aetna Medicare Advantage, and most Aetna employer plans accepted for in-person and telehealth visits.',
   },
   {
     name: 'United Healthcare',
-    icon: '🟢',
     desc: 'UnitedHealthcare commercial, UHC Medicare Advantage, and UHC Choice Plus plans accepted.',
   },
   {
     name: 'Medicare',
-    icon: '🔴',
     desc: 'Original Medicare (Parts A & B) accepted. Medicare Advantage plans from major carriers also accepted — verify at booking.',
   },
   {
     name: 'Blue Cross Blue Shield',
-    icon: '🔷',
     desc: 'Florida Blue, BCBS commercial, and BlueCard plans accepted for primary care, specialty services, and telehealth.',
   },
   {
     name: 'MultiPlan',
-    icon: '🟡',
     desc: 'MultiPlan/PHCS network plans accepted, covering many employer-sponsored and association health plans.',
   },
 ];
@@ -194,14 +191,22 @@ export default function InsurancePage() {
           <div className={styles.benefitsGrid} role="list">
             {INSURANCE_DETAILS.map((ins) => (
               <div key={ins.name} className={styles.benefitCard} role="listitem">
-                <span className={styles.benefitIcon} aria-hidden="true">{ins.icon}</span>
+                <div className={styles.benefitLogoWrap}>
+                  <Image
+                    src={INSURANCE_LOGOS[ins.name]}
+                    alt={ins.name}
+                    width={400}
+                    height={200}
+                    className={styles.benefitLogo}
+                  />
+                </div>
                 <h3 className={styles.benefitTitle}>{ins.name}</h3>
                 <p className={styles.benefitDesc}>{ins.desc}</p>
               </div>
             ))}
             {/* Self-pay card */}
             <div className={styles.benefitCard} role="listitem">
-              <span className={styles.benefitIcon} aria-hidden="true">💳</span>
+              <span className={styles.benefitIcon} aria-hidden="true"><CardIcon size={56} /></span>
               <h3 className={styles.benefitTitle}>Self-Pay & Uninsured</h3>
               <p className={styles.benefitDesc}>Affordable cash-pay rates available for all services. Ask about pricing when you book.</p>
             </div>

@@ -229,6 +229,23 @@ export const SERVICES: Service[] = [
   },
 ];
 
+/* ─── Provider portrait (hosted on Wix CDN) ─────────────────────────── */
+// 810×810 PNG · 484 KB · uploaded via Wix media library
+export const DARLYNE_PORTRAIT_URL =
+  'https://static.wixstatic.com/media/5f5ffb_002ffa0f1d8543df90ccbc54d166407b~mv2.png';
+
+/* ─── Service images ────────────────────────────────────────────────── */
+
+export const SERVICE_IMAGES: Record<string, string> = {
+  'primary-care':        '/services/primary care.JPG',
+  'medical-weight-loss': '/services/medical weightloss.PNG',
+  'mens-health':         '/services/menhealth.JPG',
+  'womens-health':       '/services/women health.JPG',
+  'iv-hydration':        '/services/hrt.jpg',
+  'telehealth':          '/services/telehealth.JPG',
+  'hiv-prep':            '/services/HIV PrEP.JPG',
+};
+
 /* ─── Insurance ─────────────────────────────────────────────────────── */
 
 export const INSURANCE = [
@@ -237,13 +254,23 @@ export const INSURANCE = [
   'Medicare',
   'Blue Cross Blue Shield',
   'MultiPlan',
+  'Tricare',
 ];
+
+export const INSURANCE_LOGOS: Record<string, string> = {
+  'Aetna':                  '/insurance/aetna.png',
+  'United Healthcare':      '/insurance/united-healthcare-logo.png',
+  'Medicare':               '/insurance/Medicare-Logo.png',
+  'Blue Cross Blue Shield': '/insurance/Blue-Cross-Blue-Shield-Logo.png',
+  'MultiPlan':              '/insurance/MULTIPLAN_LOGO_RGB.png',
+  'Tricare':                '/insurance/tricare.png',
+};
 
 /* ─── Trust signals ─────────────────────────────────────────────────── */
 
 export const TRUST_STATS = [
   { value: '500+', label: 'Patients served' },
-  { value: '4.9★', label: 'Average rating' },
+  { value: '5★', label: 'Average rating' },
   { value: '5+', label: 'Years serving Brandon' },
   { value: '8', label: 'Services offered' },
 ];

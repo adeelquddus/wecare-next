@@ -19,10 +19,16 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: https://static.wixstatic.com https://images.unsplash.com https://www.google.com https://maps.googleapis.com https://maps.gstatic.com",
+      // img-src — allow profile-photo CDNs (Google, Facebook, Wix-uploaded)
+      // alongside our own assets and map tiles. Wix Members who sign in via
+      // a social provider have their avatar hosted on the provider's CDN.
+      "img-src 'self' data: blob: https://static.wixstatic.com https://*.wixusercontent.net https://images.unsplash.com https://www.google.com https://maps.googleapis.com https://maps.gstatic.com https://*.googleusercontent.com https://platform-lookaside.fbsbx.com https://graph.facebook.com",
       "font-src 'self'",
       "frame-src https://www.google.com https://maps.google.com",
-      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://manage.wix.com",
+      // connect-src — server fetches from Wix don't go through here (CSP
+      // is browser-side), but if any future client-side code hits Wix
+      // APIs or the Wix members session, these need to be allowed.
+      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://manage.wix.com https://www.wixapis.com https://*.wix.com",
       "media-src 'self'",
     ].join('; '),
   },
