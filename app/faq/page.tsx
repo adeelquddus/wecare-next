@@ -10,33 +10,132 @@ import type { IconProps } from '@/components/ui/AnimatedIcons';
 import React from 'react';
 import styles from './page.module.css';
 
+/* ── Metadata ────────────────────────────────────────────────────────────
+   Comprehensive set: title, description, robust keyword list (long-tail
+   + local + service + condition modifiers), canonical, Open Graph card,
+   Twitter card, robots directives.
+   ────────────────────────────────────────────────────────────────────── */
+const SITE = 'https://www.wecarewellnessclinic.com';
+const OG_IMAGE = `${SITE}/hero-image.png`;
+
 export const metadata: Metadata = {
-  title: 'FAQ — WeCare Wellness Clinic Brandon, FL',
+  metadataBase: new URL(SITE),
+  title: 'FAQ — Appointments, Insurance, GLP-1, Telehealth | WeCare Wellness Clinic Brandon FL',
   description:
-    'Answers to common questions about appointments, insurance, GLP-1 weight loss, telehealth, PrEP, women\'s health and more at WeCare Wellness Clinic in Brandon, FL.',
+    'Answers to the most common questions about WeCare Wellness Clinic in Brandon, FL — appointments, insurance, GLP-1 weight loss (Semaglutide / Tirzepatide), telehealth across Florida, HIV PrEP, women\'s and men\'s health, hormone therapy, and same-week availability.',
   keywords: [
-    'FAQ WeCare Wellness Clinic',
-    'how to book appointment Brandon FL',
-    'does WeCare accept insurance',
-    'GLP-1 semaglutide questions Brandon FL',
-    'telehealth Florida questions',
-    'PrEP clinic Brandon FL questions',
-    'same day appointment Brandon FL',
+    /* Brand + page */
+    'WeCare Wellness Clinic FAQ',
+    'WeCare Wellness Clinic questions',
+    'frequently asked questions WeCare Wellness',
+    /* Local — Brandon FL */
     'primary care FAQ Brandon FL',
+    'doctor FAQ Brandon Florida',
+    'medical clinic Brandon FL questions',
+    'how to book appointment Brandon FL',
+    'same day doctor Brandon FL',
+    'walk-in clinic Brandon FL',
+    /* Insurance */
+    'does WeCare accept Aetna',
+    'does WeCare accept United Healthcare',
+    'does WeCare accept Medicare',
+    'does WeCare accept Blue Cross Blue Shield',
+    'does WeCare accept MultiPlan',
+    'does WeCare accept Tricare',
+    'self-pay primary care Brandon FL',
+    'uninsured doctor Brandon FL',
+    /* GLP-1 / Weight loss */
+    'GLP-1 weight loss FAQ',
+    'Semaglutide questions Brandon FL',
+    'Tirzepatide questions Brandon FL',
+    'Ozempic Wegovy weight loss Brandon FL',
+    'Mounjaro Zepbound Brandon FL',
+    'medical weight loss program FAQ',
+    /* Telehealth */
+    'telehealth Florida questions',
+    'online doctor Florida FAQ',
+    'video doctor visit Brandon FL',
+    'virtual urgent care Florida',
+    /* PrEP / Sexual health */
+    'PrEP clinic Brandon FL questions',
+    'HIV PrEP telehealth Florida',
+    'STI testing Brandon FL',
+    'confidential sexual health Brandon FL',
+    /* Women / Men */
+    "women's health FAQ Brandon FL",
+    "men's health FAQ Brandon FL",
+    'menopause management Brandon FL',
+    'TRT testosterone replacement Brandon FL',
+    'hormone replacement therapy questions',
   ],
-  alternates: { canonical: 'https://www.wecarewellnessclinic.com/faq' },
+  alternates: { canonical: '/faq' },
   openGraph: {
-    title: 'Frequently Asked Questions — WeCare Wellness Clinic',
-    description: 'Common questions about appointments, insurance, GLP-1, telehealth, and more at WeCare in Brandon, FL.',
-    url: 'https://www.wecarewellnessclinic.com/faq',
+    title: 'FAQ — WeCare Wellness Clinic | Brandon, FL',
+    description:
+      'Answers to common patient questions about appointments, insurance, GLP-1 weight loss, telehealth, PrEP, women\'s and men\'s health at WeCare Wellness Clinic.',
+    url: `${SITE}/faq`,
+    siteName: 'WeCare Wellness Clinic',
     type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'WeCare Wellness Clinic — frequently asked questions for patients in Brandon, FL',
+        type: 'image/png',
+      },
+    ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WeCare Wellness Clinic — FAQ',
+    description:
+      'Common questions about appointments, insurance, GLP-1 weight loss, telehealth, PrEP, and more.',
+    images: [OG_IMAGE],
+    site: '@WeCareWellness',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
+  },
+  category: 'Health',
 };
 
-const FAQ_SECTIONS = [
+/* ── Data ────────────────────────────────────────────────────────────── */
+
+interface FaqEntry {
+  q: string;
+  a: string;
+}
+
+interface FaqSection {
+  category: string;
+  /** kebab-case anchor id — derived once and reused for both nav + section */
+  slug: string;
+  Icon: React.FC<IconProps>;
+  /** Short context string used for aria-label on the section */
+  context: string;
+  faqs: FaqEntry[];
+}
+
+function slugify(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+const FAQ_SECTIONS: FaqSection[] = [
   {
     category: 'Appointments & Availability',
+    slug: 'appointments',
     Icon: CalendarIcon,
+    context: 'Booking, walk-ins, hours, what to bring',
     faqs: [
       {
         q: 'How do I book an appointment at WeCare Wellness Clinic?',
@@ -62,11 +161,13 @@ const FAQ_SECTIONS = [
   },
   {
     category: 'Insurance & Billing',
+    slug: 'insurance',
     Icon: CardIcon,
+    context: 'Accepted plans, self-pay, preventive coverage, verification',
     faqs: [
       {
         q: 'What insurance plans do you accept?',
-        a: 'We currently accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield (Florida Blue), and MultiPlan/PHCS. We are continually adding new plans — call us to verify your specific plan.',
+        a: 'We currently accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield (Florida Blue), MultiPlan/PHCS, and Tricare. We are continually adding new plans — call us to verify your specific plan.',
       },
       {
         q: 'Do you offer self-pay rates?',
@@ -88,7 +189,9 @@ const FAQ_SECTIONS = [
   },
   {
     category: 'GLP-1 & Medical Weight Loss',
+    slug: 'glp1-weight-loss',
     Icon: MedicalCrossIcon,
+    context: 'Semaglutide, Tirzepatide, eligibility, costs, what is included',
     faqs: [
       {
         q: 'Do you prescribe Semaglutide (Ozempic / Wegovy) and Tirzepatide (Mounjaro / Zepbound)?',
@@ -96,7 +199,7 @@ const FAQ_SECTIONS = [
       },
       {
         q: 'Does insurance cover GLP-1 medications for weight loss?',
-        a: 'Coverage varies. Semaglutide and tirzepatide are often covered for Type 2 diabetes under brand names Ozempic and Mounjaro. Coverage for weight loss specifically depends on your plan. We help patients navigate prior authorizations and appeal denials. Self-pay and compounded options are also available.',
+        a: 'Coverage varies. Semaglutide and Tirzepatide are often covered for Type 2 diabetes under brand names Ozempic and Mounjaro. Coverage for weight loss specifically depends on your plan. We help patients navigate prior authorizations and appeal denials. Self-pay and compounded options are also available.',
       },
       {
         q: 'How much does the Medical Weight Loss program cost?',
@@ -114,7 +217,9 @@ const FAQ_SECTIONS = [
   },
   {
     category: 'Telehealth',
+    slug: 'telehealth',
     Icon: LaptopIcon,
+    context: 'Online visits, what telehealth treats, insurance, technology',
     faqs: [
       {
         q: 'Can I see a doctor online with WeCare?',
@@ -136,7 +241,9 @@ const FAQ_SECTIONS = [
   },
   {
     category: 'HIV PrEP & Sexual Health',
+    slug: 'prep-sexual-health',
     Icon: ShieldIcon,
+    context: 'PrEP prescriptions, insurance coverage, telehealth PrEP, confidentiality',
     faqs: [
       {
         q: 'Do you prescribe PrEP (pre-exposure prophylaxis) in Brandon, FL?',
@@ -158,7 +265,9 @@ const FAQ_SECTIONS = [
   },
   {
     category: "Women's & Men's Health",
+    slug: 'womens-mens-health',
     Icon: StethoscopeIcon,
+    context: 'Gynecology, TRT, menopause, hormone therapy',
     faqs: [
       {
         q: 'Do you offer gynecology services?',
@@ -176,36 +285,85 @@ const FAQ_SECTIONS = [
   },
 ];
 
-// Build FAQPage schema from all Q&A pairs
+/* ── JSON-LD ──────────────────────────────────────────────────────────── */
+
+const allFaqEntities = FAQ_SECTIONS.flatMap((section) =>
+  section.faqs.map((faq) => ({
+    '@type': 'Question' as const,
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer' as const,
+      text: faq.a,
+    },
+  }))
+);
+
 const faqJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: FAQ_SECTIONS.flatMap((section) =>
-    section.faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.a,
-      },
-    }))
-  ),
-};
-
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.wecarewellnessclinic.com' },
-    { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://www.wecarewellnessclinic.com/faq' },
+  '@graph': [
+    /* Tells Google this is a WebPage that lives inside a MedicalBusiness.
+       Linking the FAQPage to the WebPage lets the schema chain be discovered
+       in one fetch. */
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE}/faq#webpage`,
+      url: `${SITE}/faq`,
+      name: 'FAQ — WeCare Wellness Clinic',
+      description:
+        'Answers to common patient questions about WeCare Wellness Clinic in Brandon, FL.',
+      isPartOf: { '@id': `${SITE}/#website` },
+      about: { '@id': `${SITE}/#clinic` },
+      primaryImageOfPage: { '@id': `${SITE}/faq#primaryimage` },
+      breadcrumb: { '@id': `${SITE}/faq#breadcrumb` },
+      inLanguage: 'en-US',
+      datePublished: '2026-01-01',
+      dateModified: '2026-04-28',
+    },
+    {
+      '@type': 'ImageObject',
+      '@id': `${SITE}/faq#primaryimage`,
+      url: OG_IMAGE,
+      contentUrl: OG_IMAGE,
+      width: 1200,
+      height: 630,
+      caption: 'WeCare Wellness Clinic — frequently asked questions',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${SITE}/faq#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'FAQ',  item: `${SITE}/faq` },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${SITE}/faq#faqpage`,
+      mainEntity: allFaqEntities,
+      isPartOf: { '@id': `${SITE}/faq#webpage` },
+      about: { '@id': `${SITE}/#clinic` },
+    },
+    /* Provide the WebSite identity for sitelinks-search-box eligibility */
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE}/#website`,
+      url: SITE,
+      name: 'WeCare Wellness Clinic',
+      publisher: { '@id': `${SITE}/#clinic` },
+      inLanguage: 'en-US',
+    },
   ],
 };
+
+/* ── Page ──────────────────────────────────────────────────────────────── */
 
 export default function FaqPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
       <Hero
         headline="Your questions, answered"
@@ -214,78 +372,110 @@ export default function FaqPage() {
         ctaHref="/booking"
         secondaryLabel={`Call ${CLINIC.phoneDisplay}`}
         secondaryHref={`tel:${CLINIC.phone}`}
-        badgeText="Comprehensive FAQ"
+        badgeText="Patient FAQ"
         variant="light"
       />
 
-      <section className={styles.faqPage}>
+      <section className={styles.faqPage} id="faq-content">
         <div className="container">
-          {/* Category nav */}
-          <nav className={styles.catNav} aria-label="FAQ categories">
+          {/* Sticky category nav */}
+          <nav className={styles.catNav} aria-label="Jump to FAQ category">
             {FAQ_SECTIONS.map((section) => {
               const SecIcon = section.Icon;
               return (
                 <a
-                  key={section.category}
-                  href={`#${section.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                  key={section.slug}
+                  href={`#${section.slug}`}
                   className={styles.catLink}
                 >
-                  <SecIcon size={20} />
-                  {section.category}
+                  <SecIcon size={18} animate={false} />
+                  <span>{section.category}</span>
                 </a>
               );
             })}
           </nav>
 
-          {/* FAQ sections */}
+          {/* Categorised FAQ sections */}
           <div className={styles.sections}>
             {FAQ_SECTIONS.map((section) => {
               const SecIcon = section.Icon;
+              const headingId = `heading-${section.slug}`;
               return (
-              <section
-                key={section.category}
-                id={section.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
-                className={styles.section}
-                aria-labelledby={`heading-${section.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-              >
-                <div className={styles.sectionHeader}>
-                  <span className={styles.sectionIcon} aria-hidden="true"><SecIcon size={32} /></span>
-                  <h2
-                    id={`heading-${section.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-                    className={styles.sectionTitle}
-                  >
-                    {section.category}
-                  </h2>
-                </div>
+                <section
+                  key={section.slug}
+                  id={section.slug}
+                  className={styles.section}
+                  aria-labelledby={headingId}
+                >
+                  <header className={styles.sectionHeader}>
+                    <span className={styles.sectionIcon} aria-hidden="true">
+                      <SecIcon size={28} />
+                    </span>
+                    <h2 id={headingId} className={styles.sectionTitle}>
+                      {section.category}
+                    </h2>
+                  </header>
 
-                <dl className={styles.faqList}>
-                  {section.faqs.map((faq) => (
-                    <div key={faq.q} className={styles.faqItem}>
-                      <dt className={styles.question}>{faq.q}</dt>
-                      <dd className={styles.answer}>{faq.a}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </section>
+                  <ul className={styles.faqList} role="list">
+                    {section.faqs.map((faq, idx) => (
+                      <li
+                        key={faq.q}
+                        className={styles.faqItem}
+                        itemScope
+                        itemType="https://schema.org/Question"
+                      >
+                        <span
+                          className={styles.qBadge}
+                          aria-hidden="true"
+                          title={`Question ${idx + 1} in ${section.category}`}
+                        >
+                          Q
+                        </span>
+                        <div className={styles.faqBody}>
+                          <h3 className={styles.question} itemProp="name">
+                            {faq.q}
+                          </h3>
+                          <div
+                            itemScope
+                            itemProp="acceptedAnswer"
+                            itemType="https://schema.org/Answer"
+                          >
+                            <p className={styles.answer} itemProp="text">
+                              {faq.a}
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
               );
             })}
           </div>
 
           {/* Still have questions CTA */}
-          <div className={styles.ctaStrip} role="complementary">
+          <aside className={styles.ctaStrip} aria-labelledby="cta-heading">
             <div className={styles.ctaContent}>
-              <h2 className={styles.ctaHeading}>Still have a question?</h2>
+              <h2 id="cta-heading" className={styles.ctaHeading}>
+                Still have a question?
+              </h2>
               <p className={styles.ctaBody}>
                 Our team is happy to help. Call us at{' '}
-                <a href={`tel:${CLINIC.phone}`} className={styles.ctaPhone}>{CLINIC.phoneDisplay}</a>
-                {' '}or send us a message.
+                <a href={`tel:${CLINIC.phone}`} className={styles.ctaPhone}>
+                  {CLINIC.phoneDisplay}
+                </a>{' '}
+                or send us a message — we typically reply within one business day.
               </p>
               <div className={styles.ctaActions}>
-                <Link href="/booking" className={styles.ctaBtnPrimary}>Book an Appointment</Link>
-                <Link href="/contact" className={styles.ctaBtnOutline}>Send a Message</Link>
+                <Link href="/booking" className={styles.ctaBtnPrimary}>
+                  Book an Appointment
+                </Link>
+                <Link href="/contact" className={styles.ctaBtnOutline}>
+                  Send a Message
+                </Link>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </section>
 
