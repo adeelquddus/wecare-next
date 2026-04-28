@@ -18,8 +18,8 @@ const TEN_MINUTES_SECONDS = 60 * 10;
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
   /* Derive the redirect URI from the incoming request so the OAuth flow
-     "just works" on whatever host the user is on — localhost in dev, the
-     prod domain in production, a Vercel preview URL, etc. — without
+     "just works" on whatever host the user is on - localhost in dev, the
+     prod domain in production, a Vercel preview URL, etc. - without
      needing per-environment env vars. The host comes from the request,
      respecting any reverse-proxy `x-forwarded-host` header.
 

@@ -69,7 +69,7 @@ export function draftjsToHtml(contentJson: string): string {
   try {
     content = JSON.parse(contentJson) as DraftContent;
   } catch {
-    // Not JSON — return as plain paragraph
+    // Not JSON - return as plain paragraph
     return `<p>${escapeHtml(contentJson)}</p>`;
   }
 
@@ -158,7 +158,7 @@ function renderAtomicBlock(block: DraftBlock, entityMap: Record<string, DraftEnt
       if (!src?.id) return '';
 
       const fileName = src.file_name ?? 'image.jpg';
-      // Wix media CDN URL — 900px wide, quality 85, centre-aligned
+      // Wix media CDN URL - 900px wide, quality 85, centre-aligned
       const imgUrl =
         `https://static.wixstatic.com/media/${src.id}/v1/fill/` +
         `w_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/${fileName}`;
@@ -178,7 +178,7 @@ function renderAtomicBlock(block: DraftBlock, entityMap: Record<string, DraftEnt
     case 'wix-draft-plugin-video':
     case 'wix-draft-plugin-giphy':
     case 'wix-draft-plugin-gallery':
-      // Unsupported rich media — skip silently
+      // Unsupported rich media - skip silently
       return '';
 
     default:
@@ -228,7 +228,7 @@ function renderInline(block: DraftBlock, entityMap: Record<string, DraftEntity>)
 
     let chunk = escapeHtml(text.slice(i, j));
 
-    // Inline styles — order matters for nesting
+    // Inline styles - order matters for nesting
     if (cur.styles.has('CODE'))      chunk = `<code>${chunk}</code>`;
     if (cur.styles.has('BOLD'))      chunk = `<strong>${chunk}</strong>`;
     if (cur.styles.has('ITALIC'))    chunk = `<em>${chunk}</em>`;

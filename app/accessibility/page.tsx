@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from '@/components/layout/LegalPage.module.css';
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement — WeCare Wellness Clinic',
+  title: 'Accessibility Statement - WeCare Wellness Clinic',
   description:
     'WeCare Wellness Clinic is committed to digital accessibility for people with disabilities. Read our WCAG 2.1 AA accessibility statement and how to report issues.',
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/accessibility' },
@@ -40,7 +40,7 @@ export default function AccessibilityPage() {
             <p className={styles.calloutTitle}>We are committed to accessibility</p>
             <p className={styles.p}>
               WeCare Wellness Clinic believes that healthcare information should be accessible to
-              everyone — including people with disabilities. If you experience any barriers on our
+              everyone - including people with disabilities. If you experience any barriers on our
               website, please contact us at <a href="tel:+18134385220">(813) 438-5220</a> and we
               will assist you promptly.
             </p>
@@ -88,13 +88,13 @@ export default function AccessibilityPage() {
               Americans with Disabilities Act (ADA) and Section 508 of the Rehabilitation Act.
             </p>
             <p className={styles.p}>
-              WCAG 2.1 is organized around four principles — that web content must be:
+              WCAG 2.1 is organized around four principles - that web content must be:
             </p>
             <ul className={styles.list}>
-              <li><strong>Perceivable</strong> — Information and UI components must be presentable in ways users can perceive (e.g., text alternatives for images).</li>
-              <li><strong>Operable</strong> — UI and navigation must be operable by keyboard, not just mouse.</li>
-              <li><strong>Understandable</strong> — Content and UI operation must be understandable.</li>
-              <li><strong>Robust</strong> — Content must be robust enough to be interpreted by assistive technologies.</li>
+              <li><strong>Perceivable</strong> - Information and UI components must be presentable in ways users can perceive (e.g., text alternatives for images).</li>
+              <li><strong>Operable</strong> - UI and navigation must be operable by keyboard, not just mouse.</li>
+              <li><strong>Understandable</strong> - Content and UI operation must be understandable.</li>
+              <li><strong>Robust</strong> - Content must be robust enough to be interpreted by assistive technologies.</li>
             </ul>
             <p className={styles.p}>
               Our current conformance status: <strong>Partially conformant</strong>. Some areas of the
@@ -167,7 +167,7 @@ export default function AccessibilityPage() {
               concerns seriously and aim to respond within 2 business days.
             </p>
             <div className={styles.contactBlock}>
-              <p><strong>WeCare Wellness Clinic — Accessibility</strong></p>
+              <p><strong>WeCare Wellness Clinic - Accessibility</strong></p>
               <p>214 W Brandon Blvd, Brandon, FL 33511</p>
               <p>Phone: <a href="tel:+18134385220">(813) 438-5220</a></p>
               <p>Email: <a href="mailto:accessibility@wecarewellnessclinic.com">accessibility@wecarewellnessclinic.com</a></p>
@@ -189,12 +189,12 @@ export default function AccessibilityPage() {
             </p>
             <ul className={styles.list}>
               <li>
-                <strong>U.S. Department of Justice — ADA Information Line:</strong>{' '}
+                <strong>U.S. Department of Justice - ADA Information Line:</strong>{' '}
                 <a href="tel:18004144232">1-800-514-0301</a> (voice) | 1-800-514-0383 (TTY) |{' '}
                 <a href="https://www.ada.gov" target="_blank" rel="noopener noreferrer">ada.gov</a>
               </li>
               <li>
-                <strong>U.S. Department of Health and Human Services — Office for Civil Rights:</strong>{' '}
+                <strong>U.S. Department of Health and Human Services - Office for Civil Rights:</strong>{' '}
                 <a href="https://www.hhs.gov/ocr" target="_blank" rel="noopener noreferrer">hhs.gov/ocr</a>
               </li>
               <li>
@@ -215,7 +215,7 @@ export default function AccessibilityPage() {
               <li>ADA-compliant parking spaces available near the entrance</li>
               <li>Wheelchair-accessible entrance, exam rooms, and restrooms</li>
               <li>Hearing loop system available upon request</li>
-              <li>Sign language interpretation available with advance notice — call <a href="tel:+18134385220">(813) 438-5220</a></li>
+              <li>Sign language interpretation available with advance notice - call <a href="tel:+18134385220">(813) 438-5220</a></li>
               <li>Language interpretation services available for non-English-speaking patients</li>
               <li>Telehealth appointments available for patients who cannot travel to our clinic</li>
             </ul>

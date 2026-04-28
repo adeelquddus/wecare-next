@@ -1,20 +1,20 @@
-# WeCare Wellness — 12-month marketing & SEO strategy
+# WeCare Wellness - 12-month marketing & SEO strategy
 
 > Living document. The plan. Updated every week.
 >
-> **Mission:** make WeCare Wellness one of the top-ranked healthcare websites for primary care, GLP-1 weight loss, telehealth, women's health, men's health, IV therapy, HRT, and HIV PrEP across **Florida, New York, Arizona, and Oregon** — measured by organic search traffic, patient bookings, and brand recognition.
+> **Mission:** make WeCare Wellness one of the top-ranked healthcare websites for primary care, GLP-1 weight loss, telehealth, women's health, men's health, IV therapy, HRT, and HIV PrEP across **Florida, New York, Arizona, and Oregon** - measured by organic search traffic, patient bookings, and brand recognition.
 >
 > **Last updated:** 28 April 2026
 
 ## ⚠️ Strategic constraints to acknowledge upfront
 
-1. **Multi-state telehealth — confirmed scope.** Provider is licensed in **FL + NY + AZ + OR specifically for medical weight loss / GLP-1 telehealth services**. Implication for SEO:
+1. **Multi-state telehealth - confirmed scope.** Provider is licensed in **FL + NY + AZ + OR specifically for medical weight loss / GLP-1 telehealth services**. Implication for SEO:
    - Patient-acquisition content for **weight loss** can run aggressively in all 4 states
    - Patient-acquisition content for primary care, women's health, men's health, HRT, IV, PrEP is **FL-only** (in-person + statewide telehealth)
-   - Other-state content for non-weight-loss services should be informational-only (educational articles, no booking CTA) — drives top-of-funnel awareness without crossing license lines
+   - Other-state content for non-weight-loss services should be informational-only (educational articles, no booking CTA) - drives top-of-funnel awareness without crossing license lines
    - User to confirm exact license scope per state for final content rules before Phase 3 launches
 
-2. **Healthcare advertising is regulated.** Each state has rules — NY especially restrictive on patient-testimonial usage, drug-name claims, and "best/top" superlatives. Content review pipeline must include compliance check.
+2. **Healthcare advertising is regulated.** Each state has rules - NY especially restrictive on patient-testimonial usage, drug-name claims, and "best/top" superlatives. Content review pipeline must include compliance check.
 
 3. **YMYL ("Your Money Your Life") content** has a higher SEO bar from Google. Author bios, medical-reviewer credentials, citations, and E-E-A-T signals are non-negotiable. Every clinical article needs a credentialed reviewer's byline.
 
@@ -31,9 +31,9 @@
 | Keywords ranking in top 10 | < 20 | 150 | 600 |
 | Domain Rating (Ahrefs) | ~10 | 25 | 40 |
 | Google reviews | 18 | 75 | 150+ |
-| Monthly new patient bookings (organic) | unknown — need baseline | 60 | 200 |
+| Monthly new patient bookings (organic) | unknown - need baseline | 60 | 200 |
 | Email subscribers | ~0 | 500 | 2,500 |
-| Instagram followers | unknown — audit | +500/mo | 10,000 |
+| Instagram followers | unknown - audit | +500/mo | 10,000 |
 | TikTok followers | starting from 0 | 2,000 | 15,000 |
 | Backlinks (referring domains) | unknown | 50 | 200 |
 
@@ -43,7 +43,7 @@ These are **directional**. Real numbers depend on competition in each metro, con
 
 ## 🗓️ The 4 phases (12 months)
 
-### Phase 1 — Foundation (months 1–2, weeks 1–8)
+### Phase 1 - Foundation (months 1–2, weeks 1–8)
 
 **Goal:** Domain migration done cleanly. Technical SEO bedrock laid. Tooling installed. Editorial calendar live.
 
@@ -58,7 +58,7 @@ These are **directional**. Real numbers depend on competition in each metro, con
 | 7 | Schema markup expansion: `MedicalCondition`, `MedicalProcedure`, `FAQPage`, `Article`, `Physician`, `MedicalWebPage` for every relevant page. Per-state `LocalBusiness` if applicable. |
 | 8 | Content production pipeline live. First 8 articles published. Internal linking automation. Social-share metadata audited. |
 
-### Phase 2 — Content engine (months 3–6, weeks 9–24)
+### Phase 2 - Content engine (months 3–6, weeks 9–24)
 
 **Goal:** Publish at velocity. Build topical authority. Secure first long-tail rankings.
 
@@ -66,16 +66,16 @@ These are **directional**. Real numbers depend on competition in each metro, con
 - **Content mix:**
   - 40% **service-pillar** articles (deep dives on each service)
   - 30% **condition** articles (e.g., "Managing Type 2 diabetes in Brandon, FL")
-  - 15% **comparison** articles ("Semaglutide vs Tirzepatide — which is right for you?")
+  - 15% **comparison** articles ("Semaglutide vs Tirzepatide - which is right for you?")
   - 10% **local** articles ("Best primary care in Riverview FL", "Telehealth tips for FL snowbirds")
   - 5% **news/seasonal** ("New 2026 guidelines for HRT")
 - **Programmatic launches:** Roll out location pages city-by-city (Tampa, Riverview, Valrico, Lakeland, Lithia, etc.) with localized testimonials and provider info
 - **Email capture:** lead magnet on every page (e.g., "Free GLP-1 readiness checklist"), grow to 500 subs by month 4
 - **Reviews push:** automated post-visit review request emails. Target +5 Google reviews/week
-- **Backlink outreach:** start link building in month 3 — guest posts on regional health blogs, local journalist HARO responses, broken-link building
-- **Mid-phase audit:** Month 4 — what's ranking? what's not? double down on winners.
+- **Backlink outreach:** start link building in month 3 - guest posts on regional health blogs, local journalist HARO responses, broken-link building
+- **Mid-phase audit:** Month 4 - what's ranking? what's not? double down on winners.
 
-### Phase 3 — Authority & geographic expansion (months 7–9, weeks 25–36)
+### Phase 3 - Authority & geographic expansion (months 7–9, weeks 25–36)
 
 **Goal:** Add NY/AZ/OR markets. Domain Rating 25+. Top-3 rankings on tier-2 keywords in FL.
 
@@ -84,23 +84,23 @@ These are **directional**. Real numbers depend on competition in each metro, con
   - Each cluster: state landing page + city pages (5-10 cities/state) + condition pages (obesity, type 2 diabetes, PCOS-related weight gain) + comparison pages (Semaglutide vs Tirzepatide) + cost/insurance state-specific guides
   - State-specific schema (`MedicalClinic` + `availableService` scoped to each state)
   - Local citations + GBP-equivalent listings in each state's main metros
-- **Other-state content for non-weight-loss services** runs as informational-only (no booking CTA) — drives top-of-funnel + email captures + builds topical authority for if/when service licensing expands
-- **YouTube channel launch** — 1 long-form video/week. Repurpose into blog posts + transcribed Q&As + Shorts.
-- **Influencer outreach** — partner with 5 healthcare-adjacent micro-influencers per target state (RDs, fitness coaches, fertility journey accounts). Provider quotes, joint Lives, affiliate program.
-- **Press push** — pitch to 30+ regional outlets (Tampa Bay Times, AZ Central, Oregonian, regional health magazines). Source: HARO + Qwoted + ProfNet.
-- **Healthcare directory expansion** — get listed on Castle Connolly, Best Doctors, US News, Vitals, Doctor.com (each state).
-- **Schema expansion** — add `Person` schema for every contributor + `Course`/`HowTo` schema for educational content where applicable.
+- **Other-state content for non-weight-loss services** runs as informational-only (no booking CTA) - drives top-of-funnel + email captures + builds topical authority for if/when service licensing expands
+- **YouTube channel launch** - 1 long-form video/week. Repurpose into blog posts + transcribed Q&As + Shorts.
+- **Influencer outreach** - partner with 5 healthcare-adjacent micro-influencers per target state (RDs, fitness coaches, fertility journey accounts). Provider quotes, joint Lives, affiliate program.
+- **Press push** - pitch to 30+ regional outlets (Tampa Bay Times, AZ Central, Oregonian, regional health magazines). Source: HARO + Qwoted + ProfNet.
+- **Healthcare directory expansion** - get listed on Castle Connolly, Best Doctors, US News, Vitals, Doctor.com (each state).
+- **Schema expansion** - add `Person` schema for every contributor + `Course`/`HowTo` schema for educational content where applicable.
 
-### Phase 4 — Scale & optimise (months 10–12, weeks 37–52)
+### Phase 4 - Scale & optimise (months 10–12, weeks 37–52)
 
 **Goal:** 30k+ monthly organic sessions. 200+ new-patient bookings/month. Domain Rating 40+.
 
-- **Conversion-rate optimisation** — A/B test landing pages, hero variants, CTA copy, booking flow
-- **Paid amplification** — Google Ads on top-converting keywords (defensive for branded + offensive for high-intent like "GLP-1 doctor near me"); Meta Ads for retargeting
-- **AI search optimisation** — explicit content blocks designed for AI Overview / ChatGPT / Perplexity citations (we have llms.txt, now expand to llms-full.txt and FAQ-formatted content blocks)
-- **Patient-generated content engine** — solicit testimonials, before/afters (with HIPAA releases), success stories. Run "Patient Spotlight" series.
-- **Membership/loyalty marketing** — leverage the loyalty program we built. Use point notifications as a retention/re-engagement channel.
-- **Community building** — private Facebook group for patients, monthly "Ask Darlyne" Lives, in-person Brandon community events
+- **Conversion-rate optimisation** - A/B test landing pages, hero variants, CTA copy, booking flow
+- **Paid amplification** - Google Ads on top-converting keywords (defensive for branded + offensive for high-intent like "GLP-1 doctor near me"); Meta Ads for retargeting
+- **AI search optimisation** - explicit content blocks designed for AI Overview / ChatGPT / Perplexity citations (we have llms.txt, now expand to llms-full.txt and FAQ-formatted content blocks)
+- **Patient-generated content engine** - solicit testimonials, before/afters (with HIPAA releases), success stories. Run "Patient Spotlight" series.
+- **Membership/loyalty marketing** - leverage the loyalty program we built. Use point notifications as a retention/re-engagement channel.
+- **Community building** - private Facebook group for patients, monthly "Ask Darlyne" Lives, in-person Brandon community events
 
 ---
 
@@ -126,9 +126,9 @@ These are **directional**. Real numbers depend on competition in each metro, con
 | **brand-voice:guideline-generation** | Build the voice doc once |
 | **Notion / Airtable / ClickUp** | Editorial calendar |
 | **Surfer SEO** ($89/mo+) | On-page optimisation scoring |
-| **Frase / Clearscope** (alt) | Same — competitive content briefs |
+| **Frase / Clearscope** (alt) | Same - competitive content briefs |
 | **Grammarly Business** | Final pass copy edit |
-| **Yoast / Rank Math (if WP) — N/A here** | We're on Next.js so skip — we control the SEO directly via metadata / schema in the code |
+| **Yoast / Rank Math (if WP) - N/A here** | We're on Next.js so skip - we control the SEO directly via metadata / schema in the code |
 
 ### Local SEO
 
@@ -158,8 +158,8 @@ These are **directional**. Real numbers depend on competition in each metro, con
 | **YouTube** | Long-form education; ranks in Google + autocomplete |
 | **Facebook Page + Group** | Older patient demographic + community |
 | **LinkedIn** | Provider thought leadership, B2B referrals from other clinics |
-| **Pinterest** | Wellness recipes, infographics — sleeper for healthcare |
-| **X / Twitter** | Lower priority — quick news + journalist outreach |
+| **Pinterest** | Wellness recipes, infographics - sleeper for healthcare |
+| **X / Twitter** | Lower priority - quick news + journalist outreach |
 | **Reddit** | Authentic answers in r/loseit, r/Semaglutide, etc. |
 
 ### Email
@@ -168,7 +168,7 @@ These are **directional**. Real numbers depend on competition in each metro, con
 |---|---|
 | **ConvertKit / Mailchimp / Beehiiv** | Newsletter + drip sequences |
 | **Wix Automations** (already have) | Behavioural triggers from booking/loyalty events |
-| **Resend** (alt — devs love it) | Transactional emails from Next.js |
+| **Resend** (alt - devs love it) | Transactional emails from Next.js |
 
 ### MCPs / Claude Code tooling for marketing collaboration
 
@@ -239,9 +239,9 @@ These are **directional**. Real numbers depend on competition in each metro, con
 
 ## 🚦 Pre-flight checklist (before kicking off month 1)
 
-- [x] **Canonical domain confirmed** — `wecarewellnessclinic.com`
-- [ ] **DNS flip Wix → Vercel** — kicks off Phase 1 day 1 (week 1)
-- [x] **Provider licensing scope** — FL (full) + NY/AZ/OR (medical weight loss / GLP-1 telehealth). User to confirm exact wording per state when reviewing content.
+- [x] **Canonical domain confirmed** - `wecarewellnessclinic.com`
+- [ ] **DNS flip Wix → Vercel** - kicks off Phase 1 day 1 (week 1)
+- [x] **Provider licensing scope** - FL (full) + NY/AZ/OR (medical weight loss / GLP-1 telehealth). User to confirm exact wording per state when reviewing content.
 - [ ] Legal/compliance reviewer identified for clinical content
 - [ ] Brand voice doc finalised (use `brand-voice:guideline-generation` skill)
 - [ ] Editorial calendar populated with first 6 months of topics
@@ -254,11 +254,11 @@ These are **directional**. Real numbers depend on competition in each metro, con
 
 ## 📊 Reporting templates
 
-I'll generate weekly + monthly Google-Doc-style reports auto-pulling from GSC + GA4 + Vercel Analytics + Wix Loyalty + booking data. Format TBD — Notion, Confluence, or Slack canvas depending on where the team lives.
+I'll generate weekly + monthly Google-Doc-style reports auto-pulling from GSC + GA4 + Vercel Analytics + Wix Loyalty + booking data. Format TBD - Notion, Confluence, or Slack canvas depending on where the team lives.
 
 ---
 
-## 🤝 Roles (recommended team — adjust to budget)
+## 🤝 Roles (recommended team - adjust to budget)
 
 | Role | Hours/week | Why |
 |---|---|---|
@@ -274,12 +274,12 @@ I'll generate weekly + monthly Google-Doc-style reports auto-pulling from GSC + 
 
 ## 🔗 Related docs
 
-- `DEPLOY.md` — Vercel deployment
-- `PROGRESS.md` — what's done / next
-- `~/.claude/projects/.../memory/MEMORY.md` — full project context
+- `DEPLOY.md` - Vercel deployment
+- `PROGRESS.md` - what's done / next
+- `~/.claude/projects/.../memory/MEMORY.md` - full project context
 
 ---
 
 ## Updates log
 
-- **2026-04-28** — Initial plan drafted. Awaiting confirmation on domain + licensing approach.
+- **2026-04-28** - Initial plan drafted. Awaiting confirmation on domain + licensing approach.

@@ -1,5 +1,5 @@
 /**
- * Clinic utilities — WeCare Wellness
+ * Clinic utilities - WeCare Wellness
  * Live open/closed status, contact info, services list
  * Ported from clinicUtils.js (Wix Velo version)
  */
@@ -34,7 +34,7 @@ export const HOURS: Record<number, { open: number; close: number } | null> = {
   4: { open: 9, close: 17 },   // Thursday
   5: { open: 9, close: 18 },   // Friday    9 AM – 6 PM
   6: { open: 9, close: 13 },   // Saturday  9 AM – 1 PM
-  0: null,                      // Sunday — closed
+  0: null,                      // Sunday - closed
 };
 
 export const HOURS_DISPLAY = [
@@ -147,10 +147,10 @@ export const SERVICES: Service[] = [
     name: 'Telehealth',
     tagline: 'See a provider from anywhere in Florida',
     description:
-      'Board-certified providers available by video for non-emergency consultations, prescription refills, follow-ups, and more — no travel required.',
+      'Board-certified providers available by video for non-emergency consultations, prescription refills, follow-ups, and more - no travel required.',
     icon: '💻',
     features: [
-      'Video visits — same day available',
+      'Video visits - same day available',
       'Prescription management',
       'Chronic condition follow-ups',
       'Mental health check-ins',
@@ -213,7 +213,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'hiv-prep',
     name: 'HIV PrEP',
-    tagline: 'HIV prevention — discreet & covered by insurance',
+    tagline: 'HIV prevention - discreet & covered by insurance',
     description:
       'HIV Pre-Exposure Prophylaxis (PrEP) prescriptions, STI testing, and sexual health care in Brandon, FL. Confidential, judgment-free care with board-certified providers.',
     icon: '🛡️',

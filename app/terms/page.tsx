@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from '@/components/layout/LegalPage.module.css';
 
 export const metadata: Metadata = {
-  title: 'Terms of Use — WeCare Wellness Clinic',
+  title: 'Terms of Use - WeCare Wellness Clinic',
   description:
     'Terms of Use for the WeCare Wellness Clinic website. Read about permitted use, disclaimers, and your agreement with our online services.',
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/terms' },
@@ -95,7 +95,7 @@ export default function TermsPage() {
           <div className={styles.section} id="medical-disclaimer">
             <h2 className={styles.sectionTitle}>3. Medical Disclaimer</h2>
             <div className={`${styles.callout} ${styles.calloutWarn}`}>
-              <p className={styles.calloutTitle}>Important — Not Medical Advice</p>
+              <p className={styles.calloutTitle}>Important - Not Medical Advice</p>
               <p className={styles.p}>
                 The content on this website, including text, graphics, images, and information obtained
                 from third parties, is provided for <strong>informational and educational purposes
@@ -123,8 +123,8 @@ export default function TermsPage() {
           <div className={styles.section} id="intellectual-property">
             <h2 className={styles.sectionTitle}>4. Intellectual Property</h2>
             <p className={styles.p}>
-              The Site and all of its original content, features, and functionality — including but not
-              limited to text, graphics, logos, icons, images, and software — are owned by WeCare
+              The Site and all of its original content, features, and functionality - including but not
+              limited to text, graphics, logos, icons, images, and software - are owned by WeCare
               Wellness Clinic and are protected by United States and international copyright, trademark,
               patent, trade secret, and other intellectual property or proprietary rights laws.
             </p>

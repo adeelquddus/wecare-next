@@ -8,7 +8,7 @@ import LogoLoop from '@/components/ui/LogoLoop';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Medical Services — WeCare Wellness Clinic Brandon, FL',
+  title: 'Medical Services - WeCare Wellness Clinic Brandon, FL',
   description:
     'WeCare Wellness Clinic offers primary care, GLP-1 medical weight loss (Semaglutide/Tirzepatide), telehealth, women\'s health, men\'s health, IV hydration, hormone replacement therapy, and HIV PrEP in Brandon, FL.',
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/services' },
   openGraph: {
-    title: 'All Medical Services — WeCare Wellness Clinic Brandon FL',
+    title: 'All Medical Services - WeCare Wellness Clinic Brandon FL',
     description: 'Primary care, weight loss, telehealth, women\'s health, men\'s health, IV therapy, HRT & PrEP under one roof in Brandon, FL.',
     url: 'https://www.wecarewellnessclinic.com/services',
     type: 'website',
@@ -84,7 +84,7 @@ export default function ServicesPage() {
             </h1>
             <p className={styles.svcHeroLede}>
               From everyday primary care to specialised weight loss programs and statewide
-              telehealth — WeCare covers your health from every angle, all under one roof.
+              telehealth - WeCare covers your health from every angle, all under one roof.
             </p>
             <div className={styles.svcHeroCtas}>
               <Button href="/booking" size="lg" variant="primary">Book an appointment</Button>
@@ -129,7 +129,7 @@ export default function ServicesPage() {
                   id={`svc-${service.slug}`}
                   className={`${styles.serviceCard} ${idx % 2 === 1 ? styles.cardMint : styles.cardBlue}`}
                 >
-                  {/* Hero image — fills the top of the card */}
+                  {/* Hero image - fills the top of the card */}
                   <div className={styles.cardImageWrap} aria-hidden="true">
                     {hasImage ? (
                       <Image

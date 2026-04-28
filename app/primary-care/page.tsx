@@ -24,7 +24,7 @@ import styles from './page.module.css';
 
 /* ── Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: 'Primary Care Doctor in Brandon, FL — WeCare Wellness Clinic',
+  title: 'Primary Care Doctor in Brandon, FL - WeCare Wellness Clinic',
   description:
     'Board-certified primary care in Brandon, FL. Annual physicals, chronic disease management, same-week appointments & Saturday hours. Aetna, Medicare & uninsured accepted.',
   keywords: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/primary-care' },
   openGraph: {
-    title: 'Primary Care Doctor in Brandon, FL — WeCare Wellness Clinic',
+    title: 'Primary Care Doctor in Brandon, FL - WeCare Wellness Clinic',
     description:
       'Comprehensive primary care for every age. Same-week appointments, Saturday hours, telehealth available. Accepting new patients in Brandon, FL.',
     url: 'https://www.wecarewellnessclinic.com/primary-care',
@@ -54,7 +54,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: StethoscopeIcon,
     title: 'Whole-family care',
-    desc: 'From pediatric checkups to senior wellness visits, we treat every age under one roof — no referral needed to get started.',
+    desc: 'From pediatric checkups to senior wellness visits, we treat every age under one roof - no referral needed to get started.',
   },
   {
     Icon: ClipboardIcon,
@@ -74,7 +74,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: LaptopIcon,
     title: 'Telehealth follow-ups',
-    desc: "Can't make it in? Continue your care via secure video from anywhere in Florida — ideal for follow-ups, results review, and Rx refills.",
+    desc: "Can't make it in? Continue your care via secure video from anywhere in Florida - ideal for follow-ups, results review, and Rx refills.",
   },
   {
     Icon: HandshakeIcon,
@@ -89,7 +89,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: ArmStrengthIcon,
     title: 'Preventive screenings',
-    desc: 'Evidence-based screenings for colorectal cancer, hypertension, diabetes, STIs, and vision and hearing changes — caught early, treated better.',
+    desc: 'Evidence-based screenings for colorectal cancer, hypertension, diabetes, STIs, and vision and hearing changes - caught early, treated better.',
   },
   {
     Icon: BrainIcon,
@@ -129,17 +129,17 @@ const DIFFERENTIATORS: Array<{ Icon: React.FC<IconProps>; title: string; desc: s
   {
     Icon: CalendarIcon,
     title: 'Saturday appointments available',
-    desc: "We're open Saturday 9 AM–1 PM — one of the few Brandon clinics that offers weekend primary care so you don't have to miss work or school.",
+    desc: "We're open Saturday 9 AM–1 PM - one of the few Brandon clinics that offers weekend primary care so you don't have to miss work or school.",
   },
   {
     Icon: LightningIcon,
     title: 'Same-week access for new patients',
-    desc: 'Most primary care practices make new patients wait weeks. We consistently offer same-week appointments — and often same-day for urgent needs.',
+    desc: 'Most primary care practices make new patients wait weeks. We consistently offer same-week appointments - and often same-day for urgent needs.',
   },
   {
     Icon: BadgeIcon,
     title: 'Full-service under one roof',
-    desc: 'Beyond primary care, we offer GLP-1 weight loss, IV hydration, hormone therapy, and gynecology — reducing the specialists you have to coordinate.',
+    desc: 'Beyond primary care, we offer GLP-1 weight loss, IV hydration, hormone therapy, and gynecology - reducing the specialists you have to coordinate.',
   },
   {
     Icon: CardIcon,
@@ -149,7 +149,7 @@ const DIFFERENTIATORS: Array<{ Icon: React.FC<IconProps>; title: string; desc: s
   {
     Icon: GlobeIcon,
     title: 'Telehealth across Florida',
-    desc: 'Licensed to see patients anywhere in Florida via video — great for snowbirds, remote workers, and anyone with a busy schedule.',
+    desc: 'Licensed to see patients anywhere in Florida via video - great for snowbirds, remote workers, and anyone with a busy schedule.',
   },
   {
     Icon: HospitalIcon,
@@ -162,17 +162,17 @@ const PROCESS = [
   {
     num: 1,
     title: 'Book online or call',
-    desc: 'Choose your appointment type — new patient visit, annual physical, follow-up, or urgent care. Evening and Saturday slots available.',
+    desc: 'Choose your appointment type - new patient visit, annual physical, follow-up, or urgent care. Evening and Saturday slots available.',
   },
   {
     num: 2,
     title: 'Complete intake forms',
-    desc: 'New patient paperwork is available online so your provider has your full medical history before you arrive — no wasted time in the waiting room.',
+    desc: 'New patient paperwork is available online so your provider has your full medical history before you arrive - no wasted time in the waiting room.',
   },
   {
     num: 3,
     title: 'See your provider',
-    desc: 'Meet with a board-certified physician in-person or by secure video. We spend adequate time with each patient — no rushed 7-minute visits.',
+    desc: 'Meet with a board-certified physician in-person or by secure video. We spend adequate time with each patient - no rushed 7-minute visits.',
   },
   {
     num: 4,
@@ -184,7 +184,7 @@ const PROCESS = [
 const FAQS = [
   {
     q: 'Do you accept new patients for primary care?',
-    a: 'Yes — we actively welcome new patients and typically offer same-week availability. Whether you have recently moved to Brandon, lost your previous doctor, or have never had a primary care provider, our team will get you set up quickly. Call (813) 438-5220 or book online at any time to schedule your new patient visit.',
+    a: 'Yes - we actively welcome new patients and typically offer same-week availability. Whether you have recently moved to Brandon, lost your previous doctor, or have never had a primary care provider, our team will get you set up quickly. Call (813) 438-5220 or book online at any time to schedule your new patient visit.',
   },
   {
     q: 'What insurance plans do you accept?',
@@ -196,7 +196,7 @@ const FAQS = [
   },
   {
     q: 'Do you offer telehealth primary care visits?',
-    a: 'Yes. Many primary care services can be delivered via secure video, including follow-up appointments, lab result reviews, prescription refills, chronic disease check-ins, and behavioral health screenings. Telehealth visits are available for patients throughout Florida. You just need a smartphone, tablet, or computer with a camera — no special app required.',
+    a: 'Yes. Many primary care services can be delivered via secure video, including follow-up appointments, lab result reviews, prescription refills, chronic disease check-ins, and behavioral health screenings. Telehealth visits are available for patients throughout Florida. You just need a smartphone, tablet, or computer with a camera - no special app required.',
   },
   {
     q: 'What is included in an annual wellness exam?',
@@ -212,7 +212,7 @@ const FAQS = [
   },
   {
     q: 'Are you open on Saturdays?',
-    a: 'Yes — we are open Saturday from 9 AM to 1 PM, making us one of the few primary care practices in the Brandon area with weekend availability. Saturday hours are ideal for working adults, parents with school-aged children, and anyone who finds it difficult to take time off during the week. Regular Monday–Thursday hours are 9 AM–5 PM, and Friday hours extend to 6 PM.',
+    a: 'Yes - we are open Saturday from 9 AM to 1 PM, making us one of the few primary care practices in the Brandon area with weekend availability. Saturday hours are ideal for working adults, parents with school-aged children, and anyone who finds it difficult to take time off during the week. Regular Monday–Thursday hours are 9 AM–5 PM, and Friday hours extend to 6 PM.',
   },
   {
     q: 'How do I transfer my medical records from a previous provider?',
@@ -220,7 +220,7 @@ const FAQS = [
   },
   {
     q: 'Do you offer preventive care and health screenings?',
-    a: 'Preventive care is central to what we do. We follow USPSTF guidelines for screenings including colorectal cancer, cervical cancer, breast cancer, diabetes, hypertension, depression, and sexually transmitted infections. We also offer cardiovascular risk assessment, bone density referrals, skin checks, and vision and hearing evaluations. Catching problems early is always less costly — in every sense — than treating them late.',
+    a: 'Preventive care is central to what we do. We follow USPSTF guidelines for screenings including colorectal cancer, cervical cancer, breast cancer, diabetes, hypertension, depression, and sexually transmitted infections. We also offer cardiovascular risk assessment, bone density referrals, skin checks, and vision and hearing evaluations. Catching problems early is always less costly - in every sense - than treating them late.',
   },
 ];
 
@@ -329,7 +329,7 @@ export default function PrimaryCarePage() {
 
       <Hero
         headline="Primary care that puts you first"
-        subtext="Board-certified physicians providing comprehensive, continuous care for patients of all ages in Brandon, FL — in-person and via telehealth. Same-week appointments available."
+        subtext="Board-certified physicians providing comprehensive, continuous care for patients of all ages in Brandon, FL - in-person and via telehealth. Same-week appointments available."
         ctaLabel="Book a Visit"
         ctaHref="/booking"
         secondaryLabel="Call (813) 438-5220"
@@ -348,10 +348,10 @@ export default function PrimaryCarePage() {
                 Your long-term health partner in Brandon
               </h2>
               <p className={styles.introBody}>
-                At WeCare Wellness Clinic, our board-certified primary care providers do more than treat today's symptoms — they invest in understanding your complete health history so they can help you prevent tomorrow's problems. Whether you need a routine annual physical, are managing a chronic condition like diabetes or hypertension, or have an urgent concern that can't wait, our team delivers timely, personalized care that you can count on.
+                At WeCare Wellness Clinic, our board-certified primary care providers do more than treat today's symptoms - they invest in understanding your complete health history so they can help you prevent tomorrow's problems. Whether you need a routine annual physical, are managing a chronic condition like diabetes or hypertension, or have an urgent concern that can't wait, our team delivers timely, personalized care that you can count on.
               </p>
               <p className={styles.introBody}>
-                Conveniently located at 214 W Brandon Blvd, we serve Brandon, Valrico, Riverview, Sun City Center, and patients across Florida via telehealth. We accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan, and we welcome uninsured patients with transparent self-pay pricing. Most importantly, we're accepting new patients right now — with same-week availability that most clinics simply can't match.
+                Conveniently located at 214 W Brandon Blvd, we serve Brandon, Valrico, Riverview, Sun City Center, and patients across Florida via telehealth. We accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan, and we welcome uninsured patients with transparent self-pay pricing. Most importantly, we're accepting new patients right now - with same-week availability that most clinics simply can't match.
               </p>
               <p className={styles.introBody}>
                 Unlike practices that rush patients through in seven minutes, we allocate real time for every visit. You'll leave with a clear understanding of your health status, a personalized care plan, and direct access to your care team for questions in between appointments.
@@ -400,7 +400,7 @@ export default function PrimaryCarePage() {
             <p className="ds-eyebrow">What we offer</p>
             <h2 id="benefits-heading" className="ds-h2">Primary care services</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Everything you need to manage, protect, and improve your health — all delivered by a team that knows you by name, not just a chart number.
+              Everything you need to manage, protect, and improve your health - all delivered by a team that knows you by name, not just a chart number.
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
@@ -426,7 +426,7 @@ export default function PrimaryCarePage() {
               Treating the full spectrum of primary care needs
             </h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Our providers are trained to diagnose, treat, and manage a broad range of acute and chronic conditions. Below is a partial list — if your condition isn't listed, call us and we'll let you know if we can help.
+              Our providers are trained to diagnose, treat, and manage a broad range of acute and chronic conditions. Below is a partial list - if your condition isn't listed, call us and we'll let you know if we can help.
             </p>
           </div>
           <ul className={styles.featuresList} role="list"
@@ -450,7 +450,7 @@ export default function PrimaryCarePage() {
               What makes us different from other Brandon primary care practices
             </h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Brandon has several primary care options — here is why our patients choose WeCare Wellness Clinic and why they keep coming back.
+              Brandon has several primary care options - here is why our patients choose WeCare Wellness Clinic and why they keep coming back.
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
@@ -499,7 +499,7 @@ export default function PrimaryCarePage() {
                 Conveniently located in Brandon, FL
               </h2>
               <p className={styles.introBody}>
-                We are located at <strong>214 W Brandon Blvd, Brandon, FL 33511</strong> — just off the main corridor with ample free parking. Our clinic is easily accessible from Valrico, Riverview, Sun City Center, and the greater Tampa Bay area.
+                We are located at <strong>214 W Brandon Blvd, Brandon, FL 33511</strong> - just off the main corridor with ample free parking. Our clinic is easily accessible from Valrico, Riverview, Sun City Center, and the greater Tampa Bay area.
               </p>
               <p className={styles.introBody}>
                 Can't make it in during the week? Our <strong>Saturday morning hours (9 AM–1 PM)</strong> and <strong>Friday evening hours (open until 6 PM)</strong> mean there is almost always a time that works for your schedule. For patients throughout Florida, telehealth visits are available on the same schedule.
@@ -561,7 +561,7 @@ export default function PrimaryCarePage() {
 
       {/* ── Insurance strip ───────────────────────────────────────────── */}
       <div className={styles.insuranceStrip} role="complementary" aria-label="Insurance accepted at WeCare Wellness Clinic">
-        <p className={styles.insuranceText}>Insurance accepted — and uninsured patients always welcome</p>
+        <p className={styles.insuranceText}>Insurance accepted - and uninsured patients always welcome</p>
         <p className={styles.insuranceNames}>
           Aetna &nbsp;·&nbsp; United Healthcare &nbsp;·&nbsp; Medicare &nbsp;·&nbsp; Blue Cross Blue Shield &nbsp;·&nbsp; MultiPlan &nbsp;·&nbsp; Self-Pay
         </p>
@@ -571,7 +571,7 @@ export default function PrimaryCarePage() {
 
       <BookingCTA
         heading="Ready to make primary care a priority?"
-        subtext="New and returning patients welcome. Same-week appointments available in Brandon, FL — or via telehealth anywhere in Florida. Saturday hours available."
+        subtext="New and returning patients welcome. Same-week appointments available in Brandon, FL - or via telehealth anywhere in Florida. Saturday hours available."
       />
     </>
   );

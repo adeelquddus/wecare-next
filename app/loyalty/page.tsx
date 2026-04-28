@@ -1,5 +1,5 @@
 /**
- * Loyalty page — branches on Wix Members authentication state.
+ * Loyalty page - branches on Wix Members authentication state.
  *
  *   ┌──────────────────────────────────────────────────────────┐
  *   │  visitor logged in?                                      │
@@ -21,7 +21,7 @@ import MemberDashboard from '@/components/loyalty/MemberDashboard';
 import MarketingLanding from '@/components/loyalty/MarketingLanding';
 
 export const metadata: Metadata = {
-  title: 'Loyalty Rewards Program — WeCare Wellness Clinic Brandon, FL',
+  title: 'Loyalty Rewards Program - WeCare Wellness Clinic Brandon, FL',
   description:
     'Earn points every time you book a visit, refer a friend, or purchase a plan at WeCare Wellness Clinic. Free to join. 10 points = $1 off any service.',
   keywords: [
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/loyalty' },
   openGraph: {
-    title: 'WeCare Loyalty Rewards — Earn Points On Every Visit',
+    title: 'WeCare Loyalty Rewards - Earn Points On Every Visit',
     description: 'Free patient loyalty program in Brandon, FL. Earn points, redeem rewards, save on every visit.',
     url: 'https://www.wecarewellnessclinic.com/loyalty',
     type: 'website',
   },
 };
 
-// Always render fresh — points balance is dynamic
+// Always render fresh - points balance is dynamic
 export const revalidate = 0;
 
 export default async function LoyaltyPage() {
@@ -76,7 +76,7 @@ export default async function LoyaltyPage() {
   if (!account && email) account = await getAccountByEmail(email).catch(() => null);
 
   /* Fallback: this member is logged in via Wix but doesn't have a loyalty
-     record yet (extremely rare — Wix auto-creates one on signup). Show the
+     record yet (extremely rare - Wix auto-creates one on signup). Show the
      marketing landing with a note that they're already authenticated. */
   if (!account) {
     return <MarketingLanding rewards={rewards} />;

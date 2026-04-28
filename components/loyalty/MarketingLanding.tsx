@@ -30,7 +30,7 @@ const EARN_ICONS: Record<string, IconComponent> = {
   social: LightningIcon,
 };
 
-/** Pretty label for a redemption reward — e.g. "$1 off". */
+/** Pretty label for a redemption reward - e.g. "$1 off". */
 function rewardSubtitle(r: LoyaltyReward): string {
   if (r.type === 'DISCOUNT_AMOUNT' && r.discountAmount) {
     return `$${Number(r.discountAmount.amount).toFixed(0)} off any service`;
@@ -62,12 +62,12 @@ export default function MarketingLanding({ rewards }: Props) {
 
             <p className={styles.heroLede}>
               Real points for real care. Sign up free, earn points on every visit, plan
-              purchase, and birthday — then redeem them for instant savings on any service.
+              purchase, and birthday - then redeem them for instant savings on any service.
             </p>
 
             <div className={styles.heroCtas}>
               {/*
-                Use a plain <a> for the auth endpoint — Next's <Link> would try to
+                Use a plain <a> for the auth endpoint - Next's <Link> would try to
                 client-side route to a non-existent page, but /api/auth/login is a
                 server redirect handled by the auth route handler.
               */}
@@ -122,7 +122,7 @@ export default function MarketingLanding({ rewards }: Props) {
               </span>
               <h3 className={styles.cardTitle}>Join for free</h3>
               <p className={styles.cardBody}>
-                Get enrolled automatically on your next visit — or sign up online in
+                Get enrolled automatically on your next visit - or sign up online in
                 under a minute. No fees, ever.
               </p>
             </li>
@@ -134,7 +134,7 @@ export default function MarketingLanding({ rewards }: Props) {
               <h3 className={styles.cardTitle}>Earn points</h3>
               <p className={styles.cardBody}>
                 Every visit, every plan purchase, your birthday, even an Instagram
-                follow — your points add up automatically.
+                follow - your points add up automatically.
               </p>
             </li>
             <li className={styles.howCard}>
@@ -144,7 +144,7 @@ export default function MarketingLanding({ rewards }: Props) {
               </span>
               <h3 className={styles.cardTitle}>Redeem rewards</h3>
               <p className={styles.cardBody}>
-                Trade 10 points for $1 off any service at checkout. Use them any time —
+                Trade 10 points for $1 off any service at checkout. Use them any time -
                 they never expire mid-month.
               </p>
             </li>
@@ -161,7 +161,7 @@ export default function MarketingLanding({ rewards }: Props) {
               Five real ways to stack points
             </h2>
             <p className="ds-lede">
-              These are the actual rules running on our live program — pulled
+              These are the actual rules running on our live program - pulled
               straight from our Wix Loyalty configuration.
             </p>
           </div>
@@ -211,14 +211,14 @@ export default function MarketingLanding({ rewards }: Props) {
             </h2>
             <p className="ds-lede">
               {rewards.length === 1
-                ? 'One simple, generous redemption — no fine print.'
+                ? 'One simple, generous redemption - no fine print.'
                 : 'Pick the reward that works for you.'}
             </p>
           </div>
 
           {rewards.length === 0 ? (
             <p className={styles.rewardsEmpty}>
-              New rewards are being prepared. Check back soon — your points are still stacking.
+              New rewards are being prepared. Check back soon - your points are still stacking.
             </p>
           ) : (
             <ul

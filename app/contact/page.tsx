@@ -7,7 +7,7 @@ import { PinIcon, PhoneIcon, MailIcon } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Contact WeCare Wellness Clinic — Brandon, FL (813) 438-5220',
+  title: 'Contact WeCare Wellness Clinic - Brandon, FL (813) 438-5220',
   description:
     'Contact WeCare Wellness Clinic at 214 W Brandon Blvd, Brandon FL 33511. Call (813) 438-5220 or book online. Mon–Thu 9–5, Fri 9–6, Sat 9–1. Serving Brandon, Riverview, and Tampa Bay.',
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/contact' },
   openGraph: {
-    title: 'Contact WeCare Wellness Clinic — Brandon, FL',
+    title: 'Contact WeCare Wellness Clinic - Brandon, FL',
     description: '214 W Brandon Blvd, Brandon FL 33511 · (813) 438-5220 · Mon–Thu 9–5, Fri 9–6, Sat 9–1.',
     url: 'https://www.wecarewellnessclinic.com/contact',
     type: 'website',

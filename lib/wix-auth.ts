@@ -1,5 +1,5 @@
 /**
- * Wix Members OAuth — server-side session helpers.
+ * Wix Members OAuth - server-side session helpers.
  *
  * Stores Wix OAuth `Tokens` (access + refresh) in an httpOnly cookie so server
  * components / route handlers can call `wixClient.members.getCurrentMember()`
@@ -109,7 +109,7 @@ export async function getCurrentMember(): Promise<CurrentMember | null> {
     }
     return null;
   } catch {
-    // Token likely expired or revoked — clear so next request can re-auth.
+    // Token likely expired or revoked - clear so next request can re-auth.
     await clearMemberTokens();
     return null;
   }

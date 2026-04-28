@@ -1,5 +1,5 @@
 /* =============================================================================
-   Blog Detail Page — WeCare Wellness
+   Blog Detail Page - WeCare Wellness
    Design system: CSS custom properties from globals.css (no raw hex except
    transparent/inherit). Spacing: --space-1…7. Containers: --container-max.
    ============================================================================= */
@@ -57,7 +57,7 @@
   filter: brightness(0.72);
 }
 
-/* Gradient overlay — fades to dark at bottom so text is always legible */
+/* Gradient overlay - fades to dark at bottom so text is always legible */
 .heroOverlay {
   position: absolute;
   inset: 0;
@@ -458,7 +458,7 @@
   position: relative;
 }
 
-/* Appointment card — dark with gradient */
+/* Appointment card - dark with gradient */
 .appointmentCard {
   background: var(--color-dark);
   border-color: transparent;

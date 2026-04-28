@@ -1,17 +1,17 @@
 /* =====================================================================
-   MemberDashboard — logged-in loyalty experience
+   MemberDashboard - logged-in loyalty experience
    Brand-aligned: primary blue, mint, amber, with rose accents.
    Uses design tokens exclusively (no hardcoded hex outside accent colours).
    ===================================================================== */
 
 .page {
-  /* Push the page out of the global container — the hero needs full bleed */
+  /* Push the page out of the global container - the hero needs full bleed */
   background: var(--bg-page);
   padding-bottom: var(--space-9);
 }
 
 /* ───────────────────────────────────────────────────────────
-   1. HERO  — full-bleed gradient banner with floating blobs
+   1. HERO  - full-bleed gradient banner with floating blobs
    ─────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
@@ -147,7 +147,7 @@
 }
 .heroSecondary:hover { color: #fff; }
 
-/* Hero right — avatar + animated points number */
+/* Hero right - avatar + animated points number */
 .heroRight {
   display: flex;
   flex-direction: column;
@@ -247,7 +247,7 @@
 
 
 /* ───────────────────────────────────────────────────────────
-   2. STATS STRIP — 4 tiles
+   2. STATS STRIP - 4 tiles
    ─────────────────────────────────────────────────────────── */
 .statsStrip {
   max-width: var(--container-max);
@@ -313,7 +313,7 @@
 
 
 /* ───────────────────────────────────────────────────────────
-   3. PROGRESS BAND — next-reward gradient bar
+   3. PROGRESS BAND - next-reward gradient bar
    ─────────────────────────────────────────────────────────── */
 .progressBand {
   max-width: var(--container-max);
@@ -444,7 +444,7 @@
 
 
 /* ───────────────────────────────────────────────────────────
-   3b. ROADMAP — milestone ladder
+   3b. ROADMAP - milestone ladder
    ─────────────────────────────────────────────────────────── */
 .roadmapSection {
   max-width: var(--container-max);
@@ -547,7 +547,7 @@
   font-weight: var(--weight-semibold);
 }
 
-/* Highest reached — "you are here" */
+/* Highest reached - "you are here" */
 .milestoneCurrent {
   border-color: var(--color-primary);
   box-shadow: 0 8px 24px rgba(0, 134, 197, 0.18);
@@ -817,7 +817,7 @@
 
 
 /* ───────────────────────────────────────────────────────────
-   6. TIER LADDER — only when configured
+   6. TIER LADDER - only when configured
    ─────────────────────────────────────────────────────────── */
 .tierSection {
   max-width: var(--container-max);

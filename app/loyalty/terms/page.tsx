@@ -1,5 +1,5 @@
 /**
- * Loyalty program terms — patient-facing legal/program rules.
+ * Loyalty program terms - patient-facing legal/program rules.
  *
  * Server component. Pulls live data from Wix where possible so the
  * displayed earn/redeem values match the program in real time.
@@ -18,9 +18,9 @@ import { CLINIC } from '@/lib/clinic';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Loyalty Program Terms — WeCare Wellness Clinic',
+  title: 'Loyalty Program Terms - WeCare Wellness Clinic',
   description:
-    'Official program terms for the WeCare Wellness Loyalty Program — eligibility, earning rules, redemption, point expiration, and contact information.',
+    'Official program terms for the WeCare Wellness Loyalty Program - eligibility, earning rules, redemption, point expiration, and contact information.',
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/loyalty/terms' },
   robots: { index: true, follow: true },
 };
@@ -76,8 +76,8 @@ export default async function LoyaltyTermsPage() {
           <p>
             The WeCare Wellness Loyalty Program (the "Program") is a free, opt-in rewards
             program offered by <strong>WeCare Wellness Clinic, LLC</strong> ("WeCare", "we",
-            "our") to active patients. Members earn points for engaging with their care —
-            booking visits, purchasing care plans, and other qualifying actions — and
+            "our") to active patients. Members earn points for engaging with their care -
+            booking visits, purchasing care plans, and other qualifying actions - and
             redeem those points for discounts and benefits at the clinic.
           </p>
           <p>
@@ -153,7 +153,7 @@ export default async function LoyaltyTermsPage() {
             </ul>
           ) : (
             <p className={styles.fineprint}>
-              No active rewards configured at the moment. Check back soon — or call us
+              No active rewards configured at the moment. Check back soon - or call us
               and we will let you know when new rewards launch.
             </p>
           )}

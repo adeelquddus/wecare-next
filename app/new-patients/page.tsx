@@ -28,7 +28,7 @@ import { CalendarIcon, HospitalIcon, GlobeIcon } from '@/components/ui/AnimatedI
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'New Patients — WeCare Wellness Clinic Brandon, FL',
+  title: 'New Patients - WeCare Wellness Clinic Brandon, FL',
   description:
     'Accepting new patients in Brandon, FL. Learn what to expect, what to bring, and how to book your first visit at WeCare Wellness Clinic. Most insurance accepted. Same-week appointments.',
   keywords: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/new-patients' },
   openGraph: {
-    title: 'New Patients — WeCare Wellness Clinic Brandon, FL',
+    title: 'New Patients - WeCare Wellness Clinic Brandon, FL',
     description: 'Now accepting new patients. Same-week appointments, most insurance accepted, Saturday hours. Book your first visit today.',
     url: 'https://www.wecarewellnessclinic.com/new-patients',
     type: 'website',
@@ -97,13 +97,13 @@ const WHY_CHOOSE = [
   {
     Illustration: ServicesClusterIllustration,
     title: '8 services under one roof',
-    desc: "Primary care, GLP-1 weight loss, women's health, men's health, telehealth, IV hydration, HRT, and HIV PrEP — all here.",
+    desc: "Primary care, GLP-1 weight loss, women's health, men's health, telehealth, IV hydration, HRT, and HIV PrEP - all here.",
     accent: 'mint',
   },
   {
     Illustration: WeekendIllustration,
     title: 'Saturday hours',
-    desc: 'Open Saturday 9 AM–1 PM — one of very few primary care clinics in Brandon with weekend availability.',
+    desc: 'Open Saturday 9 AM–1 PM - one of very few primary care clinics in Brandon with weekend availability.',
     accent: 'amber',
   },
   {
@@ -121,7 +121,7 @@ const WHY_CHOOSE = [
   {
     Illustration: CareHandshakeIllustration,
     title: 'Judgment-free care',
-    desc: "We treat every patient with respect and dignity — whether you're here for a physical, PrEP, hormone therapy, or weight loss.",
+    desc: "We treat every patient with respect and dignity - whether you're here for a physical, PrEP, hormone therapy, or weight loss.",
     accent: 'rose',
   },
 ];
@@ -184,7 +184,7 @@ export default function NewPatientsPage() {
               </h1>
               <p className={styles.npHeroLede}>
                 Same-week appointments, transparent pricing, and a provider who actually listens.
-                Here is everything you need to know before stepping through our doors — or hopping
+                Here is everything you need to know before stepping through our doors - or hopping
                 on a telehealth visit.
               </p>
               <div className={styles.npHeroCtas}>
@@ -211,7 +211,7 @@ export default function NewPatientsPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="ds-eyebrow">Simple process</p>
-            <h2 id="steps-heading" className="ds-h2">Your first visit — what to expect</h2>
+            <h2 id="steps-heading" className="ds-h2">Your first visit - what to expect</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
               Four straightforward steps from booking to walking out with a personalised care plan.
             </p>
@@ -246,7 +246,7 @@ export default function NewPatientsPage() {
                 {WHAT_TO_BRING.map(({ Icon, text, small }) => (
                   <li key={text} className={styles.bringItem}>
                     <span className={styles.bringIconWrap} aria-hidden="true">
-                      {/* @ts-ignore — both small icon & small SVG renderers accept size */}
+                      {/* @ts-ignore - both small icon & small SVG renderers accept size */}
                       <Icon size={small ? 36 : 22} />
                     </span>
                     <span>{text}</span>
@@ -284,14 +284,14 @@ export default function NewPatientsPage() {
         </div>
       </section>
 
-      {/* ── Why patients choose us — illustrated cards ─────────────── */}
+      {/* ── Why patients choose us - illustrated cards ─────────────── */}
       <section className={styles.whySection} aria-labelledby="why-heading">
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="ds-eyebrow">Why WeCare</p>
             <h2 id="why-heading" className="ds-h2">Why patients choose us</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Six reasons hundreds of patients keep coming back — and refer their friends.
+              Six reasons hundreds of patients keep coming back - and refer their friends.
             </p>
           </div>
           <div className={styles.whyGrid}>
@@ -315,7 +315,7 @@ export default function NewPatientsPage() {
             <p className="ds-eyebrow">Everything in one place</p>
             <h2 id="services-heading" className="ds-h2">Services available to new patients</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Browse what you can book on your first visit — or any visit after.
+              Browse what you can book on your first visit - or any visit after.
             </p>
           </div>
           <ul className={styles.serviceTiles} role="list">

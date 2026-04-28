@@ -1,5 +1,5 @@
 /* =========================================================================
-   Header — WeCare Wellness
+   Header - WeCare Wellness
    Announcement bar + sticky navbar + Services dropdown + mobile menu
    ========================================================================= */
 
@@ -18,7 +18,7 @@
   justify-content: center;
   /* Right-padding ensures the centred text never collides with the close button */
   padding: 10px clamp(48px, 8vw, 56px);
-  /* Brand gradient — blue → teal */
+  /* Brand gradient - blue → teal */
   background: linear-gradient(90deg, var(--color-primary) 0%, #1a7aff 35%, var(--color-secondary) 100%);
   color: #fff;
   overflow: hidden;   /* belt-and-braces: no spill on small viewports */
@@ -55,7 +55,7 @@
 
 .bannerLink:hover {
   opacity: 0.85;
-  color: #fff;   /* keep white — global a:hover would turn this primary-blue */
+  color: #fff;   /* keep white - global a:hover would turn this primary-blue */
 }
 
 .bannerClose {
@@ -90,7 +90,7 @@
   box-shadow: 0 2px 16px rgba(11, 31, 58, 0.08);
 }
 
-/* Full-width: no max-width — padding scales with the viewport so the nav
+/* Full-width: no max-width - padding scales with the viewport so the nav
    breathes on big monitors and tightens cleanly on tablet sizes. */
 .navInner {
   width: 100%;
@@ -214,7 +214,7 @@
 
 .dropdown {
   position: absolute;
-  /* Start flush with the bottom of the li — padding-top creates the
+  /* Start flush with the bottom of the li - padding-top creates the
      visual gap *inside* the element so the mouse never crosses empty space */
   top: 100%;
   left: 50%;
@@ -235,7 +235,7 @@
 
 /* Inner card that holds the actual content */
 .dropdown::after {
-  display: none; /* unused — inner content uses .dropInner */
+  display: none; /* unused - inner content uses .dropInner */
 }
 
 /* Real visible dropdown card */
@@ -248,7 +248,7 @@
   position: relative;
 }
 
-/* Arrow pointer — sits at the top of the visible card */
+/* Arrow pointer - sits at the top of the visible card */
 .dropInner::before {
   content: '';
   position: absolute;
@@ -646,7 +646,7 @@
   }
 }
 
-/* ≤1024: switch to mobile menu — 7 nav items + logo + CTA can no longer
+/* ≤1024: switch to mobile menu - 7 nav items + logo + CTA can no longer
    fit comfortably even with tight padding. Cleaner UX than squeezing. */
 @media (max-width: 1024px) {
   .desktopNav,

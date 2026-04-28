@@ -99,7 +99,7 @@ export default function Hero({
             </div>
           </div>
 
-          {/* Doctor image — visible on mobile/small screens only */}
+          {/* Doctor image - visible on mobile/small screens only */}
           <div className={styles.doctorWrap} aria-hidden="true">
             <Image
               src="/darlyne.png"

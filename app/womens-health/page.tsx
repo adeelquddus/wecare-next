@@ -16,7 +16,7 @@ import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: "Women's Health & Gynecology in Brandon, FL — WeCare Wellness Clinic",
+  title: "Women's Health & Gynecology in Brandon, FL - WeCare Wellness Clinic",
   description:
     "Compassionate women's health care in Brandon, FL. Annual well-woman exams, pap smears, HRT, menopause management, PCOS treatment, birth control & more. Most insurance accepted.",
   keywords: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/womens-health' },
   openGraph: {
-    title: "Women's Health & Gynecology — WeCare Wellness Clinic | Brandon, FL",
+    title: "Women's Health & Gynecology - WeCare Wellness Clinic | Brandon, FL",
     description:
       "Complete gynecological & women's wellness care in Brandon, FL. Annual exams, HRT, menopause management, PCOS, birth control, and more. Same-week appointments available.",
     url: 'https://www.wecarewellnessclinic.com/womens-health',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 const medicalClinicSchema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalClinic',
-  name: 'WeCare Wellness Clinic — Women\'s Health',
+  name: 'WeCare Wellness Clinic - Women\'s Health',
   url: 'https://www.wecarewellnessclinic.com/womens-health',
   telephone: '+18134385220',
   address: {
@@ -136,7 +136,7 @@ const faqSchema = {
       name: 'What is included in a well-woman visit at WeCare?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Our comprehensive well-woman visit includes a full physical exam, pelvic exam, breast exam, blood pressure and BMI screening, review of immunizations, and lab orders as needed (hormone panel, cholesterol, thyroid, STI screening). We also discuss family planning, mental health, bone health, and any concerns you have — giving you ample time to speak openly with your provider.',
+        text: 'Our comprehensive well-woman visit includes a full physical exam, pelvic exam, breast exam, blood pressure and BMI screening, review of immunizations, and lab orders as needed (hormone panel, cholesterol, thyroid, STI screening). We also discuss family planning, mental health, bone health, and any concerns you have - giving you ample time to speak openly with your provider.',
       },
     },
     {
@@ -176,7 +176,7 @@ const faqSchema = {
       name: 'Is STI testing confidential?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — completely. All STI screening, results, and treatment at WeCare are handled with strict confidentiality and without judgment. We offer comprehensive panels for chlamydia, gonorrhea, syphilis, HIV, hepatitis B and C, and herpes. If a result comes back positive, we provide treatment, partner notification guidance, and compassionate counseling to help you move forward confidently.',
+        text: 'Yes - completely. All STI screening, results, and treatment at WeCare are handled with strict confidentiality and without judgment. We offer comprehensive panels for chlamydia, gonorrhea, syphilis, HIV, hepatitis B and C, and herpes. If a result comes back positive, we provide treatment, partner notification guidance, and compassionate counseling to help you move forward confidently.',
       },
     },
     {
@@ -200,7 +200,7 @@ const faqSchema = {
       name: 'Does insurance cover well-woman visits and women\'s health screenings?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Under the Affordable Care Act (ACA), most insurance plans cover preventive women\'s health services — including annual well-woman exams, pap smears, mammogram referrals, STI screening, and contraception counseling — at no cost to you. We accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. We also welcome uninsured patients and offer transparent, affordable self-pay pricing.',
+        text: 'Under the Affordable Care Act (ACA), most insurance plans cover preventive women\'s health services - including annual well-woman exams, pap smears, mammogram referrals, STI screening, and contraception counseling - at no cost to you. We accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. We also welcome uninsured patients and offer transparent, affordable self-pay pricing.',
       },
     },
   ],
@@ -237,22 +237,22 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: FlowerIcon,
     title: 'Annual well-woman exams',
-    desc: 'Comprehensive preventive visits that go beyond a basic checkup. We review your full health history, perform a physical and pelvic exam, check blood pressure and BMI, discuss immunizations, and order labs tailored to your age and risk factors — all in one appointment.',
+    desc: 'Comprehensive preventive visits that go beyond a basic checkup. We review your full health history, perform a physical and pelvic exam, check blood pressure and BMI, discuss immunizations, and order labs tailored to your age and risk factors - all in one appointment.',
   },
   {
     Icon: MicroscopeIcon,
     title: 'Pap smears & cervical screening',
-    desc: 'Cervical cancer is largely preventable with routine screening. We follow USPSTF guidelines — Pap smear every 3 years for women 21–65, or combined Pap + HPV co-testing every 5 years for women 30–65. We walk you through your results and any next steps with clarity and care.',
+    desc: 'Cervical cancer is largely preventable with routine screening. We follow USPSTF guidelines - Pap smear every 3 years for women 21–65, or combined Pap + HPV co-testing every 5 years for women 30–65. We walk you through your results and any next steps with clarity and care.',
   },
   {
     Icon: ScaleIcon,
     title: 'Hormone replacement therapy (HRT)',
-    desc: 'Menopause does not have to derail your life. We design individualized HRT plans — estrogen, progesterone, or combination therapy — to ease hot flashes, night sweats, mood shifts, sleep disruption, and bone loss, while monitoring your health closely at every follow-up.',
+    desc: 'Menopause does not have to derail your life. We design individualized HRT plans - estrogen, progesterone, or combination therapy - to ease hot flashes, night sweats, mood shifts, sleep disruption, and bone loss, while monitoring your health closely at every follow-up.',
   },
   {
     Icon: PillsIcon,
     title: 'Birth control counseling',
-    desc: 'Family planning on your terms. We review your medical history, lifestyle, and goals to help you choose the right method — oral contraceptive pills, the patch, vaginal ring, Depo-Provera injection, or IUD referral. No pressure, just honest guidance so you feel confident in your decision.',
+    desc: 'Family planning on your terms. We review your medical history, lifestyle, and goals to help you choose the right method - oral contraceptive pills, the patch, vaginal ring, Depo-Provera injection, or IUD referral. No pressure, just honest guidance so you feel confident in your decision.',
   },
   {
     Icon: LeafIcon,
@@ -262,7 +262,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: DropIcon,
     title: 'Menopause & perimenopause care',
-    desc: 'The transition to menopause can span a decade. We support every stage — from the first irregular periods of perimenopause through post-menopause — with HRT, non-hormonal options, bone health monitoring, cardiovascular risk reduction, and compassionate counseling every step of the way.',
+    desc: 'The transition to menopause can span a decade. We support every stage - from the first irregular periods of perimenopause through post-menopause - with HRT, non-hormonal options, bone health monitoring, cardiovascular risk reduction, and compassionate counseling every step of the way.',
   },
   {
     Icon: TestTubeIcon,
@@ -299,7 +299,7 @@ const WELL_WOMAN_STEPS = [
   {
     num: 1,
     title: 'Health history review',
-    desc: 'We start by reviewing your personal and family medical history, current medications, lifestyle factors, and any specific concerns you have brought to the visit. Nothing is off limits — this is your time.',
+    desc: 'We start by reviewing your personal and family medical history, current medications, lifestyle factors, and any specific concerns you have brought to the visit. Nothing is off limits - this is your time.',
   },
   {
     num: 2,
@@ -309,22 +309,22 @@ const WELL_WOMAN_STEPS = [
   {
     num: 3,
     title: 'Pelvic exam & Pap smear',
-    desc: 'A pelvic exam allows us to assess your reproductive organs for any abnormalities. If you are due for cervical cancer screening, a Pap smear (and HPV co-test if appropriate) is collected — a quick, two-minute procedure.',
+    desc: 'A pelvic exam allows us to assess your reproductive organs for any abnormalities. If you are due for cervical cancer screening, a Pap smear (and HPV co-test if appropriate) is collected - a quick, two-minute procedure.',
   },
   {
     num: 4,
     title: 'Breast exam',
-    desc: 'We perform a clinical breast exam and discuss self-exam technique. If you are 40 or older — or have a family history of breast cancer — we will order a mammogram referral.',
+    desc: 'We perform a clinical breast exam and discuss self-exam technique. If you are 40 or older - or have a family history of breast cancer - we will order a mammogram referral.',
   },
   {
     num: 5,
     title: 'Lab work & screenings',
-    desc: 'Based on your age and risk factors, we order relevant labs: hormone panel, TSH, CBC, lipid panel, STI screening, glucose, and more. Blood can be drawn right in our office — no extra trip needed.',
+    desc: 'Based on your age and risk factors, we order relevant labs: hormone panel, TSH, CBC, lipid panel, STI screening, glucose, and more. Blood can be drawn right in our office - no extra trip needed.',
   },
   {
     num: 6,
     title: 'Your personalized care plan',
-    desc: 'Before you leave, your provider walks you through all findings, answers every question, and provides a clear action plan — prescriptions, referrals, follow-up schedule, and any lifestyle recommendations — all in plain language.',
+    desc: 'Before you leave, your provider walks you through all findings, answers every question, and provides a clear action plan - prescriptions, referrals, follow-up schedule, and any lifestyle recommendations - all in plain language.',
   },
 ];
 
@@ -335,7 +335,7 @@ const FAQS = [
   },
   {
     q: 'What is included in a well-woman visit at WeCare?',
-    a: 'Our well-woman visits include a full physical exam, pelvic exam, breast exam, blood pressure and BMI check, immunization review, and individualized lab orders — hormone panel, cholesterol, thyroid, STI screening, and more. We also cover family planning, mental health, bone health, and any personal concerns you want to discuss. You will never feel rushed.',
+    a: 'Our well-woman visits include a full physical exam, pelvic exam, breast exam, blood pressure and BMI check, immunization review, and individualized lab orders - hormone panel, cholesterol, thyroid, STI screening, and more. We also cover family planning, mental health, bone health, and any personal concerns you want to discuss. You will never feel rushed.',
   },
   {
     q: 'Do you manage menopause and perimenopause symptoms?',
@@ -343,7 +343,7 @@ const FAQS = [
   },
   {
     q: 'What birth control options do you offer?',
-    a: 'We counsel on and prescribe all major reversible contraceptives: daily oral contraceptive pills, the transdermal patch, the vaginal ring, and Depo-Provera injections. We also provide IUD and implant referrals. We take time to review your medical history, reproductive goals, and lifestyle so you leave with a confident, informed choice — not a rushed prescription.',
+    a: 'We counsel on and prescribe all major reversible contraceptives: daily oral contraceptive pills, the transdermal patch, the vaginal ring, and Depo-Provera injections. We also provide IUD and implant referrals. We take time to review your medical history, reproductive goals, and lifestyle so you leave with a confident, informed choice - not a rushed prescription.',
   },
   {
     q: 'What is PCOS and how is it treated?',
@@ -355,7 +355,7 @@ const FAQS = [
   },
   {
     q: 'Is STI testing confidential?',
-    a: 'Yes — completely confidential and judgment-free. We offer comprehensive STI panels for chlamydia, gonorrhea, syphilis, HIV, hepatitis B/C, and herpes. If a result is positive, we provide same-visit treatment when possible, compassionate counseling, and guidance on partner notification. Your health and dignity are our priority at every step of the process.',
+    a: 'Yes - completely confidential and judgment-free. We offer comprehensive STI panels for chlamydia, gonorrhea, syphilis, HIV, hepatitis B/C, and herpes. If a result is positive, we provide same-visit treatment when possible, compassionate counseling, and guidance on partner notification. Your health and dignity are our priority at every step of the process.',
   },
   {
     q: 'Can you help with heavy or irregular periods?',
@@ -363,11 +363,11 @@ const FAQS = [
   },
   {
     q: 'Do you screen for depression and anxiety in women?',
-    a: 'Yes. Women are significantly more likely to experience depression and anxiety, yet these are often under-screened at routine visits. Every well-woman exam at WeCare includes the PHQ-9 depression screen and GAD-7 anxiety screen. Positive results lead directly to a discussion of counseling referrals, lifestyle strategies, and medication management — all in the same appointment.',
+    a: 'Yes. Women are significantly more likely to experience depression and anxiety, yet these are often under-screened at routine visits. Every well-woman exam at WeCare includes the PHQ-9 depression screen and GAD-7 anxiety screen. Positive results lead directly to a discussion of counseling referrals, lifestyle strategies, and medication management - all in the same appointment.',
   },
   {
     q: 'Does insurance cover well-woman visits and women\'s health screenings?',
-    a: 'Under the ACA, most insurance plans cover preventive women\'s health services — annual well-woman exams, pap smears, mammogram referrals, STI screening, and contraception counseling — at no cost to you. We accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan, and we welcome uninsured patients with transparent self-pay pricing.',
+    a: 'Under the ACA, most insurance plans cover preventive women\'s health services - annual well-woman exams, pap smears, mammogram referrals, STI screening, and contraception counseling - at no cost to you. We accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan, and we welcome uninsured patients with transparent self-pay pricing.',
   },
 ];
 
@@ -392,7 +392,7 @@ export default function WomensHealthPage() {
 
       <Hero
         headline="Women's health care that listens"
-        subtext="Compassionate, evidence-based gynecology and wellness care for women at every stage of life — annual exams, hormones, menopause, PCOS, birth control, and more. You deserve a provider who truly sees you."
+        subtext="Compassionate, evidence-based gynecology and wellness care for women at every stage of life - annual exams, hormones, menopause, PCOS, birth control, and more. You deserve a provider who truly sees you."
         ctaLabel="Book a Well-Woman Visit"
         ctaHref="/booking"
         secondaryLabel="Call (813) 438-5220"
@@ -406,15 +406,15 @@ export default function WomensHealthPage() {
         <div className="container">
           <div className={styles.introGrid}>
             <div>
-              <p className={styles.introLabel}>Gynecology &amp; women&apos;s wellness — Brandon, FL</p>
+              <p className={styles.introLabel}>Gynecology &amp; women&apos;s wellness - Brandon, FL</p>
               <h2 id="intro-heading" className={styles.introHeading}>
                 A practice built around women&apos;s needs
               </h2>
               <p className={styles.introBody}>
-                WeCare Wellness Clinic provides a full spectrum of women&apos;s health services in a warm, respectful environment in Brandon, FL. We understand that your health needs shift throughout your life — from your first annual exam to navigating pregnancy, managing hormones in your 40s, and thriving in post-menopause. Our providers take the time to listen, answer every question, and partner with you in your care.
+                WeCare Wellness Clinic provides a full spectrum of women&apos;s health services in a warm, respectful environment in Brandon, FL. We understand that your health needs shift throughout your life - from your first annual exam to navigating pregnancy, managing hormones in your 40s, and thriving in post-menopause. Our providers take the time to listen, answer every question, and partner with you in your care.
               </p>
               <p className={styles.introBody}>
-                Most competitors in the Brandon area offer only brief, transactional visits. At WeCare, we go further — combining thorough preventive screenings, evidence-based hormone care, and genuine compassion so you always leave feeling heard, informed, and confident in your health plan.
+                Most competitors in the Brandon area offer only brief, transactional visits. At WeCare, we go further - combining thorough preventive screenings, evidence-based hormone care, and genuine compassion so you always leave feeling heard, informed, and confident in your health plan.
               </p>
               <ul className={styles.featuresList} role="list">
                 {[
@@ -423,7 +423,7 @@ export default function WomensHealthPage() {
                   'Hormone replacement therapy (HRT) for menopause',
                   'PCOS diagnosis and ongoing management',
                   'Birth control counseling and prescriptions',
-                  'STI/STD testing — confidential and judgment-free',
+                  'STI/STD testing - confidential and judgment-free',
                   'Thyroid disorder screening and treatment',
                   'Mental health screening (depression, anxiety)',
                   'Pregnancy testing and prenatal referrals',
@@ -462,7 +462,7 @@ export default function WomensHealthPage() {
             <p className="ds-eyebrow">What we offer</p>
             <h2 id="benefits-heading" className="ds-h2">Women&apos;s health services in Brandon, FL</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              From routine preventive care to complex hormonal management, our team is equipped to support every aspect of your health — with same-week appointments and most insurance accepted.
+              From routine preventive care to complex hormonal management, our team is equipped to support every aspect of your health - with same-week appointments and most insurance accepted.
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
@@ -486,7 +486,7 @@ export default function WomensHealthPage() {
             <p className="ds-eyebrow">Comprehensive care</p>
             <h2 id="conditions-heading" className="ds-h2">Conditions we address</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Our women&apos;s health providers are experienced in diagnosing, managing, and coordinating care for a wide range of conditions — all in our Brandon, FL clinic.
+              Our women&apos;s health providers are experienced in diagnosing, managing, and coordinating care for a wide range of conditions - all in our Brandon, FL clinic.
             </p>
           </div>
           <div
@@ -523,7 +523,7 @@ export default function WomensHealthPage() {
             <p className="ds-eyebrow">Your annual visit, explained</p>
             <h2 id="wellwoman-heading" className="ds-h2">Annual well-woman visit: what to expect</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Many women feel nervous about their annual exam — especially if it has been a few years. Here is exactly what happens at your WeCare well-woman visit, step by step. We want you to walk in prepared and walk out empowered.
+              Many women feel nervous about their annual exam - especially if it has been a few years. Here is exactly what happens at your WeCare well-woman visit, step by step. We want you to walk in prepared and walk out empowered.
             </p>
           </div>
           <ol
@@ -564,7 +564,7 @@ export default function WomensHealthPage() {
                 Ready to schedule your well-woman visit?
               </p>
               <p style={{ color: 'rgba(255,255,255,0.85)', margin: 0, fontSize: 'var(--text-sm)' }}>
-                Same-week appointments available in Brandon, FL — most insurance accepted.
+                Same-week appointments available in Brandon, FL - most insurance accepted.
               </p>
             </div>
             <a
@@ -606,17 +606,17 @@ export default function WomensHealthPage() {
               {
                 num: 2,
                 title: 'Evidence-based, not one-size-fits-all',
-                desc: 'From USPSTF screening guidelines to the latest HRT research, we practice up-to-date medicine — and we tailor every plan to your unique history and goals.',
+                desc: 'From USPSTF screening guidelines to the latest HRT research, we practice up-to-date medicine - and we tailor every plan to your unique history and goals.',
               },
               {
                 num: 3,
                 title: 'Everything in one place',
-                desc: 'Labs, hormone panels, STI testing, mental health screening, and prescriptions — handled in our Brandon office so you are not bounced between providers.',
+                desc: 'Labs, hormone panels, STI testing, mental health screening, and prescriptions - handled in our Brandon office so you are not bounced between providers.',
               },
               {
                 num: 4,
                 title: 'Telehealth when you need it',
-                desc: 'Follow-up appointments for HRT, UTI treatment, birth control refills, and mental health check-ins available by secure video — no drive required.',
+                desc: 'Follow-up appointments for HRT, UTI treatment, birth control refills, and mental health check-ins available by secure video - no drive required.',
               },
             ].map((step) => (
               <li key={step.num} className={styles.processStep}>
@@ -636,7 +636,7 @@ export default function WomensHealthPage() {
             <p className="ds-eyebrow">Common questions</p>
             <h2 id="faq-heading" className="ds-h2">Women&apos;s health FAQs</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Questions about your care should never go unanswered. Here are the ones we hear most often — with honest, detailed answers.
+              Questions about your care should never go unanswered. Here are the ones we hear most often - with honest, detailed answers.
             </p>
           </div>
           <div className={styles.faqGrid} role="list">
@@ -652,7 +652,7 @@ export default function WomensHealthPage() {
 
       {/* ── Insurance strip ── */}
       <div className={styles.insuranceStrip} role="complementary" aria-label="Insurance accepted for women's health visits">
-        <p className={styles.insuranceText}>Insurance accepted — including for preventive well-woman visits</p>
+        <p className={styles.insuranceText}>Insurance accepted - including for preventive well-woman visits</p>
         <p className={styles.insuranceNames}>
           Aetna &nbsp;·&nbsp; United Healthcare &nbsp;·&nbsp; Medicare &nbsp;·&nbsp; Blue Cross Blue Shield &nbsp;·&nbsp; MultiPlan &nbsp;·&nbsp; Uninsured patients welcome
         </p>
@@ -662,7 +662,7 @@ export default function WomensHealthPage() {
 
       <BookingCTA
         heading="Take charge of your women's health today"
-        subtext="Our compassionate team is ready to see you. Same-week appointments available in Brandon, FL — and telehealth available statewide. You deserve care that truly sees you."
+        subtext="Our compassionate team is ready to see you. Same-week appointments available in Brandon, FL - and telehealth available statewide. You deserve care that truly sees you."
       />
     </>
   );

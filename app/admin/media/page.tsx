@@ -1,7 +1,7 @@
 /**
  * Wix Media Library viewer.
  *
- * SERVER COMPONENT — fetches the list using the privileged WIX_API_KEY and
+ * SERVER COMPONENT - fetches the list using the privileged WIX_API_KEY and
  * renders the media files. The API key never reaches the browser.
  *
  * Path: /admin/media
@@ -16,16 +16,16 @@ import { listMediaFiles, type WixMediaFile, wixImageUrl } from '@/lib/wix-media'
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Media Library — WeCare Wellness Admin',
+  title: 'Media Library - WeCare Wellness Admin',
   robots: { index: false, follow: false },
 };
 
-// No caching — always fresh while we're iterating.
+// No caching - always fresh while we're iterating.
 export const revalidate = 0;
 
 function formatBytes(b?: string | number): string {
   const n = typeof b === 'string' ? Number(b) : b ?? 0;
-  if (!n) return '—';
+  if (!n) return '-';
   if (n < 1024) return `${n} B`;
   if (n < 1024 * 1024) return `${(n / 1024).toFixed(0)} KB`;
   return `${(n / (1024 * 1024)).toFixed(1)} MB`;

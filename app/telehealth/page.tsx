@@ -21,7 +21,7 @@ import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Telehealth Doctor Florida — Virtual Visits | WeCare Brandon FL',
+  title: 'Telehealth Doctor Florida - Virtual Visits | WeCare Brandon FL',
   description:
     'Board-certified telehealth doctor, statewide Florida. Virtual visits for primary care, prescriptions & chronic conditions. Most insurance accepted.',
   keywords: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/telehealth' },
   openGraph: {
-    title: 'Telehealth Doctor in Florida — Same-Day Video Visits | WeCare Wellness Clinic',
+    title: 'Telehealth Doctor in Florida - Same-Day Video Visits | WeCare Wellness Clinic',
     description:
       'Same-day telehealth visits with board-certified providers across Florida. Primary care, prescriptions, chronic condition management & more. Book online now.',
     url: 'https://www.wecarewellnessclinic.com/telehealth',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Telehealth Doctor in Florida — WeCare Wellness Clinic',
+    title: 'Telehealth Doctor in Florida - WeCare Wellness Clinic',
     description:
       'See a board-certified doctor today from anywhere in Florida. Same-day video visits for primary care, prescriptions & more.',
   },
@@ -146,7 +146,7 @@ const faqSchema = {
       name: 'Is telehealth covered by insurance in Florida?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Most major insurance plans now cover telehealth visits at the same rate as in-person visits. WeCare Wellness Clinic accepts Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan for telehealth. Coverage expanded significantly after 2020, including permanent Medicare telehealth benefits. Uninsured patients are also welcome — ask about our self-pay rates.',
+        text: 'Yes. Most major insurance plans now cover telehealth visits at the same rate as in-person visits. WeCare Wellness Clinic accepts Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan for telehealth. Coverage expanded significantly after 2020, including permanent Medicare telehealth benefits. Uninsured patients are also welcome - ask about our self-pay rates.',
       },
     },
     {
@@ -154,7 +154,7 @@ const faqSchema = {
       name: 'Do I need to download an app for a telehealth visit?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No app download is required. Our telehealth platform runs directly in your web browser on any smartphone, tablet, or computer with a camera and microphone. You will receive a secure link via email or text before your appointment — just click it to join.',
+        text: 'No app download is required. Our telehealth platform runs directly in your web browser on any smartphone, tablet, or computer with a camera and microphone. You will receive a secure link via email or text before your appointment - just click it to join.',
       },
     },
     {
@@ -202,7 +202,7 @@ const faqSchema = {
       name: 'What technology do I need for a telehealth visit?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Any smartphone, tablet, laptop, or desktop computer with a working camera and microphone will work. You need a stable internet or cellular connection — 4G LTE or higher is sufficient. No special software or app is needed. Google Chrome or Safari browsers are recommended. If you have trouble connecting, our team can assist over the phone.',
+        text: 'Any smartphone, tablet, laptop, or desktop computer with a working camera and microphone will work. You need a stable internet or cellular connection - 4G LTE or higher is sufficient. No special software or app is needed. Google Chrome or Safari browsers are recommended. If you have trouble connecting, our team can assist over the phone.',
       },
     },
     {
@@ -247,12 +247,12 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: PhoneIcon,
     title: 'Same-day appointments',
-    desc: 'No waiting rooms, no long drives. Book a slot online and see a provider today from your phone, tablet, or computer — often within hours.',
+    desc: 'No waiting rooms, no long drives. Book a slot online and see a provider today from your phone, tablet, or computer - often within hours.',
   },
   {
     Icon: HomeIcon,
     title: 'Care from anywhere in Florida',
-    desc: 'Our telehealth service is available to all Florida residents — from Jacksonville to Key West, Tampa to Orlando. Distance is no barrier to quality care.',
+    desc: 'Our telehealth service is available to all Florida residents - from Jacksonville to Key West, Tampa to Orlando. Distance is no barrier to quality care.',
   },
   {
     Icon: PillsIcon,
@@ -267,7 +267,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: BrainIcon,
     title: 'Mental health check-ins',
-    desc: 'Brief mental health screenings, counseling conversations, and medication management for anxiety, depression, and stress — from your private space.',
+    desc: 'Brief mental health screenings, counseling conversations, and medication management for anxiety, depression, and stress - from your private space.',
   },
   {
     Icon: ClipboardIcon,
@@ -282,7 +282,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: LockIcon,
     title: 'Secure and HIPAA compliant',
-    desc: 'All video visits are end-to-end encrypted and fully HIPAA compliant. Your health information stays private — just find a quiet spot and connect.',
+    desc: 'All video visits are end-to-end encrypted and fully HIPAA compliant. Your health information stays private - just find a quiet spot and connect.',
   },
 ];
 
@@ -298,10 +298,10 @@ const TREATABLE_CONDITIONS = {
     'Mild bronchitis and upper respiratory infections',
   ],
   'Chronic Condition Management': [
-    'Diabetes — A1c reviews and medication adjustments',
+    'Diabetes - A1c reviews and medication adjustments',
     'Hypertension (high blood pressure) monitoring',
     'Thyroid disorders (hypothyroidism, hyperthyroidism)',
-    'High cholesterol — labs review and medication',
+    'High cholesterol - labs review and medication',
     'Asthma management and inhaler prescriptions',
     'GERD and acid reflux management',
     'Chronic migraines and headache management',
@@ -334,8 +334,8 @@ const TREATABLE_CONDITIONS = {
   'Specialty Program Follow-Ups': [
     'GLP-1 / Medical weight loss program check-ins',
     'Hormone therapy monitoring visits',
-    'Men\'s health — testosterone therapy follow-ups',
-    'Women\'s health — routine medication management',
+    'Men\'s health - testosterone therapy follow-ups',
+    'Women\'s health - routine medication management',
     'HIV PrEP follow-up consultations',
     'IV hydration program assessments',
   ],
@@ -345,7 +345,7 @@ const TECH_REQUIREMENTS: Array<{ device: string; Icon: React.FC<IconProps>; desc
   {
     device: 'Smartphone',
     Icon: PhoneIcon,
-    desc: 'iPhone or Android — any model from the past 5 years. Use Safari (iPhone) or Chrome (Android) for the best experience.',
+    desc: 'iPhone or Android - any model from the past 5 years. Use Safari (iPhone) or Chrome (Android) for the best experience.',
   },
   {
     device: 'Tablet',
@@ -368,7 +368,7 @@ const PROCESS = [
   {
     num: 2,
     title: 'Receive your secure visit link',
-    desc: 'Before your appointment, you will receive a HIPAA-compliant video link via email or text message. No app download needed — it opens in your browser.',
+    desc: 'Before your appointment, you will receive a HIPAA-compliant video link via email or text message. No app download needed - it opens in your browser.',
   },
   {
     num: 3,
@@ -378,12 +378,12 @@ const PROCESS = [
   {
     num: 4,
     title: 'Connect with your provider',
-    desc: 'Click your link at appointment time to join your video visit. Your board-certified provider will review your history, assess your symptoms, and develop your care plan — just like an in-person visit.',
+    desc: 'Click your link at appointment time to join your video visit. Your board-certified provider will review your history, assess your symptoms, and develop your care plan - just like an in-person visit.',
   },
   {
     num: 5,
     title: 'Receive your care plan instantly',
-    desc: 'Prescriptions are sent to your pharmacy electronically. Referrals, lab orders, and follow-up instructions are provided before the visit ends. You are done — no waiting, no checkout line.',
+    desc: 'Prescriptions are sent to your pharmacy electronically. Referrals, lab orders, and follow-up instructions are provided before the visit ends. You are done - no waiting, no checkout line.',
   },
 ];
 
@@ -391,7 +391,7 @@ const LIMITATIONS: Array<{ Icon: React.FC<IconProps>; title: string; desc: strin
   {
     Icon: StethoscopeIcon,
     title: 'Physical examinations',
-    desc: 'Conditions that require hands-on assessment — listening to heart or lung sounds, abdominal palpation, wound inspection — need an in-person visit.',
+    desc: 'Conditions that require hands-on assessment - listening to heart or lung sounds, abdominal palpation, wound inspection - need an in-person visit.',
   },
   {
     Icon: TestTubeIcon,
@@ -406,7 +406,7 @@ const LIMITATIONS: Array<{ Icon: React.FC<IconProps>; title: string; desc: strin
   {
     Icon: AlertIcon,
     title: 'Medical emergencies',
-    desc: 'Chest pain, difficulty breathing, stroke symptoms, severe injuries, or any life-threatening condition — call 911 or go to your nearest emergency room immediately.',
+    desc: 'Chest pain, difficulty breathing, stroke symptoms, severe injuries, or any life-threatening condition - call 911 or go to your nearest emergency room immediately.',
   },
 ];
 
@@ -417,27 +417,27 @@ const FAQS = [
   },
   {
     q: 'Is telehealth covered by my insurance?',
-    a: 'Most likely, yes. Telehealth coverage expanded significantly after 2020, and major insurers now treat video visits on par with in-person visits. WeCare Wellness Clinic accepts Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan for telehealth. Medicare permanently extended its telehealth benefits for primary care. If you are uninsured, we offer transparent self-pay rates — ask our team when you book.',
+    a: 'Most likely, yes. Telehealth coverage expanded significantly after 2020, and major insurers now treat video visits on par with in-person visits. WeCare Wellness Clinic accepts Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan for telehealth. Medicare permanently extended its telehealth benefits for primary care. If you are uninsured, we offer transparent self-pay rates - ask our team when you book.',
   },
   {
     q: 'Do I need to download a special app?',
-    a: 'No app is required. Our telehealth platform runs entirely in your web browser — Chrome or Safari on any smartphone, tablet, laptop, or desktop computer. You will receive a secure video link before your appointment. Just click it at your appointment time and you will be connected to your provider. If you have any trouble, our front desk can walk you through it over the phone.',
+    a: 'No app is required. Our telehealth platform runs entirely in your web browser - Chrome or Safari on any smartphone, tablet, laptop, or desktop computer. You will receive a secure video link before your appointment. Just click it at your appointment time and you will be connected to your provider. If you have any trouble, our front desk can walk you through it over the phone.',
   },
   {
     q: 'Can I get a prescription through a telehealth visit?',
     a: 'Yes. Our board-certified providers can prescribe most medications electronically during your video visit, including antibiotics, blood pressure drugs, diabetes medications, thyroid medications, GLP-1 weight loss injections (Semaglutide), birth control, and more. Prescriptions are sent directly to your pharmacy. Note that controlled substances such as opioids, benzodiazepines, and certain stimulants are generally restricted under federal telehealth prescribing rules.',
   },
   {
-    q: 'I have never done a telehealth visit before — is it complicated?',
+    q: 'I have never done a telehealth visit before - is it complicated?',
     a: 'Not at all. If you have ever made a video call to a family member, you already know how to do this. You book online, receive a link, click it at your appointment time, and you are face-to-face with your provider. No technical knowledge is needed. Our team is happy to help if you run into any issues. Many patients say their first telehealth visit was easier than they expected.',
   },
   {
     q: 'Can I be a new patient and start with a telehealth visit?',
-    a: 'Yes. New patients are welcome to schedule a telehealth visit for a meet-and-greet or health history review. Your provider will get to know your medical background, current medications, and health goals during the visit. Some new patient needs may require an initial in-person visit — your provider will let you know if that applies to your situation.',
+    a: 'Yes. New patients are welcome to schedule a telehealth visit for a meet-and-greet or health history review. Your provider will get to know your medical background, current medications, and health goals during the visit. Some new patient needs may require an initial in-person visit - your provider will let you know if that applies to your situation.',
   },
   {
     q: 'Is WeCare Wellness Clinic telehealth available outside of Brandon?',
-    a: 'Yes — our telehealth service is available to all Florida residents, statewide. Florida telehealth law allows our licensed providers to treat any patient physically located in Florida during the visit. Whether you live in Tampa, Orlando, Jacksonville, Miami, or a small town, you can see a WeCare provider without making the drive to Brandon.',
+    a: 'Yes - our telehealth service is available to all Florida residents, statewide. Florida telehealth law allows our licensed providers to treat any patient physically located in Florida during the visit. Whether you live in Tampa, Orlando, Jacksonville, Miami, or a small town, you can see a WeCare provider without making the drive to Brandon.',
   },
   {
     q: 'How quickly can I get a telehealth appointment?',
@@ -445,7 +445,7 @@ const FAQS = [
   },
   {
     q: 'What technology do I need for a telehealth visit?',
-    a: 'Any device with a camera and microphone works — smartphone, tablet, laptop, or desktop. You need a stable internet or cellular connection; 4G LTE or standard home broadband is more than sufficient. Recommended browsers are Google Chrome or Apple Safari. No downloads or installs are needed. If you prefer, you can do an audio-only visit in certain situations — ask when you book.',
+    a: 'Any device with a camera and microphone works - smartphone, tablet, laptop, or desktop. You need a stable internet or cellular connection; 4G LTE or standard home broadband is more than sufficient. Recommended browsers are Google Chrome or Apple Safari. No downloads or installs are needed. If you prefer, you can do an audio-only visit in certain situations - ask when you book.',
   },
   {
     q: 'Are telehealth visits private and confidential?',
@@ -473,7 +473,7 @@ export default function TelehealthPage() {
       />
 
       <Hero
-        headline="See a doctor today — from anywhere in Florida"
+        headline="See a doctor today - from anywhere in Florida"
         subtext="Board-certified providers available via secure video for primary care, prescription refills, chronic condition management, weight loss, and more. No commute. No waiting room. Same-day appointments available."
         ctaLabel="Book a Video Visit"
         ctaHref="/booking"
@@ -488,29 +488,29 @@ export default function TelehealthPage() {
         <div className="container">
           <div className={styles.introGrid}>
             <div>
-              <p className={styles.introLabel}>Telehealth — available statewide across Florida</p>
+              <p className={styles.introLabel}>Telehealth - available statewide across Florida</p>
               <h2 id="intro-heading" className={styles.introHeading}>
                 Quality primary care without the commute
               </h2>
               <p className={styles.introBody}>
-                WeCare Wellness Clinic's telehealth service connects you with board-certified providers wherever you are in Florida. Whether you cannot make it to our Brandon office, have a busy schedule, or simply prefer the convenience of a video visit, you get the same expert care as an in-person appointment — for most conditions.
+                WeCare Wellness Clinic's telehealth service connects you with board-certified providers wherever you are in Florida. Whether you cannot make it to our Brandon office, have a busy schedule, or simply prefer the convenience of a video visit, you get the same expert care as an in-person appointment - for most conditions.
               </p>
               <p className={styles.introBody}>
-                Florida law allows our licensed providers to treat any Florida resident via telehealth. That means patients in Tampa, Orlando, Jacksonville, Miami, and every city in between can access WeCare care without traveling to Brandon. Post-COVID insurance reforms mean most plans — including Medicare — now cover telehealth visits at the same rate as office visits.
+                Florida law allows our licensed providers to treat any Florida resident via telehealth. That means patients in Tampa, Orlando, Jacksonville, Miami, and every city in between can access WeCare care without traveling to Brandon. Post-COVID insurance reforms mean most plans - including Medicare - now cover telehealth visits at the same rate as office visits.
               </p>
               <p className={styles.introBody}>
                 Available Monday through Saturday, with same-day scheduling when slots are open. All you need is a phone, tablet, or computer with a camera. No app downloads. No waiting rooms. Just care.
               </p>
               <ul className={styles.featuresList} role="list">
                 {[
-                  'Same-day video appointments — book online anytime',
-                  'No app download — works in your browser',
+                  'Same-day video appointments - book online anytime',
+                  'No app download - works in your browser',
                   'Prescriptions sent electronically to your pharmacy',
                   'Available to all Florida residents, statewide',
                   'HIPAA-compliant, end-to-end encrypted platform',
                   'Most insurance accepted, including Medicare',
                   'New patients welcome for telehealth visits',
-                  'Uninsured patients welcome — transparent self-pay rates',
+                  'Uninsured patients welcome - transparent self-pay rates',
                 ].map((f) => (
                   <li key={f} className={styles.featuresListItem}>
                     <span className={styles.checkIcon} aria-hidden="true">✓</span>
@@ -545,7 +545,7 @@ export default function TelehealthPage() {
             <p className="ds-eyebrow">Why patients choose virtual visits</p>
             <h2 id="benefits-heading" className="ds-h2">8 reasons to try telehealth</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Telehealth is not just for convenience — it is a fully legitimate, clinically sound way to receive most primary care services, backed by major insurers and embraced by patients across Florida.
+              Telehealth is not just for convenience - it is a fully legitimate, clinically sound way to receive most primary care services, backed by major insurers and embraced by patients across Florida.
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
@@ -595,7 +595,7 @@ export default function TelehealthPage() {
               What telehealth <em>cannot</em> replace
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', maxWidth: '65ch' }}>
-              We want to set honest expectations. Some situations genuinely require an in-person visit. Our providers will always let you know if you need to come in — your safety comes first.
+              We want to set honest expectations. Some situations genuinely require an in-person visit. Our providers will always let you know if you need to come in - your safety comes first.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 'var(--space-4)' }}>
               {LIMITATIONS.map(({ Icon, title, desc }) => (
@@ -619,7 +619,7 @@ export default function TelehealthPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="ds-eyebrow">Any device works</p>
-            <h2 id="tech-heading" className="ds-h2">Technology requirements — it is simpler than you think</h2>
+            <h2 id="tech-heading" className="ds-h2">Technology requirements - it is simpler than you think</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
               You do not need any special equipment or tech skills. If you can make a video call, you can do a telehealth visit. Our platform works on any device with a camera and an internet connection.
             </p>
@@ -663,9 +663,9 @@ export default function TelehealthPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="ds-eyebrow">Start to finish in minutes</p>
-            <h2 id="process-heading" className="ds-h2">How your telehealth visit works — 5 simple steps</h2>
+            <h2 id="process-heading" className="ds-h2">How your telehealth visit works - 5 simple steps</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              From booking to receiving your care plan, the entire process is designed to be fast, intuitive, and stress-free — even if this is your first telehealth visit.
+              From booking to receiving your care plan, the entire process is designed to be fast, intuitive, and stress-free - even if this is your first telehealth visit.
             </p>
           </div>
           <ol className={styles.processSteps} role="list">
@@ -687,7 +687,7 @@ export default function TelehealthPage() {
             <p className="ds-eyebrow">Coverage you can count on</p>
             <h2 id="insurance-heading" className="ds-h2">Insurance coverage for telehealth</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Telehealth coverage has never been better. Following permanent policy changes after 2020, most major insurers — including Medicare — now cover virtual visits at the same rate as in-person appointments.
+              Telehealth coverage has never been better. Following permanent policy changes after 2020, most major insurers - including Medicare - now cover virtual visits at the same rate as in-person appointments.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-6)', marginTop: 'var(--space-8)' }}>
@@ -714,7 +714,7 @@ export default function TelehealthPage() {
               },
               {
                 name: 'Uninsured / Self-Pay',
-                detail: 'No insurance? No problem. We offer transparent, affordable self-pay rates for telehealth visits. Ask our team about current rates when you book — no surprises.',
+                detail: 'No insurance? No problem. We offer transparent, affordable self-pay rates for telehealth visits. Ask our team about current rates when you book - no surprises.',
               },
             ].map((ins) => (
               <div key={ins.name} style={{ background: 'var(--surface-base, #fff)', borderRadius: 'var(--radius-lg, 12px)', padding: 'var(--space-5)', boxShadow: 'var(--shadow-sm)', borderLeft: '4px solid var(--brand-primary, #0ea5e9)' }}>

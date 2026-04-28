@@ -3,7 +3,7 @@
  *
  * Every icon:
  *   • is a self-contained inline SVG React component
- *   • paints with brand CSS variables — no hard-coded greys
+ *   • paints with brand CSS variables - no hard-coded greys
  *   • supports an optional `animate` prop that triggers a subtle motion
  *     (pulse / wiggle / spin / float / twinkle / draw)
  *   • respects prefers-reduced-motion via the global keyframes CSS
@@ -11,7 +11,7 @@
  * Conventions:
  *   • viewBox 0 0 24 24
  *   • stroke-width 1.8 (visually balanced at 24px and scales nicely)
- *   • default size 22px — matches the surrounding body text x-height
+ *   • default size 22px - matches the surrounding body text x-height
  *   • props: { size?: number, className?: string, animate?: boolean, color?: string }
  *     when `color` is set it overrides the brand variable for that icon's stroke colour.
  */
@@ -22,7 +22,7 @@ export interface IconProps {
   size?: number;
   className?: string;
   animate?: boolean;
-  color?: string;        // optional override — defaults to brand var per-icon
+  color?: string;        // optional override - defaults to brand var per-icon
 }
 
 /* Tiny helper that adds the `icon` base class + an optional animation class.

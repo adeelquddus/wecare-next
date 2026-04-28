@@ -167,7 +167,7 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'WeCare Wellness Clinic | Primary Care, Weight Loss & Telehealth — Brandon, FL',
+  title: 'WeCare Wellness Clinic | Primary Care, Weight Loss & Telehealth - Brandon, FL',
   description:
     'Primary care, GLP-1 weight loss, telehealth, IV hydration & HIV PrEP in Brandon, FL. Same-week appointments. Aetna, Medicare & BCBS accepted. Self-pay welcome.',
   keywords: [
@@ -189,7 +189,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com' },
   openGraph: {
-    title: 'WeCare Wellness Clinic — Primary Care, Weight Loss & Telehealth Brandon, FL',
+    title: 'WeCare Wellness Clinic - Primary Care, Weight Loss & Telehealth Brandon, FL',
     description:
       'Board-certified primary care, GLP-1 weight loss, telehealth & more in Brandon, FL. Same-week appointments. Aetna, Medicare & BCBS accepted.',
     url: 'https://www.wecarewellnessclinic.com',
@@ -197,7 +197,7 @@ export const metadata: Metadata = {
   },
 };
 
-/* Testimonials — verbatim verified reviews from BirdEye, Tebra & EvexiPEL */
+/* Testimonials - verbatim verified reviews from BirdEye, Tebra & EvexiPEL */
 const TESTIMONIALS = [
   {
     id: 1,
@@ -222,7 +222,7 @@ const TESTIMONIALS = [
   },
   {
     id: 4,
-    text: "WeCare Wellness is truly one of the best primary care clinics in the Riverview/Tampa area. The facility is clean, modern, which immediately makes you feel comfortable. The doctor takes the time to actually listen, explain everything clearly, and make sure all concerns are addressed — something that's hard to find in healthcare today. I never feel rushed, and the care feels personal and thorough every visit. What really sets WeCare apart is their affordable monthly plan for patients without insurance.",
+    text: "WeCare Wellness is truly one of the best primary care clinics in the Riverview/Tampa area. The facility is clean, modern, which immediately makes you feel comfortable. The doctor takes the time to actually listen, explain everything clearly, and make sure all concerns are addressed - something that's hard to find in healthcare today. I never feel rushed, and the care feels personal and thorough every visit. What really sets WeCare apart is their affordable monthly plan for patients without insurance.",
     name: 'Saint Thompson',
     detail: 'Verified Google Review · Riverview FL',
     rating: 5,
@@ -250,7 +250,7 @@ const TESTIMONIALS = [
   },
   {
     id: 8,
-    text: "Nurse practitioner Darlyne is amazing — I hadn't been to the doctor in forever and she really took the time to listen to my concerns and questions and patiently explained all my results to me.",
+    text: "Nurse practitioner Darlyne is amazing - I hadn't been to the doctor in forever and she really took the time to listen to my concerns and questions and patiently explained all my results to me.",
     name: 'Taquita Z.',
     detail: 'Verified EvexiPEL Patient',
     rating: 5,
@@ -304,7 +304,7 @@ const WHY_US: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> 
   {
     Icon: LaptopIcon,
     title: 'Telehealth across Florida',
-    desc: 'Can\'t come in person? See a provider by video from anywhere in Florida — same great care.',
+    desc: 'Can\'t come in person? See a provider by video from anywhere in Florida - same great care.',
   },
   {
     Icon: LeafIcon,
@@ -333,7 +333,7 @@ export default function HomePage() {
           { text: 'Trusted Expertise.', color: 'primary' },
           { text: 'Better Health.', color: 'teal' },
         ]}
-        subtext="Comprehensive wellness care for the whole family — primary care, medical weight loss, telehealth, and more in Brandon, FL."
+        subtext="Comprehensive wellness care for the whole family - primary care, medical weight loss, telehealth, and more in Brandon, FL."
         ctaLabel="Book Appointment"
         ctaHref="/booking"
         secondaryLabel="Explore services"
@@ -365,7 +365,7 @@ export default function HomePage() {
               Comprehensive care under one roof
             </h2>
             <p className={`ds-lede ${styles.sectionSub}`}>
-              From everyday primary care to specialized weight loss programs and telehealth — we cover what you need.
+              From everyday primary care to specialized weight loss programs and telehealth - we cover what you need.
             </p>
           </div>
 
@@ -425,7 +425,7 @@ export default function HomePage() {
                 Healthcare that puts you first
               </h2>
               <p className="ds-lede">
-                We built WeCare Wellness around one belief: you deserve a healthcare provider who actually knows you, listens to you, and works with you — not at you.
+                We built WeCare Wellness around one belief: you deserve a healthcare provider who actually knows you, listens to you, and works with you - not at you.
               </p>
               <Button href="/about" variant="outline" size="md">
                 Our story
@@ -458,7 +458,7 @@ export default function HomePage() {
               What our patients say
             </h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Verified reviews from Google &amp; BirdEye — averaging 5&#9733; across all services.
+              Verified reviews from Google &amp; BirdEye - averaging 5&#9733; across all services.
             </p>
           </div>
         </div>
@@ -511,7 +511,7 @@ export default function HomePage() {
             Don't see your plan?{' '}
             <Link href="/insurance">Check our full insurance page</Link>
             {' '}or{' '}
-            <Link href="/contact">contact us</Link> — we may still be able to help.
+            <Link href="/contact">contact us</Link> - we may still be able to help.
           </p>
         </div>
       </section>

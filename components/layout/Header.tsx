@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { CLINIC, SERVICES, SERVICE_IMAGES } from '@/lib/clinic';
 import styles from './Header.module.css';
 
-/* ─── Services dropdown — sourced directly from lib/clinic so it always
+/* ─── Services dropdown - sourced directly from lib/clinic so it always
        stays in sync with the SERVICES array. ──────────────────────────── */
 const SERVICES_DROPDOWN = SERVICES.map((s) => ({
   label: s.name,
@@ -80,7 +80,7 @@ export default function Header() {
         <div className={styles.banner}>
           <p className={styles.bannerText}>
             <img src="/favi-white-wecare-wellness.svg" alt="" aria-hidden="true" className={styles.bannerIcon} />
-            Now accepting new patients — same-week appointments available!{' '}
+            Now accepting new patients - same-week appointments available!{' '}
             <a href="/booking" className={styles.bannerLink}>
               Book today →
             </a>
@@ -100,7 +100,7 @@ export default function Header() {
         <div className={styles.navInner}>
 
           {/* Logo */}
-          <Link href="/" className={styles.logo} aria-label="WeCare Wellness Clinic — home">
+          <Link href="/" className={styles.logo} aria-label="WeCare Wellness Clinic - home">
             <Image
               src="/logo.png"
               alt="WeCare Wellness Clinic"
@@ -144,7 +144,7 @@ export default function Header() {
                         </svg>
                       </button>
 
-                      {/* Dropdown panel — transparent wrapper starts at li bottom,
+                      {/* Dropdown panel - transparent wrapper starts at li bottom,
                           padding-top creates the visual gap without a hover dead-zone */}
                       <div
                         className={`${styles.dropdown} ${dropOpen ? styles.dropdownOpen : ''}`}

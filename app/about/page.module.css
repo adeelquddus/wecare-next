@@ -141,7 +141,7 @@
   gap: var(--space-3);
 }
 
-/* Right side — profile card */
+/* Right side - profile card */
 .aboutHeroCard {
   position: relative;
   display: flex;

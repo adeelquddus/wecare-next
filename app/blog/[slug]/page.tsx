@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${post.title} | WeCare Wellness Blog`,
-    description: post.excerpt || `Read about ${post.title} at WeCare Wellness Clinic — expert healthcare insights from Brandon, FL.`,
+    description: post.excerpt || `Read about ${post.title} at WeCare Wellness Clinic - expert healthcare insights from Brandon, FL.`,
     keywords: post.tags?.join(', '),
     alternates: { canonical },
     openGraph: {
@@ -238,7 +238,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <div className={styles.authorAvatar} aria-hidden="true">{initials}</div>
                 <div className={styles.authorInfo}>
                   <p className={styles.authorName}>{authorName}</p>
-                  <p className={styles.authorRole}>WeCare Wellness Clinic — Brandon, FL</p>
+                  <p className={styles.authorRole}>WeCare Wellness Clinic - Brandon, FL</p>
                 </div>
               </div>
 

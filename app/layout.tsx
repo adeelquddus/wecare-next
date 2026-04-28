@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'WeCare Wellness Clinic — Brandon, FL',
+        alt: 'WeCare Wellness Clinic - Brandon, FL',
       },
     ],
   },
@@ -73,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Geo meta — Brandon FL */}
+        {/* Geo meta - Brandon FL */}
         <meta name="geo.region" content="US-FL" />
         <meta name="geo.placename" content="Brandon, Florida" />
         <meta name="geo.position" content="27.9378;-82.2859" />
@@ -85,7 +85,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
       </head>
       <body>
-        {/* Skip nav — WCAG 2.1 AA */}
+        {/* Skip nav - WCAG 2.1 AA */}
         <a href="#main-content" className="skip-nav">
           Skip to main content
         </a>

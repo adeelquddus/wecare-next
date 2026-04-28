@@ -15,7 +15,7 @@
 .catNav {
   /* Sticky sub-nav so the user can always re-jump to a category */
   position: sticky;
-  top: 0;          /* the page header is sticky too — sits below it */
+  top: 0;          /* the page header is sticky too - sits below it */
   z-index: 5;
   display: flex;
   flex-wrap: wrap;
@@ -64,7 +64,7 @@
 .sections {
   display: flex;
   flex-direction: column;
-  gap: var(--space-7);   /* was space-12 — too airy */
+  gap: var(--space-7);   /* was space-12 - too airy */
 }
 
 .section {
@@ -75,7 +75,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  margin-bottom: var(--space-4);   /* was space-6 — too much */
+  margin-bottom: var(--space-4);   /* was space-6 - too much */
   padding: var(--space-3) var(--space-4);
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -95,7 +95,7 @@
 }
 
 .sectionTitle {
-  font-size: var(--text-xl);    /* was text-2xl + 2px border-bottom — felt heavy */
+  font-size: var(--text-xl);    /* was text-2xl + 2px border-bottom - felt heavy */
   font-weight: var(--weight-bold);
   color: var(--text-primary);
   line-height: 1.25;

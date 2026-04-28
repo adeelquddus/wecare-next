@@ -1,10 +1,10 @@
 /**
- * Wix Loyalty REST client — server-side only.
+ * Wix Loyalty REST client - server-side only.
  *
  * Endpoints we've confirmed return 200 with the WIX_API_KEY (admin scope):
- *   GET /loyalty-rewards/v1/rewards            — reward catalog
- *   GET /loyalty-accounts/v1/accounts          — every member's points balance
- *   GET /loyalty-tiers/v1/tiers                — tier ladder (empty when not configured)
+ *   GET /loyalty-rewards/v1/rewards            - reward catalog
+ *   GET /loyalty-accounts/v1/accounts          - every member's points balance
+ *   GET /loyalty-tiers/v1/tiers                - tier ladder (empty when not configured)
  *
  * Endpoints that 404 with the API key (need member-token scope or different path):
  *   /loyalty-earning-rules/v1/earning-rules
@@ -12,7 +12,7 @@
  *   /loyalty-redemptions/v1/redemptions
  * For those, we provide static fallbacks describing the actual WeCare program rules.
  *
- * NEVER import this file from a "use client" component — it reads server-only env vars.
+ * NEVER import this file from a "use client" component - it reads server-only env vars.
  */
 
 const BASE = 'https://www.wixapis.com';
@@ -135,7 +135,7 @@ export async function getAccountByContactId(contactId: string): Promise<LoyaltyA
   return accounts.find((a) => a.contactId === contactId || a.memberId === contactId) ?? null;
 }
 
-/* ─── Static earning rules — these come from the live Wix loyalty page
+/* ─── Static earning rules - these come from the live Wix loyalty page
        since the earning-rules REST endpoint is gated. ────────────────── */
 
 export interface EarnAction {
@@ -152,14 +152,14 @@ export const EARN_ACTIONS: EarnAction[] = [
   {
     id: 'signup',
     title: 'Sign up',
-    desc: 'Welcome bonus — automatically credited the moment you join.',
+    desc: 'Welcome bonus - automatically credited the moment you join.',
     points: 50,
     oneTime: true,
   },
   {
     id: 'visit',
     title: 'Book a visit',
-    desc: 'Earn points every time you book any service — primary care, weight loss, telehealth, anything.',
+    desc: 'Earn points every time you book any service - primary care, weight loss, telehealth, anything.',
     points: 10,
     cta: { label: 'Book now', href: '/booking' },
   },
@@ -173,7 +173,7 @@ export const EARN_ACTIONS: EarnAction[] = [
   {
     id: 'birthday',
     title: 'Birthday bonus',
-    desc: "It's our gift to you — points automatically arrive during your birthday month.",
+    desc: "It's our gift to you - points automatically arrive during your birthday month.",
     points: 20,
     oneTime: true,
   },
@@ -198,7 +198,7 @@ export function rewardLabel(r: LoyaltyReward): string {
 }
 
 /**
- * Find the cheapest active reward — the "next milestone" the member is working toward.
+ * Find the cheapest active reward - the "next milestone" the member is working toward.
  * Returns null if there are no active rewards.
  */
 export function nextReward(rewards: LoyaltyReward[]): LoyaltyReward | null {

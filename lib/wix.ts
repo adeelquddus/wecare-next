@@ -1,5 +1,5 @@
 /**
- * Wix Headless SDK client — WeCare Wellness
+ * Wix Headless SDK client - WeCare Wellness
  * Connects Next.js frontend to Wix Bookings, Blog, Forms, Members, Pricing Plans
  */
 import { createClient, OAuthStrategy } from '@wix/sdk';
@@ -48,7 +48,7 @@ function wixCoverImageUrl(raw: string | undefined | null): string | undefined {
 }
 
 /**
- * Shared Wix client — use this for Bookings, Blog, Members, and Plans.
+ * Shared Wix client - use this for Bookings, Blog, Members, and Plans.
  */
 export const wixClient = createClient({
   modules: { bookings, posts, categories, members, plans, orders },

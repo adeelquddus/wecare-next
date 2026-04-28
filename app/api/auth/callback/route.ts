@@ -39,7 +39,7 @@ function originFrom(req: NextRequest): string {
 
 /* Wix's headless OAuth uses `response_mode=fragment`, so on the first
    arrival at /api/auth/callback the browser holds `code` & `state` in
-   the URL hash — which the server NEVER sees. We respond with a tiny
+   the URL hash - which the server NEVER sees. We respond with a tiny
    HTML page whose inline script copies `location.hash` to a query
    string and reloads the same URL. The reload then takes the normal
    query-string path through this handler. */
@@ -71,7 +71,7 @@ function fragmentBounceHTML(): string {
     var qs = h.slice(1); // strip leading '#'
     window.location.replace(window.location.pathname + '?' + qs);
   } else {
-    // No code & no fragment — nothing to do, send them to /loyalty.
+    // No code & no fragment - nothing to do, send them to /loyalty.
     window.location.replace('/loyalty?auth_error=1');
   }
 })();
@@ -94,7 +94,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
        bounce page that turns the fragment into a query string and
        reloads. The reload comes back here with proper search params. */
     if (!code || !state) {
-      // We do still need the state cookie at this point — if it's
+      // We do still need the state cookie at this point - if it's
       // missing, this isn't a real OAuth bounce, it's a stale visit.
       const hasState = !!req.cookies.get(OAUTH_STATE_COOKIE)?.value;
       if (!hasState) return errorRedirect;

@@ -64,7 +64,7 @@ export default function Footer() {
           <div className={styles.grid}>
             {/* Brand */}
             <div className={styles.brand}>
-              <Link href="/" className={styles.logo} aria-label="WeCare Wellness Clinic — home">
+              <Link href="/" className={styles.logo} aria-label="WeCare Wellness Clinic - home">
                 <Image
                   src="/logo-dark.png"
                   alt="WeCare Wellness Clinic"

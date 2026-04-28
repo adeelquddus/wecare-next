@@ -81,7 +81,7 @@ function renderNode(node: RicosNode): string {
       return `<ul>${(node.nodes ?? []).map(renderNode).join('')}</ul>`;
 
     case 'LIST_ITEM':
-      // A list item contains PARAGRAPH nodes — unwrap them as <li> inline text
+      // A list item contains PARAGRAPH nodes - unwrap them as <li> inline text
       return `<li>${(node.nodes ?? []).map(renderListItemContent).join('')}</li>`;
 
     case 'DIVIDER':
@@ -97,7 +97,7 @@ function renderNode(node: RicosNode): string {
       return renderText(node);
 
     default:
-      // Unknown block types — skip silently (videos, polls, galleries etc.)
+      // Unknown block types - skip silently (videos, polls, galleries etc.)
       return '';
   }
 }
@@ -139,12 +139,12 @@ function renderImage(node: RicosNode): string {
   const srcId = d.image?.src?.id ?? d.image?.src?.url ?? '';
   if (!srcId) return '';
 
-  // Wix media CDN — 900 px wide, auto quality.
+  // Wix media CDN - 900 px wide, auto quality.
   // Wix /v1/fill/ transform endpoint has three strict requirements:
-  //   1. Both w_ AND h_ params are required — omitting h_ returns HTTP 400.
+  //   1. Both w_ AND h_ params are required - omitting h_ returns HTTP 400.
   //   2. enc_avif and enc_auto both return HTTP 400; use enc_jpg instead.
   //   3. The trailing path segment must be a generic filename ("file.jpg"),
-  //      NOT the srcId repeated — srcIds with ~mv2 metadata suffixes are
+  //      NOT the srcId repeated - srcIds with ~mv2 metadata suffixes are
   //      rejected as the trailing segment (returns HTTP 400).
   const imgHeight = d.image?.height
     ? Math.round((d.image.height / (d.image.width ?? 900)) * 900)

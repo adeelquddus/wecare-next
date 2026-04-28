@@ -22,7 +22,7 @@ import styles from './page.module.css';
 
 /* ── Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: 'IV Hydration Therapy & Hormone Replacement Therapy Brandon FL — WeCare Wellness',
+  title: 'IV Hydration Therapy & Hormone Replacement Therapy Brandon FL - WeCare Wellness',
   description:
     'IV hydration & physician-supervised HRT in Brandon, FL. Myers Cocktail, NAD+, vitamin drips, testosterone & estrogen therapy. Same-day appointments.',
   keywords: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/iv-hydration' },
   openGraph: {
-    title: 'IV Hydration & Hormone Replacement Therapy — WeCare Wellness Clinic Brandon FL',
+    title: 'IV Hydration & Hormone Replacement Therapy - WeCare Wellness Clinic Brandon FL',
     description:
       'Restore energy, immunity, and hormonal balance with physician-supervised IV infusions and HRT in Brandon, FL.',
     url: 'https://www.wecarewellnessclinic.com/iv-hydration',
@@ -58,7 +58,7 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'MedicalWebPage',
-      name: 'IV Hydration Therapy & Hormone Replacement Therapy — WeCare Wellness Clinic',
+      name: 'IV Hydration Therapy & Hormone Replacement Therapy - WeCare Wellness Clinic',
       url: 'https://www.wecarewellnessclinic.com/iv-hydration',
       description:
         'IV infusion therapy and physician-supervised hormone replacement therapy in Brandon, FL. Myers Cocktail, NAD+, testosterone, and estrogen protocols.',
@@ -91,7 +91,7 @@ const jsonLd = {
           name: 'What is IV hydration therapy and how does it work?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'IV hydration therapy delivers fluids, vitamins, minerals, and antioxidants directly into your bloodstream via a small catheter in your arm. Unlike oral supplements, IV delivery bypasses the digestive system, achieving near-100% bioavailability. A session at WeCare takes 30–60 minutes in a relaxed clinical setting. Our medical team customizes each drip to your specific needs — whether for energy, immunity, recovery, or hydration.',
+            text: 'IV hydration therapy delivers fluids, vitamins, minerals, and antioxidants directly into your bloodstream via a small catheter in your arm. Unlike oral supplements, IV delivery bypasses the digestive system, achieving near-100% bioavailability. A session at WeCare takes 30–60 minutes in a relaxed clinical setting. Our medical team customizes each drip to your specific needs - whether for energy, immunity, recovery, or hydration.',
           },
         },
         {
@@ -131,7 +131,7 @@ const jsonLd = {
           name: 'How long before I feel the effects of HRT?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Most patients begin noticing improvements within 2–4 weeks of starting HRT. Full benefits — including improved energy, sleep quality, mood stability, and libido — typically develop over 3–6 months as hormone levels stabilize. We monitor your progress with repeat labs at 6–8 weeks, then every 3–6 months, adjusting your dosage as needed for optimal results.',
+            text: 'Most patients begin noticing improvements within 2–4 weeks of starting HRT. Full benefits - including improved energy, sleep quality, mood stability, and libido - typically develop over 3–6 months as hormone levels stabilize. We monitor your progress with repeat labs at 6–8 weeks, then every 3–6 months, adjusting your dosage as needed for optimal results.',
           },
         },
         {
@@ -163,7 +163,7 @@ const jsonLd = {
           name: 'What should I expect during my IV hydration appointment?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Your appointment starts with a brief health assessment and vital signs check by our nursing staff. A physician or PA reviews your health history and selects or customizes your IV formula. The IV catheter is placed in a vein in your arm or hand — most patients find this painless. You relax comfortably for 30–60 minutes while the infusion runs. Afterward, you are free to drive and return to normal activities. Mild warmth or a vitamin taste during infusion is normal.',
+            text: 'Your appointment starts with a brief health assessment and vital signs check by our nursing staff. A physician or PA reviews your health history and selects or customizes your IV formula. The IV catheter is placed in a vein in your arm or hand - most patients find this painless. You relax comfortably for 30–60 minutes while the infusion runs. Afterward, you are free to drive and return to normal activities. Mild warmth or a vitamin taste during infusion is normal.',
           },
         },
       ],
@@ -184,7 +184,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: LightningIcon,
     title: 'Instant energy boost',
-    desc: 'IV delivery achieves near-100% nutrient bioavailability vs. 20–50% from oral supplements, so you feel results within hours — not days.',
+    desc: 'IV delivery achieves near-100% nutrient bioavailability vs. 20–50% from oral supplements, so you feel results within hours - not days.',
   },
   {
     Icon: ShieldIcon,
@@ -204,7 +204,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: SparkleIcon,
     title: 'Skin & anti-aging',
-    desc: "Glutathione — the body's master antioxidant — administered IV reduces oxidative damage, brightens skin tone, and supports healthy aging from the inside out.",
+    desc: "Glutathione - the body's master antioxidant - administered IV reduces oxidative damage, brightens skin tone, and supports healthy aging from the inside out.",
   },
   {
     Icon: ScaleIcon,
@@ -247,7 +247,7 @@ const IV_MENU: Array<{
   {
     Icon: ShieldIcon,
     name: 'Immune Boost',
-    desc: 'High-dose vitamin C with zinc and glutathione to supercharge immune response — ideal before travel, during illness, or cold/flu season.',
+    desc: 'High-dose vitamin C with zinc and glutathione to supercharge immune response - ideal before travel, during illness, or cold/flu season.',
     ingredients: ['Vitamin C (high-dose)', 'Zinc', 'Glutathione', 'B-Complex'],
     duration: '45–60 min',
   },
@@ -261,7 +261,7 @@ const IV_MENU: Array<{
   {
     Icon: SparkleIcon,
     name: 'Skin Glow / Glutathione',
-    desc: "Our most popular beauty IV. Glutathione — the body's master antioxidant — reduces hyperpigmentation, brightens complexion, and neutralizes free radicals.",
+    desc: "Our most popular beauty IV. Glutathione - the body's master antioxidant - reduces hyperpigmentation, brightens complexion, and neutralizes free radicals.",
     ingredients: ['Glutathione', 'Vitamin C', 'Biotin', 'Saline'],
     duration: '30–45 min',
   },
@@ -346,7 +346,7 @@ const FAQS = [
   },
   {
     q: 'How soon will I feel HRT results?',
-    a: 'Most patients notice initial improvements within 2–4 weeks. Full benefits — energy, sleep, mood, libido — typically develop over 3–6 months as levels stabilize. We recheck labs at 6–8 weeks and adjust your dose.',
+    a: 'Most patients notice initial improvements within 2–4 weeks. Full benefits - energy, sleep, mood, libido - typically develop over 3–6 months as levels stabilize. We recheck labs at 6–8 weeks and adjust your dose.',
   },
   {
     q: 'Is HRT safe? What are the risks?',
@@ -358,7 +358,7 @@ const FAQS = [
   },
   {
     q: 'Can I do IV therapy and HRT together?',
-    a: 'Absolutely. Many of our patients combine monthly IV infusions with an ongoing HRT program. The two therapies complement each other — IVs support nutrition and energy while HRT balances hormones at the cellular level.',
+    a: 'Absolutely. Many of our patients combine monthly IV infusions with an ongoing HRT program. The two therapies complement each other - IVs support nutrition and energy while HRT balances hormones at the cellular level.',
   },
   {
     q: 'Do you offer testosterone therapy for men in Brandon?',
@@ -381,7 +381,7 @@ export default function IvHydrationPage() {
 
       <Hero
         headline="Restore Energy. Balance Hormones. Feel Your Best."
-        subtext="Physician-supervised IV infusions and HRT in Brandon, FL. Customized protocols based on your labs — not cookie-cutter wellness packages."
+        subtext="Physician-supervised IV infusions and HRT in Brandon, FL. Customized protocols based on your labs - not cookie-cutter wellness packages."
         ctaLabel="Book a Consultation"
         ctaHref="/booking"
         secondaryLabel="View IV Menu"
@@ -393,7 +393,7 @@ export default function IvHydrationPage() {
         <div className="container">
           <div className={styles.introGrid}>
             <div>
-              <p className={styles.introLabel}>Brandon, FL — Same-Day IV Appointments</p>
+              <p className={styles.introLabel}>Brandon, FL - Same-Day IV Appointments</p>
               <h2 className={styles.introHeading} id="intro-heading">
                 Medical-Grade Wellness Infusions & Hormone Optimization
               </h2>
@@ -401,12 +401,12 @@ export default function IvHydrationPage() {
                 WeCare Wellness Clinic brings clinical-grade IV therapy and hormone replacement
                 medicine to Brandon, FL. Unlike spa-style "hydration bars," every IV at WeCare
                 is prescribed by a physician and administered by licensed nurses in a fully equipped
-                medical clinic — with emergency protocols, proper screening, and continuous monitoring.
+                medical clinic - with emergency protocols, proper screening, and continuous monitoring.
               </p>
               <p className={styles.introBody}>
                 Our IV menu spans essential hydration drips to advanced NAD+ infusions. Our HRT
                 programs cover menopause, perimenopause, low testosterone, thyroid optimization,
-                and adrenal support — each backed by comprehensive lab work and follow-up testing.
+                and adrenal support - each backed by comprehensive lab work and follow-up testing.
                 Insurance is accepted for eligible medical services; transparent cash pricing
                 applies to elective wellness programs.
               </p>
@@ -454,7 +454,7 @@ export default function IvHydrationPage() {
               The WeCare Difference: Medical Oversight, Not a Wellness Spa
             </h2>
             <p className={styles.sectionSubtitle}>
-              Physician-prescribed protocols, licensed nursing staff, and real lab data — every time.
+              Physician-prescribed protocols, licensed nursing staff, and real lab data - every time.
             </p>
           </div>
           <div className={styles.benefitsGrid}>
@@ -525,9 +525,9 @@ export default function IvHydrationPage() {
             <div className={styles.hrtContent}>
               <p className={styles.hrtBody}>
                 WeCare Wellness Clinic provides comprehensive hormone replacement therapy for both
-                men and women in Brandon, FL. Our approach starts with a full hormone panel —
+                men and women in Brandon, FL. Our approach starts with a full hormone panel -
                 estradiol, progesterone, free and total testosterone, DHEA-S, cortisol, and thyroid
-                function — before any prescription is written.
+                function - before any prescription is written.
               </p>
               <p className={styles.hrtBody}>
                 <strong>For women:</strong> We treat perimenopause and menopause symptoms,
@@ -544,7 +544,7 @@ export default function IvHydrationPage() {
               <p className={styles.sectionEyebrow} style={{ marginTop: 'var(--space-3)' }}>
                 Common symptoms in women that HRT addresses:
               </p>
-              <ul className={styles.symptomsList} aria-label="HRT symptoms — women">
+              <ul className={styles.symptomsList} aria-label="HRT symptoms - women">
                 {HRT_SYMPTOMS_WOMEN.map((s) => (
                   <li key={s} className={styles.symptomItem}>
                     <span className={styles.symptomDot} aria-hidden="true" />
@@ -555,7 +555,7 @@ export default function IvHydrationPage() {
               <p className={styles.sectionEyebrow} style={{ marginTop: 'var(--space-3)' }}>
                 Low testosterone symptoms in men:
               </p>
-              <ul className={styles.symptomsList} aria-label="HRT symptoms — men">
+              <ul className={styles.symptomsList} aria-label="HRT symptoms - men">
                 {HRT_SYMPTOMS_MEN.map((s) => (
                   <li key={s} className={styles.symptomItem}>
                     <span className={styles.symptomDot} aria-hidden="true" />
@@ -617,7 +617,7 @@ export default function IvHydrationPage() {
               Your Journey to Better Health
             </h2>
             <p className={styles.sectionSubtitle}>
-              From first consultation to ongoing optimization — here is exactly what happens.
+              From first consultation to ongoing optimization - here is exactly what happens.
             </p>
           </div>
           <ol className={styles.processSteps} aria-label="Process steps">

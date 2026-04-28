@@ -8,7 +8,7 @@ import { CardIcon } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Insurance Accepted — WeCare Wellness Clinic | Brandon, FL',
+  title: 'Insurance Accepted - WeCare Wellness Clinic | Brandon, FL',
   description:
     'WeCare Wellness Clinic accepts Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. Self-pay options available. Serving Brandon, FL and telehealth patients across Florida.',
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/insurance' },
   openGraph: {
-    title: 'Insurance We Accept — WeCare Wellness Clinic',
+    title: 'Insurance We Accept - WeCare Wellness Clinic',
     description: 'Aetna, United Healthcare, Medicare, BCBS & MultiPlan accepted. Self-pay options available.',
     url: 'https://www.wecarewellnessclinic.com/insurance',
     type: 'website',
@@ -43,7 +43,7 @@ const INSURANCE_DETAILS = [
   },
   {
     name: 'Medicare',
-    desc: 'Original Medicare (Parts A & B) accepted. Medicare Advantage plans from major carriers also accepted — verify at booking.',
+    desc: 'Original Medicare (Parts A & B) accepted. Medicare Advantage plans from major carriers also accepted - verify at booking.',
   },
   {
     name: 'Blue Cross Blue Shield',
@@ -58,7 +58,7 @@ const INSURANCE_DETAILS = [
 const FAQS = [
   {
     q: 'What if I don\'t see my insurance listed?',
-    a: 'Call us at (813) 438-5220 — our team can verify your benefits in minutes. We may accept additional plans not listed here and are continually expanding our network.',
+    a: 'Call us at (813) 438-5220 - our team can verify your benefits in minutes. We may accept additional plans not listed here and are continually expanding our network.',
   },
   {
     q: 'Do you offer self-pay rates?',
@@ -70,7 +70,7 @@ const FAQS = [
   },
   {
     q: 'Does Medicare cover telehealth?',
-    a: 'Yes — Medicare covers telehealth visits for most primary care services. Coverage expanded significantly in recent years, and your copay or coinsurance may apply.',
+    a: 'Yes - Medicare covers telehealth visits for most primary care services. Coverage expanded significantly in recent years, and your copay or coinsurance may apply.',
   },
   {
     q: 'How do I verify my coverage before my visit?',
@@ -121,7 +121,7 @@ export default function InsurancePage() {
       />
       <Hero
         headline="We accept most major insurance plans"
-        subtext="WeCare Wellness Clinic works with Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan — plus affordable self-pay options for every patient."
+        subtext="WeCare Wellness Clinic works with Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan - plus affordable self-pay options for every patient."
         ctaLabel="Book an Appointment"
         ctaHref="/booking"
         secondaryLabel="Call to verify coverage"
@@ -143,13 +143,13 @@ export default function InsurancePage() {
                 We believe cost shouldn't be a barrier to quality healthcare. WeCare Wellness Clinic accepts the most common insurance plans in Florida and offers straightforward self-pay pricing for patients without coverage.
               </p>
               <p className={styles.introBody}>
-                Not sure if your plan is accepted? Call our team before your visit — we'll verify your benefits and explain exactly what to expect regarding copays, deductibles, and coverage.
+                Not sure if your plan is accepted? Call our team before your visit - we'll verify your benefits and explain exactly what to expect regarding copays, deductibles, and coverage.
               </p>
               <ul className={styles.featuresList} role="list">
                 {[
                   'Benefits verified before your visit',
                   'Transparent self-pay rates available',
-                  'No surprise billing — costs explained upfront',
+                  'No surprise billing - costs explained upfront',
                   'Medicare & Medicare Advantage accepted',
                   'Telehealth covered by most plans',
                   'Preventive visits often covered at 100%',
@@ -185,7 +185,7 @@ export default function InsurancePage() {
             <p className="ds-eyebrow">Accepted plans</p>
             <h2 id="insurance-heading" className="ds-h2">Insurance we accept</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              We accept all of the following — call us to verify your specific plan details.
+              We accept all of the following - call us to verify your specific plan details.
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
@@ -234,7 +234,7 @@ export default function InsurancePage() {
 
       {/* Call to verify strip */}
       <div className={styles.insuranceStrip} role="complementary" aria-label="Verify coverage">
-        <p className={styles.insuranceText}>Not sure if we accept your plan? Call us — we'll verify in minutes.</p>
+        <p className={styles.insuranceText}>Not sure if we accept your plan? Call us - we'll verify in minutes.</p>
         <p className={styles.insuranceNames}>
           <a href="tel:+18134385220" style={{ color: '#fff', fontWeight: 600 }}>(813) 438-5220</a>
           {' · Mon–Fri 9AM–6PM · Sat 9AM–1PM'}

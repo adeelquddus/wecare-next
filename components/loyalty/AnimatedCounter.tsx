@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * AnimatedCounter — counts up from 0 to `target` over `duration` ms with an
+ * AnimatedCounter - counts up from 0 to `target` over `duration` ms with an
  * ease-out curve. Used for the member's points balance hero number.
  *
  * Respects prefers-reduced-motion: if the user prefers reduced motion we
@@ -16,7 +16,7 @@ interface Props {
   className?: string;
   prefix?: string;
   suffix?: string;
-  /** Locale string to format numbers — defaults to en-US */
+  /** Locale string to format numbers - defaults to en-US */
   locale?: string;
 }
 

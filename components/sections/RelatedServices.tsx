@@ -4,18 +4,18 @@ import { SERVICES, SERVICE_IMAGES, type Service } from '@/lib/clinic';
 import styles from './RelatedServices.module.css';
 
 interface Props {
-  /** Slug of the current page — this service is excluded from the list */
+  /** Slug of the current page - this service is excluded from the list */
   currentSlug: string;
   /** Optional override heading */
   heading?: string;
 }
 
 /**
- * Renders a row of "related services" cards — all services except the current one.
+ * Renders a row of "related services" cards - all services except the current one.
  * Drop this above <BookingCTA> on every service page.
  *
  * Cards mirror the homepage service grid: full-bleed photo at the top
- * (sourced from SERVICE_IMAGES — same images shown on the homepage), then
+ * (sourced from SERVICE_IMAGES - same images shown on the homepage), then
  * service name, tagline, and a "Learn more →" link below.
  */
 export default function RelatedServices({ currentSlug, heading = 'Explore our other services' }: Props) {
@@ -28,7 +28,7 @@ export default function RelatedServices({ currentSlug, heading = 'Explore our ot
           <p className="ds-eyebrow">WeCare Wellness</p>
           <h2 id="related-heading" className="ds-h2">{heading}</h2>
           <p className={styles.sub}>
-            Everything you need under one roof — in Brandon, FL or via Telehealth.
+            Everything you need under one roof - in Brandon, FL or via Telehealth.
           </p>
         </div>
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from '@/components/layout/LegalPage.module.css';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — WeCare Wellness Clinic',
+  title: 'Privacy Policy - WeCare Wellness Clinic',
   description:
     'Learn how WeCare Wellness Clinic collects, uses, and protects your personal information. Our privacy practices comply with HIPAA and applicable Florida law.',
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/privacy' },
@@ -80,17 +80,17 @@ export default function PrivacyPage() {
 
             <h3 className={styles.sectionSubtitle}>Information You Provide Directly</h3>
             <ul className={styles.list}>
-              <li><strong>Contact information</strong> — name, email address, phone number, mailing address when you fill out a contact form, book an appointment, or subscribe to our newsletter.</li>
-              <li><strong>Appointment requests</strong> — preferred date/time, reason for visit, and insurance carrier when booking online.</li>
-              <li><strong>Communications</strong> — any messages you send us through contact forms, email, or phone.</li>
-              <li><strong>Feedback</strong> — reviews, survey responses, or testimonials you choose to submit.</li>
+              <li><strong>Contact information</strong> - name, email address, phone number, mailing address when you fill out a contact form, book an appointment, or subscribe to our newsletter.</li>
+              <li><strong>Appointment requests</strong> - preferred date/time, reason for visit, and insurance carrier when booking online.</li>
+              <li><strong>Communications</strong> - any messages you send us through contact forms, email, or phone.</li>
+              <li><strong>Feedback</strong> - reviews, survey responses, or testimonials you choose to submit.</li>
             </ul>
 
             <h3 className={styles.sectionSubtitle}>Information Collected Automatically</h3>
             <ul className={styles.list}>
-              <li><strong>Log data</strong> — IP address, browser type, operating system, referring URL, pages visited, and time/date of visit.</li>
-              <li><strong>Cookies &amp; similar technologies</strong> — session cookies, analytics cookies, and preference cookies. See Section 4 for details.</li>
-              <li><strong>Device information</strong> — device type, screen resolution, and general geographic location (city/state level only).</li>
+              <li><strong>Log data</strong> - IP address, browser type, operating system, referring URL, pages visited, and time/date of visit.</li>
+              <li><strong>Cookies &amp; similar technologies</strong> - session cookies, analytics cookies, and preference cookies. See Section 4 for details.</li>
+              <li><strong>Device information</strong> - device type, screen resolution, and general geographic location (city/state level only).</li>
             </ul>
 
             <h3 className={styles.sectionSubtitle}>Information from Third Parties</h3>
@@ -128,11 +128,11 @@ export default function PrivacyPage() {
             <h2 className={styles.sectionTitle}>3. How We Share Your Information</h2>
             <p className={styles.p}>We may share your information with:</p>
             <ul className={styles.list}>
-              <li><strong>Service providers</strong> — vendors who assist with website hosting, email marketing, appointment scheduling, and analytics, under confidentiality agreements.</li>
-              <li><strong>Healthcare operations</strong> — other providers involved in your care, subject to HIPAA requirements (see our <Link href="/hipaa">HIPAA Notice</Link>).</li>
-              <li><strong>Insurance companies</strong> — to verify coverage or process claims, with your authorization.</li>
-              <li><strong>Legal authorities</strong> — when required by law, court order, or to protect the safety of our patients and staff.</li>
-              <li><strong>Business transfers</strong> — in the event of a merger, acquisition, or sale of assets, your information may transfer to the successor entity.</li>
+              <li><strong>Service providers</strong> - vendors who assist with website hosting, email marketing, appointment scheduling, and analytics, under confidentiality agreements.</li>
+              <li><strong>Healthcare operations</strong> - other providers involved in your care, subject to HIPAA requirements (see our <Link href="/hipaa">HIPAA Notice</Link>).</li>
+              <li><strong>Insurance companies</strong> - to verify coverage or process claims, with your authorization.</li>
+              <li><strong>Legal authorities</strong> - when required by law, court order, or to protect the safety of our patients and staff.</li>
+              <li><strong>Business transfers</strong> - in the event of a merger, acquisition, or sale of assets, your information may transfer to the successor entity.</li>
             </ul>
             <p className={styles.p}>
               We require all third parties to respect the security of your personal data and to treat it
@@ -144,14 +144,14 @@ export default function PrivacyPage() {
           <div className={styles.section} id="cookies">
             <h2 className={styles.sectionTitle}>4. Cookies &amp; Tracking Technologies</h2>
             <p className={styles.p}>
-              Our Site uses cookies — small text files stored on your device — to improve functionality
+              Our Site uses cookies - small text files stored on your device - to improve functionality
               and understand usage patterns.
             </p>
             <ul className={styles.list}>
-              <li><strong>Strictly necessary cookies</strong> — required for the Site to function (e.g., session management). Cannot be disabled.</li>
-              <li><strong>Analytics cookies</strong> — Google Analytics (anonymized IP) to understand visitor behavior. You may opt out via Google's <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">opt-out browser add-on</a>.</li>
-              <li><strong>Preference cookies</strong> — remember your settings (e.g., accessibility preferences).</li>
-              <li><strong>Marketing cookies</strong> — we do not currently use advertising/tracking cookies for behavioral advertising.</li>
+              <li><strong>Strictly necessary cookies</strong> - required for the Site to function (e.g., session management). Cannot be disabled.</li>
+              <li><strong>Analytics cookies</strong> - Google Analytics (anonymized IP) to understand visitor behavior. You may opt out via Google's <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">opt-out browser add-on</a>.</li>
+              <li><strong>Preference cookies</strong> - remember your settings (e.g., accessibility preferences).</li>
+              <li><strong>Marketing cookies</strong> - we do not currently use advertising/tracking cookies for behavioral advertising.</li>
             </ul>
             <p className={styles.p}>
               You can control cookies through your browser settings. Disabling certain cookies may affect
@@ -188,12 +188,12 @@ export default function PrivacyPage() {
               information:
             </p>
             <ul className={styles.list}>
-              <li><strong>Access</strong> — Request a copy of the personal information we hold about you.</li>
-              <li><strong>Correction</strong> — Request that we correct inaccurate or incomplete information.</li>
-              <li><strong>Deletion</strong> — Request deletion of your personal information, subject to legal retention requirements.</li>
-              <li><strong>Opt out of marketing</strong> — Unsubscribe from marketing emails at any time by clicking "unsubscribe" or contacting us directly.</li>
-              <li><strong>Data portability</strong> — Receive your data in a structured, commonly used format.</li>
-              <li><strong>Restriction</strong> — Request that we limit processing of your information in certain circumstances.</li>
+              <li><strong>Access</strong> - Request a copy of the personal information we hold about you.</li>
+              <li><strong>Correction</strong> - Request that we correct inaccurate or incomplete information.</li>
+              <li><strong>Deletion</strong> - Request deletion of your personal information, subject to legal retention requirements.</li>
+              <li><strong>Opt out of marketing</strong> - Unsubscribe from marketing emails at any time by clicking "unsubscribe" or contacting us directly.</li>
+              <li><strong>Data portability</strong> - Receive your data in a structured, commonly used format.</li>
+              <li><strong>Restriction</strong> - Request that we limit processing of your information in certain circumstances.</li>
             </ul>
             <p className={styles.p}>
               For medical record requests and rights related to your PHI, please refer to our{' '}

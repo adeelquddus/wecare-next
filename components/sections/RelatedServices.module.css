@@ -16,7 +16,7 @@
   max-width: 520px;
 }
 
-/* Card grid — 5 cards across desktop, wrapping responsively */
+/* Card grid - 5 cards across desktop, wrapping responsively */
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -33,7 +33,7 @@
   .grid { grid-template-columns: 1fr; }
 }
 
-/* Individual card — image-led, no padding on the card itself so the image
+/* Individual card - image-led, no padding on the card itself so the image
    bleeds to the edges; padding lives on .body */
 .card {
   display: flex;

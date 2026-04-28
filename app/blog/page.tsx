@@ -8,7 +8,7 @@ import { getLatestPosts } from '@/lib/wix';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Health & Wellness Blog — WeCare Wellness Clinic Brandon FL',
+  title: 'Health & Wellness Blog - WeCare Wellness Clinic Brandon FL',
   description:
     'Evidence-based health tips, wellness advice & medical insights from WeCare Wellness Clinic in Brandon, FL. GLP-1, primary care, telehealth, women\'s health & more.',
   keywords: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/blog' },
   openGraph: {
-    title: 'Health & Wellness Blog — WeCare Wellness Clinic',
+    title: 'Health & Wellness Blog - WeCare Wellness Clinic',
     description: 'Expert health tips, wellness advice, and medical insights from our board-certified team in Brandon, FL.',
     url: 'https://www.wecarewellnessclinic.com/blog',
     type: 'website',
@@ -53,7 +53,7 @@ const FALLBACK_POSTS = [
     slug: 'telehealth-vs-in-person',
     title: 'Telehealth vs. In-Person Visits: When to Choose Each',
     excerpt:
-      'Video visits are great — but not for everything. We break down which conditions are ideal for telehealth and which ones really need an in-office appointment.',
+      'Video visits are great - but not for everything. We break down which conditions are ideal for telehealth and which ones really need an in-office appointment.',
     publishedDate: 'April 8, 2025',
     tags: ['Telehealth', 'Primary Care'],
     readingTime: 5,
@@ -61,7 +61,7 @@ const FALLBACK_POSTS = [
   {
     id: '3',
     slug: 'annual-physical-what-included',
-    title: 'What\'s Included in Your Annual Physical — and Why It Matters',
+    title: 'What\'s Included in Your Annual Physical - and Why It Matters',
     excerpt:
       'A yearly wellness visit is more than just a checkup. Learn what we screen for and why catching conditions early can make a life-changing difference.',
     publishedDate: 'March 28, 2025',
@@ -93,7 +93,7 @@ const FALLBACK_POSTS = [
     slug: 'insurance-accepted-guide',
     title: 'Understanding Your Insurance at WeCare Wellness',
     excerpt:
-      'Insurance can be confusing. We break down how we work with Aetna, United Healthcare, Medicare, BCBS, and MultiPlan — and what to do if you\'re uninsured.',
+      'Insurance can be confusing. We break down how we work with Aetna, United Healthcare, Medicare, BCBS, and MultiPlan - and what to do if you\'re uninsured.',
     publishedDate: 'February 20, 2025',
     tags: ['Insurance', 'Patient Resources'],
     readingTime: 4,
@@ -170,7 +170,7 @@ export default async function BlogPage() {
 
       <BookingCTA
         heading="Have a health question?"
-        subtext="Our providers are here to help. Book a consultation — in-person or via Telehealth."
+        subtext="Our providers are here to help. Book a consultation - in-person or via Telehealth."
       />
     </>
   );

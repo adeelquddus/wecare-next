@@ -7,7 +7,7 @@ import { PinIcon, PhoneIcon, ClockIcon, CardIcon } from '@/components/ui/Animate
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Primary Care Doctor in Brandon, FL — WeCare Wellness Clinic',
+  title: 'Primary Care Doctor in Brandon, FL - WeCare Wellness Clinic',
   description:
     'WeCare Wellness Clinic is a primary care and wellness clinic at 214 W Brandon Blvd, Brandon, FL 33511. Same-week appointments, Saturday hours, most insurance accepted. Serving Brandon, Riverview, Valrico, Seffner & Tampa Bay.',
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/brandon-fl' },
   openGraph: {
-    title: 'Primary Care & Wellness Clinic in Brandon, FL — WeCare',
+    title: 'Primary Care & Wellness Clinic in Brandon, FL - WeCare',
     description: 'Board-certified primary care, GLP-1 weight loss, telehealth & more in Brandon, FL. Saturday hours. Most insurance accepted.',
     url: 'https://www.wecarewellnessclinic.com/brandon-fl',
     type: 'website',
@@ -95,7 +95,7 @@ export default function BrandonFLPage() {
 
       <Hero
         headline="Your primary care doctor in Brandon, FL"
-        subtext="WeCare Wellness Clinic serves Brandon and the surrounding Tampa Bay area with board-certified primary care, GLP-1 weight loss, telehealth, and more — with Saturday hours and same-week appointments."
+        subtext="WeCare Wellness Clinic serves Brandon and the surrounding Tampa Bay area with board-certified primary care, GLP-1 weight loss, telehealth, and more - with Saturday hours and same-week appointments."
         ctaLabel="Book an Appointment"
         ctaHref="/booking"
         secondaryLabel={`Call ${CLINIC.phoneDisplay}`}
@@ -114,10 +114,10 @@ export default function BrandonFLPage() {
                 Comprehensive care for Brandon & Hillsborough County
               </h2>
               <p className={styles.introPara}>
-                WeCare Wellness Clinic is conveniently located on W Brandon Blvd — in the heart of Brandon — making it one of the most accessible primary care clinics for residents of Brandon, Riverview, Valrico, Seffner, and the greater Tampa Bay area.
+                WeCare Wellness Clinic is conveniently located on W Brandon Blvd - in the heart of Brandon - making it one of the most accessible primary care clinics for residents of Brandon, Riverview, Valrico, Seffner, and the greater Tampa Bay area.
               </p>
               <p className={styles.introPara}>
-                Unlike many clinics in the area, WeCare offers extended Friday hours until 6 PM and Saturday clinic from 9 AM to 1 PM. We also offer telehealth video visits for patients who prefer to see a provider from home — available statewide across Florida.
+                Unlike many clinics in the area, WeCare offers extended Friday hours until 6 PM and Saturday clinic from 9 AM to 1 PM. We also offer telehealth video visits for patients who prefer to see a provider from home - available statewide across Florida.
               </p>
               <p className={styles.introPara}>
                 We are currently accepting new patients for all services. Most major insurance plans accepted, including Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. Transparent self-pay rates available.
@@ -179,7 +179,7 @@ export default function BrandonFLPage() {
             <p className="ds-eyebrow">Available in Brandon, FL</p>
             <h2 id="services-heading" className="ds-h2">Medical services we offer</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              All services available to Brandon-area patients — in-person and via telehealth.
+              All services available to Brandon-area patients - in-person and via telehealth.
             </p>
           </div>
           <div className={styles.servicesGrid}>

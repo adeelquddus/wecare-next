@@ -17,7 +17,7 @@ import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: "Men's Health Brandon FL — TRT, Low Testosterone & ED Treatment | WeCare Wellness",
+  title: "Men's Health Brandon FL - TRT, Low Testosterone & ED Treatment | WeCare Wellness",
   description:
     "Men's health clinic in Brandon, FL. Testosterone replacement therapy, low T treatment, ED evaluation, prostate screening, annual physicals & more. Insurance accepted. Same-week appointments.",
   keywords: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/mens-health' },
   openGraph: {
-    title: "Men's Health — TRT, Low Testosterone & ED Treatment | WeCare Wellness Clinic Brandon FL",
+    title: "Men's Health - TRT, Low Testosterone & ED Treatment | WeCare Wellness Clinic Brandon FL",
     description:
       "Insurance-accepted men's health care in Brandon, FL. Testosterone replacement therapy, ED evaluation, prostate health, annual physicals & more from a board-certified physician.",
     url: 'https://www.wecarewellnessclinic.com/mens-health',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 const medicalClinicSchema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalClinic',
-  name: 'WeCare Wellness Clinic — Men\'s Health',
+  name: 'WeCare Wellness Clinic - Men\'s Health',
   url: 'https://www.wecarewellnessclinic.com/mens-health',
   telephone: '+18134385220',
   address: {
@@ -95,7 +95,7 @@ const faqSchema = {
       name: 'How do I know if I have low testosterone?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Common symptoms of low testosterone include persistent fatigue, reduced sex drive, difficulty maintaining erections, unexplained weight gain, loss of muscle mass, brain fog, depression, and irritability. Many men experience these gradually and write them off as normal aging. A simple blood test measuring total and free testosterone levels — performed here at WeCare — gives you a definitive answer so you can take action.',
+        text: 'Common symptoms of low testosterone include persistent fatigue, reduced sex drive, difficulty maintaining erections, unexplained weight gain, loss of muscle mass, brain fog, depression, and irritability. Many men experience these gradually and write them off as normal aging. A simple blood test measuring total and free testosterone levels - performed here at WeCare - gives you a definitive answer so you can take action.',
       },
     },
     {
@@ -111,7 +111,7 @@ const faqSchema = {
       name: 'Is testosterone replacement therapy safe?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'TRT is safe when properly supervised by a qualified physician. Risks — including changes to red blood cell count, fertility impact, or fluid retention — are manageable with regular monitoring. At WeCare, we check your CBC, PSA, estradiol, and testosterone levels on a scheduled basis to keep you in the optimal range and catch any changes early. We do not prescribe TRT without appropriate labs and follow-up.',
+        text: 'TRT is safe when properly supervised by a qualified physician. Risks - including changes to red blood cell count, fertility impact, or fluid retention - are manageable with regular monitoring. At WeCare, we check your CBC, PSA, estradiol, and testosterone levels on a scheduled basis to keep you in the optimal range and catch any changes early. We do not prescribe TRT without appropriate labs and follow-up.',
       },
     },
     {
@@ -119,7 +119,7 @@ const faqSchema = {
       name: 'Do you treat erectile dysfunction at WeCare?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. We start with a thorough evaluation to identify underlying causes — low testosterone, cardiovascular disease, diabetes, anxiety, or medication side effects are all common contributors. Treatment may include PDE5 inhibitors (sildenafil, tadalafil), hormone optimization, lifestyle modifications, or a referral to urology for cases requiring further workup. ED is a medical issue, not a personal failure, and we treat it clinically and without judgment.',
+        text: 'Yes. We start with a thorough evaluation to identify underlying causes - low testosterone, cardiovascular disease, diabetes, anxiety, or medication side effects are all common contributors. Treatment may include PDE5 inhibitors (sildenafil, tadalafil), hormone optimization, lifestyle modifications, or a referral to urology for cases requiring further workup. ED is a medical issue, not a personal failure, and we treat it clinically and without judgment.',
       },
     },
     {
@@ -135,7 +135,7 @@ const faqSchema = {
       name: 'Do you accept insurance for men\'s health and TRT visits?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — we accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. Annual preventive physicals are typically covered at 100% under most plans. TRT and lab work coverage vary by plan, but many patients are surprised by how much their insurance covers. We also see uninsured patients at transparent self-pay rates. Unlike some men\'s health clinics in Brandon, we do not require cash-only payment.',
+        text: 'Yes - we accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. Annual preventive physicals are typically covered at 100% under most plans. TRT and lab work coverage vary by plan, but many patients are surprised by how much their insurance covers. We also see uninsured patients at transparent self-pay rates. Unlike some men\'s health clinics in Brandon, we do not require cash-only payment.',
       },
     },
     {
@@ -151,7 +151,7 @@ const faqSchema = {
       name: 'Can you help with mental health issues like depression and anxiety in men?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Absolutely. Men are significantly under-diagnosed for depression and anxiety — often because symptoms present differently (irritability, withdrawal, risky behavior) and because men are less likely to seek help. Our providers screen for mental health conditions during primary care visits using validated tools, and we can start treatment, adjust existing medications, or coordinate with mental health specialists when appropriate.',
+        text: 'Absolutely. Men are significantly under-diagnosed for depression and anxiety - often because symptoms present differently (irritability, withdrawal, risky behavior) and because men are less likely to seek help. Our providers screen for mental health conditions during primary care visits using validated tools, and we can start treatment, adjust existing medications, or coordinate with mental health specialists when appropriate.',
       },
     },
     {
@@ -159,7 +159,7 @@ const faqSchema = {
       name: 'Do you offer weight management for men, including GLP-1 medications?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. We offer medically supervised weight management that combines GLP-1 receptor agonists (semaglutide / Ozempic, tirzepatide / Mounjaro) with personalized nutrition guidance and lifestyle coaching. For men, weight loss also directly improves testosterone levels, cardiovascular health, and sexual function — making it one of the highest-impact interventions we offer.',
+        text: 'Yes. We offer medically supervised weight management that combines GLP-1 receptor agonists (semaglutide / Ozempic, tirzepatide / Mounjaro) with personalized nutrition guidance and lifestyle coaching. For men, weight loss also directly improves testosterone levels, cardiovascular health, and sexual function - making it one of the highest-impact interventions we offer.',
       },
     },
     {
@@ -189,17 +189,17 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: LightningIcon,
     title: 'Testosterone Replacement Therapy (TRT)',
-    desc: 'Physician-supervised TRT using injections, gels, or pellets to restore testosterone to healthy levels. We run a full hormone panel before starting and monitor your labs every 3–6 months. No cookie-cutter protocols — your dosing is tailored to your symptoms and bloodwork.',
+    desc: 'Physician-supervised TRT using injections, gels, or pellets to restore testosterone to healthy levels. We run a full hormone panel before starting and monitor your labs every 3–6 months. No cookie-cutter protocols - your dosing is tailored to your symptoms and bloodwork.',
   },
   {
     Icon: ChartIcon,
     title: 'Low Testosterone Evaluation',
-    desc: 'Comprehensive low-T workup including total testosterone, free testosterone, LH, FSH, and estradiol. We identify root causes — not just low numbers — whether it\'s primary hypogonadism, secondary causes, or age-related decline. Results reviewed with you in plain language.',
+    desc: 'Comprehensive low-T workup including total testosterone, free testosterone, LH, FSH, and estradiol. We identify root causes - not just low numbers - whether it\'s primary hypogonadism, secondary causes, or age-related decline. Results reviewed with you in plain language.',
   },
   {
     Icon: HeartIcon,
     title: 'Erectile Dysfunction Treatment',
-    desc: 'Discreet, evidence-based ED evaluation and treatment. We investigate cardiovascular, hormonal, and psychological contributors and offer PDE5 inhibitors (sildenafil, tadalafil), hormone optimization, and urology referrals when needed. ED is a health issue — we treat it that way.',
+    desc: 'Discreet, evidence-based ED evaluation and treatment. We investigate cardiovascular, hormonal, and psychological contributors and offer PDE5 inhibitors (sildenafil, tadalafil), hormone optimization, and urology referrals when needed. ED is a health issue - we treat it that way.',
   },
   {
     Icon: MicroscopeIcon,
@@ -209,22 +209,22 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: StethoscopeIcon,
     title: 'Cardiovascular Risk Assessment',
-    desc: 'Men develop heart disease at nearly twice the rate of women before age 65. We assess your full cardiovascular risk profile — lipids, blood pressure, blood sugar, family history, smoking, and BMI — and build a prevention plan before a problem develops.',
+    desc: 'Men develop heart disease at nearly twice the rate of women before age 65. We assess your full cardiovascular risk profile - lipids, blood pressure, blood sugar, family history, smoking, and BMI - and build a prevention plan before a problem develops.',
   },
   {
     Icon: ClipboardIcon,
     title: 'Comprehensive Annual Physicals',
-    desc: 'A thorough annual exam covering all the labs men actually need: testosterone panel, PSA, lipid panel, A1C, CBC, and metabolic panel. Most preventive physicals are covered 100% by insurance. This is your reset point — come in once a year and stay ahead of everything.',
+    desc: 'A thorough annual exam covering all the labs men actually need: testosterone panel, PSA, lipid panel, A1C, CBC, and metabolic panel. Most preventive physicals are covered 100% by insurance. This is your reset point - come in once a year and stay ahead of everything.',
   },
   {
     Icon: ScaleIcon,
     title: 'Weight Management for Men',
-    desc: 'Medical weight management combining GLP-1 medications (semaglutide, tirzepatide) with personalized lifestyle guidance. For men, losing excess body fat directly raises testosterone, improves ED, and cuts cardiovascular risk — making weight management one of the most impactful things you can do.',
+    desc: 'Medical weight management combining GLP-1 medications (semaglutide, tirzepatide) with personalized lifestyle guidance. For men, losing excess body fat directly raises testosterone, improves ED, and cuts cardiovascular risk - making weight management one of the most impactful things you can do.',
   },
   {
     Icon: BrainIcon,
     title: "Men's Mental Health",
-    desc: "Men are under-diagnosed for depression and anxiety because symptoms show up differently — as irritability, withdrawal, or risky behavior rather than sadness. Our providers screen for mental health conditions at primary care visits and offer treatment or coordination with specialists without stigma.",
+    desc: "Men are under-diagnosed for depression and anxiety because symptoms show up differently - as irritability, withdrawal, or risky behavior rather than sadness. Our providers screen for mental health conditions at primary care visits and offer treatment or coordination with specialists without stigma.",
   },
 ];
 
@@ -244,29 +244,29 @@ const LOW_T_SYMPTOMS = [
 ];
 
 const CONDITIONS = [
-  { name: 'Hypogonadism (Low Testosterone)', desc: 'Primary or secondary — we identify the cause and treat it appropriately.' },
-  { name: 'Erectile Dysfunction (ED)', desc: 'Evaluation, labs, and evidence-based treatment — with or without TRT.' },
+  { name: 'Hypogonadism (Low Testosterone)', desc: 'Primary or secondary - we identify the cause and treat it appropriately.' },
+  { name: 'Erectile Dysfunction (ED)', desc: 'Evaluation, labs, and evidence-based treatment - with or without TRT.' },
   { name: 'Benign Prostatic Hyperplasia (BPH)', desc: 'Management of urinary symptoms and coordination with urology.' },
   { name: 'Hypertension', desc: 'Diagnosis, medication management, and lifestyle interventions.' },
   { name: 'Type 2 Diabetes & Prediabetes', desc: 'Screening, early intervention, and ongoing management.' },
   { name: 'High Cholesterol (Hyperlipidemia)', desc: 'Statin therapy, dietary counseling, and monitoring.' },
   { name: 'Obesity & Metabolic Syndrome', desc: 'GLP-1 medications, weight loss planning, and metabolic labs.' },
   { name: 'Depression & Anxiety', desc: 'Screening and treatment in a primary care setting, referrals when needed.' },
-  { name: 'Male-Pattern Hair Loss', desc: 'Finasteride and minoxidil discussion — coordinated with hormone levels.' },
+  { name: 'Male-Pattern Hair Loss', desc: 'Finasteride and minoxidil discussion - coordinated with hormone levels.' },
   { name: 'STI / STD Screening & Treatment', desc: 'Confidential testing and treatment for all common STIs.' },
   { name: 'HIV PrEP (Pre-Exposure Prophylaxis)', desc: 'Prescriptions and quarterly lab monitoring for eligible patients.' },
   { name: 'Thyroid Disorders', desc: 'TSH, T3/T4 panels, and management of hypo/hyperthyroidism.' },
   { name: 'Sleep Apnea Screening', desc: 'Referral for sleep study when clinical picture warrants it.' },
   { name: 'Testosterone & Cardiovascular Monitoring on TRT', desc: 'Hematocrit, PSA, and lipid tracking during therapy.' },
   { name: 'Hormone Imbalance Over 40', desc: 'Estradiol, cortisol, DHEA, and testosterone in aging men.' },
-  { name: 'Preventive Cancer Screenings', desc: 'Colorectal, skin, and prostate — age and risk-appropriate protocols.' },
+  { name: 'Preventive Cancer Screenings', desc: 'Colorectal, skin, and prostate - age and risk-appropriate protocols.' },
 ];
 
 const PROCESS = [
   {
     num: 1,
     title: 'Book your visit',
-    desc: 'Schedule online in minutes — new patient physicals, TRT follow-ups, or specific concern appointments are all available. Same-week slots are typically open.',
+    desc: 'Schedule online in minutes - new patient physicals, TRT follow-ups, or specific concern appointments are all available. Same-week slots are typically open.',
   },
   {
     num: 2,
@@ -276,7 +276,7 @@ const PROCESS = [
   {
     num: 3,
     title: 'Sit down with your provider',
-    desc: 'A board-certified physician reviews your labs, listens to your concerns, and builds a care plan around your goals — not a one-size-fits-all protocol.',
+    desc: 'A board-certified physician reviews your labs, listens to your concerns, and builds a care plan around your goals - not a one-size-fits-all protocol.',
   },
   {
     num: 4,
@@ -288,7 +288,7 @@ const PROCESS = [
 const FAQS = [
   {
     q: 'How do I know if I have low testosterone?',
-    a: 'Common symptoms include persistent fatigue, reduced sex drive, difficulty with erections, unexplained weight gain, loss of muscle mass, brain fog, depression, and irritability. Many men attribute these to stress or aging and never get checked. A simple blood test measuring total and free testosterone gives you a definitive answer — and if levels are low, there are real treatment options. Don\'t guess. Get tested.',
+    a: 'Common symptoms include persistent fatigue, reduced sex drive, difficulty with erections, unexplained weight gain, loss of muscle mass, brain fog, depression, and irritability. Many men attribute these to stress or aging and never get checked. A simple blood test measuring total and free testosterone gives you a definitive answer - and if levels are low, there are real treatment options. Don\'t guess. Get tested.',
   },
   {
     q: 'What forms of testosterone replacement therapy do you offer?',
@@ -296,35 +296,35 @@ const FAQS = [
   },
   {
     q: 'Is testosterone replacement therapy safe?',
-    a: 'TRT is safe when properly supervised by a qualified physician. Potential risks — such as elevated red blood cell count (polycythemia), effects on fertility, or fluid retention — are manageable with regular monitoring. At WeCare, we track your hematocrit, PSA, estradiol, and testosterone levels on a defined schedule and adjust dosing as needed. We do not prescribe TRT without appropriate labs and follow-up — no exceptions.',
+    a: 'TRT is safe when properly supervised by a qualified physician. Potential risks - such as elevated red blood cell count (polycythemia), effects on fertility, or fluid retention - are manageable with regular monitoring. At WeCare, we track your hematocrit, PSA, estradiol, and testosterone levels on a defined schedule and adjust dosing as needed. We do not prescribe TRT without appropriate labs and follow-up - no exceptions.',
   },
   {
     q: 'Do you treat erectile dysfunction at WeCare?',
-    a: 'Yes. We start with a thorough evaluation to identify the underlying cause — low testosterone, cardiovascular disease, diabetes, medication side effects, or psychological factors are all common contributors. Treatment may include PDE5 inhibitors (sildenafil/Viagra, tadalafil/Cialis), hormone optimization, lifestyle changes, or a urology referral. ED is a medical condition, and we treat it with the same clinical seriousness as any other diagnosis.',
+    a: 'Yes. We start with a thorough evaluation to identify the underlying cause - low testosterone, cardiovascular disease, diabetes, medication side effects, or psychological factors are all common contributors. Treatment may include PDE5 inhibitors (sildenafil/Viagra, tadalafil/Cialis), hormone optimization, lifestyle changes, or a urology referral. ED is a medical condition, and we treat it with the same clinical seriousness as any other diagnosis.',
   },
   {
     q: 'At what age should men start prostate cancer screening?',
-    a: 'We recommend discussing PSA screening at age 50 for average-risk men. If you are African American or have a first-degree relative diagnosed with prostate cancer before age 65, that conversation should happen at age 40–45. PSA screening is a shared decision — we explain what the test does and does not tell us, and you decide with full information. There is no one-size-fits-all answer here.',
+    a: 'We recommend discussing PSA screening at age 50 for average-risk men. If you are African American or have a first-degree relative diagnosed with prostate cancer before age 65, that conversation should happen at age 40–45. PSA screening is a shared decision - we explain what the test does and does not tell us, and you decide with full information. There is no one-size-fits-all answer here.',
   },
   {
     q: 'Do you accept insurance for men\'s health and TRT visits?',
-    a: 'Yes — we accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. Annual preventive physicals are typically covered at 100% under most plans. Lab work and TRT coverage vary by plan. We also see uninsured patients at transparent self-pay rates. Unlike some men\'s health clinics in Brandon that charge cash-only membership fees, we work with your insurance so your care is actually affordable.',
+    a: 'Yes - we accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, and MultiPlan. Annual preventive physicals are typically covered at 100% under most plans. Lab work and TRT coverage vary by plan. We also see uninsured patients at transparent self-pay rates. Unlike some men\'s health clinics in Brandon that charge cash-only membership fees, we work with your insurance so your care is actually affordable.',
   },
   {
     q: 'What is included in a men\'s annual health exam?',
-    a: 'Our comprehensive men\'s annual exam includes a full physical, blood pressure and BMI review, fasting lipid panel, hemoglobin A1C (diabetes screening), complete blood count, comprehensive metabolic panel, testosterone level, age-appropriate PSA discussion, and STI screening if clinically indicated. We also talk about your mental health, sleep, and any symptoms you\'ve been putting off — because the annual exam is the right time to get ahead of everything.',
+    a: 'Our comprehensive men\'s annual exam includes a full physical, blood pressure and BMI review, fasting lipid panel, hemoglobin A1C (diabetes screening), complete blood count, comprehensive metabolic panel, testosterone level, age-appropriate PSA discussion, and STI screening if clinically indicated. We also talk about your mental health, sleep, and any symptoms you\'ve been putting off - because the annual exam is the right time to get ahead of everything.',
   },
   {
     q: 'Can you help with depression and anxiety?',
-    a: 'Absolutely. Men are significantly under-diagnosed for depression and anxiety — often because symptoms look different: irritability, social withdrawal, increased alcohol use, or risk-taking rather than visible sadness. Our providers use validated screening tools at primary care visits. We can start medications, manage existing prescriptions, and refer to mental health specialists when appropriate. Asking for help is the strongest thing you can do.',
+    a: 'Absolutely. Men are significantly under-diagnosed for depression and anxiety - often because symptoms look different: irritability, social withdrawal, increased alcohol use, or risk-taking rather than visible sadness. Our providers use validated screening tools at primary care visits. We can start medications, manage existing prescriptions, and refer to mental health specialists when appropriate. Asking for help is the strongest thing you can do.',
   },
   {
     q: 'Do you offer weight management including GLP-1 medications?',
-    a: 'Yes. We offer medically supervised weight management combining GLP-1 receptor agonists (semaglutide/Ozempic, tirzepatide/Mounjaro) with personalized nutrition and lifestyle guidance. For men, meaningful weight loss has a direct positive effect on testosterone levels, sexual function, blood pressure, and cardiovascular risk — making it one of the single highest-impact interventions available. We treat weight medically, not as a willpower problem.',
+    a: 'Yes. We offer medically supervised weight management combining GLP-1 receptor agonists (semaglutide/Ozempic, tirzepatide/Mounjaro) with personalized nutrition and lifestyle guidance. For men, meaningful weight loss has a direct positive effect on testosterone levels, sexual function, blood pressure, and cardiovascular risk - making it one of the single highest-impact interventions available. We treat weight medically, not as a willpower problem.',
   },
   {
     q: 'Can I discuss hair loss at my appointment?',
-    a: 'Yes. Male-pattern hair loss is common and treatable. We can discuss and prescribe finasteride (oral, FDA-approved) and minoxidil. If you are on or considering TRT, we review your DHT levels and ensure any hair loss treatment plan is compatible with your hormone therapy. Bring it up — it takes two minutes and we take it seriously.',
+    a: 'Yes. Male-pattern hair loss is common and treatable. We can discuss and prescribe finasteride (oral, FDA-approved) and minoxidil. If you are on or considering TRT, we review your DHT levels and ensure any hair loss treatment plan is compatible with your hormone therapy. Bring it up - it takes two minutes and we take it seriously.',
   },
 ];
 
@@ -348,8 +348,8 @@ export default function MensHealthPage() {
       />
 
       <Hero
-        headline="Men's health in Brandon, FL — no excuses, no cash-only clinics"
-        subtext="Testosterone replacement therapy, ED treatment, prostate screening, annual physicals & more — from a board-certified physician who accepts your insurance. Same-week appointments available."
+        headline="Men's health in Brandon, FL - no excuses, no cash-only clinics"
+        subtext="Testosterone replacement therapy, ED treatment, prostate screening, annual physicals & more - from a board-certified physician who accepts your insurance. Same-week appointments available."
         ctaLabel="Book a Visit"
         ctaHref="/booking"
         secondaryLabel="Call (813) 438-5220"
@@ -368,19 +368,19 @@ export default function MensHealthPage() {
                 Most men wait too long. You don&apos;t have to.
               </h2>
               <p className={styles.introBody}>
-                Studies consistently show men are less likely to see a doctor, more likely to delay care, and more likely to die preventably as a result. Low testosterone, undiagnosed cardiovascular risk, untreated depression, and ignored ED are not inevitable — they&apos;re treatable. WeCare Wellness Clinic is a full-service primary care clinic in Brandon, FL that takes men&apos;s health seriously and makes it straightforward to get the care you need.
+                Studies consistently show men are less likely to see a doctor, more likely to delay care, and more likely to die preventably as a result. Low testosterone, undiagnosed cardiovascular risk, untreated depression, and ignored ED are not inevitable - they&apos;re treatable. WeCare Wellness Clinic is a full-service primary care clinic in Brandon, FL that takes men&apos;s health seriously and makes it straightforward to get the care you need.
               </p>
               <p className={styles.introBody}>
-                Unlike men&apos;s health specialty clinics that see you only for TRT and charge monthly membership fees without accepting insurance, we are a board-certified primary care practice. We address the whole picture — hormones, heart health, mental health, weight, and prevention — under one roof, covered by your insurance.
+                Unlike men&apos;s health specialty clinics that see you only for TRT and charge monthly membership fees without accepting insurance, we are a board-certified primary care practice. We address the whole picture - hormones, heart health, mental health, weight, and prevention - under one roof, covered by your insurance.
               </p>
               <ul className={styles.featuresList} role="list">
                 {[
-                  'Testosterone Replacement Therapy (TRT) — injections, gels, pellets',
+                  'Testosterone Replacement Therapy (TRT) - injections, gels, pellets',
                   'Erectile dysfunction evaluation and treatment',
                   'Prostate health and PSA screening',
                   'Annual physicals with full men\'s health labs',
                   'Cardiovascular risk assessment and prevention',
-                  'Weight management — GLP-1 medications + coaching',
+                  'Weight management - GLP-1 medications + coaching',
                   'Mental health screening and treatment',
                   'STI testing and HIV PrEP',
                 ].map((f) => (
@@ -415,7 +415,7 @@ export default function MensHealthPage() {
             <p className="ds-eyebrow">What we offer</p>
             <h2 id="benefits-heading" className="ds-h2">Men&apos;s health services at WeCare</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Comprehensive, insurance-covered men&apos;s healthcare — from testosterone optimization to cardiovascular prevention to mental health.
+              Comprehensive, insurance-covered men&apos;s healthcare - from testosterone optimization to cardiovascular prevention to mental health.
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list">
@@ -439,7 +439,7 @@ export default function MensHealthPage() {
             <p className="ds-eyebrow">Know the signs</p>
             <h2 id="lowt-heading" className="ds-h2">Signs you might have low testosterone</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Low testosterone (hypogonadism) affects roughly 1 in 4 men over 30 — and most of them don&apos;t know it. These symptoms are real, common, and treatable.
+              Low testosterone (hypogonadism) affects roughly 1 in 4 men over 30 - and most of them don&apos;t know it. These symptoms are real, common, and treatable.
             </p>
           </div>
           <div className={styles.benefitsGrid} role="list" aria-label="Low testosterone symptoms">
@@ -454,7 +454,7 @@ export default function MensHealthPage() {
           </div>
           <div style={{ marginTop: 'var(--space-6)', textAlign: 'center' }}>
             <p className="ds-lede">
-              If you recognize three or more of these symptoms, a testosterone panel is the right next step. A blood draw takes minutes — call <a href="tel:+18134385220" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>(813) 438-5220</a> or book online.
+              If you recognize three or more of these symptoms, a testosterone panel is the right next step. A blood draw takes minutes - call <a href="tel:+18134385220" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>(813) 438-5220</a> or book online.
             </p>
           </div>
         </div>
@@ -491,17 +491,17 @@ export default function MensHealthPage() {
                 Insurance accepted. Primary care included. No membership fees.
               </h2>
               <p className={styles.introBody}>
-                Brandon has specialty men&apos;s health clinics focused almost exclusively on testosterone and ED — and many require cash or monthly membership fees, do not accept insurance, and don&apos;t offer primary care. If something else is going on — your blood pressure is high, your cholesterol is out of range, or you need a mental health screening — you&apos;re sent elsewhere.
+                Brandon has specialty men&apos;s health clinics focused almost exclusively on testosterone and ED - and many require cash or monthly membership fees, do not accept insurance, and don&apos;t offer primary care. If something else is going on - your blood pressure is high, your cholesterol is out of range, or you need a mental health screening - you&apos;re sent elsewhere.
               </p>
               <p className={styles.introBody}>
                 At WeCare, you get all of it in one place, covered by your insurance. Our physician manages your testosterone therapy and your blood pressure and your annual physical. You don&apos;t need three separate providers or three separate bills.
               </p>
               <ul className={styles.featuresList} role="list">
                 {[
-                  'Accepts Aetna, UHC, Medicare, BCBS, MultiPlan — and uninsured',
+                  'Accepts Aetna, UHC, Medicare, BCBS, MultiPlan - and uninsured',
                   'Board-certified primary care physician',
                   'TRT plus full cardiovascular, metabolic, and mental health management',
-                  'Same-week appointments — no long waitlists',
+                  'Same-week appointments - no long waitlists',
                   'Telehealth follow-ups across all of Florida',
                   'No monthly membership fees or cash-only billing',
                 ].map((f) => (
@@ -536,7 +536,7 @@ export default function MensHealthPage() {
             <p className="ds-eyebrow">Getting started</p>
             <h2 id="process-heading" className="ds-h2">How a men&apos;s health visit works</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Four straightforward steps from booking to treatment — no runaround, no unnecessary visits.
+              Four straightforward steps from booking to treatment - no runaround, no unnecessary visits.
             </p>
           </div>
           <ol className={styles.processSteps} role="list">
@@ -582,7 +582,7 @@ export default function MensHealthPage() {
       <RelatedServices currentSlug="mens-health" />
 
       <BookingCTA
-        heading="Take the first step — book your men's health visit today"
+        heading="Take the first step - book your men's health visit today"
         subtext="Same-week appointments in Brandon, FL (214 W Brandon Blvd) and telehealth across Florida. Call (813) 438-5220 or book online in under 2 minutes."
       />
     </>

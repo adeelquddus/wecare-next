@@ -20,15 +20,15 @@ const OG_IMAGE = `${SITE}/hero-image.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
-  title: 'FAQ — Appointments, Insurance, GLP-1, Telehealth | WeCare Wellness Clinic Brandon FL',
+  title: 'FAQ - Appointments, Insurance, GLP-1, Telehealth | WeCare Wellness Clinic Brandon FL',
   description:
-    'Answers to the most common questions about WeCare Wellness Clinic in Brandon, FL — appointments, insurance, GLP-1 weight loss (Semaglutide / Tirzepatide), telehealth across Florida, HIV PrEP, women\'s and men\'s health, hormone therapy, and same-week availability.',
+    'Answers to the most common questions about WeCare Wellness Clinic in Brandon, FL - appointments, insurance, GLP-1 weight loss (Semaglutide / Tirzepatide), telehealth across Florida, HIV PrEP, women\'s and men\'s health, hormone therapy, and same-week availability.',
   keywords: [
     /* Brand + page */
     'WeCare Wellness Clinic FAQ',
     'WeCare Wellness Clinic questions',
     'frequently asked questions WeCare Wellness',
-    /* Local — Brandon FL */
+    /* Local - Brandon FL */
     'primary care FAQ Brandon FL',
     'doctor FAQ Brandon Florida',
     'medical clinic Brandon FL questions',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: '/faq' },
   openGraph: {
-    title: 'FAQ — WeCare Wellness Clinic | Brandon, FL',
+    title: 'FAQ - WeCare Wellness Clinic | Brandon, FL',
     description:
       'Answers to common patient questions about appointments, insurance, GLP-1 weight loss, telehealth, PrEP, women\'s and men\'s health at WeCare Wellness Clinic.',
     url: `${SITE}/faq`,
@@ -82,14 +82,14 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'WeCare Wellness Clinic — frequently asked questions for patients in Brandon, FL',
+        alt: 'WeCare Wellness Clinic - frequently asked questions for patients in Brandon, FL',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WeCare Wellness Clinic — FAQ',
+    title: 'WeCare Wellness Clinic - FAQ',
     description:
       'Common questions about appointments, insurance, GLP-1 weight loss, telehealth, PrEP, and more.',
     images: [OG_IMAGE],
@@ -118,7 +118,7 @@ interface FaqEntry {
 
 interface FaqSection {
   category: string;
-  /** kebab-case anchor id — derived once and reused for both nav + section */
+  /** kebab-case anchor id - derived once and reused for both nav + section */
   slug: string;
   Icon: React.FC<IconProps>;
   /** Short context string used for aria-label on the section */
@@ -143,7 +143,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       },
       {
         q: 'Do you accept walk-in patients?',
-        a: 'Yes — we welcome walk-ins based on daily availability. To guarantee your time slot and avoid waiting, we recommend booking online or by phone in advance.',
+        a: 'Yes - we welcome walk-ins based on daily availability. To guarantee your time slot and avoid waiting, we recommend booking online or by phone in advance.',
       },
       {
         q: 'Are same-day appointments available?',
@@ -167,7 +167,7 @@ const FAQ_SECTIONS: FaqSection[] = [
     faqs: [
       {
         q: 'What insurance plans do you accept?',
-        a: 'We currently accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield (Florida Blue), MultiPlan/PHCS, and Tricare. We are continually adding new plans — call us to verify your specific plan.',
+        a: 'We currently accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield (Florida Blue), MultiPlan/PHCS, and Tricare. We are continually adding new plans - call us to verify your specific plan.',
       },
       {
         q: 'Do you offer self-pay rates?',
@@ -175,7 +175,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       },
       {
         q: 'Are annual wellness exams covered at no cost?',
-        a: 'Under the Affordable Care Act, most insurance plans cover annual wellness exams, preventive screenings, and well-woman visits at 100% — meaning no copay for you. Confirm with your specific plan\'s Summary of Benefits.',
+        a: 'Under the Affordable Care Act, most insurance plans cover annual wellness exams, preventive screenings, and well-woman visits at 100% - meaning no copay for you. Confirm with your specific plan\'s Summary of Benefits.',
       },
       {
         q: 'Do you accept Medicaid?',
@@ -183,7 +183,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       },
       {
         q: 'How do I verify my insurance before visiting?',
-        a: 'Call our office at (813) 438-5220 and have your insurance card handy. Our team will verify your benefits, copay, and deductibles before your appointment — at no charge.',
+        a: 'Call our office at (813) 438-5220 and have your insurance card handy. Our team will verify your benefits, copay, and deductibles before your appointment - at no charge.',
       },
     ],
   },
@@ -223,7 +223,7 @@ const FAQ_SECTIONS: FaqSection[] = [
     faqs: [
       {
         q: 'Can I see a doctor online with WeCare?',
-        a: 'Yes — we offer telehealth video visits with board-certified providers for patients anywhere in Florida. Same-day telehealth slots are often available.',
+        a: 'Yes - we offer telehealth video visits with board-certified providers for patients anywhere in Florida. Same-day telehealth slots are often available.',
       },
       {
         q: 'What conditions can be treated via telehealth?',
@@ -231,7 +231,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       },
       {
         q: 'Does insurance cover telehealth visits?',
-        a: 'Yes — most major insurance plans we accept cover telehealth visits. Medicare also covers most telehealth primary care services. Copays may apply.',
+        a: 'Yes - most major insurance plans we accept cover telehealth visits. Medicare also covers most telehealth primary care services. Copays may apply.',
       },
       {
         q: 'What do I need for a telehealth visit?',
@@ -255,7 +255,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       },
       {
         q: 'Can I get PrEP via telehealth?',
-        a: 'Yes — we manage PrEP remotely for patients anywhere in Florida via telehealth, including prescription management and lab coordination.',
+        a: 'Yes - we manage PrEP remotely for patients anywhere in Florida via telehealth, including prescription management and lab coordination.',
       },
       {
         q: 'Is my visit confidential?',
@@ -271,7 +271,7 @@ const FAQ_SECTIONS: FaqSection[] = [
     faqs: [
       {
         q: 'Do you offer gynecology services?',
-        a: 'Yes — we provide annual well-woman exams, Pap smears, cervical cancer screening, contraception counseling, hormone replacement therapy, and menopause management.',
+        a: 'Yes - we provide annual well-woman exams, Pap smears, cervical cancer screening, contraception counseling, hormone replacement therapy, and menopause management.',
       },
       {
         q: 'Do you offer testosterone replacement therapy (TRT)?',
@@ -308,7 +308,7 @@ const faqJsonLd = {
       '@type': 'WebPage',
       '@id': `${SITE}/faq#webpage`,
       url: `${SITE}/faq`,
-      name: 'FAQ — WeCare Wellness Clinic',
+      name: 'FAQ - WeCare Wellness Clinic',
       description:
         'Answers to common patient questions about WeCare Wellness Clinic in Brandon, FL.',
       isPartOf: { '@id': `${SITE}/#website` },
@@ -326,7 +326,7 @@ const faqJsonLd = {
       contentUrl: OG_IMAGE,
       width: 1200,
       height: 630,
-      caption: 'WeCare Wellness Clinic — frequently asked questions',
+      caption: 'WeCare Wellness Clinic - frequently asked questions',
     },
     {
       '@type': 'BreadcrumbList',
@@ -367,7 +367,7 @@ export default function FaqPage() {
 
       <Hero
         headline="Your questions, answered"
-        subtext="Everything you need to know about appointments, insurance, GLP-1 weight loss, telehealth, PrEP, and more — before you even call us."
+        subtext="Everything you need to know about appointments, insurance, GLP-1 weight loss, telehealth, PrEP, and more - before you even call us."
         ctaLabel="Book an Appointment"
         ctaHref="/booking"
         secondaryLabel={`Call ${CLINIC.phoneDisplay}`}
@@ -464,7 +464,7 @@ export default function FaqPage() {
                 <a href={`tel:${CLINIC.phone}`} className={styles.ctaPhone}>
                   {CLINIC.phoneDisplay}
                 </a>{' '}
-                or send us a message — we typically reply within one business day.
+                or send us a message - we typically reply within one business day.
               </p>
               <div className={styles.ctaActions}>
                 <Link href="/booking" className={styles.ctaBtnPrimary}>

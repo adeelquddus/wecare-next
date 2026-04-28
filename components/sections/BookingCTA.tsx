@@ -11,7 +11,7 @@ interface BookingCTAProps {
 
 export default function BookingCTA({
   heading = 'Ready to feel your best?',
-  subtext = 'Book your appointment today — same-week availability in Brandon or via Telehealth across Florida.',
+  subtext = 'Book your appointment today - same-week availability in Brandon or via Telehealth across Florida.',
   showInsurance = true,
 }: BookingCTAProps) {
   return (

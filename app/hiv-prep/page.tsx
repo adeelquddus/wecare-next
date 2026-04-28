@@ -21,7 +21,7 @@ import styles from './page.module.css';
 
 /* ── Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: 'HIV PrEP Prescription & STI Testing Brandon FL — WeCare Wellness Clinic',
+  title: 'HIV PrEP Prescription & STI Testing Brandon FL - WeCare Wellness Clinic',
   description:
     'HIV PrEP (Truvada/Descovy) prescribed in Brandon, FL. Discreet care, lab monitoring, insurance accepted. Telehealth available statewide in Florida.',
   keywords: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/hiv-prep' },
   openGraph: {
-    title: 'HIV PrEP & Sexual Health Care — WeCare Wellness Clinic Brandon, FL',
+    title: 'HIV PrEP & Sexual Health Care - WeCare Wellness Clinic Brandon, FL',
     description:
       'Discreet, judgment-free HIV PrEP prescriptions and STI testing in Brandon, FL. Same-week appointments, insurance accepted.',
     url: 'https://www.wecarewellnessclinic.com/hiv-prep',
@@ -57,7 +57,7 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'MedicalWebPage',
-      name: 'HIV PrEP & Sexual Health Services — WeCare Wellness Clinic',
+      name: 'HIV PrEP & Sexual Health Services - WeCare Wellness Clinic',
       url: 'https://www.wecarewellnessclinic.com/hiv-prep',
       description:
         'HIV PrEP prescriptions, STI testing, and sexual health services in Brandon, FL. Discreet, compassionate care with board-certified providers.',
@@ -162,7 +162,7 @@ const jsonLd = {
           name: 'How long does it take for PrEP to become effective?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'For receptive anal sex (bottoming), Truvada reaches maximum protection after 7 days of daily use. For receptive vaginal sex and injection drug use, protection is maximal after 21 days. Truvada and Descovy are not interchangeable in all populations — your WeCare provider will recommend the right medication for your situation.',
+            text: 'For receptive anal sex (bottoming), Truvada reaches maximum protection after 7 days of daily use. For receptive vaginal sex and injection drug use, protection is maximal after 21 days. Truvada and Descovy are not interchangeable in all populations - your WeCare provider will recommend the right medication for your situation.',
           },
         },
       ],
@@ -203,7 +203,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: CardIcon,
     title: 'Insurance covered',
-    desc: 'Under the ACA, most insurance plans must cover PrEP at zero cost-sharing — that means the prescription AND the quarterly labs. We verify your coverage before your visit.',
+    desc: 'Under the ACA, most insurance plans must cover PrEP at zero cost-sharing - that means the prescription AND the quarterly labs. We verify your coverage before your visit.',
   },
   {
     Icon: GlobeIcon,
@@ -213,7 +213,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: MicroscopeIcon,
     title: 'Comprehensive STI testing',
-    desc: 'HIV, gonorrhea, chlamydia, syphilis, hepatitis B/C, herpes, and more — all at one visit. Discreet, fast results with follow-up guidance from your provider.',
+    desc: 'HIV, gonorrhea, chlamydia, syphilis, hepatitis B/C, herpes, and more - all at one visit. Discreet, fast results with follow-up guidance from your provider.',
   },
   {
     Icon: HandshakeIcon,
@@ -261,7 +261,7 @@ const PROCESS_STEPS = [
   {
     num: '2',
     title: 'Baseline labs drawn',
-    desc: 'HIV test, kidney panel, STI screening, hepatitis B — all in-house or at a nearby lab.',
+    desc: 'HIV test, kidney panel, STI screening, hepatitis B - all in-house or at a nearby lab.',
   },
   {
     num: '3',
@@ -286,7 +286,7 @@ const FAQS = [
   },
   {
     q: 'Is PrEP covered by insurance?',
-    a: 'Yes — the ACA requires most plans to cover PrEP at zero out-of-pocket cost, including quarterly labs. We verify your benefits before your visit. Uninsured patients qualify for the Ready, Set, PrEP program (free medication).',
+    a: 'Yes - the ACA requires most plans to cover PrEP at zero out-of-pocket cost, including quarterly labs. We verify your benefits before your visit. Uninsured patients qualify for the Ready, Set, PrEP program (free medication).',
   },
   {
     q: 'Who needs PrEP?',
@@ -302,7 +302,7 @@ const FAQS = [
   },
   {
     q: 'What STI testing do you offer?',
-    a: 'HIV (4th gen), gonorrhea, chlamydia, syphilis, herpes, hepatitis B/C, and trichomonas — all at one visit, confidential, covered by most insurance for at-risk individuals.',
+    a: 'HIV (4th gen), gonorrhea, chlamydia, syphilis, herpes, hepatitis B/C, and trichomonas - all at one visit, confidential, covered by most insurance for at-risk individuals.',
   },
   {
     q: 'What is PEP and when do I need it?',
@@ -341,7 +341,7 @@ export default function HivPrepPage() {
         <div className="container">
           <div className={styles.introGrid}>
             <div>
-              <p className={styles.introLabel}>Brandon, FL — Discreet & Affirming Care</p>
+              <p className={styles.introLabel}>Brandon, FL - Discreet & Affirming Care</p>
               <h2 className={styles.introHeading} id="intro-heading">
                 PrEP Prescriptions, STI Testing & Sexual Health Services
               </h2>
@@ -349,7 +349,7 @@ export default function HivPrepPage() {
                 WeCare Wellness Clinic provides comprehensive HIV prevention and sexual health
                 services in Brandon, FL. Our board-certified providers prescribe PrEP (Truvada,
                 Descovy, and injectable Apretude), manage STI diagnosis and treatment, and offer
-                emergency PEP consultations — all in a confidential, inclusive, judgment-free
+                emergency PEP consultations - all in a confidential, inclusive, judgment-free
                 environment.
               </p>
               <p className={styles.introBody}>
@@ -367,7 +367,7 @@ export default function HivPrepPage() {
                   'Zero-cost under most ACA insurance plans',
                   'Free PrEP available via Ready, Set, PrEP program',
                   'Telehealth PrEP management across all of Florida',
-                  'Comprehensive STI testing — one visit',
+                  'Comprehensive STI testing - one visit',
                   'Emergency PEP consultations same-day',
                 ].map((item) => (
                   <li key={item} className={styles.featuresListItem}>
@@ -400,7 +400,7 @@ export default function HivPrepPage() {
           <div className={styles.sectionHeader}>
             <p className={styles.sectionEyebrow}>Why WeCare for PrEP</p>
             <h2 className={styles.sectionTitle} id="benefits-heading">
-              Expert PrEP care in Brandon — discreet, fast, & covered
+              Expert PrEP care in Brandon - discreet, fast, & covered
             </h2>
             <p className={styles.sectionSubtitle}>
               Same-week appointments, insurance verification, and a welcoming team that puts
@@ -469,7 +469,7 @@ export default function HivPrepPage() {
           <div className={styles.sectionHeader}>
             <p className={styles.sectionEyebrow}>Getting Started</p>
             <h2 className={styles.sectionTitle} id="process-heading">
-              How to get PrEP at WeCare — 4 simple steps
+              How to get PrEP at WeCare - 4 simple steps
             </h2>
           </div>
           <ol className={styles.processSteps} aria-label="Process steps">
@@ -498,7 +498,7 @@ export default function HivPrepPage() {
           <div className={styles.sectionHeader}>
             <p className={styles.sectionEyebrow}>Common Questions</p>
             <h2 className={styles.sectionTitle} id="faq-heading">
-              HIV PrEP FAQs — Brandon, FL
+              HIV PrEP FAQs - Brandon, FL
             </h2>
           </div>
           <div className={styles.faqGrid} role="list">
@@ -526,7 +526,7 @@ export default function HivPrepPage() {
 
       <RelatedServices currentSlug="hiv-prep" />
       <BookingCTA
-        heading="Start PrEP today — same-week appointments available"
+        heading="Start PrEP today - same-week appointments available"
         subtext="Confidential, judgment-free care in Brandon, FL. Insurance verified before your visit. Telehealth available across Florida."
       />
     </>

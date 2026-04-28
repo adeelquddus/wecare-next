@@ -29,7 +29,7 @@ const STATIC_PAGES: Array<{
   { url: '/faq',                 changeFrequency: 'monthly', priority: 0.8,  lastModified: '2026-04-25' },
   { url: '/new-patients',        changeFrequency: 'monthly', priority: 0.85, lastModified: '2026-04-25' },
   { url: '/brandon-fl',          changeFrequency: 'monthly', priority: 0.9,  lastModified: '2026-04-25' },
-  // Legal — lower priority, infrequent change
+  // Legal - lower priority, infrequent change
   { url: '/privacy',             changeFrequency: 'yearly',  priority: 0.3,  lastModified: '2026-01-15' },
   { url: '/terms',               changeFrequency: 'yearly',  priority: 0.3,  lastModified: '2026-01-15' },
   { url: '/hipaa',               changeFrequency: 'yearly',  priority: 0.35, lastModified: '2026-01-15' },
@@ -64,7 +64,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7,
       }));
   } catch {
-    // Wix API unavailable — return static pages only
+    // Wix API unavailable - return static pages only
   }
 
   return [...staticEntries, ...blogEntries];

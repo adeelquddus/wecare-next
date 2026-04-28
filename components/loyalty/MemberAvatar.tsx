@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * MemberAvatar — small client component for the loyalty hero.
+ * MemberAvatar - small client component for the loyalty hero.
  *
  * Renders the member's profile photo if present, with a graceful
  * onError fallback to initials. The fallback covers two cases:

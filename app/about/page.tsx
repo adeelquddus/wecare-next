@@ -16,9 +16,9 @@ import styles from './page.module.css';
 
 /* ── Metadata ─────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: 'About WeCare Wellness Clinic | Darlyne Georges FNP-C — Brandon, FL',
+  title: 'About WeCare Wellness Clinic | Darlyne Georges FNP-C - Brandon, FL',
   description:
-    'Meet Darlyne Georges, MSN, APRN, FNP-C — a family nurse practitioner with 20+ years of experience in Brandon, FL. WeCare Wellness Clinic is devoted to comprehensive, patient-centered primary care for the whole family.',
+    'Meet Darlyne Georges, MSN, APRN, FNP-C - a family nurse practitioner with 20+ years of experience in Brandon, FL. WeCare Wellness Clinic is devoted to comprehensive, patient-centered primary care for the whole family.',
   keywords: [
     'WeCare Wellness Clinic about',
     'Darlyne Georges FNP Brandon FL',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/about' },
   openGraph: {
-    title: 'About WeCare Wellness Clinic — Darlyne Georges FNP-C, Brandon FL',
+    title: 'About WeCare Wellness Clinic - Darlyne Georges FNP-C, Brandon FL',
     description:
       'WeCare Wellness Clinic is devoted to comprehensive primary care in Brandon, FL. Meet Darlyne Georges, FNP-C, and learn about our mission to support your healthy lifestyle.',
     url: 'https://www.wecarewellnessclinic.com/about',
@@ -110,7 +110,7 @@ const VISION_POINTS = [
   {
     num: '01',
     heading: 'Highest quality of care',
-    body: 'WeCare Wellness Clinic is committed to delivering the highest quality of health services — encompassing prevention, health promotion, and medical care for every patient who walks through our doors.',
+    body: 'WeCare Wellness Clinic is committed to delivering the highest quality of health services - encompassing prevention, health promotion, and medical care for every patient who walks through our doors.',
   },
   {
     num: '02',
@@ -127,19 +127,19 @@ const PROVIDER_CREDENTIALS = [
 ];
 
 const VALUES: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
-  { Icon: HeartIcon,       title: 'Patient-First',   desc: 'Every decision begins with what is best for you — we take the time to listen, explain, and build a care plan around your individual goals.' },
+  { Icon: HeartIcon,       title: 'Patient-First',   desc: 'Every decision begins with what is best for you - we take the time to listen, explain, and build a care plan around your individual goals.' },
   { Icon: MicroscopeIcon,  title: 'Evidence-Based',  desc: 'We follow the latest clinical guidelines from the AMA, CDC, and specialty boards. Our protocols evolve as medicine evolves.' },
   { Icon: HandshakeIcon,   title: 'Accessible',      desc: 'Same-week in-person appointments, Saturday hours, and five major insurance plans accepted. Quality care should always be within reach.' },
-  { Icon: LeafIcon,        title: 'Whole-Person',    desc: 'We treat the full person — mind, body, and lifestyle. Nutrition, mental health, sleep, and stress are just as important as lab values.' },
+  { Icon: LeafIcon,        title: 'Whole-Person',    desc: 'We treat the full person - mind, body, and lifestyle. Nutrition, mental health, sleep, and stress are just as important as lab values.' },
 ];
 
 const DIFFERENTIATORS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }> = [
   { Icon: CalendarIcon,   title: 'Same-week appointments', desc: 'New and existing patients are typically seen within 3–5 business days, with same-day telehealth available for urgent needs.' },
-  { Icon: GlobeIcon,      title: 'Statewide telehealth',   desc: 'See your WeCare provider from anywhere in Florida — no travel required. We serve patients across all 67 Florida counties via video.' },
+  { Icon: GlobeIcon,      title: 'Statewide telehealth',   desc: 'See your WeCare provider from anywhere in Florida - no travel required. We serve patients across all 67 Florida counties via video.' },
   { Icon: ClipboardIcon,  title: 'Comprehensive care',     desc: 'Eight services under one roof: primary care, weight loss, women\'s health, men\'s health, telehealth, IV hydration, HRT, and HIV PrEP.' },
-  { Icon: HospitalIcon,   title: 'Independent & unbiased', desc: 'We are an independent clinic. Your care plan is built around your needs — not hospital quotas, referral targets, or system pressures.' },
+  { Icon: HospitalIcon,   title: 'Independent & unbiased', desc: 'We are an independent clinic. Your care plan is built around your needs - not hospital quotas, referral targets, or system pressures.' },
   { Icon: ChatIcon,       title: 'Direct provider access', desc: 'Reach your actual provider, not an answering service. We prioritise continuity of care so you see the same trusted face every visit.' },
-  { Icon: LightbulbIcon,  title: 'Modern medicine',        desc: 'Electronic records, online scheduling, patient portal, telehealth, GLP-1 therapy, and bioidentical HRT — the latest tools for your health.' },
+  { Icon: LightbulbIcon,  title: 'Modern medicine',        desc: 'Electronic records, online scheduling, patient portal, telehealth, GLP-1 therapy, and bioidentical HRT - the latest tools for your health.' },
 ];
 
 const AREAS_SERVED = [
@@ -149,12 +149,12 @@ const AREAS_SERVED = [
 ];
 
 const FAQS_ABOUT = [
-  { q: 'Where is WeCare Wellness Clinic located?', a: 'We are at 214 W Brandon Blvd, Brandon, FL 33511 — in the heart of Brandon with easy parking and ADA-accessible facilities.' },
-  { q: 'Are you accepting new patients?', a: 'Yes — WeCare is currently accepting new patients for primary care, all specialty services, and telehealth. Book online or call (813) 438-5220.' },
+  { q: 'Where is WeCare Wellness Clinic located?', a: 'We are at 214 W Brandon Blvd, Brandon, FL 33511 - in the heart of Brandon with easy parking and ADA-accessible facilities.' },
+  { q: 'Are you accepting new patients?', a: 'Yes - WeCare is currently accepting new patients for primary care, all specialty services, and telehealth. Book online or call (813) 438-5220.' },
   { q: 'What are your hours?', a: 'Mon–Thu 9 AM–5 PM · Fri 9 AM–6 PM · Sat 9 AM–1 PM · Sun Closed. Telehealth appointments may be available outside these hours.' },
   { q: 'Do I need a referral?', a: 'No referral is needed. Book online or call (813) 438-5220 directly. Most insurance plans accept us as your primary care provider (PCP).' },
   { q: 'What insurance do you accept?', a: 'We accept Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, MultiPlan, and Tricare. Transparent self-pay rates are also available.' },
-  { q: 'Do you offer telehealth statewide?', a: 'Yes. Our providers see telehealth patients across all of Florida — covering primary care, follow-ups, prescription refills, and chronic condition management.' },
+  { q: 'Do you offer telehealth statewide?', a: 'Yes. Our providers see telehealth patients across all of Florida - covering primary care, follow-ups, prescription refills, and chronic condition management.' },
 ];
 
 /* ── Page ─────────────────────────────────────────────────────────────── */
@@ -163,7 +163,7 @@ export default function AboutPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* ── Hero — custom for About page ─────────────────────────── */}
+      {/* ── Hero - custom for About page ─────────────────────────── */}
       <section className={styles.aboutHero} aria-labelledby="about-hero-heading">
         {/* Decorative blobs */}
         <span className={`${styles.blob} ${styles.blobOne}`} aria-hidden="true" />
@@ -173,7 +173,7 @@ export default function AboutPage() {
 
         <div className="container">
           <div className={styles.aboutHeroGrid}>
-            {/* Left — story */}
+            {/* Left - story */}
             <div className={styles.aboutHeroContent}>
               <span className={styles.aboutHeroBadge}>
                 <span className={styles.pulseDot} aria-hidden="true" />
@@ -187,7 +187,7 @@ export default function AboutPage() {
               </h1>
 
               <p className={styles.aboutHeroLede}>
-                WeCare Wellness Clinic is devoted to promoting general health — supporting
+                WeCare Wellness Clinic is devoted to promoting general health - supporting
                 attitudes that contribute to positive well-being and delivering medical
                 services built around your healthy lifestyle.
               </p>
@@ -205,13 +205,13 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right — floating credential card */}
+            {/* Right - floating credential card */}
             <div className={styles.aboutHeroCard} aria-hidden="false">
               <div className={styles.profileCard}>
                 <div className={styles.profileImgWrap}>
                   <Image
                     src={DARLYNE_PORTRAIT_URL}
-                    alt="Darlyne Georges, FNP-C — Family Nurse Practitioner"
+                    alt="Darlyne Georges, FNP-C - Family Nurse Practitioner"
                     fill
                     priority
                     sizes="(max-width: 900px) 80vw, 360px"
@@ -253,14 +253,14 @@ export default function AboutPage() {
               <blockquote className={styles.missionQuote}>
                 "We Care Wellness Clinic is devoted to providing an environment that promotes
                 general health by supporting the adoption of attitudes that contribute to positive
-                well-being — and providing information, activities, and medical services designed
+                well-being - and providing information, activities, and medical services designed
                 to support a healthy lifestyle."
               </blockquote>
               <p className="ds-body" style={{ color: 'var(--text-secondary)', marginTop: 'var(--space-4)' }}>
                 Our mission at WeCare Wellness Clinic is to take a comprehensive approach in
                 helping others achieve and maintain a healthy lifestyle while improving their
                 overall well-being. We believe that prevention, education, and personalised care
-                are the cornerstones of a healthier community — one patient at a time.
+                are the cornerstones of a healthier community - one patient at a time.
               </p>
               <div style={{ marginTop: 'var(--space-5)' }}>
                 <Button href="/booking" variant="primary" size="md">Book your visit</Button>
@@ -312,7 +312,7 @@ export default function AboutPage() {
               <div className={styles.providerPhotoWrap}>
                 <Image
                   src={DARLYNE_PORTRAIT_URL}
-                  alt="Darlyne Georges, MSN, APRN, FNP-C — Family Nurse Practitioner at WeCare Wellness Clinic"
+                  alt="Darlyne Georges, MSN, APRN, FNP-C - Family Nurse Practitioner at WeCare Wellness Clinic"
                   fill
                   className={styles.providerPhoto}
                   sizes="(max-width: 900px) 100vw, 45vw"
@@ -344,7 +344,7 @@ export default function AboutPage() {
                 Her goal is to use her knowledge and compassion to provide high-quality,
                 cost-effective healthcare that gives her patients a higher level of wellness.
                 With over 20 years in the healthcare industry, Darlyne is devoted to offering
-                the highest level of care with a more personal approach — in a welcoming,
+                the highest level of care with a more personal approach - in a welcoming,
                 pleasant environment.
               </p>
 
@@ -373,7 +373,7 @@ export default function AboutPage() {
             <div className={styles.fnpText}>
               <p className="ds-eyebrow">Why a family nurse practitioner?</p>
               <h2 id="fnp-heading" className="ds-h2">
-                Your first — and best — step in primary care
+                Your first - and best - step in primary care
               </h2>
               <p className="ds-body" style={{ color: 'var(--text-secondary)', marginTop: 'var(--space-3)' }}>
                 In today's healthcare landscape, physicians are often unable to provide the
@@ -383,22 +383,22 @@ export default function AboutPage() {
                 consistent provider.
               </p>
               <p className="ds-body" style={{ color: 'var(--text-secondary)', marginTop: 'var(--space-3)' }}>
-                People who need medical attention most — including those without health insurance
-                — deserve a dedicated advocate in their corner. A family nurse practitioner like
+                People who need medical attention most - including those without health insurance
+                - deserve a dedicated advocate in their corner. A family nurse practitioner like
                 Darlyne Georges serves as that first and most important step: providing
                 comprehensive check-ups, personalised wellness plans, and the kind of
                 preventive medicine that catches problems before they become serious.
               </p>
               <p className="ds-body" style={{ color: 'var(--text-secondary)', marginTop: 'var(--space-3)' }}>
                 By developing a true understanding of each patient's health history, lifestyle,
-                and goals, Darlyne delivers care that is not just reactive — but proactive,
+                and goals, Darlyne delivers care that is not just reactive - but proactive,
                 preventive, and built for long-term wellness.
               </p>
             </div>
             <div className={styles.fnpCards}>
               {([
                 { Icon: StethoscopeIcon, stat: '20+',       label: 'Years in healthcare',     sub: 'Serving patients across primary care, critical care & gynecology' },
-                { Icon: ShieldIcon,      stat: '100%',      label: 'Personalised plans',      sub: 'Every patient assessed as a unique individual — never a number' },
+                { Icon: ShieldIcon,      stat: '100%',      label: 'Personalised plans',      sub: 'Every patient assessed as a unique individual - never a number' },
                 { Icon: PillsIcon,       stat: 'Same week', label: 'Appointments available',  sub: 'Fast access to care when you need it, not months later' },
                 { Icon: ClipboardIcon,   stat: '8',         label: 'Services offered',        sub: 'Comprehensive wellness under one roof in Brandon, FL' },
               ] as Array<{ Icon: React.FC<IconProps>; stat: string; label: string; sub: string }>).map(({ Icon, stat, label, sub }) => (
@@ -421,7 +421,7 @@ export default function AboutPage() {
             <p className="ds-eyebrow">What we stand for</p>
             <h2 id="values-heading" className="ds-h2">Our core values</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              Four principles guide every interaction — with every patient, every day.
+              Four principles guide every interaction - with every patient, every day.
             </p>
           </div>
           <ul className={styles.valuesGrid} role="list">
@@ -468,7 +468,7 @@ export default function AboutPage() {
             <p className="ds-eyebrow">Comprehensive care</p>
             <h2 id="services-heading" className="ds-h2">Everything under one roof</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              From everyday primary care to specialised weight loss and hormone therapy —
+              From everyday primary care to specialised weight loss and hormone therapy -
               WeCare covers your health from every angle.
             </p>
           </div>

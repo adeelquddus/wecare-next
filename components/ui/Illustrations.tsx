@@ -2,7 +2,7 @@
  * 2D vector illustration set for WeCare Wellness.
  * Each illustration is a self-contained SVG React component, ~100x100 viewBox,
  * tuned to the brand palette (primary blue, mint, amber accents). They scale
- * cleanly via CSS width/height. No external assets — pure inline SVG.
+ * cleanly via CSS width/height. No external assets - pure inline SVG.
  */
 
 import React from 'react';
@@ -21,7 +21,7 @@ const baseProps = (size: number | string = 96, props: IllustrationProps) => ({
   ...props,
 });
 
-/* ── Step 1 — Calendar with checkmark (Book appointment) ─────────────── */
+/* ── Step 1 - Calendar with checkmark (Book appointment) ─────────────── */
 export const CalendarBookIllustration = ({ size = 96, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     {/* Soft halo */}
@@ -49,7 +49,7 @@ export const CalendarBookIllustration = ({ size = 96, ...rest }: IllustrationPro
   </svg>
 );
 
-/* ── Step 2 — ID + clipboard (Documents) ─────────────────────────────── */
+/* ── Step 2 - ID + clipboard (Documents) ─────────────────────────────── */
 export const DocumentsIllustration = ({ size = 96, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     <circle cx="60" cy="60" r="54" fill="#FEF3C7" />
@@ -71,7 +71,7 @@ export const DocumentsIllustration = ({ size = 96, ...rest }: IllustrationProps)
   </svg>
 );
 
-/* ── Step 3 — Clock (Arrive early) ───────────────────────────────────── */
+/* ── Step 3 - Clock (Arrive early) ───────────────────────────────────── */
 export const ClockIllustration = ({ size = 96, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     <circle cx="60" cy="60" r="54" fill="#DBEAFE" />
@@ -82,7 +82,7 @@ export const ClockIllustration = ({ size = 96, ...rest }: IllustrationProps) => 
     <rect x="58.5" y="86" width="3" height="6" rx="1.5" fill="#0F172A" />
     <rect x="28" y="58.5" width="6" height="3" rx="1.5" fill="#0F172A" />
     <rect x="86" y="58.5" width="6" height="3" rx="1.5" fill="#0F172A" />
-    {/* Hands — pointing at 9:45 (arriving early!) */}
+    {/* Hands - pointing at 9:45 (arriving early!) */}
     <line x1="60" y1="60" x2="60" y2="38" stroke="#0086C5" strokeWidth="3" strokeLinecap="round" />
     <line x1="60" y1="60" x2="42" y2="60" stroke="#10B981" strokeWidth="3.5" strokeLinecap="round" />
     <circle cx="60" cy="60" r="3" fill="#F59E0B" />
@@ -91,7 +91,7 @@ export const ClockIllustration = ({ size = 96, ...rest }: IllustrationProps) => 
   </svg>
 );
 
-/* ── Step 4 — Stethoscope + heart (Meet provider) ────────────────────── */
+/* ── Step 4 - Stethoscope + heart (Meet provider) ────────────────────── */
 export const StethoscopeIllustration = ({ size = 96, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     <circle cx="60" cy="60" r="54" fill="#D1FAE5" />
@@ -109,7 +109,7 @@ export const StethoscopeIllustration = ({ size = 96, ...rest }: IllustrationProp
   </svg>
 );
 
-/* ── Why card 1 — Same-week calendar ─────────────────────────────────── */
+/* ── Why card 1 - Same-week calendar ─────────────────────────────────── */
 export const SameWeekIllustration = ({ size = 80, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     <rect x="14" y="18" width="92" height="86" rx="10" fill="#0086C5" />
@@ -125,7 +125,7 @@ export const SameWeekIllustration = ({ size = 80, ...rest }: IllustrationProps) 
   </svg>
 );
 
-/* ── Why card 2 — Multi-services cluster ─────────────────────────────── */
+/* ── Why card 2 - Multi-services cluster ─────────────────────────────── */
 export const ServicesClusterIllustration = ({ size = 80, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     {/* Center circle */}
@@ -148,7 +148,7 @@ export const ServicesClusterIllustration = ({ size = 80, ...rest }: Illustration
   </svg>
 );
 
-/* ── Why card 3 — Saturday weekend ───────────────────────────────────── */
+/* ── Why card 3 - Saturday weekend ───────────────────────────────────── */
 export const WeekendIllustration = ({ size = 80, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     <rect x="14" y="22" width="92" height="84" rx="10" fill="#fff" stroke="#0086C5" strokeWidth="2.5" />
@@ -172,7 +172,7 @@ export const WeekendIllustration = ({ size = 80, ...rest }: IllustrationProps) =
   </svg>
 );
 
-/* ── Why card 4 — Telehealth video ───────────────────────────────────── */
+/* ── Why card 4 - Telehealth video ───────────────────────────────────── */
 export const TelehealthIllustration = ({ size = 80, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     {/* Laptop */}
@@ -192,7 +192,7 @@ export const TelehealthIllustration = ({ size = 80, ...rest }: IllustrationProps
   </svg>
 );
 
-/* ── Why card 5 — Insurance card ─────────────────────────────────────── */
+/* ── Why card 5 - Insurance card ─────────────────────────────────────── */
 export const InsuranceCardIllustration = ({ size = 80, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     {/* Card back */}
@@ -214,7 +214,7 @@ export const InsuranceCardIllustration = ({ size = 80, ...rest }: IllustrationPr
   </svg>
 );
 
-/* ── Why card 6 — Handshake / care ───────────────────────────────────── */
+/* ── Why card 6 - Handshake / care ───────────────────────────────────── */
 export const CareHandshakeIllustration = ({ size = 80, ...rest }: IllustrationProps) => (
   <svg {...baseProps(size, rest)}>
     {/* Heart bg */}

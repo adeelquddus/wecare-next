@@ -1,15 +1,15 @@
 /**
- * MemberDashboard — the personalized loyalty experience for a logged-in
+ * MemberDashboard - the personalized loyalty experience for a logged-in
  * Wix Member. Server component: receives the loyalty account, the active
  * reward catalog, and the optional tier list as props. All data is real.
  *
  * Visual layout:
- *   1. Hero card        — personalized greeting + animated points counter
- *   2. Stats strip      — earned / redeemed / available / expiring (4 tiles)
- *   3. Progress band    — "X points away from next reward" with a gradient bar
- *   4. Rewards rail     — the actual rewards from the Wix catalog
- *   5. Earn-more grid   — list of EARN_ACTIONS with CTAs
- *   6. (Optional) Tier ladder — only when tiers are configured
+ *   1. Hero card        - personalized greeting + animated points counter
+ *   2. Stats strip      - earned / redeemed / available / expiring (4 tiles)
+ *   3. Progress band    - "X points away from next reward" with a gradient bar
+ *   4. Rewards rail     - the actual rewards from the Wix catalog
+ *   5. Earn-more grid   - list of EARN_ACTIONS with CTAs
+ *   6. (Optional) Tier ladder - only when tiers are configured
  *   7. Sign out + Help footer
  */
 
@@ -33,7 +33,7 @@ interface Props {
   account: LoyaltyAccount;
   rewards: LoyaltyReward[];
   tiers: LoyaltyTier[];
-  /** Wix Members fields — used to greet the member */
+  /** Wix Members fields - used to greet the member */
   member: {
     displayName?: string | null;
     firstName?: string | null;
@@ -92,12 +92,12 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
   const dollarsAvailable = Math.floor(balance / nextThreshold) * unitDollars;
   const pointsInProgress = balance % nextThreshold;
   const pointsToNextIncrement = pointsInProgress === 0
-    ? nextThreshold              /* exactly at a multiple — full {nextThreshold} away from the NEXT one */
+    ? nextThreshold              /* exactly at a multiple - full {nextThreshold} away from the NEXT one */
     : nextThreshold - pointsInProgress;
   const incrementProgress = (pointsInProgress / nextThreshold) * 100;
   const nextDollarValue = dollarsAvailable + unitDollars;
 
-  /* Roadmap milestones — sensible dollar tiers that stack on top of the
+  /* Roadmap milestones - sensible dollar tiers that stack on top of the
      basic increment. We pick a few realistic targets and tell the member
      exactly how many points they need + how far they are. */
   const milestoneDollarValues = [unitDollars, unitDollars * 5, unitDollars * 10, unitDollars * 20, unitDollars * 50];
@@ -119,7 +119,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
   return (
     <main className={styles.page}>
 
-      {/* ── 1. Hero card — gradient banner with greeting + animated counter ─── */}
+      {/* ── 1. Hero card - gradient banner with greeting + animated counter ─── */}
       <section className={styles.hero} aria-labelledby="dash-greeting">
         <span className={`${styles.blob} ${styles.blobOne}`} aria-hidden="true" />
         <span className={`${styles.blob} ${styles.blobTwo}`} aria-hidden="true" />
@@ -147,7 +147,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
                 </Link>
               ) : (
                 <Link href="/booking" className={styles.heroCta}>
-                  <CalendarIcon size={18} animate={false} /> Earn more — book a visit
+                  <CalendarIcon size={18} animate={false} /> Earn more - book a visit
                 </Link>
               )}
               <Link href="/api/auth/logout" className={styles.heroSecondary}>
@@ -199,7 +199,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
       </section>
 
 
-      {/* ── 2. Stats strip — earned / redeemed / available / expiring ───────── */}
+      {/* ── 2. Stats strip - earned / redeemed / available / expiring ───────── */}
       <section className={styles.statsStrip} aria-label="Lifetime stats">
         <div className={`${styles.statTile} ${styles.statBlue}`}>
           <span className={styles.statIcon} aria-hidden="true"><StarIcon size={26} /></span>
@@ -221,7 +221,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
           <span className={styles.statValue}>
             {expiring > 0
               ? <AnimatedCounter target={expiring} duration={1400} />
-              : <span aria-hidden="true">—</span>}
+              : <span aria-hidden="true">-</span>}
           </span>
           <span className={styles.statLabel}>
             {expiring > 0 ? `Expiring ${formatDate(expDate)}` : 'No points expiring soon'}
@@ -230,7 +230,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
       </section>
 
 
-      {/* ── 3. Progress band — cumulative dollars + next $1 increment ───────── */}
+      {/* ── 3. Progress band - cumulative dollars + next $1 increment ───────── */}
       {next && (
         <section className={styles.progressBand} aria-labelledby="progress-heading">
           <div className={styles.progressHeader}>
@@ -251,7 +251,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
                 {pointsInProgress === 0
                   ? <>Earn <strong>{nextThreshold}</strong> more points to add another <strong>${unitDollars}</strong> on top.</>
                   : <>You're <strong>{pointsInProgress}/{nextThreshold}</strong> of the way to your next <strong>${unitDollars}</strong>{' '}
-                      — {pointsToNextIncrement} {pointsToNextIncrement === 1 ? 'point' : 'points'} to go.</>
+                      - {pointsToNextIncrement} {pointsToNextIncrement === 1 ? 'point' : 'points'} to go.</>
                 }
               </p>
             </div>
@@ -283,7 +283,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
       )}
 
 
-      {/* ── 4. Roadmap — milestone ladder so members see what's coming ──────── */}
+      {/* ── 4. Roadmap - milestone ladder so members see what's coming ──────── */}
       {next && (
         <section className={styles.roadmapSection} aria-labelledby="roadmap-heading">
           <div className={styles.sectionHeader}>
@@ -326,7 +326,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
             <SparkleIcon size={18} animate={false} />
             <span>
               <strong>How redemption works:</strong> when you book your next visit
-              we'll automatically apply your full available balance — up to{' '}
+              we'll automatically apply your full available balance - up to{' '}
               <strong>${dollarsAvailable || unitDollars}</strong>{' '}
               {dollarsAvailable > 0 ? 'right now' : 'once you reach your first reward'}
               . You don't have to redeem in small chunks; one visit can use the whole stack.
@@ -336,19 +336,19 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
       )}
 
 
-      {/* ── 4. Rewards rail — the live Wix catalog ──────────────────────────── */}
+      {/* ── 4. Rewards rail - the live Wix catalog ──────────────────────────── */}
       <section className={styles.rewardsSection} aria-labelledby="rewards-heading">
         <div className={styles.sectionHeader}>
           <p className="ds-eyebrow">Available rewards</p>
           <h2 id="rewards-heading" className="ds-h2">Redeem your points</h2>
           <p className="ds-lede">
-            Use them on any service — primary care, weight loss, telehealth, hormone therapy.
+            Use them on any service - primary care, weight loss, telehealth, hormone therapy.
           </p>
         </div>
         <ul className={styles.rewardsGrid} role="list">
           {rewards.length === 0 && (
             <li className={styles.rewardEmpty}>
-              No rewards configured yet — check back soon.
+              No rewards configured yet - check back soon.
             </li>
           )}
           {rewards.map((r) => {
@@ -430,7 +430,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
       </section>
 
 
-      {/* ── 6. Tier ladder — only when tiers are configured ─────────────────── */}
+      {/* ── 6. Tier ladder - only when tiers are configured ─────────────────── */}
       {tiers.length > 0 && (
         <section className={styles.tierSection} aria-labelledby="tier-heading">
           <div className={styles.sectionHeader}>
@@ -461,7 +461,7 @@ export default function MemberDashboard({ account, rewards, tiers, member }: Pro
             <h3 className={styles.footerHeading}>Questions about your rewards?</h3>
             <p className={styles.footerBody}>
               Call <a href="tel:+18134385220" className={styles.footerLink}>(813) 438-5220</a>
-              {' '}or email <a href="mailto:info@wecarewellnessclinic.com" className={styles.footerLink}>info@wecarewellnessclinic.com</a> — we are happy to help.
+              {' '}or email <a href="mailto:info@wecarewellnessclinic.com" className={styles.footerLink}>info@wecarewellnessclinic.com</a> - we are happy to help.
             </p>
           </div>
           <div className={styles.footerActions}>

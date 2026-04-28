@@ -131,7 +131,7 @@
   margin-bottom: var(--space-5);
 }
 
-/* Custom anchor that mimics primary Button styling — needed because we
+/* Custom anchor that mimics primary Button styling - needed because we
    need a plain <a> for the auth route handler redirect. */
 .ctaPrimary {
   display: inline-flex;

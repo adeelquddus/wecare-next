@@ -11,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
           '/_next/',
         ],
       },
-      // Block AI training scrapers — social crawlers (FacebookBot, Twitterbot)
+      // Block AI training scrapers - social crawlers (FacebookBot, Twitterbot)
       // must NOT be blocked or link previews stop working
       {
         userAgent: [

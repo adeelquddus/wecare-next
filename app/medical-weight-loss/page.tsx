@@ -16,7 +16,7 @@ import type { IconProps } from '@/components/ui/AnimatedIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Medical Weight Loss Brandon FL — Semaglutide & Tirzepatide | WeCare Wellness',
+  title: 'Medical Weight Loss Brandon FL - Semaglutide & Tirzepatide | WeCare Wellness',
   description:
     'Physician-supervised GLP-1 weight loss in Brandon, FL. Semaglutide (Ozempic/Wegovy), Tirzepatide (Mounjaro/Zepbound), nutrition counseling & lab monitoring. Insurance accepted.',
   keywords: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/medical-weight-loss' },
   openGraph: {
-    title: 'Medical Weight Loss (Semaglutide/Tirzepatide) — WeCare Wellness | Brandon, FL',
+    title: 'Medical Weight Loss (Semaglutide/Tirzepatide) - WeCare Wellness | Brandon, FL',
     description:
       'GLP-1 weight loss programs using Semaglutide and Tirzepatide, supervised by board-certified physicians in Brandon, FL. Lab monitoring and nutrition counseling included.',
     url: 'https://www.wecarewellnessclinic.com/medical-weight-loss',
@@ -132,7 +132,7 @@ const faqSchema = {
       name: 'What is the difference between Semaglutide and Tirzepatide?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Semaglutide (the active ingredient in Ozempic and Wegovy) works by activating GLP-1 receptors to reduce appetite and slow digestion. Tirzepatide (Mounjaro and Zepbound) activates both GLP-1 and GIP receptors simultaneously — a dual-agonist mechanism that typically produces greater weight loss. In SURMOUNT-1 trials, tirzepatide achieved up to 22.5% average body weight reduction. Your provider will recommend the best option based on your health profile.",
+        text: "Semaglutide (the active ingredient in Ozempic and Wegovy) works by activating GLP-1 receptors to reduce appetite and slow digestion. Tirzepatide (Mounjaro and Zepbound) activates both GLP-1 and GIP receptors simultaneously - a dual-agonist mechanism that typically produces greater weight loss. In SURMOUNT-1 trials, tirzepatide achieved up to 22.5% average body weight reduction. Your provider will recommend the best option based on your health profile.",
       },
     },
     {
@@ -156,7 +156,7 @@ const faqSchema = {
       name: 'What are the side effects of GLP-1 medications?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "The most common side effects are nausea, reduced appetite, and mild gastrointestinal symptoms such as bloating or constipation — particularly when starting or increasing your dose. These typically improve within two to four weeks as your body adjusts. We start at a low dose and titrate slowly to minimize discomfort, and we are available to guide you through the adjustment period.",
+        text: "The most common side effects are nausea, reduced appetite, and mild gastrointestinal symptoms such as bloating or constipation - particularly when starting or increasing your dose. These typically improve within two to four weeks as your body adjusts. We start at a low dose and titrate slowly to minimize discomfort, and we are available to guide you through the adjustment period.",
       },
     },
     {
@@ -180,7 +180,7 @@ const faqSchema = {
       name: 'Can I do the weight loss program via telehealth?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Yes. After your initial in-person consultation and lab work, many follow-up appointments — including dosing reviews and progress check-ins — can be conducted via telehealth. This makes it easy to stay on track even with a busy schedule. We serve patients throughout Hillsborough County and the greater Tampa Bay area.",
+        text: "Yes. After your initial in-person consultation and lab work, many follow-up appointments - including dosing reviews and progress check-ins - can be conducted via telehealth. This makes it easy to stay on track even with a busy schedule. We serve patients throughout Hillsborough County and the greater Tampa Bay area.",
       },
     },
     {
@@ -233,12 +233,12 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: SyringeIcon,
     title: 'Semaglutide (GLP-1)',
-    desc: 'The active ingredient in Ozempic® and Wegovy®. Semaglutide reduces hunger signals, slows gastric emptying, and improves insulin sensitivity — producing an average 14.9% body weight reduction in the STEP-1 clinical trial over 68 weeks.',
+    desc: 'The active ingredient in Ozempic® and Wegovy®. Semaglutide reduces hunger signals, slows gastric emptying, and improves insulin sensitivity - producing an average 14.9% body weight reduction in the STEP-1 clinical trial over 68 weeks.',
   },
   {
     Icon: MedicalCrossIcon,
     title: 'Tirzepatide (GIP + GLP-1)',
-    desc: 'The dual-agonist in Mounjaro® and Zepbound® targets both GIP and GLP-1 receptors simultaneously. SURMOUNT-1 trials showed up to 22.5% average body weight reduction — the highest of any approved weight-loss medication to date.',
+    desc: 'The dual-agonist in Mounjaro® and Zepbound® targets both GIP and GLP-1 receptors simultaneously. SURMOUNT-1 trials showed up to 22.5% average body weight reduction - the highest of any approved weight-loss medication to date.',
   },
   {
     Icon: PillsIcon,
@@ -263,7 +263,7 @@ const BENEFITS: Array<{ Icon: React.FC<IconProps>; title: string; desc: string }
   {
     Icon: ChartIcon,
     title: 'Body composition analysis',
-    desc: 'Scale weight alone is misleading. We track body fat percentage versus lean mass so we can confirm you are losing fat — not muscle — and adjust your program accordingly to preserve strength and metabolic rate.',
+    desc: 'Scale weight alone is misleading. We track body fat percentage versus lean mass so we can confirm you are losing fat - not muscle - and adjust your program accordingly to preserve strength and metabolic rate.',
   },
   {
     Icon: CalendarIcon,
@@ -276,7 +276,7 @@ const PROCESS = [
   {
     num: 1,
     title: 'Initial consultation & labs',
-    desc: 'Meet with your physician to review your health history, weight loss goals, and any prior attempts. We order a comprehensive baseline lab panel — metabolic panel, A1C, thyroid, lipids, and kidney function — before prescribing anything.',
+    desc: 'Meet with your physician to review your health history, weight loss goals, and any prior attempts. We order a comprehensive baseline lab panel - metabolic panel, A1C, thyroid, lipids, and kidney function - before prescribing anything.',
   },
   {
     num: 2,
@@ -291,12 +291,12 @@ const PROCESS = [
   {
     num: 4,
     title: 'Monthly monitoring & dose titration',
-    desc: 'Monthly check-ins review your progress, labs, and how you are tolerating the medication. Your provider adjusts your dose on schedule — typically increasing every 4 weeks — to maximize effectiveness while minimizing side effects.',
+    desc: 'Monthly check-ins review your progress, labs, and how you are tolerating the medication. Your provider adjusts your dose on schedule - typically increasing every 4 weeks - to maximize effectiveness while minimizing side effects.',
   },
   {
     num: 5,
     title: 'Long-term maintenance planning',
-    desc: 'As you approach your goal weight, we transition focus to maintenance — developing a sustainable nutrition and activity plan, and a structured tapering schedule if you choose to reduce or stop medication.',
+    desc: 'As you approach your goal weight, we transition focus to maintenance - developing a sustainable nutrition and activity plan, and a structured tapering schedule if you choose to reduce or stop medication.',
   },
 ];
 
@@ -307,7 +307,7 @@ const FAQS = [
   },
   {
     q: 'What is the difference between Semaglutide and Tirzepatide?',
-    a: "Semaglutide (Ozempic/Wegovy) activates GLP-1 receptors to reduce appetite and slow digestion. Tirzepatide (Mounjaro/Zepbound) activates both GLP-1 and GIP receptors — a dual-agonist approach that typically produces greater weight loss, with up to 22.5% body weight reduction in SURMOUNT-1 trials versus ~15% for semaglutide. Your provider will recommend the best fit for your health profile and goals.",
+    a: "Semaglutide (Ozempic/Wegovy) activates GLP-1 receptors to reduce appetite and slow digestion. Tirzepatide (Mounjaro/Zepbound) activates both GLP-1 and GIP receptors - a dual-agonist approach that typically produces greater weight loss, with up to 22.5% body weight reduction in SURMOUNT-1 trials versus ~15% for semaglutide. Your provider will recommend the best fit for your health profile and goals.",
   },
   {
     q: 'Does insurance cover medical weight loss at WeCare?',
@@ -319,7 +319,7 @@ const FAQS = [
   },
   {
     q: 'What are the side effects?',
-    a: "The most common side effects are nausea, reduced appetite, and mild GI symptoms — especially when starting or increasing your dose. These typically improve within 2–4 weeks. We use a slow titration protocol to minimize discomfort and provide guidance on timing injections with meals and managing symptoms throughout your program.",
+    a: "The most common side effects are nausea, reduced appetite, and mild GI symptoms - especially when starting or increasing your dose. These typically improve within 2–4 weeks. We use a slow titration protocol to minimize discomfort and provide guidance on timing injections with meals and managing symptoms throughout your program.",
   },
   {
     q: 'Who should NOT take GLP-1 medications?',
@@ -331,7 +331,7 @@ const FAQS = [
   },
   {
     q: 'Can I do the program via telehealth?',
-    a: "After your initial in-person visit and lab work, many follow-up appointments — including dosing reviews and progress check-ins — can be done via telehealth. This makes it easy to stay on track with a busy schedule. We serve patients throughout Hillsborough County and the greater Tampa Bay area, including Brandon, Valrico, Riverview, and Plant City.",
+    a: "After your initial in-person visit and lab work, many follow-up appointments - including dosing reviews and progress check-ins - can be done via telehealth. This makes it easy to stay on track with a busy schedule. We serve patients throughout Hillsborough County and the greater Tampa Bay area, including Brandon, Valrico, Riverview, and Plant City.",
   },
   {
     q: 'Do I need to stay on medication long term?',
@@ -339,7 +339,7 @@ const FAQS = [
   },
   {
     q: 'What does the program cost, and how does it compare to competitors?',
-    a: "Program costs vary based on medication, dose, and insurance coverage. We provide a fully transparent cost breakdown at your consultation — no hidden fees. For reference, some local competitors charge $350 per 4-dose cycle for tirzepatide 5 mg and $550 for 10 mg. We are competitively priced and accept insurance, which can significantly reduce your out-of-pocket cost.",
+    a: "Program costs vary based on medication, dose, and insurance coverage. We provide a fully transparent cost breakdown at your consultation - no hidden fees. For reference, some local competitors charge $350 per 4-dose cycle for tirzepatide 5 mg and $550 for 10 mg. We are competitively priced and accept insurance, which can significantly reduce your out-of-pocket cost.",
   },
 ];
 
@@ -364,7 +364,7 @@ export default function MedicalWeightLossPage() {
 
       <Hero
         headline="Science-backed weight loss that actually works"
-        subtext="Physician-supervised GLP-1 programs using Semaglutide and Tirzepatide — the same medications behind Ozempic, Wegovy, Mounjaro, and Zepbound — with clinical monitoring, lab work, and nutrition support included."
+        subtext="Physician-supervised GLP-1 programs using Semaglutide and Tirzepatide - the same medications behind Ozempic, Wegovy, Mounjaro, and Zepbound - with clinical monitoring, lab work, and nutrition support included."
         ctaLabel="Book a Consultation"
         ctaHref="/booking"
         secondaryLabel="Call us: (813) 438-5220"
@@ -380,10 +380,10 @@ export default function MedicalWeightLossPage() {
             <div>
               <p className={styles.introLabel}>GLP-1 · Semaglutide · Tirzepatide · Brandon, FL</p>
               <h2 id="intro-heading" className={styles.introHeading}>
-                Medically supervised weight loss — the right way
+                Medically supervised weight loss - the right way
               </h2>
               <p className={styles.introBody}>
-                The GLP-1 revolution has changed what is achievable in weight management. At WeCare Wellness Clinic in Brandon, FL, our board-certified physicians build personalized programs around FDA-approved GLP-1 medications, comprehensive lab monitoring, and nutrition counseling — giving you clinical-grade support, not just a prescription.
+                The GLP-1 revolution has changed what is achievable in weight management. At WeCare Wellness Clinic in Brandon, FL, our board-certified physicians build personalized programs around FDA-approved GLP-1 medications, comprehensive lab monitoring, and nutrition counseling - giving you clinical-grade support, not just a prescription.
               </p>
               <p className={styles.introBody}>
                 This is not a diet plan or a mail-order service. It is a fully supervised medical program that addresses the hormonal and metabolic drivers of weight gain. When the biology is treated properly, sustainable results follow.
@@ -397,7 +397,7 @@ export default function MedicalWeightLossPage() {
                   'GLP-1-optimized nutrition counseling',
                   'Body composition monitoring',
                   'Regular lab monitoring (A1C, metabolic panel, thyroid)',
-                  'Monthly provider check-ins — telehealth available',
+                  'Monthly provider check-ins - telehealth available',
                 ].map((f) => (
                   <li key={f} className={styles.featuresListItem}>
                     <span className={styles.checkIcon} aria-hidden="true">✓</span>
@@ -436,13 +436,13 @@ export default function MedicalWeightLossPage() {
           </div>
           <div style={{ maxWidth: '780px', margin: '0 auto', display: 'grid', gap: 'var(--space-6, 1.5rem)' }}>
             <p style={{ lineHeight: 1.75 }}>
-              GLP-1 (glucagon-like peptide-1) is a hormone your gut naturally releases after eating. It signals your brain that you are full, slows the rate at which food leaves your stomach, and prompts your pancreas to release insulin in response to rising blood sugar. In people with obesity, this signaling system is often dysregulated — the brain does not receive adequate satiety signals, hunger persists despite sufficient caloric intake, and the body defends a higher weight set-point.
+              GLP-1 (glucagon-like peptide-1) is a hormone your gut naturally releases after eating. It signals your brain that you are full, slows the rate at which food leaves your stomach, and prompts your pancreas to release insulin in response to rising blood sugar. In people with obesity, this signaling system is often dysregulated - the brain does not receive adequate satiety signals, hunger persists despite sufficient caloric intake, and the body defends a higher weight set-point.
             </p>
             <p style={{ lineHeight: 1.75 }}>
-              <strong>Semaglutide</strong> is a synthetic GLP-1 receptor agonist — it mimics and amplifies the natural GLP-1 signal. The result is significantly reduced appetite, earlier feelings of fullness during meals, slower gastric emptying, and stabilized blood sugar. In the landmark STEP-1 clinical trial, participants lost an average of 14.9% of their body weight over 68 weeks.
+              <strong>Semaglutide</strong> is a synthetic GLP-1 receptor agonist - it mimics and amplifies the natural GLP-1 signal. The result is significantly reduced appetite, earlier feelings of fullness during meals, slower gastric emptying, and stabilized blood sugar. In the landmark STEP-1 clinical trial, participants lost an average of 14.9% of their body weight over 68 weeks.
             </p>
             <p style={{ lineHeight: 1.75 }}>
-              <strong>Tirzepatide</strong> goes one step further by also activating GIP (glucose-dependent insulinotropic polypeptide) receptors. This dual-agonist action produces synergistic effects on appetite suppression, insulin sensitivity, and fat metabolism. SURMOUNT-1 trial participants on the highest tirzepatide dose lost an average of 22.5% of their body weight over 72 weeks — the largest average reduction ever recorded for a weight-loss medication in a major clinical trial.
+              <strong>Tirzepatide</strong> goes one step further by also activating GIP (glucose-dependent insulinotropic polypeptide) receptors. This dual-agonist action produces synergistic effects on appetite suppression, insulin sensitivity, and fat metabolism. SURMOUNT-1 trial participants on the highest tirzepatide dose lost an average of 22.5% of their body weight over 72 weeks - the largest average reduction ever recorded for a weight-loss medication in a major clinical trial.
             </p>
             <p style={{ lineHeight: 1.75 }}>
               The key insight: these medications are not willpower substitutes. They correct a biological signaling deficit, making it physiologically easier to eat less and lose weight sustainably.
@@ -456,7 +456,7 @@ export default function MedicalWeightLossPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="ds-eyebrow">What is included</p>
-            <h2 id="benefits-heading" className="ds-h2">A complete program — not just a prescription</h2>
+            <h2 id="benefits-heading" className="ds-h2">A complete program - not just a prescription</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
               Every component below is part of your supervised program, because medication alone is only part of the equation.
             </p>
@@ -482,7 +482,7 @@ export default function MedicalWeightLossPage() {
             <p className="ds-eyebrow">Is this right for you?</p>
             <h2 id="candidate-heading" className="ds-h2">Who is a candidate for medical weight loss?</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
-              GLP-1 therapy is clinically indicated for a broad range of patients — not only those with severe obesity.
+              GLP-1 therapy is clinically indicated for a broad range of patients - not only those with severe obesity.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--space-8, 2rem)', maxWidth: '900px', margin: '0 auto' }}>
@@ -506,7 +506,7 @@ export default function MedicalWeightLossPage() {
               </ul>
             </div>
             <div>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: 'var(--space-4, 1rem)' }}>Safety considerations — not suitable if you have:</h3>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: 'var(--space-4, 1rem)' }}>Safety considerations - not suitable if you have:</h3>
               <ul className={styles.featuresList} role="list" aria-label="Contraindications list">
                 {[
                   'Personal/family history of medullary thyroid carcinoma',
@@ -570,7 +570,7 @@ export default function MedicalWeightLossPage() {
             ))}
           </div>
           <p style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center', fontSize: '0.875rem', color: 'var(--color-text-secondary, #6b7280)', lineHeight: 1.7 }}>
-            Individual results vary. Clinical trial results reflect outcomes under controlled conditions with dose titration protocols. Weight regain is common if medication is discontinued without concurrent lifestyle modification — which is why our program emphasizes both.
+            Individual results vary. Clinical trial results reflect outcomes under controlled conditions with dose titration protocols. Weight regain is common if medication is discontinued without concurrent lifestyle modification - which is why our program emphasizes both.
           </p>
         </div>
       </section>
@@ -580,7 +580,7 @@ export default function MedicalWeightLossPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="ds-eyebrow">Getting started</p>
-            <h2 id="process-heading" className="ds-h2">How the program works — step by step</h2>
+            <h2 id="process-heading" className="ds-h2">How the program works - step by step</h2>
             <p className="ds-lede" style={{ marginTop: 'var(--space-2)' }}>
               From first appointment to long-term maintenance, here is exactly what to expect.
             </p>
@@ -612,7 +612,7 @@ export default function MedicalWeightLossPage() {
               <strong>Pancreatitis:</strong> Acute pancreatitis, including fatal and non-fatal hemorrhagic or necrotizing pancreatitis, has been reported in patients treated with GLP-1 receptor agonists. Discontinue use and seek care immediately if you experience persistent severe abdominal pain.
             </p>
             <p>
-              <strong>Hypoglycemia:</strong> When used without insulin or sulfonylureas, GLP-1 agonists have a low risk of hypoglycemia in non-diabetic patients. Risk increases if combined with other glucose-lowering agents — inform your provider of all medications.
+              <strong>Hypoglycemia:</strong> When used without insulin or sulfonylureas, GLP-1 agonists have a low risk of hypoglycemia in non-diabetic patients. Risk increases if combined with other glucose-lowering agents - inform your provider of all medications.
             </p>
             <p>
               <strong>Gastrointestinal risk:</strong> GLP-1 medications slow gastric emptying. Patients scheduled for surgery requiring anesthesia should inform their surgical team, as aspiration risk may be elevated. Your provider will advise on pre-procedure management.
@@ -647,7 +647,7 @@ export default function MedicalWeightLossPage() {
 
       {/* ── Insurance strip ────────────────────────────────────────────── */}
       <div className={styles.insuranceStrip} role="complementary" aria-label="Insurance accepted">
-        <p className={styles.insuranceText}>Insurance accepted — GLP-1 medication coverage may apply. Uninsured patients welcome.</p>
+        <p className={styles.insuranceText}>Insurance accepted - GLP-1 medication coverage may apply. Uninsured patients welcome.</p>
         <p className={styles.insuranceNames}>Aetna · United Healthcare · Medicare · Blue Cross Blue Shield · MultiPlan</p>
       </div>
 

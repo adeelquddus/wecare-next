@@ -1,14 +1,14 @@
 /**
- * Wix Site Media REST client — server-side only.
+ * Wix Site Media REST client - server-side only.
  *
  * Uses the Wix Site Media API:
- *   GET /site-media/v1/files          — list all media files
- *   GET /site-media/v1/files/search   — search by tag/name
- *   GET /site-media/v1/files/{id}     — get one file's full metadata
- *   GET /site-media/v1/folders        — list folders
+ *   GET /site-media/v1/files          - list all media files
+ *   GET /site-media/v1/files/search   - search by tag/name
+ *   GET /site-media/v1/files/{id}     - get one file's full metadata
+ *   GET /site-media/v1/folders        - list folders
  *
  * Auth requirements (per Wix docs):
- *   Authorization:    <API_KEY>          (no "Bearer" prefix — Wix is unusual here)
+ *   Authorization:    <API_KEY>          (no "Bearer" prefix - Wix is unusual here)
  *   wix-account-id:   <account UUID>
  *   wix-site-id:      <site UUID>        (only required for site-scoped data)
  *

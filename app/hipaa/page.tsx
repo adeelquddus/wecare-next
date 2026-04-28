@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from '@/components/layout/LegalPage.module.css';
 
 export const metadata: Metadata = {
-  title: 'HIPAA Notice of Privacy Practices — WeCare Wellness Clinic',
+  title: 'HIPAA Notice of Privacy Practices - WeCare Wellness Clinic',
   description:
     'WeCare Wellness Clinic\'s HIPAA Notice of Privacy Practices. Learn how we use and protect your protected health information (PHI) and your patient rights.',
   alternates: { canonical: 'https://www.wecarewellnessclinic.com/hipaa' },
@@ -27,7 +27,7 @@ export default function HipaaPage() {
     <>
       <div className={styles.hero}>
         <div className="container">
-          <p className={styles.heroEyebrow}>Legal — Healthcare</p>
+          <p className={styles.heroEyebrow}>Legal - Healthcare</p>
           <h1 className={styles.heroTitle}>HIPAA Notice of Privacy Practices</h1>
           <p className={styles.heroMeta}>
             Effective: {EFFECTIVE_DATE} &nbsp;·&nbsp; Last updated: {LAST_UPDATED}
@@ -63,8 +63,8 @@ export default function HipaaPage() {
           {/* Intro */}
           <div className={styles.section}>
             <p className={styles.p}>
-              We are required by law — specifically, the Health Insurance Portability and Accountability
-              Act (HIPAA) — to maintain the privacy of your Protected Health Information (PHI), to
+              We are required by law - specifically, the Health Insurance Portability and Accountability
+              Act (HIPAA) - to maintain the privacy of your Protected Health Information (PHI), to
               provide you with notice of our legal duties and privacy practices with respect to PHI, and
               to notify you following a breach of unsecured PHI.
             </p>
@@ -128,16 +128,16 @@ export default function HipaaPage() {
 
             <h3 className={styles.sectionSubtitle}>Other Permitted Uses and Disclosures Without Authorization</h3>
             <ul className={styles.list}>
-              <li><strong>As required by law</strong> — We will disclose your PHI when required by federal, state, or local law.</li>
-              <li><strong>Public health activities</strong> — We may report PHI to public health authorities to prevent or control disease, report child abuse or neglect, or report reactions to medications.</li>
-              <li><strong>Health oversight activities</strong> — We may disclose PHI to government agencies for oversight activities such as audits, inspections, and investigations.</li>
-              <li><strong>Law enforcement</strong> — We may disclose PHI to law enforcement officials in response to a court order, warrant, subpoena, or similar process.</li>
-              <li><strong>Serious threats to health or safety</strong> — We may use or disclose PHI if we believe it is necessary to prevent or lessen a serious and imminent threat to a person or the public.</li>
-              <li><strong>Workers' compensation</strong> — We may disclose PHI to the extent required by workers' compensation laws.</li>
-              <li><strong>Coroners, medical examiners, and funeral directors</strong> — We may disclose PHI to identify a deceased person, determine a cause of death, or as authorized by law.</li>
-              <li><strong>Research</strong> — Under certain conditions, we may use or disclose PHI for approved research purposes with appropriate safeguards.</li>
-              <li><strong>Facility directory</strong> — Unless you object, we may use your name, location in the facility, and general condition to tell family members or others who ask for you by name.</li>
-              <li><strong>Individuals involved in your care</strong> — We may disclose relevant PHI to a family member, friend, or other person involved in your care, unless you instruct us otherwise.</li>
+              <li><strong>As required by law</strong> - We will disclose your PHI when required by federal, state, or local law.</li>
+              <li><strong>Public health activities</strong> - We may report PHI to public health authorities to prevent or control disease, report child abuse or neglect, or report reactions to medications.</li>
+              <li><strong>Health oversight activities</strong> - We may disclose PHI to government agencies for oversight activities such as audits, inspections, and investigations.</li>
+              <li><strong>Law enforcement</strong> - We may disclose PHI to law enforcement officials in response to a court order, warrant, subpoena, or similar process.</li>
+              <li><strong>Serious threats to health or safety</strong> - We may use or disclose PHI if we believe it is necessary to prevent or lessen a serious and imminent threat to a person or the public.</li>
+              <li><strong>Workers' compensation</strong> - We may disclose PHI to the extent required by workers' compensation laws.</li>
+              <li><strong>Coroners, medical examiners, and funeral directors</strong> - We may disclose PHI to identify a deceased person, determine a cause of death, or as authorized by law.</li>
+              <li><strong>Research</strong> - Under certain conditions, we may use or disclose PHI for approved research purposes with appropriate safeguards.</li>
+              <li><strong>Facility directory</strong> - Unless you object, we may use your name, location in the facility, and general condition to tell family members or others who ask for you by name.</li>
+              <li><strong>Individuals involved in your care</strong> - We may disclose relevant PHI to a family member, friend, or other person involved in your care, unless you instruct us otherwise.</li>
             </ul>
 
             <h3 className={styles.sectionSubtitle}>Uses and Disclosures Requiring Your Written Authorization</h3>
@@ -237,7 +237,7 @@ export default function HipaaPage() {
 
             <h3 className={styles.sectionSubtitle}>Complaint to WeCare Wellness Clinic</h3>
             <div className={styles.contactBlock}>
-              <p><strong>Privacy Officer — WeCare Wellness Clinic</strong></p>
+              <p><strong>Privacy Officer - WeCare Wellness Clinic</strong></p>
               <p>214 W Brandon Blvd, Brandon, FL 33511</p>
               <p>Phone: <a href="tel:+18134385220">(813) 438-5220</a></p>
               <p>Email: <a href="mailto:privacy@wecarewellnessclinic.com">privacy@wecarewellnessclinic.com</a></p>
@@ -245,7 +245,7 @@ export default function HipaaPage() {
 
             <h3 className={styles.sectionSubtitle}>Complaint to the U.S. Department of Health and Human Services</h3>
             <div className={styles.contactBlock}>
-              <p><strong>Office for Civil Rights — U.S. HHS</strong></p>
+              <p><strong>Office for Civil Rights - U.S. HHS</strong></p>
               <p>200 Independence Avenue SW, Washington, D.C. 20201</p>
               <p>Toll-free: <a href="tel:18006277953">1-800-627-7953</a> (TTY: 1-800-537-7697)</p>
               <p>Online: <a href="https://www.hhs.gov/hipaa/filing-a-complaint" target="_blank" rel="noopener noreferrer">hhs.gov/hipaa/filing-a-complaint</a></p>
@@ -260,7 +260,7 @@ export default function HipaaPage() {
               please contact:
             </p>
             <div className={styles.contactBlock}>
-              <p><strong>WeCare Wellness Clinic — Privacy Officer</strong></p>
+              <p><strong>WeCare Wellness Clinic - Privacy Officer</strong></p>
               <p>214 W Brandon Blvd, Brandon, FL 33511</p>
               <p>Phone: <a href="tel:+18134385220">(813) 438-5220</a></p>
               <p>Email: <a href="mailto:privacy@wecarewellnessclinic.com">privacy@wecarewellnessclinic.com</a></p>

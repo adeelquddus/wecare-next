@@ -1,10 +1,10 @@
 /* =========================================================================
-   WeCare Wellness — Design Tokens (Next.js port of colors_and_type.css)
+   WeCare Wellness - Design Tokens (Next.js port of colors_and_type.css)
    Healthcare-adapted system: trust, calm, care.
    Primary Blue leads, Wellness Teal supports.
    ========================================================================= */
 
-/* Self-hosted Geist — brand font */
+/* Self-hosted Geist - brand font */
 @font-face { font-family: 'Geist'; font-style: normal; font-weight: 100; font-display: swap; src: url('/fonts/Geist-Thin.ttf') format('truetype'); }
 @font-face { font-family: 'Geist'; font-style: normal; font-weight: 200; font-display: swap; src: url('/fonts/Geist-ExtraLight.ttf') format('truetype'); }
 @font-face { font-family: 'Geist'; font-style: normal; font-weight: 300; font-display: swap; src: url('/fonts/Geist-Light.ttf') format('truetype'); }
@@ -17,7 +17,7 @@
 
 :root {
   /* -------------------------------------------------------------------
-     COLOR — Brand
+     COLOR - Brand
      ------------------------------------------------------------------- */
   --color-primary:    #2E6BFF;
   --color-secondary:  #00C2A8;
@@ -55,7 +55,7 @@
   --color-green-500: #10B981;
 
   /* -------------------------------------------------------------------
-     COLOR — Neutrals
+     COLOR - Neutrals
      ------------------------------------------------------------------- */
   --color-text:     #1F2937;
   --color-muted:    #6B7280;
@@ -74,7 +74,7 @@
   --color-gray-900: #111827;
 
   /* -------------------------------------------------------------------
-     COLOR — Semantic
+     COLOR - Semantic
      ------------------------------------------------------------------- */
   --color-success: #10B981;
   --color-warning: #F59E0B;
@@ -82,7 +82,7 @@
   --color-info:    #2E6BFF;
 
   /* -------------------------------------------------------------------
-     COLOR — Aliases (use these in components)
+     COLOR - Aliases (use these in components)
      ------------------------------------------------------------------- */
   --bg-page:       var(--color-bg);
   --bg-surface:    var(--color-white);
@@ -137,7 +137,7 @@
   --tracking-wider:   0.08em;
 
   /* -------------------------------------------------------------------
-     SPACING — 8/16/24/32/48/64/96
+     SPACING - 8/16/24/32/48/64/96
      ------------------------------------------------------------------- */
   --space-1:  8px;
   --space-2:  16px;
@@ -166,7 +166,7 @@
   --radius-pill: 999px;
 
   /* -------------------------------------------------------------------
-     SHADOWS — soft, low-contrast
+     SHADOWS - soft, low-contrast
      ------------------------------------------------------------------- */
   --shadow-xs:    0 1px 2px rgba(0, 0, 0, 0.03);
   --shadow-sm:    0 2px 6px rgba(0, 0, 0, 0.04);
@@ -178,7 +178,7 @@
   --overlay-brand: rgba(46, 107, 255, 0.10);
 
   /* -------------------------------------------------------------------
-     MOTION — calm, reassuring
+     MOTION - calm, reassuring
      ------------------------------------------------------------------- */
   --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in:   cubic-bezier(0.64, 0, 0.78, 0);
@@ -325,7 +325,7 @@ img {
 }
 
 /* =========================================================================
-   FOCUS — WCAG 2.1 AA
+   FOCUS - WCAG 2.1 AA
    ========================================================================= */
 :focus-visible {
   outline: 2px solid var(--color-primary);
@@ -432,7 +432,7 @@ img {
 }
 
 /* =========================================================================
-   ANIMATED ICONS — keyframes & per-icon classes
+   ANIMATED ICONS - keyframes & per-icon classes
    Used by components/ui/AnimatedIcons.tsx
    ========================================================================= */
 
@@ -453,7 +453,7 @@ img {
 }
 .icon-pulse-dot { animation: icon-pulse-dot-kf 2s infinite; }
 
-/* Heartbeat — two-stage scale that mimics a pulse */
+/* Heartbeat - two-stage scale that mimics a pulse */
 @keyframes icon-heartbeat-kf {
   0%, 50%, 100%   { transform: scale(1); }
   20%             { transform: scale(1.18); }

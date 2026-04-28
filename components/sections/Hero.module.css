@@ -24,7 +24,7 @@
   padding: var(--space-7) 0;
 }
 
-/* ── Content — sits on the white part of the bg image ─────────────── */
+/* ── Content - sits on the white part of the bg image ─────────────── */
 .content {
   max-width: 620px;
 }
@@ -96,7 +96,7 @@
   color: var(--color-secondary);
 }
 
-/* ── Doctor image — hidden on desktop only ───────────────────────────── */
+/* ── Doctor image - hidden on desktop only ───────────────────────────── */
 .doctorWrap {
   display: none;
 }
