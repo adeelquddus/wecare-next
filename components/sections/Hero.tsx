@@ -6,7 +6,7 @@ import styles from './Hero.module.css';
 
 interface HeadlineLine {
   text: string;
-  color?: 'dark' | 'primary' | 'teal';
+  color?: 'dark' | 'primary' | 'teal' | 'gradient';
 }
 
 interface HeroProps {
@@ -23,9 +23,10 @@ interface HeroProps {
 }
 
 const colorClass: Record<string, string> = {
-  dark:    'headlineDark',
-  primary: 'headlineBlue',
-  teal:    'headlineTeal',
+  dark:     'headlineDark',
+  primary:  'headlineBlue',
+  teal:     'headlineTeal',
+  gradient: 'headlineGradient',
 };
 
 export default function Hero({

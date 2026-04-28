@@ -35,7 +35,10 @@
 
 .headline {
   margin: 0 0 var(--space-5);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: var(--weight-bold);
   line-height: 1.1;
+  letter-spacing: -0.02em;
   white-space: nowrap;
 }
 
@@ -51,8 +54,16 @@
 }
 
 .headlineDark {
-  color: var(--color-dark);
+  color: var(--text-primary);
   display: block;
+}
+
+.headlineGradient {
+  display: block;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtext {

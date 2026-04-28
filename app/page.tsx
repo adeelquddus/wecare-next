@@ -330,8 +330,8 @@ export default function HomePage() {
       <Hero
         headlineLines={[
           { text: 'Personalized Care.', color: 'dark' },
-          { text: 'Trusted Expertise.', color: 'primary' },
-          { text: 'Better Health.', color: 'teal' },
+          { text: 'Trusted Expertise.', color: 'gradient' },
+          { text: 'Better Health.', color: 'dark' },
         ]}
         subtext="Comprehensive wellness care for the whole family - primary care, medical weight loss, telehealth, and more in Brandon, FL."
         ctaLabel="Book Appointment"
