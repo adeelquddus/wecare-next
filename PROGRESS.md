@@ -97,7 +97,12 @@ When the production DNS eventually flips to Vercel:
 
 > Things being actively worked on. Update status notes as work progresses.
 
-- **Funnel build** — type TBD (waiting on user to pick: GLP-1 / HRT / PrEP / Telehealth / General new-patient). Will live on `feat/funnel-<name>`.
+- **12-month marketing & SEO strategy** — initial draft in `MARKETING.md`. Domain confirmed (`wecarewellnessclinic.com`). Provider licensing confirmed for medical weight loss / GLP-1 across FL+NY+AZ+OR. Awaiting:
+  - User confirmation on exact license scope per state (for compliance copy)
+  - Choice of editorial-calendar tool (Notion / Airtable / ClickUp)
+  - Budget approval for tooling stack
+  - Team roster decisions (which roles in-house vs freelance)
+- **Funnel build** — likely **GLP-1 weight loss funnel** since that's the multi-state licensed service. Will live on `feat/funnel-glp1`. Pending green-light to start.
 
 ---
 
