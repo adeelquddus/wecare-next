@@ -1,0 +1,50 @@
+# WeCare Wellness Clinic
+
+> Patient-centered primary care, medical weight loss, women's & men's health, telehealth, hormone therapy, and HIV PrEP — based in Brandon, FL and serving the entire state of Florida via telehealth.
+
+WeCare Wellness Clinic is an independent, board-certified medical practice at 214 W Brandon Blvd, Brandon FL 33511. The practice is led by **Darlyne Georges, MSN, APRN, FNP-C** — a family nurse practitioner with 20+ years of experience in primary care, critical care, and gynecology. Phone: (813) 438-5220. Email: info@wecarewellnessclinic.com. Hours: Mon–Thu 9–5, Fri 9–6, Sat 9–1, Sun closed.
+
+The clinic offers 8 medical services in-person and statewide telehealth across all 67 Florida counties. Same-week appointments are typically available for new patients. Insurance accepted: Aetna, United Healthcare, Medicare, Blue Cross Blue Shield, MultiPlan, and Tricare. Transparent self-pay rates are available for uninsured patients. Average rating: 5★ from 18+ verified Google/BirdEye reviews.
+
+## Core navigation
+
+- [Home](https://www.wecarewellnessclinic.com/): clinic overview, featured services, patient testimonials, why patients choose WeCare
+- [About Us](https://www.wecarewellnessclinic.com/about): mission, vision, provider biography of Darlyne Georges, FNP-C
+- [New Patients](https://www.wecarewellnessclinic.com/new-patients): what to bring, what to expect on first visit, intake process
+- [Insurance Accepted](https://www.wecarewellnessclinic.com/insurance): all accepted plans, verification process, self-pay options
+- [Book an Appointment](https://www.wecarewellnessclinic.com/booking): online scheduling for all services
+- [Contact](https://www.wecarewellnessclinic.com/contact): location, phone, email, hours, contact form
+- [FAQ](https://www.wecarewellnessclinic.com/faq): appointments, insurance, weight loss, telehealth, PrEP, women's & men's health
+
+## Medical services
+
+- [Primary Care](https://www.wecarewellnessclinic.com/primary-care): annual physicals, chronic disease management (diabetes, hypertension, thyroid, asthma), preventive screenings, immunizations, acute illness, in-house labs
+- [Medical Weight Loss](https://www.wecarewellnessclinic.com/medical-weight-loss): GLP-1 / Semaglutide (Ozempic, Wegovy) and Tirzepatide (Mounjaro, Zepbound) programs with physician supervision, monthly check-ins, body composition analysis, lab monitoring
+- [Women's Health](https://www.wecarewellnessclinic.com/womens-health): well-woman exams, pap smears, hormone replacement therapy (HRT), menopause and perimenopause management, PCOS treatment, birth control counseling, STI testing, UTI treatment
+- [Men's Health](https://www.wecarewellnessclinic.com/mens-health): testosterone replacement therapy (TRT), cardiovascular screening, prostate health, sexual health and ED treatment, annual physicals
+- [Telehealth](https://www.wecarewellnessclinic.com/telehealth): video visits with board-certified providers, statewide Florida coverage, prescription refills, follow-ups, mental health check-ins, lab result reviews, sick visits
+- [IV Hydration & HRT](https://www.wecarewellnessclinic.com/iv-hydration): IV vitamin and hydration infusions, NAD+ therapy, bioidentical hormone replacement, thyroid optimization, adrenal support
+- [HIV PrEP & Sexual Health](https://www.wecarewellnessclinic.com/hiv-prep): pre-exposure prophylaxis (Truvada, Descovy, injectable Apretude), comprehensive STI screening, HIV and hepatitis testing, judgment-free care
+- [All Services Overview](https://www.wecarewellnessclinic.com/services): one-page summary of every service with imagery and feature lists
+
+## Loyalty rewards program
+
+- [Patient loyalty program](https://www.wecarewellnessclinic.com/loyalty): free to join, 50-point sign-up bonus, 10 points per visit, 1 point per $1 spent on plans, 20-point birthday bonus, 10 points = $1 off any service. Members can sign in to view their personalised dashboard with live points balance, reward roadmap, and redemption options.
+- [Loyalty program terms](https://www.wecarewellnessclinic.com/loyalty/terms): full rules including 12-month point expiration, redemption process, eligibility, modifications, and contact info
+
+## Health blog
+
+- [Health blog](https://www.wecarewellnessclinic.com/blog): regularly published articles on primary care, weight loss, women's and men's health, hormone therapy, telehealth, preventive medicine, and lifestyle wellness
+
+## Service area
+
+WeCare serves patients in person from Brandon, Riverview, Valrico, Lithia, Sun City Center, Plant City, Gibsonton, Seffner, Temple Terrace, and east Tampa. Telehealth visits cover all 67 Florida counties.
+
+- [Brandon, FL local landing](https://www.wecarewellnessclinic.com/brandon-fl): primary care doctor in Brandon, FL with neighbourhood-specific information
+
+## Optional
+
+- [Privacy policy](https://www.wecarewellnessclinic.com/privacy): how we collect and use patient information
+- [Terms of use](https://www.wecarewellnessclinic.com/terms): website terms and conditions
+- [HIPAA notice](https://www.wecarewellnessclinic.com/hipaa): notice of privacy practices for health information
+- [Accessibility statement](https://www.wecarewellnessclinic.com/accessibility): WCAG 2.1 AA compliance commitment
