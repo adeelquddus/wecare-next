@@ -47,6 +47,21 @@ When the production DNS eventually flips to Vercel:
 
 ## 🟢 Recently shipped (newest first)
 
+### April 28 2026 — FAQ overhaul: design + comprehensive SEO/Lighthouse
+- Spacing tightened (space-7 rhythm instead of space-12/16)
+- Card-based FAQ items with hover lift + primary-blue "Q" badge
+- Sticky category nav with frosted backdrop + horizontal scroll on mobile
+- Section headers use soft tinted card with primary-blue left rule (replacing heavy 2px underline)
+- Smooth-scroll for in-page anchors + prefers-reduced-motion respected
+- Heading hierarchy fixed: h1 (hero) → h2 (sections) → h3 (questions)
+- JSON-LD upgraded to a single @graph with 6 linked types: WebPage, ImageObject, BreadcrumbList, FAQPage, WebSite, 26 Questions
+- Microdata `itemprop` attributes added inline as belt-and-braces alongside JSON-LD
+- Open Graph: og:image (1200×630 with alt + dimensions), og:locale, og:site_name
+- Twitter card: summary_large_image with site handle
+- Robots: explicit max-snippet/max-image-preview/max-video-preview
+- Keywords: 8 → 38 (local + insurance + GLP-1 + telehealth + PrEP + women's/men's clusters)
+- metadataBase set so canonical/OG URLs resolve correctly across environments
+
 ### April 28 2026 — Production deployment + LLM discoverability
 - Vercel deploy live at `wecare-next-flax.vercel.app`
 - All 19 public routes verified 200 OK
@@ -110,10 +125,12 @@ When the production DNS eventually flips to Vercel:
 
 > Concrete next-up work. In priority order. Move items up to **🟡 In progress** when you start them.
 
-1. **Real loyalty redemption flow** — wire `redeemCurrentMemberPoints` so the "Apply $5 to my next visit" button actually deducts points and produces a Wix coupon code. Needs OAuth member-token scope (which we already have).
-2. **Wix Bookings deep integration** — auto-attach the loyalty coupon to the booking URL so the discount applies at checkout.
-3. **Sitemap + robots.txt** — exclude the Vercel preview URL from search-engine indexing so it doesn't compete with the prod domain on Google.
-4. **DNS flip to Vercel** — only when fully validated. Steps in `DEPLOY.md` "Later — when you're ready to flip DNS".
+1. **Roll out FAQ-grade SEO to every other page** — the FAQ page now has the gold-standard pattern (Open Graph image, Twitter card, expanded keywords, @graph JSON-LD with WebPage→FAQPage→Breadcrumb→ImageObject→WebSite, microdata, complete robots directives). Apply the same pattern to: home, about, services, new-patients, insurance, contact, blog, booking, all 7 service detail pages, brandon-fl, loyalty. Per-page `og-image` if budget allows; share `/hero-image.png` otherwise.
+2. **Per-page custom OG images** — generate 1200×630 branded social cards per page (e.g. via `app/[route]/opengraph-image.tsx` Next.js convention or by extending `scripts/build_marketing_pdf.py` pattern). Differentiate from share previews so each page has its own card.
+3. **Real loyalty redemption flow** — wire `redeemCurrentMemberPoints` so the "Apply $5 to my next visit" button actually deducts points and produces a Wix coupon code. Needs OAuth member-token scope (which we already have).
+4. **Wix Bookings deep integration** — auto-attach the loyalty coupon to the booking URL so the discount applies at checkout.
+5. **Sitemap + robots.txt** — generate dynamic sitemap.xml from the route tree. Add `noindex` for the Vercel preview URL so it doesn't compete with the prod domain on Google.
+6. **DNS flip to Vercel** — only when fully validated. Steps in `DEPLOY.md` "Later — when you're ready to flip DNS".
 
 ---
 
